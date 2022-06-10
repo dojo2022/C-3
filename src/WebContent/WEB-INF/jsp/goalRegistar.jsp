@@ -8,7 +8,18 @@
 <link rel="stylesheet" type="text/css" href="/app/css/goalRegistar.css">
 </head>
 <body>
-POME GOALREGISTAR
+<header>
+</header>
+
+<!-- ここからメイン -->
+<main>
+<p>POME GOALREGISTAR</p>
+</main>
+<!--  -->
+
+<footer>
+</footer>
+
 <script src="js/goalRegistar.js"></script>
 </body>
 </html>
