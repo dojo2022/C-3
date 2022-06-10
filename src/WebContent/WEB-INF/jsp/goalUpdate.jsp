@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+-<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,19 @@
 <link rel="stylesheet" type="text/css" href="/app/css/goalUpdate.css">
 </head>
 <body>
-POME 目標更新消去
+<header>
+</header>
+
+<!-- ここからメイン -->
+<main>
+<p>POME 目標更新消去</p>
+</main>
+<!--  -->
+
+<footer>
+</footer>
+
 <script src="js/goalUpdate.js"></script>
 </body>
 </html>
+
