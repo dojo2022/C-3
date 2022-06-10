@@ -15,20 +15,22 @@
 <main>
 
 	<form method="post" action="">
-		joys登録 <br>
+		<h1>joys登録</h1>
+
 
 		<table>
 			<tr>
 				<th>joys名</th>
 			</tr>
 			<tr>
-				<td><input type="text" name="reward_name" placeholder = "アイス"></input></td>
+				<td><input type="text" name="reward_name" placeholder="アイス"></input></td>
 			</tr>
 			<tr>
 				<th>詳細</th>
 			</tr>
 			<tr>
-				<td><input type="text" name="reward_detail" placeholder = "チョコモナカジャンボを大人買い"></input></td>
+				<td><input type="text" name="reward_detail"
+					placeholder="チョコモナカジャンボを大人買い"></input></td>
 			</tr>
 			<tr>
 				<th>ささやかor豪華選択</th>
