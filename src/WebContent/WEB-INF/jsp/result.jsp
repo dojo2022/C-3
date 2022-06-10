@@ -8,10 +8,18 @@
 <link rel="stylesheet" type="text/css" href="css/result.css">
 </head>
 <body>
-<header></header>
-<main></main>
-<footer></footer>
+<header>
+</header>
+
+<!-- ここからメイン -->
+<main>
 <p>POME</p>
+</main>
+<!--  -->
+
+<footer>
+</footer>
+
 <script src="js/result.js"></script>
 </body>
 </html>
