@@ -8,8 +8,16 @@
 <title>joys一覧</title>
 </head>
 <body>
-joys一覧
+<header>
 
+</header>
+
+<main>
+joys一覧
+</main>
+
+<footer>
+</footer>
 <script src="js/joys.js"></script>
 </body>
 </html>
