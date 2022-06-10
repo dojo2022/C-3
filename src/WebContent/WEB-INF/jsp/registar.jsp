@@ -8,7 +8,9 @@
 <link rel="stylesheet" type="text/css" href="css/registar.css">
 </head>
 <body>
-	<header></header>
+	<header>
+	</header>
+	<!-- ここからメイン -->
 	<main>
 		<h1>新規登録</h1>
 
@@ -46,7 +48,10 @@
 			</tr>
 		</table>
 	</main>
-	<footer></footer>
+	<!--  -->
+
+	<footer>
+	</footer>
 
 	<script src="js/registar.js"></script>
 </body>
