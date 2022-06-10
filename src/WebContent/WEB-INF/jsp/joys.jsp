@@ -12,6 +12,7 @@
 
 </header>
 
+<!-- ここからメイン -->
 <main>
 <h1>joys一覧</h1>
 
@@ -29,14 +30,14 @@
 		</tr>
 
 		</c:forEach>
-//頑張る
+<!-- 頑張る -->
 
 </table>
 
 
 
 </main>
-
+<!--  -->
 <footer>
 </footer>
 <script src="js/joys.js"></script>
