@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>joys一覧</title>
+<title>Insert title here</title>
 </head>
 <body>
-joys一覧
+POME 目標更新消去
 </body>
 </html>
