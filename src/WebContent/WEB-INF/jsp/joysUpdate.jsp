@@ -7,6 +7,16 @@
 <title>joys更新・削除</title>
 </head>
 <body>
+<header>
+
+</header>
+
+<main>
 joys更新・削除
+</main>
+
+<footer>
+</footer>
+
 </body>
 </html>

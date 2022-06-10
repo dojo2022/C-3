@@ -8,6 +8,13 @@
 <link rel="stylesheet" type="text/css" href="css/hint.css">
 </head>
 <body>
+<header></header>
+
+<main>
+<h1>ヒントページ</h1>
+</main>
+
+<footer></footer>
 <p>POME</p>
 <script src="js/hint.js"></script>
 </body>

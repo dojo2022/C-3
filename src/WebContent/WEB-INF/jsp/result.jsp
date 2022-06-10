@@ -8,6 +8,9 @@
 <link rel="stylesheet" type="text/css" href="css/result.css">
 </head>
 <body>
+<header></header>
+<main></main>
+<footer></footer>
 <p>POME</p>
 <script src="js/result.js"></script>
 </body>
