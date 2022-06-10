@@ -8,8 +8,16 @@
 <title>ランキング</title>
 </head>
 <body>
-ランキング
+<header>
 
+</header>
+
+<main>
+ランキング
+</main>
+
+<footer>
+</footer>
 <script src="js/ranking.js"></script>
 </body>
 </html>
