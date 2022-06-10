@@ -14,6 +14,11 @@
 <a href="/app/LoginServlet" class="LogoutBtn">ログアウト</a>
 <a href="/app/HintServlet" class="hint" target="_blank"><img src="/app/img/hint.png"></a>
 </header>
+
+<!-- ここからメイン -->
+<main>
+</main>
+<!--  -->
 <footer>
 <ul>
 	<li><a href="/app/HomeServlet"><img src="/app/img/home.png" class="menu"></a></li>
