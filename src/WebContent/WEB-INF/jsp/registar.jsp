@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/registar.css">
 </head>
 <body>
 <p>POME</p>
+<script src="js/registar.js"></script>
 </body>
 </html>
