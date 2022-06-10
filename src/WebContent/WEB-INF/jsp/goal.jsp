@@ -8,7 +8,22 @@
 <link rel="stylesheet" type="text/css" href="/app/css/goal.css">
 </head>
 <body>
+<header>
+</header>
+
+<!-- ここからメイン -->
+<main>
 POME goal
+</main>
+<!--  -->
+
+<footer>
+</footer>]
+
 <script src="js/goal.js"></script>
 </body>
 </html>
+
+
+
+
