@@ -10,10 +10,9 @@
 </head>
 <body>
 <header>
-<div><img src="/app/img/joys.png" width="80" height="80"><h1>joys更新・削除</h1></div>
-<div><img src="/app/img/logo.png" width="80" height="80"></div>
-<a href="/app/LoginServlet" class="LogoutBtn">ボタン</a>
-<a href="/app/HintServlet" class="hint" target="_blank"><img src="hint"></a>
+<div><img src="/app/img/logo00.png" class="logo"></div>
+<a href="/app/LoginServlet" class="LogoutBtn">ログアウト</a>
+<a href="/app/HintServlet" class="hint" target="_blank"><img src="/app/img/hint.png"></a>
 </header>
 <footer>
 <ul>
