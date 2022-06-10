@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+POME 目標更新消去
 </body>
 </html>
