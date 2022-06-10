@@ -9,8 +9,16 @@
 
 </head>
 <body>
-joys登録
+<head>
 
+</head>
+<main>
+joys登録
+</main>
+
+<footer>
+
+</footer>
 
 <script src="js/joysRegistar.js"></script>
 </body>
