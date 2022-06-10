@@ -34,12 +34,7 @@ public class JoysServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
-	/*
-	 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// ログインページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/hint.jsp");
-		dispatcher.forward(request, response);
-	}*/
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
