@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/app/css/home.css">
 </head>
 <body>
 POME HOME
+<script src="js/home.js"></script>
 </body>
 </html>
