@@ -12,18 +12,16 @@
 
 </header>
 
+<!-- ここからメイン -->
 <main>
 <h1>ランキング</h1>
-
 <table>
 
 
 
 </table>
-
-
 </main>
-
+<!--  -->
 <footer>
 </footer>
 <script src="js/ranking.js"></script>
