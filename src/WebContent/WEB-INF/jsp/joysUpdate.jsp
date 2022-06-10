@@ -12,6 +12,7 @@
 
 </header>
 
+<!-- ここからメイン -->
 <main>
 
 	<form method="post" action="">
@@ -47,6 +48,7 @@
 	</form>
 
 </main>
+<!--  -->
 
 <footer>
 </footer>
