@@ -13,7 +13,28 @@
 </header>
 
 <main>
-joys一覧
+<h1>joys一覧</h1>
+
+<table>
+		<tr>
+			<th></th>
+			<th>joys名</th>
+			<th>必要ポイント数</th>
+			<th></th>
+		</tr>
+
+		<c:forEach var = "e" items="${}">
+		<tr>
+
+		</tr>
+
+		</c:forEach>
+//頑張る
+
+</table>
+
+
+
 </main>
 
 <footer>

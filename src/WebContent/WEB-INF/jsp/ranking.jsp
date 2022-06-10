@@ -13,7 +13,15 @@
 </header>
 
 <main>
-ランキング
+<h1>ランキング</h1>
+
+<table>
+
+
+
+</table>
+
+
 </main>
 
 <footer>
