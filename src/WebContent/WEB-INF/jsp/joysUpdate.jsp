@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>joys更新・削除</title>
 </head>
 <body>
-
+joys更新・削除
 </body>
 </html>
