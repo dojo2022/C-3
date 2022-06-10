@@ -8,7 +8,18 @@
 <link rel="stylesheet" type="text/css" href="css/profile.css">
 </head>
 <body>
+<header>
+</header>
+
+<!-- ここからメイン -->
+<main>
 <p>POME</p>
+</main>
+<!--  -->
+
+<footer>
+</footer>
+
 <script src="js/profile.js"></script>
 </body>
 </html>
