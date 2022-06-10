@@ -8,7 +8,10 @@
 <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-	<header> </header>
+	<header>
+	</header>
+
+	<!-- ここからメイン -->
 	<main>
 
 		<h3>
@@ -31,7 +34,10 @@
 		<input type="submit" name="login" value="ログイン">
 		<a href="registar.jsp">新規登録</a>
 	</main>
-	<footer></footer>
+	<!--  -->
+
+	<footer>
+	</footer>
 	<p>POME</p>
 	<script src="js/login.js"></script>
 </body>
