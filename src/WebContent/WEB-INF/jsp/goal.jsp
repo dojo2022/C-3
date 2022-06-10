@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/app/css/goal.css">
 </head>
 <body>
 POME goal
+<script src="js/goal.js"></script>
 </body>
 </html>
