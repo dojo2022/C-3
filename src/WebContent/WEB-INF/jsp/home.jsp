@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>POME HOME</title>
 <link rel="stylesheet" type="text/css" href="/app/css/home.css">
 </head>
 <body>
-POME HOME
+<img src="">
 <script src="js/home.js"></script>
 </body>
 </html>
