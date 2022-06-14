@@ -16,20 +16,30 @@
 
 
 		<!-- 参考サイト：https://shu-sait.com/tab-kirikae-box/ -->
+				<!-- 目標名はSQLに接続してから -->
+						<!-- 編集ボタンからの内部構造、SQLとのあれこれが必要そうです-->
+								<!-- 詳細マウスオーバーのコード書いてないです…！-->
 		<div>
 			<div class="goal_wrap">
 
-				<input id="tab0" type="radio" name="tag_id"> <label
-					for="tab0" class="tab_lab0_all">目標一覧</label> <input id="tab1"
-					type="radio" name="tag_id"> <label for="tab1"
-					class="tab_lab1_work">仕事</label> <input id="tab2" type="radio"
-					name="tag_id"> <label for="tab2" class="tab_lab2_housework">家事</label>
+				<input id="tab0" type="radio" name="tag_id" value="0">
+				<label for="tab0" class="tab_lab0_all">目標一覧</label>
 
-				<input id="tab3" type="radio" name="tag_id"> <label
-					for="tab3" class="tab_lab3_hobby">趣味</label> <input id="tab4"
-					type="radio" name="tag_id"> <label for="tab4"
-					class="tab_lab4_study">勉強</label> <input id="tab5" type="radio"
-					name="tag_id"> <label for="tab5" class="tab_lab5_etc">その他</label>
+				<input id="tab1" type="radio" name="tag_id" value="1">
+				<label for="tab1" class="tab_lab1_work">仕事</label>
+
+				<input id="tab2" type="radio" name="tag_id" value="2">
+				<label for="tab2" class="tab_lab2_housework" >家事</label>
+
+				<input id="tab3" type="radio" name="tag_id" value="3">
+				<label for="tab3" class="tab_lab3_hobby">趣味</label>
+
+
+				<input id="tab4" type="radio" name="tag_id" value="4">
+				<label for="tab4" class="tab_lab4_study">勉強</label>
+
+				<input id="tab5" type="radio" name="tag_id" value="5">
+				<label for="tab5" class="tab_lab5_etc">その他</label>
 
 
 
@@ -103,8 +113,6 @@
 						</tr>
 					</table>
 				</div>
-
-
 
 
 				<div id="tag_etc" class="tag_table">
