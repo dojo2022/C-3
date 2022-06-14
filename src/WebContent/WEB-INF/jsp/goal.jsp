@@ -37,11 +37,10 @@
 					<table>
 						<tr>
 							<th>目標名</th>
-							<th></th>
-							<td></td>
+							<th><a href="/app/GoalUpdateServlet"><img
+									src="/app/img/edit.png" class="menu"></a></th>
 							<th></th>
 							<td><input type="checkbox" id="achievement"></td>
-
 						</tr>
 					</table>
 				</div>
@@ -54,8 +53,8 @@
 							<th>目標名</th>
 							<th><a href="/app/GoalUpdateServlet"><img
 									src="/app/img/edit.png" class="menu"></a></th>
-							<th>チェックボタン</th>
 							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
 						</tr>
 					</table>
 				</div>
@@ -67,9 +66,10 @@
 					<table>
 						<tr>
 							<th>目標名</th>
-							<th>編集ボタン</th>
-							<th>チェックボタン</th>
+							<th><a href="/app/GoalUpdateServlet"><img
+									src="/app/img/edit.png" class="menu"></a></th>
 							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
 						</tr>
 					</table>
 				</div>
@@ -81,9 +81,10 @@
 					<table>
 						<tr>
 							<th>目標名</th>
-							<th>編集ボタン</th>
-							<th>チェックボタン</th>
+							<th><a href="/app/GoalUpdateServlet"><img
+									src="/app/img/edit.png" class="menu"></a></th>
 							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
 						</tr>
 					</table>
 				</div>
@@ -95,9 +96,10 @@
 					<table>
 						<tr>
 							<th>目標名</th>
-							<th>編集ボタン</th>
-							<th>チェックボタン</th>
+							<th><a href="/app/GoalUpdateServlet"><img
+									src="/app/img/edit.png" class="menu"></a></th>
 							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
 						</tr>
 					</table>
 				</div>
@@ -109,9 +111,10 @@
 					<table>
 						<tr>
 							<th>目標名</th>
-							<th>編集ボタン</th>
-							<th>チェックボタン</th>
+							<th><a href="/app/GoalUpdateServlet"><img
+									src="/app/img/edit.png" class="menu"></a></th>
 							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
 						</tr>
 					</table>
 				</div>
