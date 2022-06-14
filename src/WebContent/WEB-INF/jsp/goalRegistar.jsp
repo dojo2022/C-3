@@ -55,6 +55,10 @@
 				</tr>
 				<tr>
 					<td><input type="date" name="difficulty_id" value="1"></td>
+
+<!-- 開始日はjavaScriptで今日の日付を生成し自動入力されていると便利かも。 -->
+<!-- 開始日が本日以前は入力できない形でもよさそう -->
+
 					<td>～</td>
 					<td><input type="date" name="difficulty_id" value="2"></td>
 				</tr>
