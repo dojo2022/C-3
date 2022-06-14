@@ -124,7 +124,7 @@
 
 			</div>
 		</div>
-		<a href="/app/GoalRegistarServlet.java"><img
+		<a href="/app/GoalRegistarServlet"><img
 			src="/app/img/regist.png" class=""></a>
 
 	</main>
