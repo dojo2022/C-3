@@ -1,1 +1,74 @@
 @charset "UTF-8";
+
+body {
+    margin: 0px;
+    height: 1000px;
+}
+a {
+    text-decoration:none;
+}
+
+/* ヘッダー */
+.header {
+	position: relative;
+	top: 0;
+}
+.logoutbtn div {
+	color: black;
+	background-color: #def03c;
+	font-size: 30px;
+	position: absolute;
+	right: 180px;
+	top: 60px;
+}
+.hint img {
+	position: absolute;
+	right: 50px;
+	top: 50px;
+}
+
+/* フッター */
+.footer {
+    height: 100px;
+    background-color: #FF9933;
+    font-size: 15px;
+    width: 100%;
+
+    /* 固定 */
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+
+}
+.footer-ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+
+
+}
+.footer-li {
+    width: 25%;
+    text-align: center;
+}
+.footer-li div {
+    color: #3a3a3a;
+
+}
+/* フッター　「目標一覧」　位置調整 */
+.footer-li-goal {
+	padding-right: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
