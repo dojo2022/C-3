@@ -12,7 +12,7 @@
 	<!-- ここからメイン -->
 	<main>
 		<h1>新規登録</h1>
-
+<form id="registar_form" method="POST" action="/app/RegistarServlet">
 		<table>
 			<tr>
 
@@ -48,6 +48,7 @@
 			</tr>
 
 		</table>
+		</form>
 	</main>
 	<!--  -->
 

@@ -19,7 +19,11 @@
 
 <!-- ここからメイン -->
 <main>
+<<<<<<< Updated upstream
 <form method="POST" id="profile_form" action="/app/ResuultServlet">
+=======
+<form method="POST" id="profile_form" action="/app/ResultServlet">
+>>>>>>> Stashed changes
 
 <h1><img src="/app/img/profile.png" width="50" height="50">PROFILE</h1>
 <input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);"><br>
@@ -55,6 +59,7 @@
 		</c:forEach>-->
 	</table>
 	</div>
+	</form>
 </main>
 <!--  -->
 
