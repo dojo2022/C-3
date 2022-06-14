@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +8,35 @@
 <link rel="stylesheet" type="text/css" href="/app/css/goal.css">
 </head>
 <body>
-<header>
-</header>
+	<header> </header>
 
-<!-- ここからメイン -->
-<main>
-POME goal
+	<!-- ここからメイン -->
+	<main>
+		POME goal
 
-			<table>
+
+			<!-- 参考サイト：https://shu-sait.com/tab-kirikae-box/ -->
+		<div>
+			<input id="tab1" type="radio" name="tag_id">
+			<label for="tab1" class="tab_lab1_work">仕事</label>
+
+
+			<input id="tab2" type="radio" name="tag_id">
+			<label for="tab2" class="tab_lab2_housework">家事</label>
+
+			<input id="tab3" type="radio" name="tag_id">
+			<label for="tab3" class="tab_lab3_hobby">趣味</label>
+
+			<input id="tab" type="radio" name="tag_id">
+			<label for="tab3" class="tab_lab3_hobby">趣味</label>
+
+		</div>
+
+		<table>
+
+
+
+
 			<tr>
 				<th>目標名</th>
 				<th>編集ボタン</th>
@@ -33,13 +54,13 @@ POME goal
 
 		</table>
 
-</main>
-<!--  -->
+	</main>
+	<!--  -->
 
-<footer>
-</footer>]
+	<footer> </footer>
+	]
 
-<script src="js/goal.js"></script>
+	<script src="js/goal.js"></script>
 </body>
 </html>
 
