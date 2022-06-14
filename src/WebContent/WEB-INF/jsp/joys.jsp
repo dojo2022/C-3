@@ -24,12 +24,12 @@
 			<th></th>
 		</tr>
 
-		<c:forEach var = "e" items="${}">
+
 		<tr>
 
 		</tr>
 
-		</c:forEach>
+
 <!-- 頑張る -->
 
 </table>
