@@ -25,7 +25,7 @@
 					<th>目標名</th>
 				</tr>
 				<tr>
-					<td><input type="text" name="goal_name" placeholder=""></input></td>
+					<td><input type="text" name="goal_name" placeholder="" required></input></td>
 				</tr>
 				<tr>
 					<th>詳細</th>
@@ -38,7 +38,7 @@
 					<th>期間</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="term_id" value="1">終日</td>
+					<td><input type="radio" name="term_id" value="1" required>終日</td>
 					<td><input type="radio" name="term_id" value="2">繰り返し</td>
 					<td><input type="radio" name="term_id" value="3">長期</td>
 				</tr>
@@ -46,7 +46,7 @@
 					<th>達成難易度</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="difficulty_id" value="1">簡単</td>
+					<td><input type="radio" name="difficulty_id" value="1" required>簡単</td>
 					<td><input type="radio" name="difficulty_id" value="2">難しい</td>
 				</tr>
 
@@ -54,20 +54,20 @@
 					<th>日付</th>
 				</tr>
 				<tr>
-					<td><input type="date" name="difficulty_id" value="1"></td>
+					<td><input type="date" name="starting_date" required></td>
 
 <!-- 開始日はjavaScriptで今日の日付を生成し自動入力されていると便利かも。 -->
 <!-- 開始日が本日以前は入力できない形でもよさそう -->
 
 					<td>～</td>
-					<td><input type="date" name="difficulty_id" value="2"></td>
+					<td><input type="date" name="ending_date"></td>
 				</tr>
 
 				<tr>
 					<th>タグ</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="tag_id" value="1">仕事</td>
+					<td><input type="radio" name="tag_id" value="1" required>仕事</td>
 					<td><input type="radio" name="tag_id" value="2">家事</td>
 					<td><input type="radio" name="tag_id" value="3">趣味</td>
 					<td><input type="radio" name="tag_id" value="4">勉強</td>
