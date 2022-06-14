@@ -9,10 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.BcDAO;
-import model.Bc;
-import model.Result;
-
 /**
  * Servlet implementation class JoysUpdateServlet
  */
@@ -35,7 +31,7 @@ public class JoysUpdateServlet extends HttpServlet {
 
 /*-------------------------------------------------------------------------------------------------------------*/
 /* 0614 bcからひな形追加　引数、DAO部分変更 */
-
+/*
 		// リクエストパラメータを取得する　rewardテーブル
 		String reward_id = request.getParameter("reward_id");
 		String user_id = request.getParameter("user_id");
@@ -70,7 +66,7 @@ public class JoysUpdateServlet extends HttpServlet {
 				new Result("削除失敗！", "Joysを削除できませんでした。", "/app/JoysServlet.java"));
 			}
 		}
-
+*/
 /*-------------------------------------------------------------------------------------------------------------*/
 
 
@@ -78,6 +74,13 @@ public class JoysUpdateServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/joysUpdate.jsp");
 		dispatcher.forward(request, response);
 	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
 
 		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
