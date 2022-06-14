@@ -32,7 +32,7 @@
 					<th>joys名</th>
 				</tr>
 				<tr>
-					<td><input type="text" name="reward_name" placeholder=""></input></td>
+					<td><input type="text" name="reward_name" placeholder="" required></input></td>
 				</tr>
 				<tr>
 					<th>詳細</th>
@@ -44,7 +44,7 @@
 					<th>ささやかor豪華選択</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="reward_level_id" value="1">ささやか(10pt)</td>
+					<td><input type="radio" name="reward_level_id" value="1" required>ささやか(10pt)</td>
 					<td><input type="radio" name="reward_level_id" value="2">豪華(50pt)</td>
 				</tr>
 				<tr>
