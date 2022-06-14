@@ -4,16 +4,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>POME HOME</title>
-	<link rel="stylesheet" type="text/css" href="/app/css/home.css">
+<meta charset="UTF-8">
+<title>POME HOME</title>
+<link rel="stylesheet" type="text/css" href="/app/css/home.css">
 </head>
 <body>
-	<header class="header">
-		<div class="logo"><img src="/app/img/logo00.png"  width="300" height="150"></div>
-		<a href="/app/LoginServlet" class="logoutbtn"><div>ログアウト</div></a>
-		<a href="/app/HintServlet" class="hint" target="_blank"><img src="/app/img/hint.png" width="60" height="60"></a>
-	</header>
+<header>
+<div><img src="/app/img/logo00.png" class="logo"></div>
+<a href="/app/LoginServlet" class="LogoutBtn">ログアウト</a>
+<a href="/app/HintServlet" class="hint" target="_blank"><img src="/app/img/hint.png"></a>
+</header>
 
 <!-- ここからメイン -->
 <main>
@@ -47,9 +47,9 @@
 							<th>目標名</th>
 							<th>編集ボタン</th>
 
-									<a href="/app/GoalRegistarServlet.java"><img src="/app/img/regist.png" class="regist"></a>
 
-									<a href="/app/GoalRegistarServlet.java"><img src="/app/img/regist.png" class="regist"></a>
+
+									<input type = "checkbox">
 
 
 							<th>チェックボタン</th>
@@ -137,16 +137,16 @@
 
 			</div>
 		</div>
-
+<a href="/app/GoalRegistarServlet.java"><img src="/app/img/regist.png" class=""></a>
 
 </main>
 <!--  -->
-<footer class="footer">
-<ul class="footer-ul">
-	<li class="footer-li"><a href="/app/HomeServlet"><img src="/app/img/home.png" width="60" height="60"><br><div>Home</div></a></li>
-	<li class="footer-li"><a href="/app/GoalServlet"><img src="/app/img/check.png" width="60" height="60"><br><div class="footer-li-goal">目標一覧</div></a></li>
-	<li class="footer-li"><a href="/app/JoysServlet"><img src="/app/img/joys.png" width="60" height="60"><br><div>Joys</div></a></li>
-	<li class="footer-li"><a href="/app/ProfileServlet"><img src="/app/img/profile.png" width="60" height="60"><br><div>マイプロフィール</div></a></li>
+<footer>
+<ul>
+	<li><a href="/app/HomeServlet"><img src="/app/img/home.png" class="menu"></a></li>
+	<li><a href="/app/GoalServlet"><img src="/app/img/check.png" class="menu"></a></li>
+	<li><a href="/app/JoysServlet"><img src="/app/img/joys.png" class="menu"></a></li>
+	<li><a href="/app/ProfileServlet"><img src="/app/img/profile.png" class="menu"></a></li>
 </ul>
 </footer>
 <script src="js/home.js"></script>
