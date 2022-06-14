@@ -17,7 +17,7 @@
 		<h3>
 			ToDo管理アプリのように登録し<br> 達成したときには褒めてもらえるアプリ
 		</h3>
-		<img src="/app/img/logo.PNG" width="260" height="140" alt="POME">
+		<img src="/app/img/logo00.png" width="260" height="140" alt="POME">
 
 		<table>
 			<tr>
@@ -32,13 +32,17 @@
 			</tr></table>
 
 		<input type="submit" name="login" value="ログイン">
-		<a href="registar.jsp">新規登録</a>
+		<a href="RegistarServlet">新規登録</a>
 	</main>
 	<!--  -->
 
 	<footer>
+<a href = "HintServlet">
+<img src="/app/img/hint.png" width="25" height="25" >POMEについて詳しく知りたい方はこちらへ
+</a >
+
 	</footer>
-	<p>POME</p>
+
 	<script src="js/login.js"></script>
 </body>
 </html>
