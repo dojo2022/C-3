@@ -37,7 +37,8 @@ public class GoalRegistarServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("/app/ResultServlet");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

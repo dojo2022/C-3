@@ -19,6 +19,12 @@
 
 <!-- ここからメイン -->
 <main>
+<<<<<<< Updated upstream
+<form method="POST" id="profile_form" action="/app/ResuultServlet">
+=======
+<form method="POST" id="profile_form" action="/app/ResultServlet">
+>>>>>>> Stashed changes
+
 <h1><img src="/app/img/profile.png" width="50" height="50">PROFILE</h1>
 <input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);"><br>
 		<canvas id="preview" style="max-width:200px;"></canvas><br>
@@ -37,6 +43,8 @@
 <input type="radio" name="edit" value="yes">編集する
 <input type="radio" name="edit" value="no" checked>編集しない<br>
 
+</form>
+
 <input type="submit" name="SUBMIT" value="更新" ><br>
 達成済みリスト
 	<div id="table">
@@ -51,6 +59,7 @@
 		</c:forEach>-->
 	</table>
 	</div>
+	</form>
 </main>
 <!--  -->
 

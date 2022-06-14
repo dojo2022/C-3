@@ -28,7 +28,7 @@
 					<th>joys名</th>
 				</tr>
 				<tr>
-					<td><input type="text" name="reward_name" placeholder="アイス"></input></td>
+					<td><input type="text" name="reward_name" placeholder="アイス" required></input></td>
 				</tr>
 				<tr>
 					<th>詳細</th>
@@ -41,7 +41,7 @@
 					<th>ささやかor豪華選択</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="reward_level_id" value="1">ささやか</td>
+					<td><input type="radio" name="reward_level_id" value="1" required>ささやか</td>
 					<td><input type="radio" name="reward_level_id" value="2">豪華</td>
 				</tr>
 				<tr>

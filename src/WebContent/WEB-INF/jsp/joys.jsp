@@ -23,10 +23,11 @@
 
 		<table>
 			<tr>
-				<th></th>
+				<th><a href="/app/GoalUpdateServlet"><img
+									src="/app/img/edit.png" ></a></th>
 				<th>joys名</th>
 				<th>必要ポイント数</th>
-				<th></th>
+				<th><button type="button"> <img src="/app/img/present.png" ></button></th>
 			</tr>
 
 

@@ -19,7 +19,6 @@
 		</h3>
 		<img src="/app/img/logo00.png" width="260" height="140" alt="POME">
 
-		<form id="login_form" method="POST" action="/app/LoginServlet">
 		<table>
 			<tr>
 				<td><input type="text" value="" placeholder="ユーザーID"
@@ -28,12 +27,11 @@
 
 
 			<tr>
-		<td><input type="password" value="" placeholder="パスワード"
-				name="password"></td>
+		<td><input type="password" value="" placeholder="ユーザーID"
+				name="user_ID"></td>
 			</tr></table>
 
 		<input type="submit" name="login" value="ログイン">
-		</form>
 		<a href="RegistarServlet">新規登録</a>
 	</main>
 	<!--  -->
