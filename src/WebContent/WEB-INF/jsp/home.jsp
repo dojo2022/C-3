@@ -46,6 +46,12 @@
 						<tr>
 							<th>目標名</th>
 							<th>編集ボタン</th>
+
+									<a href="/app/GoalRegistarServlet.java"><img src="/app/img/regist.png" class="regist"></a>
+
+									<a href="/app/GoalRegistarServlet.java"><img src="/app/img/regist.png" class="regist"></a>
+
+
 							<th>チェックボタン</th>
 							<th></th>
 						</tr>
@@ -58,8 +64,15 @@
 					<table>
 						<tr>
 							<th>目標名</th>
+
 							<th>編集ボタン</th>
+							<td>
+
+							</td>
+
 							<th>チェックボタン</th>
+							<td></td>
+
 							<th></th>
 						</tr>
 					</table>
