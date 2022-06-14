@@ -8,8 +8,14 @@
 <link rel="stylesheet" type="text/css" href="/app/css/goal.css">
 </head>
 <body>
-	<header> </header>
-
+	<header>
+		<div>
+			<img src="/app/img/logo00.png" class="logo">
+		</div>
+		<a href="/app/LoginServlet" class="LogoutBtn">ログアウト</a> <a
+			href="/app/HintServlet" class="hint" target="_blank"><img
+			src="/app/img/hint.png"></a>
+	</header>
 	<!-- ここからメイン -->
 	<main>
 		POME goal
