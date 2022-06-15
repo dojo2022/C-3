@@ -1,1 +1,13 @@
 @charset "UTF-8";
+footer {
+    height: 100px;
+    background-color: #FF9933;
+    font-size: 15px;
+    width: 100%;
+
+    /* 固定 */
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+
+}
