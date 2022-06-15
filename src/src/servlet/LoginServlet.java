@@ -36,11 +36,17 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		//dao isLoginOKをつかって、データベースと情報と比較してokなら
+		
+		
 		// セッションスコープにIDを格納する
 		HttpSession session = request.getSession();
 		user user = new user();
-		user.setUser_id("ログインしたユーザーのID");
+		user.setUser_id("makoto");
 		session.setAttribute("id", user);
+		
+		
+		
 
 
 
