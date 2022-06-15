@@ -37,60 +37,50 @@ public class joysDao {
 			else {
 				pStmt.setString(1, "%");
 			}
-			if (param.getName() != null) {
-				pStmt.setString(2, "%" + param.getName() + "%");
+
+			if (reward.getUser_id() != null) {
+				pStmt.setString(2, "%" + reward.getUser_id() + "%");
 			}
 			else {
 				pStmt.setString(2, "%");
 			}
-			if (param.getAddress() != null) {
-				pStmt.setString(3, "%" + param.getAddress() + "%");
+
+			if (reward.getUser_id() != null) {
+				pStmt.setString(3, "%" + reward.getReward_id() + "%");
 			}
 			else {
 				pStmt.setString(3, "%");
 			}
 
-			if (param.getTel() != null) {
-				pStmt.setString(4, "%" + param.getTel() + "%");
+			if (reward.getReward_id() != null) {
+				pStmt.setString(4, "%" + reward.getReward_id() + "%");
 			}
 			else {
 				pStmt.setString(4, "%");
 			}
 
-			if (param.getMail() != null) {
-				pStmt.setString(5, "%" + param.getMail() + "%");
+			if (reward.getReward_id() != null) {
+				pStmt.setString(5, "%" + reward.getReward_id() + "%");
 			}
 			else {
 				pStmt.setString(5, "%");
 			}
 
-			if (param.getAttr() != null) {
-				pStmt.setString(6, "%" + param.getAttr() + "%");
-			}
-			else {
-				pStmt.setString(6, "%");
-			}
 
-			if (param.getRemarks() != null) {
-				pStmt.setString(7, "%" + param.getRemarks() + "%");
-			}
-			else {
-				pStmt.setString(7, "%");
-			}
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表をコレクションにコピーする  ここを改造
 			while (rs.next()) {
-				Bc card = new Bc(
-				rs.getString("NUMBER"),
-				rs.getString("NAME"),
-				rs.getString("ADDRESS"),
-				rs.getString("TEL"),
-				rs.getString("MAIL"),
-				rs.getString("ATTR"),
-				rs.getString("REMARKS")
+				reward card = new reward(
+				rs.getString("reward_id"),
+				rs.getString("user_id"),
+				rs.getString("reward_name"),
+				rs.getString("reward_detail"),
+				rs.getString(""),
+				rs.getString(""),
+				rs.getString("")
 				);
 				cardList.add(card);
 			}
