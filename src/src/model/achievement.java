@@ -1,41 +1,25 @@
 package model;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import java.io.Serializable;
 /**
  * Servlet implementation class achievement
  */
-@WebServlet("/achievement")
-public class achievement extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public achievement() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+public class achievement implements Serializable{
+	private String achievement_id;//1,2
+	private String achievement_name;//達成、未達成
+	public String getAchievement_id() {
+		return achievement_id;
+	}
+	public void setAchievement_id(String achievement_id) {
+		this.achievement_id = achievement_id;
+	}
+	public String getAchievement_name() {
+		return achievement_name;
+	}
+	public void setAchievement_name(String achievement_name) {
+		this.achievement_name = achievement_name;
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
 
 }
