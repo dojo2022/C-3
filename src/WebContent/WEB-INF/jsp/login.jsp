@@ -13,10 +13,11 @@
 
 	<!-- ここからメイン -->
 	<main>
-
+	<div class = "wrapper">
 		<h3>
 			ToDo管理アプリのように登録し<br> 達成したときには褒めてもらえるアプリ
 		</h3>
+	</div>
 		<img src="/app/img/logo00.png" width="260" height="140" alt="POME">
 		<form id="login_form" method="POST" action="/app/LoginServlet">
 			<table>
@@ -27,7 +28,7 @@
 
 
 				<tr>
-			<td><input type="password" value="" placeholder="パスワード">
+			<td><input type="password" value="" placeholder="パスワード"
 					name="password"></td>
 				</tr></table>
 
@@ -45,5 +46,7 @@
 	</footer>
 
 	<script src="js/login.js"></script>
+
+</body>
 </body>
 </html>
