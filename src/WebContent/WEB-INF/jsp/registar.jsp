@@ -55,6 +55,7 @@
 	<footer>
 		<a href="/app/HintServlet">
 			<img src="/app/img/hint.png" width="25" height="25"  >POMEについて詳しく知りたい方はこちらへ
+			<!-- ヒントマークの余白の関係で、文字の上に引っ付いているように見える、上と左の余白を盛る、文字とか大きさ調整 -->
 		</a>
 	</footer>
 
