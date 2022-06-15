@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/ranking.css">
+<link rel="stylesheet" type="text/css" href="css/color.css">
 <title>ランキング</title>
 </head>
 <body>

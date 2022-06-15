@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/joys.css">
+<link rel="stylesheet" type="text/css" href="css/ranking.css">
 <title>joys一覧</title>
 </head>
 <body>
