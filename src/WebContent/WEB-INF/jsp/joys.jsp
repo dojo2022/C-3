@@ -24,7 +24,7 @@
 
 		<table>
 			<tr>
-				<th><a href="/app/joysUpdateServlet"><img
+				<th><a href="/app/JoysUpdateServlet"><img
 									src="/app/img/edit.png" ></a></th>
 				<th>joys名</th>
 				<th>必要ポイント数</th>
