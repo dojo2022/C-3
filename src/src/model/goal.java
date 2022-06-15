@@ -81,5 +81,23 @@ public class goal implements Serializable {
 		this.term_id = term_id;
 	}
 
+	public goal(String goal_name, String goal_detail, Date starting_date,
+			Date endint_date) {
+		super();
+
+		this.goal_name = goal_name;
+		this.goal_detail = goal_detail;
+		this.starting_date = starting_date;
+		this.endint_date = endint_date;
+	}
+
+	public goal(Date date, Date date2, String string, String string2) {
+		// TODO 自動生成されたコンストラクター・スタブ
+		this.starting_date = date;
+		this.endint_date = date2;
+		this.goal_name = string;
+		this.goal_detail = string2;
+	}
+
 
 }

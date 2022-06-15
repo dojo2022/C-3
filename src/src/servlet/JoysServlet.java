@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -64,15 +65,11 @@ public class JoysServlet extends HttpServlet {
 		String reward_detail = request.getParameter("reward_detail");
 
 		// 検索処理を行う
-		joysDao jDao = new JoysDao();
+		joysDao jDao = new joysDao();
 		List<reward> rewardList = jDao.select(new reward(reward_id,user_id,reward_name,reward_detail));
 
 		// 検索結果をリクエストスコープに格納する
 				request.setAttribute("rewardList", rewardList);
-
-		//パターン１
-		//引数をidを文字列とした場合
-		dao.select(user.getUser_id());
 
 	}
 
