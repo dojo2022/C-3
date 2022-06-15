@@ -14,6 +14,18 @@ public class result implements Serializable {
 	private String message;
 	private String backTo;
 	private String backToMessage;
+
+	public result() {
+		this(null, null, null,null);
+	}
+
+	public result(String title, String message, String backTo, String backToMessage) {
+		this.title = title;
+		this.message = message;
+		this.backTo = backTo;
+		this.backToMessage=backToMessage;
+
+	}
 	public String getTitle() {
 		return title;
 	}
