@@ -1,7 +1,10 @@
 package servlet;
 
 import java.io.IOException;
+import javax.servlet.http.HttpSession;
 
+import dao.joysDao;
+import model.user;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,5 +45,16 @@ public class JoysServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	HttpSession session = request.getSession();
+	user user = (user)session.getAttribute("id");
+
+	System.out.println(user.getUser_id());
+
+	goalDao dao = new joysDao();
+	//パターン１
+	//引数をidを文字列とした場合
+	dao.select(user.getUser_id());
+
+
 
 }
