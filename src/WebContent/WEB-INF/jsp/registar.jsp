@@ -33,7 +33,7 @@
 				<td>
 					<p>
 						<span id="error_message"></span><br>
-						<input type="submit"name="registar" value="登録">
+						<input id="touroku" type="submit"name="registar" value="登録">
 						<input type="reset"name="reset" value="リセット">
 					</p>
 
