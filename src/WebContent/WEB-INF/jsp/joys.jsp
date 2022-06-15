@@ -24,26 +24,27 @@
 
 		<table>
 			<tr>
-				<th><a href="/app/JoysUpdateServlet"><img
-						src="/app/img/edit.png"></a></th>
+				<th><a href="/app/JoysUpdateServlet"><img src="/app/img/edit.png"></a></th>
 				<th>joys名</th>
+				<!--<c:forEach var="e" items="${rewardList}" > var="e"e←適当 -->
+				<!--  </c:forEach> -->
+
 				<th>必要ポイント数</th>
-				<th><button type="button">
+
+				<th><button type="button" ><!-- モーダルウィンドウ？？ -->
 						<img src="/app/img/present.png">
 					</button></th>
 			</tr>
-
 
 			<tr>
 
 			</tr>
 
 
+
 			<!-- 頑張る -->
 
 		</table>
-
-
 
 	</main>
 	<!--  -->
