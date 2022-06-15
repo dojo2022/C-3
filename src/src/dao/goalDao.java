@@ -28,7 +28,7 @@ public class goalDao {
 	}
 
 	//目標一覧用
-	public List<goal> selectAll(goal param, goal_result result) {
+	public List<goal> selectAll(goal param, goal_result result, String id) {
 		Connection conn = null;
 		List<goal> goalList = new ArrayList<goal>();
 
@@ -45,7 +45,7 @@ public class goalDao {
 
 			// SQL文を完成させる
 			if (param.getUser_id() != null) {
-				pStmt.setString(1, param.getUser_id());
+				pStmt.setString(1, id);
 			}
 			if (result.getAchievement_id() != null) {
 				pStmt.setString(1, result.getAchievement_id());
