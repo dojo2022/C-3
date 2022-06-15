@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/joysUpdate.css">
+<link rel="stylesheet" type="text/css" href="css/ranking.css">
 <title>joys更新・削除</title>
 </head>
 <body>

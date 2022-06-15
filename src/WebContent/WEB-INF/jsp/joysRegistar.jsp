@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/joysRegistar.css">
+<link rel="stylesheet" type="text/css" href="css/ranking.css">
 <title>joys登録</title>
 
 </head>
