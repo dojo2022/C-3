@@ -15,6 +15,23 @@ function pushHideButton() {
     	}
     };
 
+     document.getElementById('touroku').onclick = function (event) {
+        if(registar_form.password.value !== registar_form.password_confirm.value) {
+          event.preventDefault();
+        document.getElementById('error_message').textContent=`※パスワードが一致していません`;
+
+            return false;
+
+         } else if (registar_form.password.value == registar_form.password_confirm.value) {
+            document.getElementById('error_message').textContent=``;
+
+         }
+   };
+    /* [リセット]ボタンをクリックしたときの処理 */
+     registar_form.onreset = function () {
+       error_message.textContent = "";
+     };
+
    //パスワード確認用フォーム
 //function CheckPassword(password_confirm){
 
