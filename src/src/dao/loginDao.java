@@ -57,7 +57,7 @@ public class loginDao {
 		// 結果を返す
 		return loginResult;
 	}
-
+//新規登録
 	public boolean newuser(user user) {
 		Connection conn = null;
 		boolean newuser = false;
