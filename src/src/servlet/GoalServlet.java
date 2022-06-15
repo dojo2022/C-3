@@ -32,15 +32,14 @@ public class GoalServlet extends HttpServlet {
 
 		goalDao dao = new goalDao();
 
-
-
 		//パターン１
 		//引数をidを文字列とした場合
 		dao.select(user.getUser_id());
+//		List<goal> cardList = dao.selectAll(new goal("", "", "", ""), new goal_result("","","",""),user.getUser_id());
 
-		//パターン２
-		//userオブジェクトをまるごと引数として渡してあげる
-		dao.select(user);
+//		//パターン２
+//		//userオブジェクトをまるごと引数として渡してあげる
+//		dao.select(user);
 
 
 		// 目標一覧ページにフォワードする
