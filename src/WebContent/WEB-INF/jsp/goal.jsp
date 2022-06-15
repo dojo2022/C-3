@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,13 +50,23 @@
 
 				<div id="tag_all" class="tag_table">
 					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
+						<c:forEach var="e" items="${goalList}">
+							<div class="menu">
+								<label for="menu_bar01">
+									<tr>
+										<th>${e.starting_date}</th>
+										<th>${e.ending_date}</th>
+										<th>${e.goal_name}</th>
+										<th><a href="/app/GoalUpdateServlet"><img
+												src="/app/img/edit.png" class="menu"></a></th>
+										<td><input type="checkbox" id="achievement"></td>
+									</tr>
+								</label> <input type="checkbox" id="menu_bar01" />
+								<ul id="links01">
+									<li>${e.goal_detail}</li>
+								</ul>
+							</div>
+						</c:forEach>
 					</table>
 				</div>
 
