@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.goalDao;
+import model.goal;
+import model.goal_result;
 import model.user;
 
 /**
@@ -35,7 +38,7 @@ public class GoalServlet extends HttpServlet {
 		//パターン１
 		//引数をidを文字列とした場合
 		dao.select(user.getUser_id());
-//		List<goal> cardList = dao.selectAll(new goal("", "", "", ""), new goal_result("","","",""),user.getUser_id());
+		List<goal> cardList = dao.selectAll(new goal("", "", null, null), new goal_result(),user.getUser_id());
 
 //		//パターン２
 //		//userオブジェクトをまるごと引数として渡してあげる
