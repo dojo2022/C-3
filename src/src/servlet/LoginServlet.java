@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.user;
 
 /**
  * Servlet implementation class LoginServlet
@@ -32,6 +35,17 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		// セッションスコープにIDを格納する
+		HttpSession session = request.getSession();
+		user user = new user();
+		user.setUser_id("ログインしたユーザーのID");
+		session.setAttribute("id", user);
+
+
+
+
+
 		// ホームサーブレットにリダイレクトする
 		response.sendRedirect("/app/HomeServlet");
 	}
