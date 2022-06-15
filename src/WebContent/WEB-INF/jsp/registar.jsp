@@ -25,7 +25,7 @@
 			</tr>
 			<tr>
 
-				<td><input type="password" placeholder="パスワード(確認用)"name="password_confirm"></td>
+				<td><input type="password" placeholder="パスワード(確認用)"name="password_confirm" ></td>
 			</tr>
 
 			<tr>
