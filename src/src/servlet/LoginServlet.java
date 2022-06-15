@@ -43,14 +43,22 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String user_id = request.getParameter("user_id");
 		String password = request.getParameter("password");
-		String nickname = request.getParameter("nickname");
-		int having_point =Integer.parseInt(request.getParameter("having_point"));
-		int total_point = Integer.parseInt(request.getParameter("total_point"));
-		String picture = request.getParameter("picture");
+//		String nickname = request.getParameter("nickname");
+//		int having_point =Integer.parseInt(request.getParameter("having_point"));
+//							//Integer.parseInt(null);
+//		int total_point = Integer.parseInt(request.getParameter("total_point"));
+//		String picture = request.getParameter("picture");
+		//jspのnameが違うorformの中に入ってない時のエラー
 
 		//ログイン処理を行う
 		loginDao lDao = new loginDao();
-		if (lDao.isLoginOK(new user(user_id, password,nickname,having_point,total_point,picture))) {	// ログイン成功
+		user user = new user();
+		user.setUser_id(user_id);
+		user.setPassword(password);
+		System.out.println(user_id);//コンソールチェック用
+		System.out.println(password);//コンソールチェック用
+
+		if (lDao.isLoginOK(user)) {	// ログイン成功
 
 		// セッションスコープにIDを格納する(先生の書いたやつ）
 		//HttpSession session = request.getSession();
@@ -60,7 +68,7 @@ public class LoginServlet extends HttpServlet {
 
 		//セッションスコープにIDを格納
 		HttpSession session = request.getSession();
-		session.setAttribute("id", new user(user_id,password,nickname,having_point,total_point,picture));
+		session.setAttribute("id", user);
 
 
 		// ホームサーブレットにリダイレクトする

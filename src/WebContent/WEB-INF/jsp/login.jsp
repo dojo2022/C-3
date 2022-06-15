@@ -23,7 +23,7 @@
 			<table>
 				<tr>
 					<td><input type="text" value="" placeholder="ユーザーID"
-						name="user_ID"></td>
+						name="user_id"></td>
 				</tr>
 
 
