@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+
 /**
  * Servlet implementation class achievement
  */
