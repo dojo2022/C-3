@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.goalDao;
+import model.user;
 
 /**
  * Servlet implementation class GoalServlet
@@ -20,6 +24,25 @@ public class GoalServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		HttpSession session = request.getSession();
+		user user = (user)session.getAttribute("id");
+
+		System.out.println(user.getUser_id());
+
+		goalDao dao = new goalDao();
+
+
+
+		//パターン１
+		//引数をidを文字列とした場合
+		dao.select(user.getUser_id());
+
+		//パターン２
+		//userオブジェクトをまるごと引数として渡してあげる
+		dao.select(user);
+
+
 		// 目標一覧ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/goal.jsp");
 		dispatcher.forward(request, response);
