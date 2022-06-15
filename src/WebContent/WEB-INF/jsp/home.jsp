@@ -20,7 +20,6 @@
 
 		<div>
 			<div class="goal_wrap">
-
 				<input id="tab0" type="radio" name="tag_id"> <label
 					for="tab0" class="tab_lab0_all">今日やること</label> <input id="tab1"
 					type="radio" name="tag_id"> <label for="tab1"
