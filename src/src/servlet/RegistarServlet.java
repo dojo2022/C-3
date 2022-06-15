@@ -22,7 +22,7 @@ public class RegistarServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newuser.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registar.jsp");
 		dispatcher.forward(request, response);
 	}
 	/**
@@ -40,10 +40,12 @@ public class RegistarServlet extends HttpServlet {
 				user user = new user();
 				user.setUser_id(user_id);
 				user.setPassword(password);
+				System.out.println(user_id);//コンソールチェック用
+				System.out.println(password);//コンソールチェック用
 
 
 				if (lDao.newuser(user)) {
-					request.setAttribute("result", (new result("", "登録に成功しました。", "", "" )));
+					request.setAttribute("result", (new result("新規登録成功！", "登録に成功しました。", "/app/LoginServlet", "ログインページへ戻る" )));
 
 					// 結果ページにフォワードする
 
@@ -55,20 +57,10 @@ public class RegistarServlet extends HttpServlet {
 				}else {									// ログイン失敗
 						// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
 						request.setAttribute("result",
-						new result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/app/LoginServlet","ログインページへ戻る"));
+						new result("新規登録失敗！", "既に登録されています", "/app/LoginServlet","ログインページへ戻る"));
 
 
-
-
-
-
-					//} else {
-
-					// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
-					//request.setAttribute("result", (new Result("", "既に登録されています。", "", "", "")));
-
-					// 結果ページにフォワードする
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newuser.jsp");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 					dispatcher.forward(request, response);
 				}
 	}

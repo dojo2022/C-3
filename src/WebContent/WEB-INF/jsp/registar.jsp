@@ -16,7 +16,7 @@
 		<table>
 			<tr>
 
-				<td><input type="text" placeholder="ユーザーID(1～12文字)"name="user_ID"></td>
+				<td><input type="text" placeholder="ユーザーID(1～12文字)"name="user_id"></td>
 			</tr>
 			<tr>
 
