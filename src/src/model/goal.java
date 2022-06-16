@@ -98,6 +98,9 @@ public class goal implements Serializable {
 		this.goal_name = string;
 		this.goal_detail = string2;
 	}
+	public goal(String string) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
 
 
 }
