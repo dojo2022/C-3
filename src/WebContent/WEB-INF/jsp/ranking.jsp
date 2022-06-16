@@ -19,11 +19,46 @@
 	<!-- ここからメイン -->
 	<main>
 		<h1>ランキング</h1>
-		<table>
+		<c:forEach var="e" items="${rewardList}" >
 
+			<!-- 頑張る -->
 
+		<ul class="">
+			<li class="">
+				<label class="">joys番号</label>
+				<input type="text" name="reward_id" value="${e.reward_id}">
+			</li>
+			<!--
+			<li class="">
+				<label class="">ユーザーID</label>
+				<input type="text" name="user_id" value="${e.user_id}">
+			</li>
+			-->
+			<li class="">
+				<a href="/app/JoysUpdateServlet"><img src="/app/img/edit.png" width="60" height="60"></a>
+				<label class="">Joys名</label>
+				<input type="text" name="reward_name" value="${e.reward_name}">
+			</li>
+			<!--
+			<li class="">
+				<label class="">Joys詳細</label>
+				<input type="text" name="reward_detail" value="${e.reward_detail}">
+			</li>
+			-->
+			<!--
+			<li class="">
+				<label class="">必要ポイント数</label>
+				<input type="text" name="required_point" value="${e.required_point}">
+			</li>
+			-->
+				<button type="button" >	<!-- モーダルウィンドウ？？ 別画面？？ -->
+					<img src="/app/img/present.png">
+				</button>
 
-		</table>
+		</ul>
+
+		<hr>
+		</c:forEach>
 	</main>
 	<!--  -->
 	       <footer class="footer">
