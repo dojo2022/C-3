@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.goal;
-import model.goal_result;
 
 public class goalDao {
 
@@ -29,7 +28,7 @@ public class goalDao {
 //	}
 
 	//目標一覧用
-	public List<goal> selectAll(goal param, goal_result result, String id) {
+	public List<goal> selectAll(String id) {
 		Connection conn = null;
 		List<goal> goalList = new ArrayList<goal>();
 
@@ -45,12 +44,10 @@ public class goalDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (param.getUser_id() != null) {
+			if (id != null) {
 				pStmt.setString(1, id);
 			}
-			if (result.getAchievement_id() != null) {
-				pStmt.setString(2, result.getAchievement_id());
-			}
+				pStmt.setString(2, "2");
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
