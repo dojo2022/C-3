@@ -26,22 +26,27 @@ public class JoysServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
+/*
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		if (session.getAttribute("user_id") == null) {
+		HttpSession sessiont = request.getSession();
+		if (sessiont.getAttribute("user_id") == null) {
 			response.sendRedirect("/app/LoginServlet");
+			System.out.println(sessiont);
 			return;
-		}
-		 */
+*/
+		}//31 32 sessiont
 
+/*
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		user user = (user)session.getAttribute("id");
-
-		System.out.println(user.getUser_id());
-
-		joysDao dao = new joysDao();
+*/
+/*
+		//セッションスコープにIDを格納
+		HttpSession session = request.getSession();
+		user user = (user)session.getAttribute("id");
+*/
+		//System.out.println(get.user_id());
 
 		//パターン１
 		//引数をidを文字列とした場合
@@ -62,7 +67,7 @@ public class JoysServlet extends HttpServlet {
 		List<reward> rewardList = jDao.select(user.getUser_id());
 
 		// 検索結果をリクエストスコープに格納する
-				request.setAttribute("rewardList", rewardList);
+		request.setAttribute("rewardList", rewardList);
 
 		// joys一覧閲覧画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/joys.jsp");
