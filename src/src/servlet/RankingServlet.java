@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.loginDao;
+import dao.rankingDao;
 import model.user;
 
 /**
@@ -24,7 +25,7 @@ public class RankingServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+/*
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		if (session.getAttribute("user_id") == null) {
@@ -32,13 +33,18 @@ public class RankingServlet extends HttpServlet {
 			return;
 		}
 
-		//検索処理を行う
-		//領分的にはloginDaoだけど、joysDaoで扱った方がいいのか、新規Daoを作成すべきか？
-		loginDao loginDao = new loginDao();
-		List<user> ranking = loginDao.select(new user());
+*/
+		HttpSession session = request.getSession();
+		user user = (user)session.getAttribute("id");
+
+		System.out.println(user.getUser_id());
+
+
+		rankingDao rDao = new rankingDao();
+		List<user> rankingList = rDao.select(getServletInfo());
 
 		//検索結果をリクエストスコープに格納する
-		request.setAttribute("ranking", loginDao);
+		request.setAttribute("rankingList", rankingList);
 
 		//	ランキング＝結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking.jsp");
