@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import dao.goalDao;
 import model.goal;
-import model.goal_result;
 import model.user;
 
 /**
@@ -38,7 +37,7 @@ public class GoalServlet extends HttpServlet {
 		//パターン１
 		//引数をidを文字列とした場合
 		dao.select(user.getUser_id());
-		List<goal> goalList = dao.selectAll(new goal("", "", null, null), new goal_result(),user.getUser_id());
+		List<goal> goalList = dao.selectAll(user.getUser_id());
 
 
 //		//パターン２
