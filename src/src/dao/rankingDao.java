@@ -33,13 +33,14 @@ public class rankingDao {
 
 			// 結果表をコレクションにコピーする  ここを改造
 			while (rs.next()) {
-				user card = new user(
+				user ranking = new user(
 						rs.getString("nickname"),
-						rs.getString("total_point")
+						rs.getInt("total_point")
 						);
-				rankingList.add(card);
+				rankingList.add(ranking);
 			}
 
+			System.out.println(rankingList);
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
