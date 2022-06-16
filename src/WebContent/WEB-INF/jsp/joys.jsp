@@ -27,37 +27,15 @@
 
 			<!-- 頑張る -->
 
-						<c:forEach var="e" items="${goalList}">
-							<div class="menu">
-								<label for="menu_bar01">
-									<tr>
-										<th>${e.starting_date}</th>
-										<th>${e.ending_date}</th>
-										<th>${e.goal_name}</th>
-										<th><a href="/app/GoalUpdateServlet"><img
-												src="/app/img/edit.png" class="menu"></a></th>
-										<td><input type="checkbox" id="achievement"></td>
-									</tr>
-								</label> <input type="checkbox" id="menu_bar01" />
-								<ul id="links01">
-									<li>${e.goal_detail}</li>
-								</ul>
-							</div>
-						</c:forEach>
-
 		<ul class="">
 			<li class="">
 				<label class="">joys番号 <br> ${e.reward_id}</label>
 			</li>
-
 			<li class="">
-				<label class="">ユーザーID</label>
-				<input type="text" name="user_id" value="${e.user_id}">
+				<label class="">ユーザーID <br> ${e.user_id}</label>
 			</li>
-
 			<li class="">
-				<label class="">Joys名</label>
-				<input type="text" name="reward_name" value="${e.reward_name}">
+				<label class="">Joys名 <br> ${e.reward_name}</label>
 			</li>
 			<!--
 			<li class="">
@@ -71,18 +49,16 @@
 				<input type="text" name="required_point" value="${e.required_point}">
 			</li>
 			-->
-				<button type="button" >	<!-- モーダルウィンドウ？？ 別画面？？ -->
-					<img src="/app/img/present.png" width="60" height="60">
-				</button>
-
+			<button type="button" >	<!-- モーダルウィンドウ？？ 別画面？？ -->
+				<img src="/app/img/present.png" width="60" height="60">
+			</button>
 		</ul>
-
 		<hr>
 		</c:forEach>
 
 	</main>
 	<!--  -->
-<footer class="footer">
+		<footer class="footer">
             <ul class="footer-ul">
                 <li class="footer-li"><a href="/app/HomeServlet"><img src="/app/img/home.png" width="60" height="60"><br><div>Home</div></a></li>
                 <li class="footer-li"><a href="/app/GoalServlet"><img src="/app/img/check.png" width="60" height="60"><br><div class="footer-li-goal">目標一覧</div></a></li>
@@ -90,7 +66,6 @@
                 <li class="footer-li"><a href="/app/ProfileServlet"><img src="/app/img/profile.png" width="60" height="60"><br><div>マイプロフィール</div></a></li>
             </ul>
         </footer>
-	</footer>
 	<script src="js/joys.js"></script>
 </body>
 </html>
