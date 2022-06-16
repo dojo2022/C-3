@@ -37,6 +37,10 @@ public class user implements Serializable {
 	}
 	//getter,setter
 
+	public user() {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
 	public String getUser_id() {
 		return user_id;
 	}
