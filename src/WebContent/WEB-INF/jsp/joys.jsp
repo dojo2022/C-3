@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,20 +30,17 @@
 
 		<ul class="">
 			<li class="">
-				<label class="">joys番号 <br> ${e.reward_id}</label>
+				<div class="">joys番号 <br> ${e.reward_id}</div>
 			</li>
 			<li class="">
-				<label class="">ユーザーID <br> ${e.user_id}</label>
+				<div class="">ユーザーID <br> ${e.user_id}</div>
 			</li>
 			<li class="">
-				<label class="">Joys名 <br> ${e.reward_name}</label>
+				<div class="">Joys名 <br> ${e.reward_name}</div>
 			</li>
-			<!--
 			<li class="">
-				<label class="">Joys詳細</label>
-				<input type="text" name="reward_detail" value="${e.reward_detail}">
+				<div class="">Joys詳細 <br> ${e.reward_detail}</div>
 			</li>
-			-->
 			<!--
 			<li class="">
 				<label class="">必要ポイント数</label>
