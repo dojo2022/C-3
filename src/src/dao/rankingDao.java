@@ -13,7 +13,7 @@ import model.user;
 public class rankingDao {
 
 	// 引数user_rewardで検索項目を指定し、検索結果のリストを返す
-	public List<user> select(String id) {
+	public List<user> select() {
 		Connection conn = null;
 		List<user>rankingList = new ArrayList<user>();
 		try {
@@ -21,13 +21,12 @@ public class rankingDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/app", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備・完成させる
 			String sql = "SELECT TOP 5 nickname, total_point FROM USER ORDER BY total_point DESC;";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -36,7 +35,7 @@ public class rankingDao {
 			while (rs.next()) {
 				user card = new user(
 						rs.getString("nickname"),
-						rs.getString("getString")
+						rs.getString("total_point")
 						);
 				rankingList.add(card);
 			}
