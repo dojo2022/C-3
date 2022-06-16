@@ -36,7 +36,7 @@ public class GoalServlet extends HttpServlet {
 
 		//パターン１
 		//引数をidを文字列とした場合
-		dao.select(user.getUser_id());
+		//dao.select(user.getUser_id());
 		List<goal> goalList = dao.selectAll(user.getUser_id());
 
 
