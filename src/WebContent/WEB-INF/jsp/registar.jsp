@@ -16,11 +16,11 @@
 		<table>
 			<tr>
 
-				<td><input type="text" placeholder="ユーザーID(1～12文字)"name="user_id"></td>
+				<td><input type="text" placeholder="ユーザーID(1～12文字)"name="user_id" required></td>
 			</tr>
 			<tr>
 
-				<td><input type="password" id="textPassword"placeholder="パスワード(8～12文字)" name="password">
+				<td><input type="password" id="textPassword"placeholder="パスワード(8～12文字)" name="password" required>
 				<input type="button" id="buttonPassword" value="表示"onclick="return pushHideButton()"></td>
 			</tr>
 			<tr>
