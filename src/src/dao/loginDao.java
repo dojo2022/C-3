@@ -137,6 +137,8 @@ public class loginDao {
 			String sql = "SELECT user_id, password, nickname, having_point, total_point, picture FROM user WHERE user_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);//connはConnectionクラスのインスタンス、SQL文に入っている？に後から入力できるようにした
 
+			System.out.println(param.getUser_id());
+			
 			// SQL文を完成させる　？の数だけセットする必要がある
 			if (param.getUser_id() != null) {
 				pStmt.setString(1, param.getUser_id() );
