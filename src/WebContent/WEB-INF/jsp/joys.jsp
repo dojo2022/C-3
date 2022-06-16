@@ -21,7 +21,7 @@
 	<main>
 		<img src="/app/img/joys.png" width="60" height="60">
 		<h1>joys一覧</h1>
-v		<hr>
+		<hr>
 		<c:forEach var="e" items="${rewardList}" >
 
 			<!-- 頑張る -->
@@ -55,7 +55,7 @@ v		<hr>
 			</li>
 			-->
 				<button type="button" >	<!-- モーダルウィンドウ？？ 別画面？？ -->
-					<img src="/app/img/present.png">
+					<img src="/app/img/present.png" width="60" height="60">
 				</button>
 
 		</ul>
@@ -73,7 +73,6 @@ v		<hr>
 			<li class="footer-li"><a href="/app/GoalServlet"><img
 					src="/app/img/check.png" width="60" height="60"><br>
 				<div class="footer-li-goal">目標一覧</div></a></li>
-
 			<li class="footer-li"><a href="/app/ProfileServlet"><img
 					src="/app/img/profile.png" width="60" height="60"><br>
 				<div>マイプロフィール</div></a></li>
