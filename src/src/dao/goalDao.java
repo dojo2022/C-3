@@ -40,18 +40,19 @@ public class goalDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT starting_date, ending_date, goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = '?' AND achievement_id = '?'";
+			String sql = "SELECT starting_date, ending_date, goal_name,goal_detailid  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND achievement_id = ?";
+
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 			if (id != null) {
 				pStmt.setString(1, id);
-			}
 				pStmt.setString(2, "2");
+			}
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
-
+			//if()
 			// 結果表をコレクションにコピーする<ここ改造>
 			while (rs.next()) {
 				goal card = new goal(
