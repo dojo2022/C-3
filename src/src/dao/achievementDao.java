@@ -72,6 +72,7 @@ public class achievementDao {
 				achievementList.add(card);
 			}
 
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			achievementList = null;
@@ -92,5 +93,6 @@ public class achievementDao {
 
 		// 結果を返す
 		return achievementList;
+
 	}
 }
