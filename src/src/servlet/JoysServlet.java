@@ -39,7 +39,7 @@ public class JoysServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		user user = (user)session.getAttribute("id");
 
-		System.out.println(user.getUser_id());
+		//System.out.println(user.getUser_id());
 
 		joysDao dao = new joysDao();
 
