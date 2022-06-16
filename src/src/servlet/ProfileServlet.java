@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.achievementDao;
 import dao.loginDao;
+import model.goal;
 //import model.Bc;
 //import model.user;
 import model.user;
@@ -44,12 +46,21 @@ public class ProfileServlet extends HttpServlet {
 		System.out.println(user.getUser_id());
 
 
-
 		loginDao pDAO =new loginDao();
 		List<user> profile = pDAO.select(user);
 
+
+
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("profile", profile);
+
+
+		achievementDao aDAO =new achievementDao();
+		List<goal> achievementList = aDAO.select(user);
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("achievementList", achievementList);
+
 
 		//プロフィールページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
