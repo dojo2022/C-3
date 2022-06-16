@@ -101,6 +101,9 @@ public class goal implements Serializable {
 	public goal(String string) {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
+	public goal(String string, String string2) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
 
 
 }
