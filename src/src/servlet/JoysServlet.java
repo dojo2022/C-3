@@ -39,13 +39,14 @@ public class JoysServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		user user = (user)session.getAttribute("id");
 
-		//System.out.println(user.getUser_id());
+		System.out.println(user.getUser_id());
 
 		joysDao dao = new joysDao();
 
 		//パターン１
 		//引数をidを文字列とした場合
-		dao.select(user.getUser_id());
+		//dao.select(user.getUser_id());
+
 
 		//リクエストパラメータを取得する
 /* 		  名刺管理アプリではJSPにフォームの記載があったためリクパラ必須だった(フォームで送られたデータを取得するため)
@@ -58,7 +59,7 @@ public class JoysServlet extends HttpServlet {
 
 		// 検索処理を行う
 		joysDao jDao = new joysDao();
-		List<reward> rewardList = jDao.select( user.getUser_id());
+		List<reward> rewardList = jDao.select(user.getUser_id());
 
 		// 検索結果をリクエストスコープに格納する
 				request.setAttribute("rewardList", rewardList);
