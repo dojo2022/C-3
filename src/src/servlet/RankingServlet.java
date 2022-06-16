@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.rankingDao;
 import model.user;
@@ -34,12 +33,6 @@ public class RankingServlet extends HttpServlet {
 		}
 
 */
-		HttpSession session = request.getSession();
-		user user = (user)session.getAttribute("id");
-
-		System.out.println(user.getUser_id());
-
-
 		rankingDao rDao = new rankingDao();
 		List<user> rankingList = rDao.select(getServletInfo());
 
