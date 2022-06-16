@@ -15,14 +15,14 @@ public class joysDao {
 
 	//パターン１
 	//アクセス修飾子 戻り値データ型
-	/*public List<reward> select(String id){
+	public List<reward> select(String id){
 		List<reward> rewardList = new ArrayList<reward>();
 
 		return rewardList;
-	}*/
+	}
 
 	// 引数user_rewardで検索項目を指定し、検索結果のリストを返す
-	public List<reward> select(String id) {
+	public List<reward> selectAll(String id) {
 		Connection conn = null;
 		List<reward> rewardList = new ArrayList<reward>();
 
@@ -34,7 +34,13 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC";
+			String sql = "SELECT  reward.reward_name,reward.reward_detail,reward_level.required_point\r\n"
+					+ "			FROM reward \r\n"
+					+ "			INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id \r\n"
+					+ "			WHERE reward.user_id = 'kawakami' ORDER BY reward_level.reward_level_id ASC";
+
+
+			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -52,8 +58,7 @@ public class joysDao {
 				rs.getString("reward_id"),
 				rs.getString("user_id"),
 				rs.getString("reward_name"),
-				rs.getString("reward_detail")
-				);
+				rs.getString("reward_detail"));
 				rewardList.add(card);
 			}
 
