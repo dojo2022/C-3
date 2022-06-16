@@ -53,7 +53,7 @@
 
 	<c:forEach var="a" items="${achievementList}">
 		<tr>
-			<td>${e.goal_name }</td>
+			<td>${a.goal_name }</td>
 
 		</tr>
 		</c:forEach>
