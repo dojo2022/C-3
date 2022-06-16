@@ -31,10 +31,9 @@ public class RankingServlet extends HttpServlet {
 			response.sendRedirect("/app/LoginServlet");
 			return;
 		}
-
 */
 		rankingDao rDao = new rankingDao();
-		List<user> rankingList = rDao.select(getServletInfo());
+		List<user> rankingList = rDao.select();
 
 		//検索結果をリクエストスコープに格納する
 		request.setAttribute("rankingList", rankingList);
