@@ -39,6 +39,7 @@ public class GoalServlet extends HttpServlet {
 		//dao.select(user.getUser_id());
 		List<goal> goalList = dao.selectAll(user.getUser_id());
 
+System.out.println(goalList.get(0));
 
 //		//パターン２
 //		//userオブジェクトをまるごと引数として渡してあげる
