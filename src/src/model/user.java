@@ -24,7 +24,7 @@ public class user implements Serializable {
 
 		//引数が無いコンストラクタ
 
-	public user() {
+	public user(String string, String string2) {
 
 		super();
 		this.user_id ="";
