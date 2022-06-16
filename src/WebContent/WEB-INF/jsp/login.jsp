@@ -23,13 +23,13 @@
 			<table>
 				<tr>
 					<td><input type="text" value="" placeholder="ユーザーID"
-						name="user_id"></td>
+						name="user_id" required></td>
 				</tr>
 
 
 				<tr>
 			<td><input type="password" value="" placeholder="パスワード"
-					name="password"></td>
+					name="password" required></td>
 				</tr></table>
 
 			<input type="submit" name="login" value="ログイン">
