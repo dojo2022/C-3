@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,13 +25,16 @@
 <h1><img src="/app/img/profile.png" width="50" height="50">PROFILE</h1>
 <input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);"><br>
 		<canvas id="preview" style="max-width:200px;"></canvas><br>
-<div>まことさん</div>
+
+<c:forEach var="e" items="${profile }">
+<div>${e.nickname }</div>
 <div>所持ポイント<br>
-	 0ポイント<br>
+	 ${e.having_point }ポイント<br>
 </div>
 <div>累計ポイント<br>
-	 0ポイント<a href="/app/RankingServlet">(ランキング)</a><br>
+	 ${e.total_point }ポイント<a href="/app/RankingServlet">(ランキング)</a><br>
 </div>
+</c:forEach>
 <select name = "color">
 <option value = color1>デフォルトカラー</option>
 <option value = color1>ダークカラー</option>
