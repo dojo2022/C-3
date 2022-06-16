@@ -47,19 +47,18 @@
 
 <input type="submit" name="SUBMIT" value="更新" ><br>
 達成済みリスト
-	<div id="table">
+	<div id="table" >
 	<table id="list">
 
 
-	<!-- <c:forEach var="e" items="${ 目標名のスコープのやつ}">
+	<c:forEach var="a" items="${achievementList}">
 		<tr>
-			<td>${e.目標名 }</td>
+			<td>${e.goal_name }</td>
 
 		</tr>
-		</c:forEach>-->
+		</c:forEach>
 	</table>
 	</div>
-	</form>
 </main>
 <!--  -->
 
