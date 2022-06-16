@@ -24,14 +24,14 @@ public class user implements Serializable {
 
 		//引数が無いコンストラクタ
 
-	public user(String string, String string2) {
+	public user(String nickname, int total_point) {
 
 		super();
 		this.user_id ="";
 		this.password="";
-		this.nickname="";
+		this.nickname=nickname;
 		this.having_point=0;
-		this.total_point=0;
+		this.total_point=total_point;
 		this.picture="";
 
 	}

@@ -33,10 +33,30 @@ public class RankingServlet extends HttpServlet {
 		}
 */
 		rankingDao rDao = new rankingDao();
+
+
+		//String[] aaa = new String[5];
+		//{ "", "", "" ,"" ,"" }
+
+		//List<String> bbb = new ArrayList<String>();
+		//{}
+		//bbb.add("test");
+		//{ "test" }
+		//bbb.add("test1");
+
 		List<user> rankingList = rDao.select();
+		//rankingList = [ user, user, user, user, user, user, user, user, user, user ]
+
+
+		System.out.println(rankingList);
+
+		for (user user : rankingList) {
+			System.out.println(user.getNickname());
+		}
 
 		//検索結果をリクエストスコープに格納する
 		request.setAttribute("rankingList", rankingList);
+
 
 		//	ランキング＝結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ranking.jsp");
