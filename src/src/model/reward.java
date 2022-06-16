@@ -13,6 +13,9 @@ import java.io.Serializable;
 		private String reward_name;
 		private String reward_detail;
 		private String reward_level_id;
+		public reward(String string, String string2, String string3, String string4) {
+			// TODO 自動生成されたコンストラクター・スタブ
+		}
 		public String getReward_id() {
 			return reward_id;
 		}
