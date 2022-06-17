@@ -28,8 +28,8 @@
 
 
 				<tr>
-			<td><input type="password" value="" placeholder="パスワード"
-					name="password" required></td>
+			<td><input type="password" id="textPassword"  placeholder="パスワード"name="password" required><br>
+				<input type="checkbox" id="password-check">パスワードを表示する</td>
 				</tr></table>
 
 			<input type="submit" name="login" value="ログイン">
@@ -48,5 +48,5 @@
 	<script src="js/login.js"></script>
 
 </body>
-</body>
+
 </html>

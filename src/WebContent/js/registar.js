@@ -1,19 +1,14 @@
  'use strict';
 
-function pushHideButton() {
-    	var txtPass = document.getElementById("textPassword");
-    	var btnPass = document.getElementById("buttonPassword");
-
-    	if(txtPass.type === "password"){
-    		txtPass.type = "text";
-    		btnPass.value ="非表示";
-
-    	} else{
-    		txtPass.type = "password";
-    		btnPass.value ="表示";
-
-    	}
-    };
+	const pwd=document.getElementById('textPassword');
+	const pwdCheck =document.getElementById('password-check');
+	 pwdCheck.addEventListener('change', function() {
+	     if(pwdCheck.checked) {
+	         pwd.setAttribute('type', 'text');
+	     } else {
+	         pwd.setAttribute('type', 'password');
+	     }
+	 }, false);
 
      document.getElementById('touroku').onclick = function (event) {
         if(registar_form.password.value !== registar_form.password_confirm.value) {
@@ -26,6 +21,13 @@ function pushHideButton() {
             document.getElementById('error_message').textContent=``;
 
          }
+          pwdCheck.addEventListener('change', function() {
+		     if(pwdCheck.checked) {
+		         pwd.setAttribute('type', 'text');
+		     } else {
+		         pwd.setAttribute('type', 'password');
+		     }
+		 }, false);
    };
     /* [リセット]ボタンをクリックしたときの処理 */
      registar_form.onreset = function () {
