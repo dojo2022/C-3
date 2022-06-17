@@ -27,7 +27,7 @@
 		<canvas id="preview" style="max-width:200px;"></canvas><br>
 
 <c:forEach var="e" items="${profile }">
-<div>${e.nickname }</div>
+<div><input type="text" name="nickname" value=${e.nickname }></div>
 <div>所持ポイント<br>
 	 ${e.having_point }ポイント<br>
 </div>
@@ -43,9 +43,11 @@
 <input type="radio" name="edit" value="yes"  >編集する
 <input type="radio" name="edit" value="no"  checked>編集しない<br>
 
+<input type="submit" name="update" value="更新" disabled = "disabled" ><br>
+
 </form>
 
-<input type="submit" name="update" value="更新" disabled = "disabled" ><br>
+
 達成済みリスト
 	<div id="table" >
 	<table id="list">
