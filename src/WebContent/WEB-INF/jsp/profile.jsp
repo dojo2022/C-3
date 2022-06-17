@@ -18,7 +18,7 @@
 <!-- ここからメイン -->
 <main>
 
-<form method="POST" id="profile_form" action="/app/ResuultServlet">
+<form method="POST" id="profile_form"   action="/app/ResuultServlet">
 
 
 
@@ -40,12 +40,12 @@
 <option value = color1>ダークカラー</option>
 </select>
 
-<input type="radio" name="edit" value="yes">編集する
-<input type="radio" name="edit" value="no" checked>編集しない<br>
+<input type="radio" name="edit" value="yes"  >編集する
+<input type="radio" name="edit" value="no"  checked>編集しない<br>
 
 </form>
 
-<input type="submit" name="SUBMIT" value="更新" ><br>
+<input type="submit" name="update" value="更新" disabled = "disabled" ><br>
 達成済みリスト
 	<div id="table" >
 	<table id="list">
@@ -59,6 +59,7 @@
 		</c:forEach>
 	</table>
 	</div>
+
 </main>
 <!--  -->
 
@@ -72,6 +73,11 @@
         </footer>
 
 
-<script src="js/profile.js"></script>
+<script src="js/profile.js">
+
+
+
+
+</script>
 </body>
 </html>
