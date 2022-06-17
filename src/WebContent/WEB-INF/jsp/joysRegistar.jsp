@@ -18,7 +18,7 @@
 
 	<main>
 
-		<form method="post" action="">
+		<form method="post" action="/app/JoysRegistarServlet">
 			<h1>joys登録</h1>
 
 

@@ -34,7 +34,7 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT reward.reward_name,reward.reward_detail,reward_level.required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC";
+			String sql = "SELECT reward.reward_name,reward.reward_detail,reward_level.required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.user_id = ? ORDER BY CAST(reward.reward_id AS INT) ASC";
 
 			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
 
@@ -87,7 +87,7 @@ public class joysDao {
 
 
 	// 引数rewardで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(rewardjoys reward) {
+	public boolean insert(String user_id,rewardjoys reward) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -102,8 +102,9 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "insert into reward (reward_name,reward_detail, reward_level_id) values (?, ?, ?)";
+			String sql = "insert into reward (reward_name,reward_detail, reward_level_id,user_id) values (?,?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+
 
 			//エラー＃４がセットされてない→？と同数下記にif文を追加
 			// SQL文を完成させる
@@ -125,6 +126,8 @@ public class joysDao {
 			else {
 				pStmt.setString(3,"");
 			}
+
+			pStmt.setString(4, user_id);
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -166,7 +169,8 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "update reward set reward_name=?, reward_detail=?, reward_level_id=? where user_id=?" ユーザID情報はSQL文上必要だが入力項目じゃないので「？いらないのでは;
+			//ユーザID情報はSQL文上必要だが入力項目じゃないので「？]いらないのでは
+			String sql = "update reward set reward_name=?, reward_detail=?, reward_level_id=? where user_id=";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -221,7 +225,7 @@ public class joysDao {
 	}
 
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-	public boolean delete(String number) {
+	public boolean delete(String reward_id) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -230,14 +234,14 @@ public class joysDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "delete from BC where NUMBER=?";
+			String sql = "delete from reward where reward_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			pStmt.setString(1, number);
+			pStmt.setString(1, reward_id);
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {

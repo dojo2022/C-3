@@ -9,13 +9,12 @@
 <link rel="stylesheet" type="text/css" href="css/result.css">
 </head>
 <body>
-<header>
-		<div>
-			<img src="/app/img/logo00.png" class="logo">
+<header class="header">
+		<div class="logo">
+			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<a href="/app/LoginServlet" class="LogoutBtn">ログアウト</a> <a
-			href="/app/HintServlet" class="hint" target="_blank"><img
-			src="/app/img/hint.png"></a>
+		<a href="/app/LoginServlet" class="logoutbtn"><div>ログアウト</div></a> <a
+			href="/app/HintServlet" class="hint" target="_blank"><img src="/app/img/hint.png" width="60" height="60"></a>
 	</header>
 
 <!-- ここからメイン -->
@@ -33,20 +32,14 @@
 
 </main>
 
-<footer>
-		<ul>
-			<li><a href="/app/HomeServlet"><img src="/app/img/home.png"
-					class="menu"></a></li>
-			<li><a href="/app/GoalServlet"><img src="/app/img/check.png"
-					class="menu"></a></li>
-			<li><a href="/app/JoysServlet"><img src="/app/img/joys.png"
-					class="menu"></a></li>
-			<li><a href="/app/ProfileServlet"><img
-					src="/app/img/profile.png" class="menu"></a></li>
-		</ul>
-
-
-	</footer>
+		<footer class="footer">
+            <ul class="footer-ul">
+                <li class="footer-li"><a href="/app/HomeServlet"><img src="/app/img/home.png" width="60" height="60"><br><div>Home</div></a></li>
+                <li class="footer-li"><a href="/app/GoalServlet"><img src="/app/img/check.png" width="60" height="60"><br><div class="footer-li-goal">目標一覧</div></a></li>
+                <li class="footer-li"><a href="/app/JoysServlet"><img src="/app/img/joys.png" width="60" height="60"><br><div>Joys</div></a></li>
+                <li class="footer-li"><a href="/app/ProfileServlet"><img src="/app/img/profile.png" width="60" height="60"><br><div>マイプロフィール</div></a></li>
+            </ul>
+        </footer>
 
 <script src="js/result.js"></script>
 </body>

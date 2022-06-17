@@ -22,6 +22,7 @@
 	<main>
 		<img src="/app/img/joys.png" width="60" height="60">
 		<a href="/app/JoysUpdateServlet"><img src="/app/img/edit.png" width="60" height="60"></a>
+		<a href="/app/JoysRegistarServlet"><img src="/app/img/edit.png" width="60" height="60"></a>
 		<h1>joys一覧</h1>
 		<hr>
 		<c:forEach var="e" items="${rewardList}" >
@@ -29,20 +30,17 @@
 			<!-- 頑張る -->
 
 		<ul class="">
-			<li class="">
-				joys番号 <br> ${e.reward_id}
-			</li>
-			<li class="">
+			<!-- <li class="">
 				ユーザーID <br> ${e.user_id}
+			</li> -->
+			<li class="">
+				Joys名  ${e.reward_name}
 			</li>
 			<li class="">
-				Joys名 <br> ${e.reward_name}
+				Joys詳細  ${e.reward_detail}
 			</li>
 			<li class="">
-				Joys詳細 <br> ${e.reward_detail}
-			</li>
-			<li class="">
-				必要ポイント数 <br> ${e.required_point}
+				必要ポイント数  ${e.required_point}
 			</li>
 			<button type="button" >	<!-- モーダルウィンドウ？？ 別画面？？ -->
 				<img src="/app/img/present.png" width="60" height="60">

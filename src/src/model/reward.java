@@ -14,19 +14,25 @@ import java.io.Serializable;
 		private String reward_detail;
 		private String reward_level_id;
 
-		public reward(String reward_id, String user_id, String reward_name, String reward_detail) {
+		public reward(String reward_id, String user_id, String reward_name, String reward_detail,String reward_level_id) {
 			// TODO 自動生成されたコンストラクター・スタブ
 			super();
 			this.reward_id =reward_id;
 			this.user_id =user_id;
 			this.reward_name =reward_name;
 			this.reward_detail =reward_detail;
-			this.reward_level_id ="";
+			this.reward_level_id =reward_level_id;
 		}
 
 		//引数なしのコンストラクタ
-		public reward() {
+		public reward(String reward_name, String reward_detail, String reward_level_id) {
 			// TODO 自動生成されたコンストラクター・スタブ
+			this.reward_id ="";
+			this.user_id ="";
+			this.reward_name =reward_name;
+			this.reward_detail =reward_detail;
+			this.reward_level_id =reward_level_id;
+
 		}
 
 		public String getReward_id() {
