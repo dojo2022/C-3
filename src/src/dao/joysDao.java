@@ -8,23 +8,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.reward;
+import model.rewardjoys;
 //select,insert,update,deleteは基本だから通常作っておくのがベース。
 //ただ、全部作るのは大変だから必要なもののみまずは作る
 public class joysDao {
 /*
 	//パターン１
 	//アクセス修飾子 戻り値データ型
-	public List<reward> select(String id){
-		List<reward> rewardList = new ArrayList<reward>();
+	public List<rewardjoys> select(String id){
+		List<rewardjoys> rewardList = new ArrayList<rewardjoys>();
 
 		return rewardList;
 	}
 */
 	// 引数user_rewardで検索項目を指定し、検索結果のリストを返す
-	public List<reward> selectAll(String id) {
+	public List<rewardjoys> selectAll(String id) {
 		Connection conn = null;
-		List<reward> rewardList = new ArrayList<reward>();
+		List<rewardjoys> rewardList = new ArrayList<rewardjoys>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -34,7 +34,7 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT  reward.reward_name,reward.reward_detail,reward_level.required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.user_id = 'kawakami' ORDER BY reward_level.reward_level_id ASC";
+			String sql = "SELECT reward.reward_name,reward.reward_detail,reward_level.required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC";
 
 			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
 
@@ -50,12 +50,13 @@ public class joysDao {
 
 			// 結果表をコレクションにコピーする  ここを改造
 			while (rs.next()) {
-				reward card = new reward(
-				rs.getString("reward_id"),
-				rs.getString("user_id"),
-				rs.getString("reward_name"),
-				rs.getString("reward_detail"));
-				rewardList.add(card);
+				rewardjoys reward = new rewardjoys();
+				//reward.setReward_id(rs.getString("reward_id"));
+				//reward.setUser_id(rs.getString("user_id"));
+				reward.setReward_name(rs.getString("reward_name"));
+				reward.setReward_detail(rs.getString("reward_detail"));
+				reward.setRequired_point(rs.getInt("required_point"));
+				rewardList.add(reward);
 			}
 
 		}
@@ -84,9 +85,5 @@ public class joysDao {
 		return rewardList;
 	}
 
-	public List<reward> select(String user_id) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
 
 }
