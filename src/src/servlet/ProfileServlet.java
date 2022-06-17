@@ -92,17 +92,21 @@ public class ProfileServlet extends HttpServlet {
 				//HttpSession session = request.getSession();
 				//user user = (user)session.getAttribute("id");
 
-
+				HttpSession session = request.getSession();
+				user user = (user)session.getAttribute("id");
+				user.setNickname(nickname);
 
 
 				//更新を行う
 				loginDao uDao = new loginDao();
-				user profile = new user(nickname );
+				//user profile = new user(nickname );
+				//profile.setUser_id(user.getUser_id());
+				System.out.println(user);
 
 				if (request.getParameter("update").equals("更新")) {
-					if (uDao.update(profile)) {	// 更新成功
+					if (uDao.update(user)) {	// 更新成功
 						request.setAttribute("result",
-						(new result("更新成功！", "更新に成功しました。", "/app/profileServlet", "ログインページへ戻る" )));
+						(new result("更新成功！", "更新に成功しました。", "/app/ProfileServlet", "プロフィールページへ戻る" )));
 
 
 
@@ -112,7 +116,7 @@ public class ProfileServlet extends HttpServlet {
 
 					}
 					else{request.setAttribute("result",
-							(new result("更新失敗！", "更新に失敗しました。", "/app/profileServlet", "ログインページへ戻る" )));
+							(new result("更新失敗！", "更新に失敗しました。", "/app/ProfileServlet", "プロフィールページへ戻る" )));
 
 					// 結果ページにフォワードする
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
