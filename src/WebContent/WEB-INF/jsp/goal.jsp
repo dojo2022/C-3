@@ -49,8 +49,6 @@
 
 
 
-${goalList}
-
 
 
 				<div id="tag_work" class="tag_table">
