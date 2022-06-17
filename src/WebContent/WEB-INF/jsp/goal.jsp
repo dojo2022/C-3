@@ -63,24 +63,35 @@
 					</table>
 				</div>
 
-<div id="tag_all" class="tag_table">
-					<table>
+				<div id="tag_all" class="tag_table">
+					<table border="1">
 						<c:forEach var="e" items="${goalList}">
-							<div class="menu">
-								<label for="menu_bar01">
-									<tr>
-										<th>${e.starting_date}</th>
-										<th>${e.ending_date}</th>
-										<th>${e.goal_name}</th>
-										<th><a href="/app/GoalUpdateServlet"><img
-												src="/app/img/edit.png" class="menu"></a></th>
-										<td><input type="checkbox" id="achievement"></td>
-									</tr>
-								</label> <input type="checkbox" id="menu_bar01" />
-								<ul id="links01">
-									<li>${e.goal_detail}</li>
-								</ul>
-							</div>
+							<tr class="title">
+								<td><div>${e.starting_date}</div></td>
+								<td>～</td>
+								<td><div>${e.ending_date}</div></td>
+								<td><div>${e.goal_name}</div></td>
+								<td><div>
+										<a href="/app/GoalUpdateServlet"><img
+											src="/app/img/edit.png" class="menu"></a>
+									</div></td>
+								<td><div class="btn"></div></td>
+							</tr>
+
+							<tr class="content">
+								<td>${e.goal_detail}</td>
+							</tr>
+
+
+
+
+							<!-- <ul id="links01"> -->
+
+							<!-- <li>${e.goal_detail}</li> -->
+							<!-- </ul> -->
+							<!-- </div> -->
+
+
 						</c:forEach>
 					</table>
 				</div>
@@ -157,7 +168,7 @@
             </ul>
         </footer>
 
-	<script src="js/goal.js"></script>
+	<script src="/app/js/goal.js"></script>
 </body>
 </html>
 

@@ -35,15 +35,21 @@
 
 
 				<div id="tag_all" class="tag_table">
+
 					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
+						<c:forEach var="e" items="${goalTodayList}">
+							<tr>
+								<td><div>${e.goal_name}</div></td>
+								<td><div>${e.goal_detail}</div></td>
+								<td><a href="/app/GoalUpdateServlet"><img
+										src="/app/img/edit.png" class="menu"></a></td>
+								<th></th>
+
+					  			<td><input type="checkbox" id="achievement"></td>
+							</tr>
+						</c:forEach>
 					</table>
+
 				</div>
 
 
