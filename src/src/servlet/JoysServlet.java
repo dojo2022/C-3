@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.joysDao;
-import model.reward;
+import model.rewardjoys;
 import model.user;
 
 /**
@@ -38,7 +38,7 @@ public class JoysServlet extends HttpServlet {
 		}//31 32 sessiont
 
 
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		//セッションスコープにIDを格納
 		HttpSession session = request.getSession();
 		user user = (user)session.getAttribute("id");
 
@@ -52,7 +52,7 @@ public class JoysServlet extends HttpServlet {
 
 		// 検索処理を行う
 		joysDao jDao = new joysDao();
-		List<reward> rewardList = jDao.select(user.getUser_id());
+		List<rewardjoys> rewardList = jDao.selectAll(user.getUser_id());
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("rewardList", rewardList);

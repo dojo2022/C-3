@@ -8,23 +8,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.reward;
+import model.rewardjoys;
 //select,insert,update,deleteは基本だから通常作っておくのがベース。
 //ただ、全部作るのは大変だから必要なもののみまずは作る
 public class joysDao {
 /*
 	//パターン１
 	//アクセス修飾子 戻り値データ型
-	public List<reward> select(String id){
-		List<reward> rewardList = new ArrayList<reward>();
+	public List<rewardjoys> select(String id){
+		List<rewardjoys> rewardList = new ArrayList<rewardjoys>();
 
 		return rewardList;
 	}
 */
 	// 引数user_rewardで検索項目を指定し、検索結果のリストを返す
-	public List<reward> selectAll(String id) {
+	public List<rewardjoys> selectAll(String id) {
 		Connection conn = null;
-		List<reward> rewardList = new ArrayList<reward>();
+		List<rewardjoys> rewardList = new ArrayList<rewardjoys>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -34,7 +34,7 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT  reward.reward_name,reward.reward_detail,reward_level.required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.user_id = 'kawakami' ORDER BY reward_level.reward_level_id ASC";
+			String sql = "SELECT reward.reward_name,reward.reward_detail,reward_level.required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC";
 
 			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
 
@@ -50,12 +50,13 @@ public class joysDao {
 
 			// 結果表をコレクションにコピーする  ここを改造
 			while (rs.next()) {
-				reward card = new reward(
-				rs.getString("reward_id"),
-				rs.getString("user_id"),
-				rs.getString("reward_name"),
-				rs.getString("reward_detail"));
-				rewardList.add(card);
+				rewardjoys reward = new rewardjoys();
+				//reward.setReward_id(rs.getString("reward_id"));
+				//reward.setUser_id(rs.getString("user_id"));
+				reward.setReward_name(rs.getString("reward_name"));
+				reward.setReward_detail(rs.getString("reward_detail"));
+				reward.setRequired_point(rs.getInt("required_point"));
+				rewardList.add(reward);
 			}
 
 		}
@@ -84,9 +85,186 @@ public class joysDao {
 		return rewardList;
 	}
 
-	public List<reward> select(String user_id) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+
+	// 引数rewardで指定されたレコードを登録し、成功したらtrueを返す
+	public boolean insert(rewardjoys reward) {
+		Connection conn = null;
+		boolean result = false;
+
+		//デバッグ用
+		System.out.println(reward.toString());
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+			// SQL文を準備する
+			String sql = "insert into reward (reward_name,reward_detail, reward_level_id) values (?, ?, ?)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			//エラー＃４がセットされてない→？と同数下記にif文を追加
+			// SQL文を完成させる
+			if (reward.getReward_name() != null && !reward.getReward_name().equals("")) {
+				pStmt.setString(1, reward.getReward_name());
+			}
+			else {
+				pStmt.setString(1,"");
+			}
+			if (reward.getReward_detail() != null && !reward.getReward_detail().equals("")) {
+				pStmt.setString(2, reward.getReward_detail());
+			}
+			else {
+				pStmt.setString(2,"");
+			}
+			if (reward.getReward_level_id() != null && !reward.getReward_level_id().equals("")) {
+				pStmt.setString(3, reward.getReward_level_id());
+			}
+			else {
+				pStmt.setString(3,"");
+			}
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
 	}
+
+	// 引数rewardで指定されたレコードを更新し、成功したらtrueを返す
+	public boolean update(rewardjoys reward) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+			// SQL文を準備する
+			String sql = "update reward set reward_name=?, reward_detail=?, reward_level_id=? where user_id=?" ユーザID情報はSQL文上必要だが入力項目じゃないので「？いらないのでは;
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			if (reward.getReward_name() != null && !reward.getReward_name().equals("")) {
+				pStmt.setString(1, reward.getReward_name());
+			}
+			else {
+				pStmt.setString(1, null);
+			}
+			if (reward.getReward_detail() != null && !reward.getReward_detail().equals("")) {
+				pStmt.setString(2, reward.getReward_detail());
+			}
+			else {
+				pStmt.setString(2, null);
+			}
+
+			if (reward.getReward_level_id() != null && !reward.getReward_level_id().equals("")) {
+				pStmt.setString(3, reward.getReward_level_id());
+			}
+			else {
+				pStmt.setString(3, null);
+			}
+
+			//ユーザーが入力する項目じゃないから必要ないかも
+			//pStmt.setString(4, reward.getUser_id());
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
+	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
+	public boolean delete(String number) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+
+			// SQL文を準備する
+			String sql = "delete from BC where NUMBER=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, number);
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
 
 }

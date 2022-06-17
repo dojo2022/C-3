@@ -13,6 +13,7 @@ import java.io.Serializable;
 		private String reward_name;
 		private String reward_detail;
 		private String reward_level_id;
+
 		public reward(String reward_id, String user_id, String reward_name, String reward_detail) {
 			// TODO 自動生成されたコンストラクター・スタブ
 			super();
@@ -21,8 +22,13 @@ import java.io.Serializable;
 			this.reward_name =reward_name;
 			this.reward_detail =reward_detail;
 			this.reward_level_id ="";
-
 		}
+
+		//引数なしのコンストラクタ
+		public reward() {
+			// TODO 自動生成されたコンストラクター・スタブ
+		}
+
 		public String getReward_id() {
 			return reward_id;
 		}
