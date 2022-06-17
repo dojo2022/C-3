@@ -43,7 +43,7 @@ public class HomeServlet extends HttpServlet {
 		List<goal> goalTodayList = dao.selectToday(user.getUser_id());
 
 		// 検索結果をリクエストスコープに格納する
-				request.setAttribute("goalList", goalTodayList);
+				request.setAttribute("goalTodayList", goalTodayList);
 
 		// ホームページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
