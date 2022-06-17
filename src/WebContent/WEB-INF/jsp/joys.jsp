@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,23 +30,20 @@
 
 		<ul class="">
 			<li class="">
-				<div class="">joys番号 <br> ${e.reward_id}</div>
+				joys番号 <br> ${e.reward_id}
 			</li>
 			<li class="">
-				<div class="">ユーザーID <br> ${e.user_id}</div>
+				ユーザーID <br> ${e.user_id}
 			</li>
 			<li class="">
-				<div class="">Joys名 <br> ${e.reward_name}</div>
+				Joys名 <br> ${e.reward_name}
 			</li>
 			<li class="">
-				<div class="">Joys詳細 <br> ${e.reward_detail}</div>
+				Joys詳細 <br> ${e.reward_detail}
 			</li>
-			<!--
 			<li class="">
-				<label class="">必要ポイント数</label>
-				<input type="text" name="required_point" value="${e.required_point}">
+				必要ポイント数 <br> ${e.required_point}
 			</li>
-			-->
 			<button type="button" >	<!-- モーダルウィンドウ？？ 別画面？？ -->
 				<img src="/app/img/present.png" width="60" height="60">
 			</button>
