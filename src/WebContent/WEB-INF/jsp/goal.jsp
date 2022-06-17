@@ -26,26 +26,35 @@
 								<!-- 詳細マウスオーバーのコード書いてないです…！-->
 		<div>
 			<div class="goal_wrap">
+				<form action="/app/GoalServlet" id="f0" method="POST">
+					<input id="btn0" type="radio" name="tag" value="0">
+					<label for="tab0" class="tab_lab0_all">目標一覧</label>
+				</form>
 
-				<input id="tab0" type="radio" name="tag_id" value="0">
-				<label for="tab0" class="tab_lab0_all">目標一覧</label>
+				<form action="/app/GoalServlet" id="f1" method="POST">
+					<input id="btn1" type="radio" name="tag" value="1">
+					<label for="tab1" class="tab_lab1_work">仕事</label>
+				</form>
 
-				<input id="tab1" type="radio" name="tag_id" value="1">
-				<label for="tab1" class="tab_lab1_work">仕事</label>
-
-				<input id="tab2" type="radio" name="tag_id" value="2">
+				<form action="/app/GoalServlet" id="f2" method="POST">
+				<input id="btn2" type="radio" name="tag" value="2">
 				<label for="tab2" class="tab_lab2_housework" >家事</label>
+				</form>
 
-				<input id="tab3" type="radio" name="tag_id" value="3">
+				<form action="/app/GoalServlet" id="f3" method="POST">
+				<input id="btn3" type="radio" name="tag" value="3">
 				<label for="tab3" class="tab_lab3_hobby">趣味</label>
+				</form>
 
-
-				<input id="tab4" type="radio" name="tag_id" value="4">
+				<form action="/app/GoalServlet" id="f4" method="POST">
+				<input id="btn4" type="radio" name="tag" value="4">
 				<label for="tab4" class="tab_lab4_study">勉強</label>
+				</form>
 
-				<input id="tab5" type="radio" name="tag_id" value="5">
+				<form action="/app/GoalServlet" id="f5" method="POST">
+				<input id="btn5" type="radio" name="tag" value="5">
 				<label for="tab5" class="tab_lab5_etc">その他</label>
-
+				</form>
 
 
 
