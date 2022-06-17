@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import dao.achievementDao;
 import dao.loginDao;
 import model.goal;
+import model.result;
 //import model.Bc;
 //import model.user;
 import model.user;
@@ -29,6 +30,8 @@ public class ProfileServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+
+	//プロフィール情報をとってくる
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession sessiont = request.getSession();
@@ -70,39 +73,57 @@ public class ProfileServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	//プロフィールを変更する処理
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				String user_id = request.getParameter("user_id");
+				//String user_id = request.getParameter("user_id");
 				String nickname = request.getParameter("nickname");
-				int having_point =Integer.parseInt(request.getParameter("having_point"));
-				int total_point = Integer.parseInt(request.getParameter("total_point"));
-				String picture = request.getParameter("picture");
+				//String picture = request.getParameter("picture");
 
 				// セッションスコープにIDを格納する(先生の書いたやつ）
-				HttpSession session = request.getSession();
-				user user = new user();
-				user.setUser_id(user_id);
-				session.setAttribute("id", user);
+				//HttpSession session = request.getSession();
+				//user user = new user();
+				//user.setUser_id(user_id);
+				//session.setAttribute("id", user);
+
+				//セッションスコープにIDを格納
+				//HttpSession session = request.getSession();
+				//user user = (user)session.getAttribute("id");
+
+
+
 
 				//更新を行う
-				loginDao pDao = new loginDao();
-				user profile = new user(user_id,nickname, having_point, total_point,picture);
-				if (request.getParameter("SUBMIT").equals("更新")) {
-					if (bDao.update(bc)) {	// 更新成功
+				loginDao uDao = new loginDao();
+				user profile = new user(nickname );
+
+				if (request.getParameter("update").equals("更新")) {
+					if (uDao.update(profile)) {	// 更新成功
 						request.setAttribute("result",
-						new Result("更新成功！", "レコードを更新しました。", "/simpleBC/MenuServlet"));
-						request.setAttribute("bc",bc);
+						(new result("更新成功！", "更新に成功しました。", "/app/profileServlet", "ログインページへ戻る" )));
+
+
+
 						// 結果ページにフォワードする
 						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 						dispatcher.forward(request, response);
 
 					}
+					else{request.setAttribute("result",
+							(new result("更新失敗！", "更新に失敗しました。", "/app/profileServlet", "ログインページへ戻る" )));
+
+					// 結果ページにフォワードする
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+					dispatcher.forward(request, response);
+
+					}
 				}
 
-		// プロフィールサーブレットにリダイレクトする
-					response.sendRedirect("/app/profileServlet");
-	}*/
+
+
+	}
 
 
 }
