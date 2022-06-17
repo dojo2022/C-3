@@ -50,83 +50,86 @@
 						</c:forEach>
 					</table>
 
-				</div>
-
-
-
 				<div id="tag_work" class="tag_table">
+
 					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
+						<c:forEach var="e" items="${goalTodayList_work}">
+							<tr>
+								<td><div>${e.goal_name}</div></td>
+								<td><div>${e.goal_detail}</div></td>
+								<td><a href="/app/GoalUpdateServlet"><img
+										src="/app/img/edit.png" class="menu"></a></td>
+								<th></th>
+
+					  			<td><input type="checkbox" id="achievement"></td>
+							</tr>
+						</c:forEach>
 					</table>
 				</div>
-
-
-
 
 				<div id="tag_housework" class="tag_table">
+
 					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
+						<c:forEach var="e" items="${goalTodayList_housework}">
+							<tr>
+								<td><div>${e.goal_name}</div></td>
+								<td><div>${e.goal_detail}</div></td>
+								<td><a href="/app/GoalUpdateServlet"><img
+										src="/app/img/edit.png" class="menu"></a></td>
+								<th></th>
+
+					  			<td><input type="checkbox" id="achievement"></td>
+							</tr>
+						</c:forEach>
 					</table>
-				</div>
-
-
-
 
 				<div id="tag_hobby" class="tag_table">
+
 					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
+						<c:forEach var="e" items="${goalTodayList_hobby}">
+							<tr>
+								<td><div>${e.goal_name}</div></td>
+								<td><div>${e.goal_detail}</div></td>
+								<td><a href="/app/GoalUpdateServlet"><img
+										src="/app/img/edit.png" class="menu"></a></td>
+								<th></th>
+
+					  			<td><input type="checkbox" id="achievement"></td>
+							</tr>
+						</c:forEach>
 					</table>
-				</div>
-
-
-
 
 				<div id="tag_study" class="tag_table">
+
 					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
+						<c:forEach var="e" items="${goalTodayList_study}">
+							<tr>
+								<td><div>${e.goal_name}</div></td>
+								<td><div>${e.goal_detail}</div></td>
+								<td><a href="/app/GoalUpdateServlet"><img
+										src="/app/img/edit.png" class="menu"></a></td>
+								<th></th>
+
+					  			<td><input type="checkbox" id="achievement"></td>
+							</tr>
+						</c:forEach>
 					</table>
-				</div>
-
-
-
 
 				<div id="tag_etc" class="tag_table">
+
 					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
+						<c:forEach var="e" items="${goalTodayList_etc}">
+							<tr>
+								<td><div>${e.goal_name}</div></td>
+								<td><div>${e.goal_detail}</div></td>
+								<td><a href="/app/GoalUpdateServlet"><img
+										src="/app/img/edit.png" class="menu"></a></td>
+								<th></th>
+
+					  			<td><input type="checkbox" id="achievement"></td>
+							</tr>
+						</c:forEach>
 					</table>
-				</div>
-
-
 			</div>
 		</div>
 		<a href="/app/GoalRegistarServlet"><img
