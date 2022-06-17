@@ -244,7 +244,88 @@ public class loginDao {
 
 
 
+	//目標達成によって加算、累積ポイントと保持ポイントを更新
+	public boolean pluspoint_update(String user_id,int pluspoint) {
+		Connection conn = null;
+		boolean pluspoint_update = false;
+
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+			// SQL文を準備する
+			//累計ポイントと保持ポイントの呼び出し
+
+			String sql = "SELECT having_point,total_point FROM user WHERE user_id=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+
+			//SQL文を完成させる
+			if (user_id != null) {
+				pStmt.setString(1, user_id );
+			}
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			//1件しかデータがない場合
+			//pointcardにuserテーブルのintのやつ代入
+			user pluspointcard = new user();
+			if(rs.next()) {
+				pluspointcard.setHaving_point(rs.getInt("having_point"));
+				pluspointcard.setTotal_point(rs.getInt("total_point"));
+
+			}
+
+			//持ってきたポイント数を変数に代入
+			int h = pluspointcard.getHaving_point();
+			int t =pluspointcard.getTotal_point();
+
+			// 変数に獲得ポイントを加算
+			h = h + pluspoint;
+			t = t + pluspoint;
+			//加算したポイントをpointcardに戻す
+			pluspointcard.setHaving_point(h);
+			pluspointcard.setTotal_point(t);
+
+			// SQL文を準備する
+			//更新処理
+			String sqlu = "UPDATE user SET having_point=?,total_point=?  WHERE user_id=?";
+			PreparedStatement pStmtu = conn.prepareStatement(sqlu);
+
+			//updateの？は
+			//引数のuserid
+			//pointcardのhaving_point total_pointを使う
+
+			// SQL文を完成させる
+				pStmtu.setInt(1, pluspointcard.getHaving_point());
+				pStmtu.setInt(2,pluspointcard.getTotal_point() );
+				pStmtu.setString(3, user_id );
+				if (pStmtu.executeUpdate() == 1) {
+					pluspoint_update = true;
+				}
+
+			}catch ( Exception e ) {
+
+			} finally {
+
+			}
+
+
+		// 結果を返す
+		return pluspoint_update;
+	}
+
+
+
+
 }
+
+
 
 
 
