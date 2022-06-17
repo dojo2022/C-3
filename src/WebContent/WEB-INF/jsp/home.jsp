@@ -32,18 +32,23 @@
 					class="tab_lab4_study">勉強</label> <input id="tab5" type="radio"
 					name="tag_id"> <label for="tab5" class="tab_lab5_etc">その他</label>
 
-
+${goalTodayList}
 
 				<div id="tag_all" class="tag_table">
+
 					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
+						<c:forEach var="e" items="${goalTodayList}">
+							<tr>
+								<td><div>${e.goal_name}</div></td>
+								<td><a href="/app/GoalUpdateServlet"><img
+										src="/app/img/edit.png" class="menu"></a></td>
+								<th></th>
+
+					  			<td><input type="checkbox" id="achievement"></td>
+							</tr>
+						</c:forEach>
 					</table>
+
 				</div>
 
 
