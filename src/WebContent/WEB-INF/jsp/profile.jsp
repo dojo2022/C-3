@@ -18,7 +18,7 @@
 <!-- ここからメイン -->
 <main>
 
-<form method="POST" id="profile_form"   action="/app/ResuultServlet">
+<form method="POST" id="profile_form"   action="/app/ProfileServlet">
 
 
 
