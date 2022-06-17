@@ -138,7 +138,7 @@ public class loginDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);//connはConnectionクラスのインスタンス、SQL文に入っている？に後から入力できるようにした
 
 			System.out.println(param.getUser_id());
-			
+
 			// SQL文を完成させる　？の数だけセットする必要がある
 			if (param.getUser_id() != null) {
 				pStmt.setString(1, param.getUser_id() );
@@ -186,7 +186,64 @@ public class loginDao {
 
 		// 結果を返す
 		return profile;
+
 	}
+
+	//プロフィールを変更
+	public boolean update(user card) {
+		Connection conn = null;
+		boolean update = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+
+			// SQL文を準備する
+			//画像は後回しのため入れていません
+			String sql = "update user set nickname =?  where  user_id=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+						if (card.getNickname() != null && !card.getNickname().equals("")) {
+							pStmt.setString(1, card.getNickname());
+						}
+						else {
+							pStmt.setString(1, null);}
+
+							pStmt.setString(2, card.getUser_id());
+
+							if (pStmt.executeUpdate() == 1) {
+								update = true;
+							}
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+						catch (ClassNotFoundException e) {
+							e.printStackTrace();
+						}
+						finally {
+							// データベースを切断
+							if (conn != null) {
+								try {
+									conn.close();
+								}
+								catch (SQLException e) {
+									e.printStackTrace();
+								}
+							}
+						}
+
+						// 結果を返す
+						return update;
+					}
+
+
+
 }
 
 
