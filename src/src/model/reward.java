@@ -13,8 +13,15 @@ import java.io.Serializable;
 		private String reward_name;
 		private String reward_detail;
 		private String reward_level_id;
-		public reward(String string, String string2, String string3, String string4) {
+		public reward(String reward_id, String user_id, String reward_name, String reward_detail) {
 			// TODO 自動生成されたコンストラクター・スタブ
+			super();
+			this.reward_id =reward_id;
+			this.user_id =user_id;
+			this.reward_name =reward_name;
+			this.reward_detail =reward_detail;
+			this.reward_level_id ="";
+
 		}
 		public String getReward_id() {
 			return reward_id;
