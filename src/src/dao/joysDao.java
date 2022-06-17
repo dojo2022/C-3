@@ -12,7 +12,7 @@ import model.reward;
 //select,insert,update,deleteは基本だから通常作っておくのがベース。
 //ただ、全部作るのは大変だから必要なもののみまずは作る
 public class joysDao {
-
+/*
 	//パターン１
 	//アクセス修飾子 戻り値データ型
 	public List<reward> select(String id){
@@ -20,7 +20,7 @@ public class joysDao {
 
 		return rewardList;
 	}
-
+*/
 	// 引数user_rewardで検索項目を指定し、検索結果のリストを返す
 	public List<reward> selectAll(String id) {
 		Connection conn = null;
@@ -34,11 +34,7 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT  reward.reward_name,reward.reward_detail,reward_level.required_point\r\n"
-					+ "			FROM reward \r\n"
-					+ "			INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id \r\n"
-					+ "			WHERE reward.user_id = 'kawakami' ORDER BY reward_level.reward_level_id ASC";
-
+			String sql = "SELECT  reward.reward_name,reward.reward_detail,reward_level.required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.user_id = 'kawakami' ORDER BY reward_level.reward_level_id ASC";
 
 			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
 
@@ -86,6 +82,11 @@ public class joysDao {
 
 		// 結果を返す
 		return rewardList;
+	}
+
+	public List<reward> select(String user_id) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
 
 }
