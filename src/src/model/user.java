@@ -41,6 +41,11 @@ public class user implements Serializable {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
+	public user(String nickname2) {
+		// TODO 自動生成されたコンストラクター・スタブ
+		this.nickname= nickname2;
+	}
+
 	public String getUser_id() {
 		return user_id;
 	}
