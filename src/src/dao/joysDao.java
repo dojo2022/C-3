@@ -86,4 +86,185 @@ public class joysDao {
 	}
 
 
+	// 引数rewardで指定されたレコードを登録し、成功したらtrueを返す
+	public boolean insert(rewardjoys reward) {
+		Connection conn = null;
+		boolean result = false;
+
+		//デバッグ用
+		System.out.println(reward.toString());
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+			// SQL文を準備する
+			String sql = "insert into reward (reward_name,reward_detail, reward_level_id) values (?, ?, ?)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			//エラー＃４がセットされてない→？と同数下記にif文を追加
+			// SQL文を完成させる
+			if (reward.getReward_name() != null && !reward.getReward_name().equals("")) {
+				pStmt.setString(1, reward.getReward_name());
+			}
+			else {
+				pStmt.setString(1,"");
+			}
+			if (reward.getReward_detail() != null && !reward.getReward_detail().equals("")) {
+				pStmt.setString(2, reward.getReward_detail());
+			}
+			else {
+				pStmt.setString(2,"");
+			}
+			if (reward.getReward_level_id() != null && !reward.getReward_level_id().equals("")) {
+				pStmt.setString(3, reward.getReward_level_id());
+			}
+			else {
+				pStmt.setString(3,"");
+			}
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
+	// 引数rewardで指定されたレコードを更新し、成功したらtrueを返す
+	public boolean update(rewardjoys reward) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+			// SQL文を準備する
+			String sql = "update reward set reward_name=?, reward_detail=?, reward_level_id=? where user_id=?" ユーザID情報はSQL文上必要だが入力項目じゃないので「？いらないのでは;
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			if (reward.getReward_name() != null && !reward.getReward_name().equals("")) {
+				pStmt.setString(1, reward.getReward_name());
+			}
+			else {
+				pStmt.setString(1, null);
+			}
+			if (reward.getReward_detail() != null && !reward.getReward_detail().equals("")) {
+				pStmt.setString(2, reward.getReward_detail());
+			}
+			else {
+				pStmt.setString(2, null);
+			}
+
+			if (reward.getReward_level_id() != null && !reward.getReward_level_id().equals("")) {
+				pStmt.setString(3, reward.getReward_level_id());
+			}
+			else {
+				pStmt.setString(3, null);
+			}
+
+			//ユーザーが入力する項目じゃないから必要ないかも
+			//pStmt.setString(4, reward.getUser_id());
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
+	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
+	public boolean delete(String number) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+
+			// SQL文を準備する
+			String sql = "delete from BC where NUMBER=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, number);
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
+
 }
