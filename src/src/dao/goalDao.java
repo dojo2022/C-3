@@ -83,7 +83,10 @@ public class goalDao {
 		// 結果を返す
 		return goalList;
 	}
-
+											//1 , 2, 3, 4, 5
+	public List<goal> selectTagGoal(String id, String type) {
+		return null;
+	}
 	//今日やることリスト
 	public List<goal> selectToday(String id) {
 		Connection conn = null;
