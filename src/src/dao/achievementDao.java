@@ -41,7 +41,7 @@ public class achievementDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT goal_name FROM goal INNER JOIN goal_result ON goal.goal_id=goal_result.goal_id WHERE achievement_id='1' AND user_id=?";
+			String sql = "SELECT goal_name FROM goal INNER JOIN goal_result ON goal.goal_id=goal_result.goal_id WHERE achievement_id='1' AND user_id=? ORDER BY CAST(goal.goal_id AS INT) ASC";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
