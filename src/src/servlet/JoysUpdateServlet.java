@@ -35,14 +35,24 @@ public class JoysUpdateServlet extends HttpServlet {
 			return;
 		}
 
+		//IDをキーにデータを取る
+		//取ったらjspに渡す
+
+		//リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+				String reward_id = request.getParameter("reward_id");
+				String reward_name = request.getParameter("reward_name");
+				String reward_detail = request.getParameter("reward_detail");
+				String reward_level_id= request.getParameter("reward_level_id");
+
+
 		// joys更新・削除画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/joysUpdate.jsp");
 		dispatcher.forward(request, response);
 	}
 
 
-	//IDをキーにデータを取る
-	//取ったらjspに渡す
+
 
 
 
