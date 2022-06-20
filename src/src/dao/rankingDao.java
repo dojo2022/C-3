@@ -24,7 +24,7 @@ public class rankingDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備・完成させる
-			String sql = "SELECT TOP 5 nickname, total_point FROM USER ORDER BY total_point DESC;";
+			String sql = "SELECT TOP 5 nickname,  total_point , RANK() OVER(ORDER BY  total_point  DESC) AS rank_result FROM user ORDER BY rank_result ASC;";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
