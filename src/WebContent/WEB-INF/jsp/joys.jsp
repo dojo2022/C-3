@@ -36,7 +36,9 @@
 				<!-- <li class="">
 				ユーザーID <br> ${e.user_id}
 			</li> -->
-				<li><a href="/app/JoysUpdateServlet"><img
+				<li><a href="/app/JoysUpdateServlet?reward_id=${e.reward_id}">
+						<!-- /app/JoysUpdateServlet?reward_id=0001		 -->
+				<img
 						src="/app/img/edit.png" width="60" height="60"></a></li>
 				<li class = "">JoysID ${e.reward_id} </li>
 				<li class="">Joys名 ${e.reward_name}</li>

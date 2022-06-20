@@ -29,12 +29,7 @@
 			</div>
 
 			<table>
-				<tr>
-					<td>
 
-			<input type="hidden" name="reward_id" placeholder=""
-						required></input></td>
-				</tr>
 				<tr>
 					<td><input type="text" name="reward_id" placeholder=""
 						required></input></td>
