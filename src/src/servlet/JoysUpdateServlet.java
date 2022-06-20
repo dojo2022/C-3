@@ -45,11 +45,11 @@ public class JoysUpdateServlet extends HttpServlet {
 //		String reward_detail = request.getParameter("reward_detail");
 //		String reward_level_id= request.getParameter("reward_level_id");
 
-		
+
 		//Daoを経由してreward_idに一致するデータを取得する。
-		
+
 		//取得したrewardjoysデータをリクエストスコープに格納する。
-		
+
 
 		// joys更新・削除画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/joysUpdate.jsp");
@@ -85,14 +85,24 @@ public class JoysUpdateServlet extends HttpServlet {
 
 		if (request.getParameter("SUBMIT").equals("更新")) {
 			System.out.println(request.getParameter("SUBMIT"));
-			//jDao.update←jDaoのupdateメソッド内の処理でfalseがでているせい→trueにしたい
+			//jDao.update←jDaoのupdateメソッド内の処理でfalseがでているせい、これをtrueにしたい
+			//→falseの原因はコンストラクタが正しく記述されておらず
+			//反映されていないことに気づけなかったため。
+
+			//デフォルトコンストラクタ
 			rewardjoys value  = new rewardjoys();
+			/*
+			beansに逐一使用するコンストラクタを宣言するのではなく、
+			↑↓のようにデフォルトコンストラクタと元々はif文に
+			入っていた引数を一つずつ記述することで
+			beansにコンストラクタを宣言することなく処理ができる。
+			*/
 			value.setReward_id(reward_id);
 			value.setReward_name(reward_name);
 			value.setReward_detail(reward_detail);
 			value.setReward_level_id(reward_level_id);
 			if (jDao.update(value)) {	// 更新成功
-//			if (jDao.update(new rewardjoys( reward_name,  reward_detail, reward_level_id,reward_id))) {	// 更新成功
+			//if (jDao.update(new rewardjoys( reward_name,  reward_detail, reward_level_id,reward_id))) {	// 更新成功
 				request.setAttribute("result",
 						new result("更新成功！", "レコードを更新しました。", "/app/JoysUpdateServlet", "ジョイス登録画面へ"));
 			}
