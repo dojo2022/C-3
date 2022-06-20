@@ -54,8 +54,34 @@ public class HomeServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		//セッションスコープからuserIDを取得
+				HttpSession session = request.getSession();
+				user user = (user)session.getAttribute("id");
+
+				//リクエストパラメーターを書く！！
+				request.setCharacterEncoding("UTF-8");
+				String  tag = request.getParameter("tag");
+
+				System.out.println(tag);
+				goalDao dao = new goalDao();
+
+				if (tag.equals("0")) {
+					List<goal> goalTodayList = dao.selectToday(user.getUser_id());
+					//検索結果をリクエストスコープに格納する
+					request.setAttribute("goalTodayList", goalTodayList);
+				}else {
+					List<goal> goalTodayList = dao.selectTagToday(user.getUser_id(), tag);
+					//検索結果をリクエストスコープに格納する
+					request.setAttribute("goalTodayList", goalTodayList);
+				}
+
+
+
+
+				// 目標一覧ページにフォワードする
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+						dispatcher.forward(request, response);
+			}
 	}
 
-}
+

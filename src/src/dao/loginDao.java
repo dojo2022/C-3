@@ -320,6 +320,79 @@ public class loginDao {
 		return pluspoint_update;
 	}
 
+	//Joys達成に伴う保持ポイントの減算処理
+		public boolean minuspoint_update(String user_id,int minuspoint) {
+			Connection conn = null;
+			boolean minuspoint_update = false;
+
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+				// SQL文を準備する
+				//累計ポイントと保持ポイントの呼び出し
+
+				String sql = "SELECT having_point FROM user WHERE user_id=?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+
+				//SQL文を完成させる
+				if (user_id != null) {
+					pStmt.setString(1, user_id );
+				}
+
+				// SQL文を実行し、結果表を取得する
+				ResultSet rs = pStmt.executeQuery();
+
+				//1件しかデータがない場合
+				//pointcardにuserテーブルのintのやつ代入
+				user minuspointcard = new user();
+				if(rs.next()) {
+					minuspointcard.setHaving_point(rs.getInt("having_point"));
+
+				}
+
+				//持ってきたポイント数を変数に代入
+				int m = minuspointcard.getHaving_point();
+
+
+				// 変数に獲得ポイントを加算減算
+				m = m - minuspoint;
+
+				//加算したポイントをpointcardに戻す
+				minuspointcard.setHaving_point(m);
+
+
+				// SQL文を準備する
+				//更新処理
+				String sqlm = "UPDATE user SET having_point=? WHERE user_id=?";
+				PreparedStatement pStmtm = conn.prepareStatement(sqlm);
+
+				//updateの？は
+				//引数のuserid
+				//pointcardのhaving_point total_pointを使う
+
+				// SQL文を完成させる
+					pStmtm.setInt(1, minuspointcard.getHaving_point());
+					pStmtm.setString(2, user_id );
+					if (pStmtm.executeUpdate() == 1) {
+						minuspoint_update = true;
+					}
+
+				}catch ( Exception e ) {
+
+				} finally {
+
+				}
+
+
+			// 結果を返す
+			return minuspoint_update;
+		}
 
 
 

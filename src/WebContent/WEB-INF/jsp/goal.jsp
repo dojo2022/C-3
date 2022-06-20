@@ -104,63 +104,6 @@
 						</c:forEach>
 					</table>
 				</div>
-
-				<div id="tag_housework" class="tag_table">
-					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
-					</table>
-				</div>
-
-
-
-
-				<div id="tag_hobby" class="tag_table">
-					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
-					</table>
-				</div>
-
-
-
-
-				<div id="tag_study" class="tag_table">
-					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
-					</table>
-				</div>
-
-
-				<div id="tag_etc" class="tag_table">
-					<table>
-						<tr>
-							<th>目標名</th>
-							<th><a href="/app/GoalUpdateServlet"><img
-									src="/app/img/edit.png" class="menu"></a></th>
-							<th></th>
-							<td><input type="checkbox" id="achievement"></td>
-						</tr>
-					</table>
-				</div>
-
-
 			</div>
 		</div>
 

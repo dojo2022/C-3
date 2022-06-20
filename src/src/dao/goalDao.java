@@ -84,9 +84,61 @@ public class goalDao {
 		return goalList;
 	}
 											//1 , 2, 3, 4, 5
-	public List<goal> selectTagGoal(String id, String type) {
-		return null;
+	public List<goal> selectTagGoal(String id, String tag) {
+		Connection conn = null;
+		List<goal> goalList = new ArrayList<goal>();
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+			// SQL文を準備する
+			String sql = "SELECT goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND tag_id = ? AND achievement_id = '2'";
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			// SQL文を完成させる
+			if (id != null) {
+				pStmt.setString(1, id);
+			}
+			if (tag != null) {
+				pStmt.setString(2, tag);
+			}
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+			// 結果表をコレクションにコピーする<ここ改造>
+			while (rs.next()) {
+				goal card = new goal(
+						rs.getString("goal_name"),
+						rs.getString("goal_detail"));
+				goalList.add(card);
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+			goalList = null;
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			goalList = null;
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+					goalList = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return goalList;
 	}
+
+
 	//今日やることリスト
 	public List<goal> selectToday(String id) {
 		Connection conn = null;
@@ -139,6 +191,63 @@ public class goalDao {
 		// 結果を返す
 		return goalTodayList;
 	}
+
+	//今日やることリストのタグ用
+	public List<goal> selectTagToday(String id, String tag) {
+		Connection conn = null;
+		List<goal> goalTodayList = new ArrayList<goal>();
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+			// SQL文を準備する
+			String sql = "SELECT goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND starting_date <= curdate() AND ending_date >=  curdate()AND tag_id = ? AND achievement_id = '2'";
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			if (id != null) {
+				pStmt.setString(1, id);
+			}
+			if (tag != null) {
+				pStmt.setString(2, tag);
+			}
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+			// 結果表をコレクションにコピーする<ここ改造>
+			while (rs.next()) {
+				goal card = new goal(
+						rs.getString("goal_name"),
+						rs.getString("goal_detail"));
+				goalTodayList.add(card);
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+			goalTodayList = null;
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			goalTodayList = null;
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+					goalTodayList = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return goalTodayList;
+	}
+
 }
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 	/*public boolean insert( card) {
