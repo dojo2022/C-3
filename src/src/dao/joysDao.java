@@ -34,7 +34,7 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT reward.reward_name,reward.reward_detail,reward_level.required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.user_id = ? ORDER BY CAST(reward.reward_id AS INT) ASC";
+			String sql = "SELECT reward.reward_id,reward.reward_name,reward.reward_detail,reward_level.required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.user_id = ? ORDER BY CAST(reward.reward_id AS INT) ASC";
 
 			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
 
@@ -51,7 +51,7 @@ public class joysDao {
 			// 結果表をコレクションにコピーする  ここを改造
 			while (rs.next()) {
 				rewardjoys reward = new rewardjoys();
-				//reward.setReward_id(rs.getString("reward_id"));
+				reward.setReward_id(rs.getString("reward_id"));
 				//reward.setUser_id(rs.getString("user_id"));
 				reward.setReward_name(rs.getString("reward_name"));
 				reward.setReward_detail(rs.getString("reward_detail"));

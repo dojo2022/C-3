@@ -46,6 +46,14 @@ public class rewardjoys implements Serializable{
 		this.reward_level_id =reward_level_id;
 	}
 
+	public rewardjoys(String reward_id, String reward_name,  String reward_detail,String reward_level_id, int required_point) {
+		this.reward_id =reward_id;
+		this.user_id ="";
+		this.reward_name =reward_name;
+		this.reward_detail =reward_detail;
+		this.reward_level_id =reward_level_id;
+	}
+
 	public String getReward_id() {
 		return reward_id;
 	}
