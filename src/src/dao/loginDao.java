@@ -313,7 +313,16 @@ public class loginDao {
 
 			} finally {
 
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					} catch (Exception e) {
+
+
+				}
 			}
+		}
 
 
 		// 結果を返す
@@ -387,16 +396,23 @@ public class loginDao {
 
 				} finally {
 
-				}
 
+			// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							} catch (Exception e) {
+
+
+						}
+					}
+				}
 
 			// 結果を返す
 			return minuspoint_update;
 		}
 
-
-
-}
+	}
 
 
 

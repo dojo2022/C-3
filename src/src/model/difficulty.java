@@ -21,8 +21,8 @@ public class difficulty implements Serializable {
 	public void setDifficulty_name(String difficulty_name) {
 		this.difficulty_name = difficulty_name;
 	}
-	public void setGoal_name(int goal_name) {
-		this.goal_point = goal_name;
+	public void setGoal_point(int goal_point) {
+		this.goal_point = goal_point;
 	}
 
 

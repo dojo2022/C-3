@@ -2,7 +2,7 @@
  *
  */
 
-
+//タグごと表示のラジオボタン
  let btn0 = document.getElementById('btn0');
     btn0.onclick = function(){
         f0.submit();
@@ -32,3 +32,27 @@
     btn5.onclick = function(){
         f5.submit();
         }
+
+  //今日やることを達成したときの処理
+    function formSubmit(form){
+		form.submit();
+	}
+
+  	let btn = document.getElementById('achievement');
+    btn.onclick = function(){
+    	modal.style.display = 'block';
+    }
+
+    // バツ印がクリックされた時
+buttonClose.addEventListener('click', modalClose);
+function modalClose() {
+  modal.style.display = 'none';
+}
+
+// モーダルコンテンツ以外がクリックされた時
+addEventListener('click', outsideClose);
+function outsideClose(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+ }

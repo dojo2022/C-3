@@ -13,6 +13,7 @@ public class goal implements Serializable {
 	private Date ending_date;
 	private String difficulty_id;
 	private String term_id;
+	private String id;
 	public String getGoal_id() {
 		return goal_id;
 	}
@@ -107,6 +108,16 @@ public class goal implements Serializable {
 		this.goal_name = string;
 		this.goal_detail = string2;
 	}
-
+	public goal(String string, String string2, String string3) {
+		this.goal_name = string;
+		this.goal_detail = string2;
+		this.setId(string3);
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
 }
