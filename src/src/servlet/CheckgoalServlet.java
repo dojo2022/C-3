@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.goalDao;
+import dao.goalpointDao;
 import model.user;
 
 /**
@@ -36,12 +36,11 @@ public class CheckgoalServlet extends HttpServlet {
 
 		//リクエストパラメーターを書く！！
 		request.setCharacterEncoding("UTF-8");
-		String  goal_name = request.getParameter("goal_name");
-		String  goal_detail = request.getParameter("goal_detail");
-		System.out.println(goal_name);
-		System.out.println(goal_detail);
-		goalDao dao = new goalDao();
-		//int plusPoint = dao.achRegist(user.getUser_id());
+		String  id = request.getParameter("id");
+		System.out.println(id);
+		goalpointDao dao = new goalpointDao();
+		int plusPoint = dao.select(id);
+		boolean update = dao.update(id);
 	}
 
 }
