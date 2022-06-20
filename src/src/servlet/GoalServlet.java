@@ -57,8 +57,32 @@ public class GoalServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//リクエストパラメーターを書く！！
-		System.out.println("成功！！");
-	}
+		//セッションスコープからuserIDを取得
+		HttpSession session = request.getSession();
+		user user = (user)session.getAttribute("id");
 
+		//リクエストパラメーターを書く！！
+		request.setCharacterEncoding("UTF-8");
+		String  tag = request.getParameter("tag");
+
+
+		goalDao dao = new goalDao();
+
+		if (tag.equals("0")) {
+			List<goal> goalList = dao.selectAll(user.getUser_id());
+			//検索結果をリクエストスコープに格納する
+			request.setAttribute("goalList", goalList);
+		}else {
+			List<goal> goalList = dao.selectTagGoal(user.getUser_id(), tag);
+			//検索結果をリクエストスコープに格納する
+			request.setAttribute("goalList", goalList);
+		}
+
+
+
+
+		// 目標一覧ページにフォワードする
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/goal.jsp");
+				dispatcher.forward(request, response);
+	}
 }
