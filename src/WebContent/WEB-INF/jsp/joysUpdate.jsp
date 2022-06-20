@@ -49,14 +49,6 @@
 				</tr>
 
 				<tr>
-					<th>りわれべID</th>
-				</tr>
-				<tr>
-					<td><input type="text" name="reward_level_id" value="${e.reward_level_id}"
-						required></input></td>
-				</tr>
-
-				<tr>
 					<th>ささやかor豪華選択</th>
 				</tr>
 				<tr>
