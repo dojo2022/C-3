@@ -52,7 +52,12 @@ public class JoysRegistarServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession sessiont = request.getSession();
+		if (sessiont.getAttribute("id") == null) {
+			response.sendRedirect("/app/LoginServlet");
+			return;
+		}
 
 		// リクエストパラメータを取得する
 			request.setCharacterEncoding("UTF-8");

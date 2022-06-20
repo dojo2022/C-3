@@ -86,6 +86,7 @@ public class joysDao {
 	}
 
 
+//登録画面
 	// 引数rewardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(String user_id,rewardjoys reward) {
 		Connection conn = null;
@@ -156,6 +157,8 @@ public class joysDao {
 		return result;
 	}
 
+
+//更新
 	// 引数rewardで指定されたレコードを更新し、成功したらtrueを返す
 	public boolean update(rewardjoys reward) {
 		Connection conn = null;
@@ -170,28 +173,36 @@ public class joysDao {
 
 			// SQL文を準備する
 			//ユーザID情報はSQL文上必要だが入力項目じゃないので「？]いらないのでは
-			String sql = "update reward set reward_name=?, reward_detail=?, reward_level_id=? where user_id=";
+			String sql = "update reward set reward_id=?, reward_name=?, reward_detail=?, reward_level_id=? where user_id=";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (reward.getReward_name() != null && !reward.getReward_name().equals("")) {
-				pStmt.setString(1, reward.getReward_name());
+			if (reward.getReward_id() != null && !reward.getReward_id().equals("")) {
+				pStmt.setString(1, reward.getReward_id());
 			}
 			else {
 				pStmt.setString(1, null);
 			}
-			if (reward.getReward_detail() != null && !reward.getReward_detail().equals("")) {
-				pStmt.setString(2, reward.getReward_detail());
+
+
+			if (reward.getReward_name() != null && !reward.getReward_name().equals("")) {
+				pStmt.setString(2, reward.getReward_name());
 			}
 			else {
 				pStmt.setString(2, null);
 			}
-
-			if (reward.getReward_level_id() != null && !reward.getReward_level_id().equals("")) {
-				pStmt.setString(3, reward.getReward_level_id());
+			if (reward.getReward_detail() != null && !reward.getReward_detail().equals("")) {
+				pStmt.setString(3, reward.getReward_detail());
 			}
 			else {
 				pStmt.setString(3, null);
+			}
+
+			if (reward.getReward_level_id() != null && !reward.getReward_level_id().equals("")) {
+				pStmt.setString(4, reward.getReward_level_id());
+			}
+			else {
+				pStmt.setString(4, null);
 			}
 
 			//ユーザーが入力する項目じゃないから必要ないかも
@@ -224,6 +235,10 @@ public class joysDao {
 		return result;
 	}
 
+
+
+
+//削除
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
 	public boolean delete(String reward_id) {
 		Connection conn = null;

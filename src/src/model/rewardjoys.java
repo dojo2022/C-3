@@ -38,6 +38,14 @@ public class rewardjoys implements Serializable{
 		this.required_point =0;
 	}
 
+	public rewardjoys(String reward_id, String reward_name,  String reward_detail,String reward_level_id) {
+		this.reward_id ="";
+		this.user_id ="";
+		this.reward_name =reward_name;
+		this.reward_detail =reward_detail;
+		this.reward_level_id =reward_level_id;
+	}
+
 	public String getReward_id() {
 		return reward_id;
 	}
