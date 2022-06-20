@@ -35,7 +35,8 @@ public class rankingDao {
 			while (rs.next()) {
 				user ranking = new user(
 						rs.getString("nickname"),
-						rs.getInt("total_point")
+						rs.getInt("total_point"),
+						rs.getInt("rank_result")
 						);
 				rankingList.add(ranking);
 			}

@@ -31,8 +31,7 @@
 
 			<ul class="">
 
-				<li>順位</li>
-
+				<li>${e.rank_result}</li>
 				<li>${e.nickname}</li>
 				<li>${e.total_point }ポイント</li>
 			</ul>

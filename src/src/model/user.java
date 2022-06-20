@@ -8,6 +8,8 @@ public class user implements Serializable {
 	private int having_point;//保持ポイント
 	private int total_point;//累計ポイント
 	private String picture;//画像パス
+	private int rank_result;//ランク順位
+
 
 
 	//引数があるコンストラクタ
@@ -22,9 +24,9 @@ public class user implements Serializable {
 		this.picture=picture;
 	}
 
-		//引数が無いコンストラクタ
+	//引数が無いコンストラクタ
 
-	public user(String nickname, int total_point) {
+	public user(String nickname, int total_point, int rank_result) {
 
 		super();
 		this.user_id ="";
@@ -33,6 +35,7 @@ public class user implements Serializable {
 		this.having_point=0;
 		this.total_point=total_point;
 		this.picture="";
+		this.rank_result=rank_result;
 
 	}
 	//getter,setter
@@ -94,9 +97,13 @@ public class user implements Serializable {
 		this.picture = picture;
 	}
 
+	public int getRank_result() {
+		return rank_result;
+	}
 
-
-
+	public void setRank_result(int rank_result) {
+		this.rank_result = rank_result;
+	}
 
 
 }
