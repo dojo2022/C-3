@@ -56,24 +56,25 @@
 		</div>
 
 				<div id="tag_all" class="tag_table">
-
+					<c:forEach var="e" items="${goalTodayList}">
+					<form action="/app/CheckgoalServlet" method="POST" id="ach">
 					<table>
-						<c:forEach var="e" items="${goalTodayList}">
+
 							<tr>
-								<td><div>${e.goal_name}</div></td>
-								<td><div>${e.goal_detail}</div></td>
+								<td><input type=hidden name="goal_name" value=></td>
+								<td name="goal_name"${e.goal_name}</td>
+								<td name="goal_detail">${e.goal_detail}</td>
 								<td><a href="/app/GoalUpdateServlet"><img
 										src="/app/img/edit.png" class="menu"></a></td>
-								<th></th>
-
 								<td>
-									<form action="/app/CheckgoalServlet" method="POST" id="ach">
-										<input type="checkbox" id="achievement" name="check" value="1">
-									</form>
+
+										<input type="checkbox" id="achievement" name="check" value="1" onchange="formSubmit(this.form)">
+
 								</td>
 							</tr>
-						</c:forEach>
 					</table>
+					</form>
+					</c:forEach>
 				</div>
 
 	</main>
