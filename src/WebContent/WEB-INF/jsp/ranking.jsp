@@ -25,19 +25,40 @@
 	<!-- ここからメイン -->
 	<main>
 		<h1>ランキング</h1>
-		<c:forEach var="e" items="${rankingList}">
+		<!-- <c:forEach var="e" items="${rankingList}">
 
-			<!-- 頑張る -->
+			頑張る
 
 			<ul class="">
-
-				<li>${e.rank_result}</li>
-				<li>${e.nickname}</li>
-				<li>${e.total_point }ポイント</li>
+				<li>順位：${e.rank_result}</li>
+				<li>ニックネーム：${e.nickname}</li>
+				<li>累計ポイント：${e.total_point }ポイント</li>
 			</ul>
 
 			<hr>
+		</c:forEach>-->
+
+		<div id="table">
+	<table id="list">
+		<tr>
+			<th>順位</th>
+			<th>ニックネーム</th>
+			<th>累計ポイント</th>
+
+
+		</tr>
+
+	<c:forEach var="e" items="${ rankingList}">
+		<tr>
+			<td>${e.rank_result}</td>
+			<td>${e.nickname}</td>
+			<td>${e.total_point }ポイント</td>
+
+		</tr>
 		</c:forEach>
+	</table>
+	</div>
+
 	</main>
 	<!--  -->
 	<footer class="footer">

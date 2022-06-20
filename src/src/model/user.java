@@ -49,6 +49,13 @@ public class user implements Serializable {
 		this.nickname= nickname2;
 	}
 
+	public user(int rank_result, String nickname, int total_point) {
+		// TODO 自動生成されたコンストラクター・スタブ
+		this.rank_result=rank_result;
+		this.nickname=nickname;
+		this.total_point=total_point;
+	}
+
 	public String getUser_id() {
 		return user_id;
 	}
