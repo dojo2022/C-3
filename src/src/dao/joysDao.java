@@ -172,8 +172,7 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			//ユーザID情報はSQL文上必要だが入力項目じゃないので「？]いらないのでは
-			String sql = "update reward set reward_id=?, reward_name=?, reward_detail=?, reward_level_id=? where user_id=";
+			String sql = "update reward set reward_id=?, reward_name=?, reward_detail=?, reward_level_id=? where user_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -203,6 +202,13 @@ public class joysDao {
 			}
 			else {
 				pStmt.setString(4, null);
+			}
+
+			if (reward.getUser_id() != null && !reward.getUser_id().equals("")) {
+				pStmt.setString(5, reward.getUser_id());
+			}
+			else {
+				pStmt.setString(5, null);
 			}
 
 			//ユーザーが入力する項目じゃないから必要ないかも

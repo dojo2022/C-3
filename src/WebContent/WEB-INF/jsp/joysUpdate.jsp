@@ -29,28 +29,23 @@
 			</div>
 
 			<table>
-				<tr>
-					<td>
 
-			<input type="hidden" name="reward_id" placeholder=""
-						required></input></td>
-				</tr>
 				<tr>
-					<td><input type="text" name="reward_id" placeholder=""
+					<td><input type="text" name="reward_id"  value="${e.reward_id}"
 						required></input></td>
 				</tr>
 				<tr>
 					<th>joys名</th>
 				</tr>
 				<tr>
-					<td><input type="text" name="reward_name" placeholder=""
+					<td><input type="text" name="reward_name" value="${e.reward_name}"
 						required></input></td>
 				</tr>
 				<tr>
 					<th>詳細</th>
 				</tr>
 				<tr>
-					<td><input type="text" name="reward_detail" placeholder=""></input></td>
+					<td><input type="text" name="reward_detail" value="${e.reward_detail}"></input></td>
 				</tr>
 				<tr>
 					<th>ささやかor豪華選択</th>

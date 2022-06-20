@@ -22,6 +22,7 @@ import model.user;
 public class JoysUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -34,8 +35,15 @@ public class JoysUpdateServlet extends HttpServlet {
 			return;
 		}
 
+		//IDをキーにデータを取る
+		//取ったらjspに渡す
 
-
+		//リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+				String reward_id = request.getParameter("reward_id");
+				String reward_name = request.getParameter("reward_name");
+				String reward_detail = request.getParameter("reward_detail");
+				String reward_level_id= request.getParameter("reward_level_id");
 
 
 		// joys更新・削除画面にフォワードする
@@ -43,12 +51,15 @@ public class JoysUpdateServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
+
+
+
+
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 
 
 		//リクエストパラメータを取得する
@@ -74,7 +85,7 @@ public class JoysUpdateServlet extends HttpServlet {
 			}
 			else {												// 登録失敗
 				request.setAttribute("result",
-				new result("登録失敗！", "レコードを登録できませんでした。", "/app/JoysUpdateServlet", "ジョイス登録画面へ"));
+				new result("登録失敗！", "レコードを更新できませんでした。", "/app/JoysUpdateServlet", "ジョイス登録画面へ"));
 			}
 		}
 		else {
@@ -89,8 +100,8 @@ public class JoysUpdateServlet extends HttpServlet {
 		}
 
 		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-		dispatcher.forward(request, response);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+				dispatcher.forward(request, response);
 	}
 
 }
