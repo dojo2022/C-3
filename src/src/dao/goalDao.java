@@ -152,7 +152,7 @@ public class goalDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND starting_date <= curdate() AND ending_date >=  curdate() AND achievement_id = '2'";
+			String sql = "SELECT goal_name,goal_detail, id  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND starting_date <= curdate() AND ending_date >=  curdate() AND achievement_id = '2'";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -167,7 +167,8 @@ public class goalDao {
 			while (rs.next()) {
 				goal card = new goal(
 						rs.getString("goal_name"),
-						rs.getString("goal_detail"));
+						rs.getString("goal_detail"),
+						rs.getString("id"));
 				goalTodayList.add(card);
 			}
 		}catch (SQLException e) {
