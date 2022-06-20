@@ -160,6 +160,11 @@ public class joysDao {
 
 //更新
 	// 引数rewardで指定されたレコードを更新し、成功したらtrueを返す
+	// 「レコードを更新できませんでした」
+	//→デバッグ、更新のため入力した内容は入ってた
+	//１JSPに更新内容入力送信　ここはおｋ
+	//２Joysアプデサブで入力内容受け取る(if)　elseで更新の失敗、削除の成功できたのでここもおｋ
+	//３ｊダオがテーブルにデータ反映させる　終わり
 	public boolean update(rewardjoys reward) {
 		Connection conn = null;
 		boolean result = false;
@@ -172,50 +177,41 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "update reward set reward_id=?, reward_name=?, reward_detail=?, reward_level_id=? where user_id=?";
+			String sql = "update reward set reward_name=?, reward_detail=?, reward_level_id=? where reward_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (reward.getReward_id() != null && !reward.getReward_id().equals("")) {
-				pStmt.setString(1, reward.getReward_id());
+			if (reward.getReward_name() != null && !reward.getReward_name().equals("")) {
+				pStmt.setString(1, reward.getReward_name());
 			}
 			else {
 				pStmt.setString(1, null);
 			}
-
-
-			if (reward.getReward_name() != null && !reward.getReward_name().equals("")) {
-				pStmt.setString(2, reward.getReward_name());
+			if (reward.getReward_detail() != null && !reward.getReward_detail().equals("")) {
+				pStmt.setString(2, reward.getReward_detail());
 			}
 			else {
 				pStmt.setString(2, null);
 			}
-			if (reward.getReward_detail() != null && !reward.getReward_detail().equals("")) {
-				pStmt.setString(3, reward.getReward_detail());
+
+			if (reward.getReward_level_id() != null && !reward.getReward_level_id().equals("")) {
+				pStmt.setString(3, reward.getReward_level_id());
 			}
 			else {
 				pStmt.setString(3, null);
 			}
 
-			if (reward.getReward_level_id() != null && !reward.getReward_level_id().equals("")) {
-				pStmt.setString(4, reward.getReward_level_id());
+			if (reward.getReward_id() != null && !reward.getReward_id().equals("")) {
+				pStmt.setString(4, reward.getReward_id());
 			}
 			else {
 				pStmt.setString(4, null);
 			}
 
-			if (reward.getUser_id() != null && !reward.getUser_id().equals("")) {
-				pStmt.setString(5, reward.getUser_id());
-			}
-			else {
-				pStmt.setString(5, null);
-			}
-
-			//ユーザーが入力する項目じゃないから必要ないかも
-			//pStmt.setString(4, reward.getUser_id());
-
 			// SQL文を実行する
-			if (pStmt.executeUpdate() == 1) {
+			int ret = pStmt.executeUpdate();//retが０になる；；
+			System.out.println( ret );
+			if ( ret == 1) {//更新数１の意味
 				result = true;
 			}
 		}
