@@ -61,9 +61,9 @@
 					<table>
 
 							<tr>
-								<td><input type=hidden name="goal_name" value=></td>
-								<td><input type="text" name="goal_name" value="${e.goal_name}" readonly></td>
-								<td name="goal_detail">${e.goal_detail}</td>
+								<td><input type="hidden" name="id" value=${e.id} readonly></td>
+								<td>${e.goal_name}</td>
+								<td>${e.goal_detail}</td>
 								<td><a href="/app/GoalUpdateServlet"><img
 										src="/app/img/edit.png" class="menu"></a></td>
 								<td>
