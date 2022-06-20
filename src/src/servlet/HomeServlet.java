@@ -64,7 +64,6 @@ public class HomeServlet extends HttpServlet {
 
 				System.out.println(tag);
 				goalDao dao = new goalDao();
-
 				if (tag.equals("0")) {
 					List<goal> goalTodayList = dao.selectToday(user.getUser_id());
 					//検索結果をリクエストスコープに格納する
