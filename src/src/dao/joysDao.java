@@ -172,7 +172,6 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			//ユーザID情報はSQL文上必要だが入力項目じゃないので「？]いらないのでは
 			String sql = "update reward set reward_id=?, reward_name=?, reward_detail=?, reward_level_id=? where user_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
