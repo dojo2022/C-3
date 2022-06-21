@@ -77,6 +77,7 @@
 					</c:forEach>
 				</div>
 		<!-- ほめる機能モーダルウィンドウ -->
+		<button id="modalOpen" class="button">Click Me</button>
 		<div id="easyModal" class="modal">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -89,6 +90,7 @@
 				</div>
 			</div>
 		</div>
+
 
 	</main>
 	<!--  -->
