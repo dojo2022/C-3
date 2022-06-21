@@ -6,6 +6,7 @@ public class difficulty implements Serializable {
 	private String difficulty_id;
 	private String difficulty_name;
 	private int goal_point;
+
 	public String getDifficulty_id() {
 		return difficulty_id;
 	}
