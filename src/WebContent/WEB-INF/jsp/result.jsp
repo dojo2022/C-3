@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>結果</title>
 <link rel="stylesheet" type="text/css" href="css/result.css">
+<link rel="stylesheet" type="text/css" href="css/color.css">
 </head>
 <body>
 <header class="header">

@@ -8,6 +8,19 @@ a {
     text-decoration:none;
 }
 
+/* ダークカラー
+main {
+
+	//小見出し白 h1 h2とか
+	color: whitesmoke;
+	//↓基本文字グレー
+	color: gray;
+
+	background-color: rgb(36, 36, 36);
+}
+*/
+
+
 /* ヘッダー */
 .header {
 	position: relative;
