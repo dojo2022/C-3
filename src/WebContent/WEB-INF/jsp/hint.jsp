@@ -4,8 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>POME | ヒントページ</title>
 <link rel="stylesheet" type="text/css" href="css/hint.css">
+<link rel="stylesheet" type="text/css" href="css/color.css">
 </head>
 <body>
 <header>
