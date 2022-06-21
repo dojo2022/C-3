@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.goalpointDao;
+import dao.loginDao;
 import model.user;
 
 /**
@@ -37,10 +38,14 @@ public class CheckgoalServlet extends HttpServlet {
 		//リクエストパラメーターを書く！！
 		request.setCharacterEncoding("UTF-8");
 		String  id = request.getParameter("id");
-		System.out.println(id);
 		goalpointDao dao = new goalpointDao();
+		loginDao point = new loginDao();
 		int plusPoint = dao.select(id);
-		boolean update = dao.update(id);
+		dao.update(id);
+		boolean update = point.pluspoint_update(id, plusPoint);
+
+		// ホームサーブレットにリダイレクトする
+		response.sendRedirect("/app/HomeServlet");
 	}
 
 }
