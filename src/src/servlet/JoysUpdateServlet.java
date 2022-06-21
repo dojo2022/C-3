@@ -47,7 +47,8 @@ public class JoysUpdateServlet extends HttpServlet {
 
 //------------------------------------------------------------------------------------------------
 		//Daoを経由してreward_idに一致するデータを取得する。
-		//joysDao jDao = new
+		//Daoから取得したデータと
+		//インスタンスの生成
 		joysDao jDao = new joysDao();
 		List<rewardjoys> rewardList = jDao.selectReward_id(reward_id);
 
@@ -62,7 +63,7 @@ public class JoysUpdateServlet extends HttpServlet {
 
 
 		  //リクエストスコープからインスタンス取得
-		rewardjoys rewardjoys = (rewardjoys)request.getAttribute("rewardjoys");
+		//rewardjoys rewardjoys = (rewardjoys)request.getAttribute("rewardjoys");
 		// human 		h 		= (Human) request.getAttribute		("human");
 
 
