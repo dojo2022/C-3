@@ -54,9 +54,6 @@ public class JoysServlet extends HttpServlet {
 		joysDao jDao = new joysDao();
 		List<rewardjoys> rewardList = jDao.selectAll(user.getUser_id());
 
-		// 検索処理を行う
-				joysDao pDao = new joysDao();
-				List<user> pointList = pDao.selectHavingPoint(user.getUser_id());
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("rewardList", rewardList);
