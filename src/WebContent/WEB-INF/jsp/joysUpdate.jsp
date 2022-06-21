@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +22,8 @@
 
 	<!-- ここからメイン -->
 	<main>
-
-		<form method="post" action="">
+<c:forEach var="e" items="${rewardList}">
+		<form method="post" action="/app/JoysUpdateServlet">
 			<div class="img">
 				<img src="/app/img/joys.png" width="80" height="80">
 				<h1>joys更新・削除</h1>
@@ -62,8 +63,9 @@
 				</tr>
 			</table>
 		</form>
-
+</c:forEach>
 	</main>
+
 	<!--  -->
 
 	<footer class="footer">

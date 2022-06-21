@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,15 +42,39 @@ public class JoysUpdateServlet extends HttpServlet {
 		//リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String reward_id = request.getParameter("reward_id");
-//		String reward_name = request.getParameter("reward_name");
-//		String reward_detail = request.getParameter("reward_detail");
-//		String reward_level_id= request.getParameter("reward_level_id");
 
 
+
+//------------------------------------------------------------------------------------------------
 		//Daoを経由してreward_idに一致するデータを取得する。
+		//joysDao jDao = new
+		joysDao jDao = new joysDao();
+		List<rewardjoys> rewardList = jDao.selectReward_id(reward_id);
+
+
+
 
 		//取得したrewardjoysデータをリクエストスコープに格納する。
+		//リクエストスコープに変数から取出した値を格納
+		request.setAttribute("rewardList",rewardList);
+	  //request.setAttribute(  "human"  ,human);
 
+
+
+		  //リクエストスコープからインスタンス取得
+		rewardjoys rewardjoys = (rewardjoys)request.getAttribute("rewardjoys");
+		// human 		h 		= (Human) request.getAttribute		("human");
+
+
+
+
+		// リクエストスコープに保存する
+		//request.setAttribute("属性名", 保存したいインスタンス);
+		//リクエストスコープからインスタンスを取得する
+		//型 名前 = (型) request.getAttribute("属性名");
+		// 属性名とはスコープを指し示すインデックスのこと
+		// 型とは保存したインスタンスの型のこと
+		// 名前とは取得したインスタンスにつけたい参照変数のこと
 
 		// joys更新・削除画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/joysUpdate.jsp");
@@ -57,6 +82,7 @@ public class JoysUpdateServlet extends HttpServlet {
 	}
 
 
+//------------------------------------------------------------------------------------------------
 
 
 
@@ -75,6 +101,7 @@ public class JoysUpdateServlet extends HttpServlet {
 		String reward_level_id= request.getParameter("reward_level_id");
 
 		//セッションスコープにIDを格納
+		// セッションスコープの保存領域を確保
 		HttpSession session = request.getSession();
 		user user = (user)session.getAttribute("id");
 

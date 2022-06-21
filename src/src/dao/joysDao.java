@@ -288,4 +288,68 @@ public class joysDao {
 	}
 
 
+	// 引数reward_idで一致するデータを取得する　JoysUpdate49
+	public List<rewardjoys> selectReward_id(String id) {
+		Connection conn = null;
+		List<rewardjoys> rewardList = new ArrayList<rewardjoys>();
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+			// SQL文を準備する
+			String sql = "SELECT reward.reward_name,reward.reward_detail,reward.reward_level_id FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.reward_id=?";
+			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			if (id != null) {
+				pStmt.setString(1,id);
+			}
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする  ここを改造
+			while (rs.next()) {
+				rewardjoys reward = new rewardjoys();
+				reward.setReward_id(rs.getString("reward_id"));
+				//reward.setUser_id(rs.getString("user_id"));
+				reward.setReward_name(rs.getString("reward_name"));
+				reward.setReward_detail(rs.getString("reward_detail"));
+				reward.setRequired_point(rs.getInt("required_point"));
+				rewardList.add(reward);
+			}
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			rewardList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			rewardList = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					rewardList = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return rewardList;
+	}
+
+
 }
