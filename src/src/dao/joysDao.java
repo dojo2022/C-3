@@ -289,7 +289,8 @@ public class joysDao {
 
 
 	// 引数reward_idで一致するデータを取得する　JoysUpdate49
-	public List<rewardjoys> selectReward_id(String id) {
+	//検索と同じ
+	public List<rewardjoys> selectReward_id(String reward_id) {
 		Connection conn = null;
 		List<rewardjoys> rewardList = new ArrayList<rewardjoys>();
 
@@ -300,30 +301,31 @@ public class joysDao {
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
-			// SQL文を準備する
-			String sql = "SELECT reward.reward_name,reward.reward_detail,reward.reward_level_id FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.reward_id=?";
+			// SQL文を準備する SQL問題ない
+			String sql = "SELECT reward.reward_id,reward.reward_name,reward.reward_detail,reward.reward_level_id FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.reward_id=?";
 			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (id != null) {
-				pStmt.setString(1,id);
+			if (reward_id != null) {
+				pStmt.setString(1,reward_id);
 			}
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
-			// 結果表をコレクションにコピーする  ここを改造
+			// 結果表をコレクションにコピーする
+			//コンソールにて「reward_id列がない」→SQLのSELECT文にreward.reward_id追加で解決
 			while (rs.next()) {
 				rewardjoys reward = new rewardjoys();
 				reward.setReward_id(rs.getString("reward_id"));
-				//reward.setUser_id(rs.getString("user_id"));
 				reward.setReward_name(rs.getString("reward_name"));
 				reward.setReward_detail(rs.getString("reward_detail"));
-				reward.setRequired_point(rs.getInt("required_point"));
+				reward.setRequired_point(rs.getInt("reward_level_id"));
 				rewardList.add(reward);
 			}
+
 
 		}
 		catch (SQLException e) {
@@ -334,6 +336,7 @@ public class joysDao {
 			e.printStackTrace();
 			rewardList = null;
 		}
+
 		finally {
 			// データベースを切断
 			if (conn != null) {
