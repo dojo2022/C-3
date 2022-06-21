@@ -51,7 +51,7 @@
 				</table>
 			</form>
 
-			あなたのポイントは${e.having_point}です
+			${e.nickname}さんのポイントは${e.having_point}です
 			<hr>
 		</c:forEach>
 

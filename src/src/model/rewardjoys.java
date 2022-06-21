@@ -13,6 +13,10 @@ public class rewardjoys implements Serializable{
 	private String reward_level_id;
 	private String reward_level_name;
 	private int required_point;
+	private String nickname;
+	private int having_point;
+
+
 
 	//引数あり
 	public rewardjoys(String reward_id, String user_id, String reward_name,String reward_detail,String reward_level_id, String reward_level_name, int required_point) {
@@ -99,5 +103,19 @@ public class rewardjoys implements Serializable{
 		this.required_point = required_point;
 	}
 
+	public String getNickname() {
+		return nickname;
+	}
 
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public int getHaving_point() {
+		return having_point;
+	}
+
+	public void setHaving_point(int having_point) {
+		this.having_point = having_point;
+	}
 }
