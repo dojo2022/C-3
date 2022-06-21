@@ -21,37 +21,36 @@
 
 	<!-- ここからメイン -->
 	<main>
-		<img src="/app/img/joys.png" width="60" height="60">
-
-				<a href="/app/JoysRegistarServlet"><img src="/app/img/regist.png"
+		<img src="/app/img/joys.png" width="60" height="60"> <a
+			href="/app/JoysRegistarServlet"><img src="/app/img/regist.png"
 			width="60" height="60"></a>
-	<!-- ↑右下に固定したい登録ボタン -->
+		<!-- ↑右下に固定したい登録ボタン -->
 		<h1>joys一覧</h1>
 		<hr>
 		<c:forEach var="e" items="${rewardList}">
+			<form action="/app/CheckjoysServlet" method="POST" id="exchange">
+				<!-- 頑張る -->
 
-			<!-- 頑張る -->
+				<ul class="">
+					<li><input type="hidden"> ユーザーID</li>
+					<li><input type="hidden"> ${e.user_id}</li>
 
-			<ul class="">
-				<!-- <li class="">
-				ユーザーID <br> ${e.user_id}
-			</li> -->
-				<li><a href="/app/JoysUpdateServlet?reward_id=${e.reward_id}">
-						<!-- /app/JoysUpdateServlet?reward_id=0001		 -->
-				<img
-						src="/app/img/edit.png" width="60" height="60"></a></li>
-				<li class = "">JoysID ${e.reward_id} </li>
-				<li class="">Joys名 ${e.reward_name}</li>
-				<li class="">Joys詳細 ${e.reward_detail}</li>
-				<li class="">必要ポイント数 ${e.required_point}</li>
-				<li><a href="/app/CheckjoysServlet"><img
-						src="/app/img/present.png" width="60" height="60"> </a></li>
+					<!-- ↓  /app/JoysUpdateServlet?reward_id=0001	こんな感じで数値が入る	 -->
+					<li><a href="/app/JoysUpdateServlet?reward_id=${e.reward_id}">
+							<img src="/app/img/edit.png" width="60" height="60">
+					</a></li>
+					<li class="">JoysID ${e.reward_id}</li>
+					<li class="">Joys名 ${e.reward_name}</li>
+					<li class="">Joys詳細 ${e.reward_detail}</li>
+					<li class="">必要ポイント数 ${e.required_point}</li>
+					<li><a href="/app/CheckjoysServlet"
+						onclick="joysExchange(this.form)"><img
+							src="/app/img/present.png" width="60" height="60"> </a></li>
 
-			</ul>
+				</ul>
+			</form>
 			<hr>
 		</c:forEach>
-
-
 
 
 	</main>
@@ -60,16 +59,16 @@
 		<ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img
 					src="/app/img/home.png" width="60" height="60"><br>
-				<div>Home</div></a></li>
+					<div>Home</div></a></li>
 			<li class="footer-li"><a href="/app/GoalServlet"><img
 					src="/app/img/check.png" width="60" height="60"><br>
-				<div class="footer-li-goal">目標一覧</div></a></li>
+					<div class="footer-li-goal">目標一覧</div></a></li>
 			<li class="footer-li"><a href="/app/JoysServlet"><img
 					src="/app/img/joys.png" width="60" height="60"><br>
-				<div>Joys</div></a></li>
+					<div>Joys</div></a></li>
 			<li class="footer-li"><a href="/app/ProfileServlet"><img
 					src="/app/img/profile.png" width="60" height="60"><br>
-				<div>マイプロフィール</div></a></li>
+					<div>マイプロフィール</div></a></li>
 		</ul>
 	</footer>
 	<script src="js/joys.js"></script>
