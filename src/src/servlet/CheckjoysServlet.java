@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.joyspointDao;
 import dao.loginDao;
+import model.user;
 
 /**
  * Servlet implementation class CheckjoysServlet
@@ -32,23 +33,25 @@ public class CheckjoysServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//セッションスコープからuserIDを取得
 		HttpSession session = request.getSession();
-		String user = (String)session.getAttribute("id");
+		user user_id = (user)session.getAttribute("id");
 
 				//リクエストパラメーターを書く！！
-			//消費ポイントを返す
+				//消費ポイントを返す
 				request.setCharacterEncoding("UTF-8");
 				String  id = request.getParameter("reward_id");
 
 				joyspointDao dao = new joyspointDao();
 				int minuspoint = dao.select(id);
 
-			//ポイントを引き算
+				System.out.println("pluspoint"+minuspoint);
+
+				//ポイントを引き算
 				loginDao point = new loginDao();
 
-				boolean update = point.minuspoint_update(user, minuspoint);
+				boolean update = point.minuspoint_update(user_id.getUser_id(), minuspoint);
 
-				// アップデートサーブレットにリダイレクトする
-				response.sendRedirect("/app/JousUpdateServlet");
+				// サーブレットにリダイレクトする
+				response.sendRedirect("/app/JoysServlet");
 	}
 
 }

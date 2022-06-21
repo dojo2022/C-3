@@ -22,7 +22,7 @@ public class joyspointDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection(":file:C:/dojo6_data/C3", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 				// SQL文を準備する
 				String sql = "SELECT required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward_id = ?";
@@ -51,7 +51,7 @@ public class joyspointDao {
 							}
 
 							//持ってきたポイント数を変数に代入
-						     minuspoint = minus_point	.getRequired_point();
+						     minuspoint = minus_point.getRequired_point();
 
 
 			}catch ( Exception e ) {
