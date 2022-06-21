@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.rewardjoys;
-import model.user;
 //select,insert,update,deleteは基本だから通常作っておくのがベース。
 //ただ、全部作るのは大変だから必要なもののみまずは作る
 public class joysDao {
@@ -35,7 +34,8 @@ public class joysDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT reward.reward_id,reward.reward_name,reward.reward_detail,reward_level.required_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id WHERE reward.user_id = ? ORDER BY CAST(reward.reward_id AS INT) ASC";
+			String sql = "SELECT reward.reward_id, reward.reward_name, reward.reward_detail, reward_level.required_point, "
+					+ "user.nickname, user.having_point FROM reward INNER JOIN reward_level ON reward.reward_level_id = reward_level.reward_level_id LEFT OUTER JOIN user ON reward.user_id = user.user_id WHERE reward.user_id =? ORDER BY CAST(reward.reward_id AS INT) ASC;";
 
 			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
 
@@ -57,6 +57,8 @@ public class joysDao {
 				reward.setReward_name(rs.getString("reward_name"));
 				reward.setReward_detail(rs.getString("reward_detail"));
 				reward.setRequired_point(rs.getInt("required_point"));
+				reward.setNickname(rs.getString("nickname"));
+				reward.setHaving_point(rs.getInt("having_point"));
 				rewardList.add(reward);
 			}
 
@@ -90,67 +92,7 @@ public class joysDao {
 
 
 
-//保持ポイントの検索をする
 
-	public List<user> selectHavingPoint(String id) {
-		Connection conn = null;
-		List<user> pointList = new ArrayList<user>();
-
-		try {
-			// JDBCドライバを読み込む
-			Class.forName("org.h2.Driver");
-
-			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
-
-			// SQL文を準備する
-			String sql = "SELECT nickname,having_point FROM user WHERE user_id = ? ";
-
-			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
-
-			PreparedStatement pStmt = conn.prepareStatement(sql);
-
-			// SQL文を完成させる  reward_level_id
-			if (id != null) {
-				pStmt.setString(1,id);
-			}
-
-			// SQL文を実行し、結果表を取得する
-			ResultSet rs = pStmt.executeQuery();
-
-			// 結果表をコレクションにコピーする  ここを改造
-			while (rs.next()) {
-				user point = new user();
-				point.setNickname(rs.getString("nickname"));
-				point.setHaving_point(rs.getInt("having_point"));
-				pointList.add(point);
-			}
-
-		}
-		catch (SQLException e) {
-			e.printStackTrace();
-			pointList = null;
-		}
-		catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			pointList = null;
-		}
-		finally {
-			// データベースを切断
-			if (conn != null) {
-				try {
-					conn.close();
-				}
-				catch (SQLException e) {
-					e.printStackTrace();
-					pointList = null;
-				}
-			}
-		}
-
-		// 結果を返す
-		return pointList;
-	}
 
 
 //登録画面
