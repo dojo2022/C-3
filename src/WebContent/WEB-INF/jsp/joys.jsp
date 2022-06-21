@@ -26,8 +26,15 @@
 			width="60" height="60"></a>
 		<!-- ↑右下に固定したい登録ボタン -->
 		<h1>joys一覧</h1>
+
+		<c:forEach end= "0" var="a" items="${rewardList}">
+		現在の${a.nickname}さんのポイントは${a.having_point}です
+		</c:forEach>
+
 		<hr>
 		<c:forEach var="e" items="${rewardList}">
+
+
 			<form action="/app/CheckjoysServlet" method="POST" id="exchange">
 				<!-- 頑張る -->
 								<input type="hidden" value="${e.user_id}">
@@ -52,6 +59,7 @@
 					</tr>
 				</table>
 			</form>
+
 	</c:forEach>
 
 			<hr>
