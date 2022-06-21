@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.joyspointDao;
 import dao.loginDao;
+import model.result_reward;
 import model.user;
 
 /**
@@ -50,8 +52,19 @@ public class CheckjoysServlet extends HttpServlet {
 
 				boolean update = point.minuspoint_update(user_id.getUser_id(), minuspoint);
 
-				// サーブレットにリダイレクトする
-				response.sendRedirect("/app/JoysServlet");
+				if (update) {	// 更新成功
+
+						request.setAttribute("result_joys",
+								new result_reward("交換成功！", "あなたはjoys名ができるようになりました", "今の保持ポイントはhaving_point","/app/JoysServlet", "Joys一覧画面へ"));
+					}
+					else {		// 更新失敗
+						request.setAttribute("result_joys",
+						new result_reward("交換失敗！", "レコードを更新できませんでした。","今の保持ポイントは", "/app/JoysServlet", "Joys一覧画面へ"));
+					}
+
+				// 結果ページにフォワードする
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result_joys.jsp");
+				dispatcher.forward(request, response);
 	}
 
 }
