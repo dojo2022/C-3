@@ -7,7 +7,7 @@
     function joysExchange(form){
 		form.submit();
 	}
-
+/*
      btn.onclick = function(){
     	modal.style.display = 'block';
     }
@@ -25,3 +25,4 @@ function outsideClose(e) {
     modal.style.display = 'none';
   }
  }
+*/
