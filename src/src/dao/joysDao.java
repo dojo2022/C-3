@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.rewardjoys;
+import model.user;
 //select,insert,update,deleteは基本だから通常作っておくのがベース。
 //ただ、全部作るのは大変だから必要なもののみまずは作る
 public class joysDao {
@@ -83,6 +84,72 @@ public class joysDao {
 
 		// 結果を返す
 		return rewardList;
+	}
+
+
+
+
+
+//保持ポイントの検索をする
+
+	public List<user> selectHavingPoint(String id) {
+		Connection conn = null;
+		List<user> pointList = new ArrayList<user>();
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+			// SQL文を準備する
+			String sql = "SELECT nickname,having_point FROM user WHERE user_id = ? ";
+
+			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる  reward_level_id
+			if (id != null) {
+				pStmt.setString(1,id);
+			}
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする  ここを改造
+			while (rs.next()) {
+				user point = new user();
+				point.setNickname(rs.getString("nickname"));
+				point.setHaving_point(rs.getInt("having_point"));
+				pointList.add(point);
+			}
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			pointList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			pointList = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					pointList = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return pointList;
 	}
 
 
