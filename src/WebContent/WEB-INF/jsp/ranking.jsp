@@ -14,9 +14,9 @@
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<div>
-			<a href="/app/LoginServlet" class="logoutbtn">ログアウト</a>
-		</div>
+
+			<a href="/app/LoginServlet" class="logoutbtn"><div>ログアウト</div></a>
+
 		<a href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
 	</header>
