@@ -31,6 +31,8 @@
 			<form action="/app/CheckjoysServlet" method="POST" id="exchange">
 				<!-- 頑張る -->
 								<input type="hidden" value="${e.user_id}">
+								<input type="hidden" value="${e.nickname}">
+								<input type="hidden" value="${e.having_point}">
 
 				<table class="">
 
@@ -50,25 +52,12 @@
 					</tr>
 				</table>
 			</form>
+	</c:forEach>
 
-			${e.nickname}さんのポイントは${e.having_point}です
 			<hr>
-		</c:forEach>
 
 
-		<!-- コピペでもらってh1変えただけのモーダルウィンドウ -->
-		<div id="easyModal" class="modal">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h1>交換しました</h1>
-					<span class="modalClose">×</span>
-				</div>
-				<div class="modal-body">
-					<p>You've just displayed this awesome Modal Window!</p>
-					<p>Let's enjoy learning JavaScript ☺️</p>
-				</div>
-			</div>
-		</div>
+
 
 	</main>
 	<!--  -->
