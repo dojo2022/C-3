@@ -30,28 +30,45 @@
 		<c:forEach var="e" items="${rewardList}">
 			<form action="/app/CheckjoysServlet" method="POST" id="exchange">
 				<!-- 頑張る -->
+								<input type="hidden" value="${e.user_id}">
 
-				<ul class="">
-					<li><input type="hidden"> ユーザーID</li>
-					<li><input type="hidden"> ${e.user_id}</li>
+				<table class="">
+
 
 					<!-- ↓  /app/JoysUpdateServlet?reward_id=0001	こんな感じで数値が入る	 -->
-					<li><a href="/app/JoysUpdateServlet?reward_id=${e.reward_id}">
+					<tr >
+					<td>
+					<a href="/app/JoysUpdateServlet?reward_id=${e.reward_id}">
 							<img src="/app/img/edit.png" width="60" height="60">
-					</a></li>
-					<li class="">JoysID ${e.reward_id}</li>
-					<li class="">Joys名 ${e.reward_name}</li>
-					<li class="">Joys詳細 ${e.reward_detail}</li>
-					<li class="">必要ポイント数 ${e.required_point}</li>
-					<li><a href="/app/CheckjoysServlet"
-						onclick="joysExchange(this.form)"><img
-							src="/app/img/present.png" width="60" height="60"> </a></li>
-
-				</ul>
+					</a></td>
+					<td class="">JoysID ${e.reward_id}</td>
+					<td class="">Joys名 ${e.reward_name}</td>
+					<td class="">Joys詳細 ${e.reward_detail}</td>
+					<td class="">必要ポイント数 ${e.required_point}</td>
+					<td><a href="/app/CheckjoysServlet?required_point=${e.required_point}"><img
+							src="/app/img/present.png" width="60" height="60"> </a></td>
+					</tr>
+				</table>
 			</form>
+
+			あなたのポイントは${e.having_point}です
 			<hr>
 		</c:forEach>
 
+
+		<!-- コピペでもらってh1変えただけのモーダルウィンドウ -->
+		<div id="easyModal" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1>交換しました</h1>
+					<span class="modalClose">×</span>
+				</div>
+				<div class="modal-body">
+					<p>You've just displayed this awesome Modal Window!</p>
+					<p>Let's enjoy learning JavaScript ☺️</p>
+				</div>
+			</div>
+		</div>
 
 	</main>
 	<!--  -->

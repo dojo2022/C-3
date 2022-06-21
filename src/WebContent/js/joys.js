@@ -3,7 +3,7 @@
  */
  "use strict";
 
-//今日やることを達成したときの処理
+//プレゼントボタン（交換ボタン）を押されたとき
     function joysExchange(form){
 		form.submit();
 	}
