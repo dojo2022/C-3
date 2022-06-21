@@ -5,8 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>POME | 目標一覧</title>
 <link rel="stylesheet" type="text/css" href="/app/css/goal.css">
+<link rel="stylesheet" type="text/css" href="/app/css/color.css">
 </head>
 <body>
         <header class="header">
@@ -17,6 +18,7 @@
 
 	<!-- ここからメイン -->
 	<main>
+	<img src="/app/img/check.png" width="100" height="100">
 		POME goal
 
 
