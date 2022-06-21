@@ -24,7 +24,7 @@
 
 	<!-- ここからメイン -->
 	<main>
-		<h1>ランキング</h1>
+		<h1><img src ="/app/img/ranking.png" width="50" height="50">ランキング</h1>
 		<!-- <c:forEach var="e" items="${rankingList}">
 
 			頑張る
