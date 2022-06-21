@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,8 +46,12 @@ public class CheckgoalServlet extends HttpServlet {
 		dao.update(id);
 		boolean update = point.pluspoint_update(user_id.getUser_id(), plusPoint);
 
-		// ホームサーブレットにリダイレクトする
-		response.sendRedirect("/app/HomeServlet");
+		//セッションスコープにIDを格納
+		HttpSession plus = request.getSession();
+		plus.setAttribute("plusPoint", plusPoint);
+		// 結果ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/homeResult.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }
