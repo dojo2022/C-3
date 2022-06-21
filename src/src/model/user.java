@@ -56,7 +56,7 @@ public class user implements Serializable {
 		this.total_point=total_point;
 	}
 
-	public String getUser_id() {
+	public   String getUser_id() {
 		return user_id;
 	}
 
