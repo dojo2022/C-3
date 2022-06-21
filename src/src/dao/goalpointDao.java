@@ -23,7 +23,7 @@ public class goalpointDao {
 			conn = DriverManager.getConnection(":file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT goal_point FROM goal INNER JOIN difficulty ON goal.difficulty_id = difficulty.difficulty_id WHERE  id = ?";
+			String sql = "SELECT  goal_point FROM goal INNER JOIN difficulty ON goal.difficulty_id = difficulty.difficulty_id INNER JOIN  goal_result ON goal.goal_id = goal_result.goal_id WHERE id = ?";
 
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
