@@ -36,6 +36,9 @@ public class CheckjoysServlet extends HttpServlet {
 		//リクエストパラメータ取得
 		request.setCharacterEncoding("UTF-8");
 		String  id = request.getParameter("reward_id");
+		//String reward_name= request.getParameter("reward_name");
+		//String nickname =request.getParameter("nickname");
+		//int having_point =Integer.parseInt(request.getParameter("having_point"));
 		System.out.println(id);
 
 
@@ -60,12 +63,17 @@ public class CheckjoysServlet extends HttpServlet {
 				if (update) {	// 交換成功
 
 						request.setAttribute("result_joys",
-								new result_reward("交換成功！", "あなたはjoys名ができるようになりました", "今の保持ポイントはhaving_point","/app/JoysServlet", "Joys一覧画面へ"));
+								new result_reward("交換成功！", "ができるようになりました", "今の保持ポイントは","/app/JoysServlet", "Joys一覧画面へ"));
 					}
 					else {		// 交換失敗
 						request.setAttribute("result_joys",
-						new result_reward("交換失敗！", "ポイントが足りませんでした。","今の保持ポイントは", "/app/JoysServlet", "Joys一覧画面へ"));
+						new result_reward("交換失敗！", "ができるようになるにはポイントが足りませんでした。","今の保持ポイントは", "/app/JoysServlet", "Joys一覧画面へ"));
 					}
+				//セッションスコープに表示内容を格納
+				//HttpSession minus = request.getSession();
+				//minus.setAttribute("reward_name", reward_name);
+				//minus.setAttribute("having_point", having_point);
+
 
 				//結果ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result_joys.jsp");

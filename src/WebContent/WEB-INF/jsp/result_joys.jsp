@@ -24,7 +24,9 @@
 
 <hr>
 <p><c:out value="${result_joys.message}" /></p><br>
-<p><c:out value="${result_joys.pointmessage}" /></p>
+<p><c:out value="${result_joys.pointmessage}" />
+
+</p>
 
 
 

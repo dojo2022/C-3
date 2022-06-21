@@ -51,6 +51,7 @@
 							<img src="/app/img/edit.png" width="60" height="60">
 					</a></td>
 					<td><input type="hidden" name="reward_id" value=${e.reward_id} readonly></td>
+					<td><input type="hidden" name="reward_name" value=${e.reward_name} readonly></td>
 					<td class="">JoysID ${e.reward_id}</td>
 					<td class="">Joys名 ${e.reward_name}</td>
 					<td class="">Joys詳細 ${e.reward_detail}</td>
