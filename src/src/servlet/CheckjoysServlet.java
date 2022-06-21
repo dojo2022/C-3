@@ -33,14 +33,19 @@ public class CheckjoysServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//リクエストパラメータ取得
+		request.setCharacterEncoding("UTF-8");
+		String  id = request.getParameter("reward_id");
+		System.out.println(id);
+
+
 		//セッションスコープからuserIDを取得
 		HttpSession session = request.getSession();
 		user user_id = (user)session.getAttribute("id");
 
 				//リクエストパラメーターを書く！！
 				//消費ポイントを返す
-				request.setCharacterEncoding("UTF-8");
-				String  id = request.getParameter("reward_id");
+
 
 				joyspointDao dao = new joyspointDao();
 				int minuspoint = dao.select(id);
@@ -52,19 +57,20 @@ public class CheckjoysServlet extends HttpServlet {
 
 				boolean update = point.minuspoint_update(user_id.getUser_id(), minuspoint);
 
-				if (update) {	// 更新成功
+				if (update) {	// 交換成功
 
 						request.setAttribute("result_joys",
 								new result_reward("交換成功！", "あなたはjoys名ができるようになりました", "今の保持ポイントはhaving_point","/app/JoysServlet", "Joys一覧画面へ"));
 					}
-					else {		// 更新失敗
+					else {		// 交換失敗
 						request.setAttribute("result_joys",
-						new result_reward("交換失敗！", "レコードを更新できませんでした。","今の保持ポイントは", "/app/JoysServlet", "Joys一覧画面へ"));
+						new result_reward("交換失敗！", "ポイントが足りませんでした。","今の保持ポイントは", "/app/JoysServlet", "Joys一覧画面へ"));
 					}
 
-				// 結果ページにフォワードする
+				//結果ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result_joys.jsp");
 				dispatcher.forward(request, response);
+
 	}
 
 }

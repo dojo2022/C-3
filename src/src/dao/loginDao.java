@@ -366,13 +366,16 @@ public class loginDao {
 				}
 
 				//持ってきたポイント数を変数に代入
+
 				int m = minuspointcard.getHaving_point();
 
 
-				// 変数に獲得ポイントを加算減算
+				// 変数に獲得ポイントを減算(having_pointがminuspointより大きければ減算小さければエラー？
+				if(m>=minuspoint) {
 				m = m - minuspoint;
 
-				//加算したポイントをpointcardに戻す
+
+				//減算したポイントをpointcardに戻す
 				minuspointcard.setHaving_point(m);
 
 
@@ -391,6 +394,8 @@ public class loginDao {
 					if (pStmtm.executeUpdate() == 1) {
 						minuspoint_update = true;
 					}
+				}else
+					minuspoint_update=false;
 
 				}catch ( Exception e ) {
 

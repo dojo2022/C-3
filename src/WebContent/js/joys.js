@@ -3,10 +3,16 @@
  */
  "use strict";
 
-//プレゼントボタン（交換ボタン）を押されたとき
+ //プレゼントボタン（交換ボタン）を押されたとき
+  function change(form) {
+			form.submit();
+			}
+
+
+/*//プレゼントボタン（交換ボタン）を押されたとき
     function joysExchange(form){
 		form.submit();
-	}
+	}*/
 /*
      btn.onclick = function(){
     	modal.style.display = 'block';
