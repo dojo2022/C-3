@@ -59,9 +59,6 @@
 				</form>
 
 
-
-
-
 				<div id="tag_work" class="tag_table">
 					<table>
 						<tr>
