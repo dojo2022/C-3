@@ -18,7 +18,7 @@
 	<!-- ここからメイン -->
 	<main>
 	<c:forEach var="e" items="${goalList}">
-		<p>POME 目標更新消去</p>
+
 
 		<form method="post" action="">
 			<div class="img">
