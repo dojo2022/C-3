@@ -269,54 +269,16 @@ public String insert(String user, GoalInsert goal) {
 		PreparedStatement pStmt = conn.prepareStatement(sql);
 
 		// SQL文を完成させる <<改造＞＞
-		if (user != null && !user.equals("")) {
+
 			pStmt.setString(1, user);
-		}
-		else {
-			pStmt.setString(1, null);
-		}
-		if (goal.getGoal_name() != null && !goal.getGoal_name().equals("")) {
 			pStmt.setString(2, goal.getGoal_name());
-		}
-		else {
-			pStmt.setString(2, null);
-		}
-		if (goal.getGoal_detail() != null && !goal.getGoal_detail().equals("")) {
 			pStmt.setString(3, goal.getGoal_detail());
-		}
-		else {
-			pStmt.setString(3, null);
-		}
-		if (goal.getTerm_id() != null && !goal.getTerm_id().equals("")) {
-			pStmt.setString(4, goal.getTerm_id());
-		}
-		else {
-			pStmt.setString(4, null);
-		}
-		if (goal.getDifficulty_id() != null && !goal.getDifficulty_id().equals("")) {
-			pStmt.setString(5, goal.getDifficulty_id());
-		}
-		else {
-			pStmt.setString(5, null);
-		}
-		if (goal.getStarting_date() != null && !goal.getStarting_date().equals("")) {
-			pStmt.setDate(6, goal.getStarting_date());
-		}
-		else {
-			pStmt.setString(6, null);
-		}
-		if (goal.getEnding_date() != null && !goal.getEnding_date().equals("")) {
-			pStmt.setDate(7, goal.getEnding_date());
-		}
-		else {
-			pStmt.setString(7, null);
-		}
-		if (goal.getTag_id() != null && !goal.getTag_id().equals("")) {
-			pStmt.setString(8, goal.getTag_id());
-		}
-		else {
-			pStmt.setString(8, null);
-		}
+			pStmt.setString(4, goal.getTag_id());
+			pStmt.setDate(5, goal.getStarting_date());
+			pStmt.setDate(6, goal.getEnding_date());
+			pStmt.setString(7, goal.getDifficulty_id());
+			pStmt.setString(8, goal.getTerm_id());
+
 
 		// SQL文を実行する
 		if (pStmt.executeUpdate() == 1) {
@@ -379,7 +341,7 @@ public boolean resultinsert(GoalInsert goal, String goal_id) {
 				pStmt.setString(2, null);
 			}
 				pStmt.setString(3, "2");
-			
+
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
@@ -407,7 +369,7 @@ public boolean resultinsert(GoalInsert goal, String goal_id) {
 			if (pStmtq.executeUpdate() == 1) {
 				result = true;
 			}
-		
+
 	case "3":
 		String sqlqq = "goal_result(goal_id, achievement_id) VALUES (?, ?)";
 		PreparedStatement pStmtqq = conn.prepareStatement(sqlqq);
