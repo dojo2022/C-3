@@ -17,6 +17,7 @@
 
 	<!-- ここからメイン -->
 	<main>
+	<c:forEach var="e" items="${goalList}">
 		<p>POME 目標更新消去</p>
 
 		<form method="post" action="">
@@ -27,7 +28,7 @@
 
 			<table>
 			<tr>
-			<td><input type="text" name="goal_id" >
+			<td><input type="text" name="goal_id" value= "${e.goal_id}" >
 			</td>
 
 			</tr>
@@ -37,14 +38,14 @@
 					<th>目標名</th>
 				</tr>
 				<tr>
-					<td><input type="text" name="goal_name" placeholder="" required></input></td>
+					<td><input type="text" name="goal_name" value="${e.goal_name}" required></input></td>
 				</tr>
 				<tr>
 					<th>詳細</th>
 				</tr>
 				<tr>
 					<td><input type="text" name="goal_detail"
-						placeholder="1000文字まで"></input></td>
+						value = "${e.goal_detail}"></input></td>
 				</tr>
 				<tr>
 					<th>期間</th>
@@ -66,13 +67,13 @@
 					<th>日付</th>
 				</tr>
 				<tr>
-					<td><input type="date" name="starting_date" required></td>
+					<td><input type="date" name="starting_date" value = "${e.starting_date}" required></td>
 
 <!-- 開始日はjavaScriptで今日の日付を生成し自動入力されていると便利かも。 -->
 <!-- 開始日が本日以前は入力できない形でもよさそう -->
 
 					<td>～</td>
-					<td><input type="date" name="ending_date"></td>
+					<td><input type="date" name="ending_date" value = "${e.ending_date}"></td>
 				</tr>
 
 				<tr>
@@ -94,7 +95,7 @@
 			</table>
 		</form>
 
-
+</c:forEach>
 	</main>
 	<!--  -->
 
