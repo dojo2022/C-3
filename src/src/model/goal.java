@@ -92,12 +92,13 @@ public class goal implements Serializable {
 		this.ending_date = ending_date;
 	}
 
-	public goal(Date date, Date date2, String string, String string2) {
+	public goal(Date date, Date date2, String string, String string2, String string3) {
 		// TODO 自動生成されたコンストラクター・スタブ
 		this.starting_date = date;
 		this.ending_date = date2;
 		this.goal_name = string;
-		this.goal_detail = string2;//引数をフィールドに格納している処理
+		this.goal_detail = string2;
+		this.goal_id = string3;//引数をフィールドに格納している処理
 	}
 	public goal(String string) {
 		// TODO 自動生成されたコンストラクター・スタブ
