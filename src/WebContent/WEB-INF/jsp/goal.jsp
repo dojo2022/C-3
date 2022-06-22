@@ -95,8 +95,7 @@
 								<td>${e.goal_detail}</td>
 							</tr>
 
-							<a href="/app/GoalRegistarServlet"><img
-								src="/app/img/regist.png" class="menu"></a>
+
 
 
 							<!-- <ul id="links01"> -->
@@ -108,6 +107,8 @@
 
 						</c:forEach>
 					</table>
+					<a href="/app/GoalRegistarServlet"><img
+						src="/app/img/regist.png" class="menu"></a>
 				</div>
 			</div>
 		</div>
@@ -120,16 +121,16 @@
 		<ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img
 					src="/app/img/home.png" width="60" height="60"><br>
-				<div>Home</div></a></li>
+					<div>Home</div></a></li>
 			<li class="footer-li"><a href="/app/GoalServlet"><img
 					src="/app/img/check.png" width="60" height="60"><br>
-				<div class="footer-li-goal">目標一覧</div></a></li>
+					<div class="footer-li-goal">目標一覧</div></a></li>
 			<li class="footer-li"><a href="/app/JoysServlet"><img
 					src="/app/img/joys.png" width="60" height="60"><br>
-				<div>Joys</div></a></li>
+					<div>Joys</div></a></li>
 			<li class="footer-li"><a href="/app/ProfileServlet"><img
 					src="/app/img/profile.png" width="60" height="60"><br>
-				<div>マイプロフィール</div></a></li>
+					<div>マイプロフィール</div></a></li>
 		</ul>
 	</footer>
 
