@@ -25,6 +25,13 @@
 			</div>
 
 			<table>
+			<tr>
+			<td><input type="text" name="goal_id" >
+			</td>
+
+			</tr>
+
+
 				<tr>
 					<th>目標名</th>
 				</tr>
@@ -80,7 +87,7 @@
 
 				</tr>
 				<tr>
-					<td><input type="submit" name="" value="登録"></td>
+					<td><input type="submit" name="SUBMIT" value="更新"></td>
 
 				</tr>
 			</table>
