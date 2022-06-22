@@ -13,8 +13,8 @@
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<a href="/app/LoginServlet" class="logoutbtn"><div>ログアウト</div></a> <a
-			href="/app/HintServlet" class="hint" target="_blank"><img
+		<!-- <a href="/app/LoginServlet" class="logoutbtn"><div>ログアウト</div></a>-->
+		 <a href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
 	</header>
 
@@ -25,7 +25,7 @@
 	</main>
 
 	<footer class="footer">
-		<ul class="footer-ul">
+		<!--  <ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img
 					src="/app/img/home.png" width="60" height="60"><br>
 				<div>Home</div></a></li>
@@ -38,7 +38,7 @@
 			<li class="footer-li"><a href="/app/ProfileServlet"><img
 					src="/app/img/profile.png" width="60" height="60"><br>
 				<div>マイプロフィール</div></a></li>
-		</ul>
+		</ul>-->
 	</footer>
 	<script>
 		const imageArea = document.getElementById('imageArea');
