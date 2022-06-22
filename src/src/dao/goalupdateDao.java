@@ -157,7 +157,7 @@ public class goalupdateDao {
 
 
 		//goal用の検索メソッド
-		public List<goal> selectgoal_id(String goal_id) {
+		public List<goal> selectGoal_id(String goal_id) {
 			Connection conn = null;
 			List<goal> goalList = new ArrayList<goal>();
 
