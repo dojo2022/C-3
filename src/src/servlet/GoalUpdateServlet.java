@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,11 +36,26 @@ public class GoalUpdateServlet extends HttpServlet {
 			return;
 		}
 
-		//セッションスコープにIDを格納
-		HttpSession session = request.getSession();
-		user user = (user)session.getAttribute("id");
+		//リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+				String goal_id = request.getParameter("goal_id");
 
-		System.out.println(user.getUser_id());
+
+				//System.out.println(user.getUser_id());
+
+				//Daoを経由してreward_idに一致するデータを取得する。
+				//Daoから取得したデータと
+				//インスタンスの生成
+				goalupdateDao gDao = new goalupdateDao();
+				List<goal> goalList = gDao.selectGoal_id(goal_id);
+
+
+
+
+				//取得したrewardjoysデータをリクエストスコープに格納する。
+				//リクエストスコープに変数から取出した値を格納
+				request.setAttribute("goalList",goalList);
+			  //request.setAttribute(  "human"  ,human);
 
 		// 目標更新・削除画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/goalUpdate.jsp");
