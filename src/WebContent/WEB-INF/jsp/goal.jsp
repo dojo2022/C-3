@@ -93,7 +93,7 @@
 								<td>${e.goal_detail}</td>
 							</tr>
 
-
+<a href="/app/GoalRegisterServlet"><img src="/app/img/regist.png" class="menu"></a>
 
 
 							<!-- <ul id="links01"> -->
