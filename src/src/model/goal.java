@@ -59,7 +59,7 @@ public class goal implements Serializable {
 	public void setStarting_date(Date starting_date) {
 		this.starting_date = starting_date;
 	}
-	public void setEndint_date(Date ending_date) {
+	public void setEnding_date(Date ending_date) {
 		this.ending_date = ending_date;
 	}
 	public void setDifficulty_id(String difficulty_id) {
@@ -113,6 +113,27 @@ public class goal implements Serializable {
 		this.goal_detail = string2;
 		this.setId(string3);
 	}
+	public goal(String goal_name, String goal_detail,  Date starting_date, Date ending_date, String difficulty_id,  String term_id) {
+		// TODO 自動生成されたコンストラクター・スタブ
+		super();
+		this.goal_name = goal_name ;
+		this. goal_detail =  goal_detail ;
+		this.starting_date = starting_date ;
+		this.ending_date = ending_date ;
+		this.difficulty_id = difficulty_id ;
+		this.term_id = term_id ;
+	}
+	public goal() {
+		// TODO 自動生成されたコンストラクター・スタブ
+		super();
+		this.goal_name = "" ;
+		this. goal_detail =  "" ;
+		this.starting_date = null ;
+		this.ending_date = null;
+		this.difficulty_id = "" ;
+		this.term_id = "" ;
+	}
+
 	public String getId() {
 		return id;
 	}
