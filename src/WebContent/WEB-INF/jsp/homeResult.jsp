@@ -22,6 +22,7 @@
 		<h1>${plusPoint }ポイントを獲得しました！！！</h1>
 		<img src="/app/img/omedetou.png"><br>
 		<img src="/app/img/1.png" id='imageArea'>
+		<a href="/app/HomeServlet">ホームへ戻る</a>
 	</main>
 
 	<footer class="footer">
