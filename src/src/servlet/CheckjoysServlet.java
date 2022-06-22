@@ -64,7 +64,7 @@ public class CheckjoysServlet extends HttpServlet {
 				//セッションスコープにIDを格納
 				HttpSession result = request.getSession();
 				result.setAttribute("reward_name", reward_name);
-				//result.setAttribute("having_point",having_point);
+				result.setAttribute("having_point",having_point);
 				result.setAttribute("minushaving_point",minushaving_point);
 
 
