@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import dao.joyspointDao;
 import dao.loginDao;
-import model.result_reward;
 import model.user;
 
 /**
@@ -36,9 +35,9 @@ public class CheckjoysServlet extends HttpServlet {
 		//リクエストパラメータ取得
 		request.setCharacterEncoding("UTF-8");
 		String  id = request.getParameter("reward_id");
-		//String reward_name= request.getParameter("reward_name");
+		String reward_name= request.getParameter("reward_name");
 		//String nickname =request.getParameter("nickname");
-		//int having_point =Integer.parseInt(request.getParameter("having_point"));
+		int having_point =Integer.parseInt(request.getParameter("having_point"));
 		System.out.println(id);
 
 
@@ -60,14 +59,21 @@ public class CheckjoysServlet extends HttpServlet {
 
 				boolean update = point.minuspoint_update(user_id.getUser_id(), minuspoint);
 
-				if (update) {	// 交換成功
+				//セッションスコープにIDを格納
+				HttpSession result = request.getSession();
+				result.setAttribute("reward_name", reward_name);
+				result.setAttribute("having_point", having_point);
 
-						request.setAttribute("result_joys",
-								new result_reward("交換成功！", "ができるようになりました", "今の保持ポイントは","/app/JoysServlet", "Joys一覧画面へ"));
-					}
+				if (update) {	// 交換成功
+					//結果ページにフォワードする
+
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result_joys.jsp");
+					dispatcher.forward(request, response);
+						}
 					else {		// 交換失敗
-						request.setAttribute("result_joys",
-						new result_reward("交換失敗！", "ができるようになるにはポイントが足りませんでした。","今の保持ポイントは", "/app/JoysServlet", "Joys一覧画面へ"));
+						//結果ページにフォワードする
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result_joys_false.jsp");
+						dispatcher.forward(request, response);
 					}
 				//セッションスコープに表示内容を格納
 				//HttpSession minus = request.getSession();
@@ -75,9 +81,6 @@ public class CheckjoysServlet extends HttpServlet {
 				//minus.setAttribute("having_point", having_point);
 
 
-				//結果ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result_joys.jsp");
-				dispatcher.forward(request, response);
 
 	}
 

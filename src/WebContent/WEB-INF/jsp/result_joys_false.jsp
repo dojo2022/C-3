@@ -20,18 +20,15 @@
 
 <!-- ここからメイン -->
 <main>
-
-<h1>交換成功！</h1>
+<h1>交換失敗！</h1>
 <hr>
 
-	<p>「${reward_name}」ができるようになりました！</p>
+	<p>「${reward_name}」ができるようになるにはポイントが足りませんでした・・・</p>
 	<p>現在の保持ポイントは${having_point}ポイントです</p>
-	<img src="/app/img/1.png" >
+
 
 
 <hr>
-
-
 <a href="/app/JoysServlet">Joys一覧へ戻る</a>
 
 

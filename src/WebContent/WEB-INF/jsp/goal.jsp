@@ -59,9 +59,6 @@
 				</form>
 
 
-
-
-
 				<div id="tag_work" class="tag_table">
 					<table>
 						<tr>
@@ -93,7 +90,7 @@
 								<td>${e.goal_detail}</td>
 							</tr>
 
-
+<a href="/app/GoalRegistarServlet"><img src="/app/img/regist.png" class="menu"></a>
 
 
 							<!-- <ul id="links01"> -->
