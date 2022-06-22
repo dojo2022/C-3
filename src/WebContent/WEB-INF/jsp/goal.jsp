@@ -63,7 +63,7 @@
 					<table>
 						<tr>
 							<th>目標名</th>
-							<td><a href="/app/JoysUpdateServlet?goal_id=${e.goal_id}">
+							<td><a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}">
 							<img src="/app/img/edit.png" width="60" height="60"></a></td>
 							<th></th>
 							<td><input type="checkbox" id="achievement"></td>
