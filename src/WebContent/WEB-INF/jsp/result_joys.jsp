@@ -25,7 +25,7 @@
 <hr>
 
 	<p>「${reward_name}」ができるようになりました！</p>
-	<p>現在の保持ポイントは${having_point}ポイントです</p>
+	<p>現在の保持ポイントは${minushaving_point}ポイントです</p>
 	<img src="/app/img/1.png" >
 
 

@@ -59,10 +59,14 @@ public class CheckjoysServlet extends HttpServlet {
 
 				boolean update = point.minuspoint_update(user_id.getUser_id(), minuspoint);
 
+				int minushaving_point = having_point-minuspoint;
+
 				//セッションスコープにIDを格納
 				HttpSession result = request.getSession();
 				result.setAttribute("reward_name", reward_name);
-				result.setAttribute("having_point", having_point);
+				//result.setAttribute("having_point",having_point);
+				result.setAttribute("minushaving_point",minushaving_point);
+
 
 				if (update) {	// 交換成功
 					//結果ページにフォワードする
