@@ -80,8 +80,9 @@
 								<td><div>${e.ending_date}</div></td>
 								<td><div>${e.goal_name}</div></td>
 								<td><div>
-										<a href="/app/GoalUpdateServlet"><img
-											src="/app/img/edit.png" class="menu"></a>
+
+									<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}">
+							<img src="/app/img/edit.png" width="60" height="60"></a>
 									</div></td>
 								<td><div class="btn"></div></td>
 							</tr>
