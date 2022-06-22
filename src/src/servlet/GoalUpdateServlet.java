@@ -74,6 +74,7 @@ public class GoalUpdateServlet extends HttpServlet {
 		SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy/MM/dd");
          starting_date = (Date)sdFormat.parse(sd);
          ending_date = (Date)sdFormat.parse(ed);
+         System.out.println(starting_date);
        }catch(Exception e){}
 
 
@@ -119,16 +120,16 @@ public class GoalUpdateServlet extends HttpServlet {
 				new result("更新失敗！", "目標を更新できませんでした。", "/app/GoalServlet", "目標一覧登録画面へ"));
 			}
 		}
-		/*else {
-			if (jDao.delete(goal_id)) {	// 削除成功
+		else {
+			if (gDao.delete(goal_id)) {	// 削除成功
 				request.setAttribute("result",
-						new result("削除成功！", "レコードを削除しました。", "/app/JoysUpdateServlet", "ジョイス画面へ"));
+						new result("削除成功！", "目標を削除しました。", "/app/GoalServlet", "目標一覧画面へ"));
 					}
 			else {						// 削除失敗
 				request.setAttribute("result",
-						new result("削除失敗！", "レコードを削除できませんでした。", "/app/JoysUpdateServlet", "ジョイス画面へ"));
+						new result("削除失敗！", "目標を削除できませんでした。", "/app/GoalServlet", "目標一覧画面へ"));
 			}
-		}*/
+		}
 
 		// 結果ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
