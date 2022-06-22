@@ -39,7 +39,7 @@
 				<!-- 頑張る -->
 								<input type="hidden" value="${e.user_id}">
 								<input type="hidden" value="${e.nickname}">
-								<input type="hidden" value="${e.having_point}">
+								<input type="hidden" name="having_point"value="${e.having_point}">
 
 				<table class="">
 
