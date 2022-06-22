@@ -41,7 +41,7 @@ public class GoalUpdateServlet extends HttpServlet {
 				String goal_id = request.getParameter("goal_id");
 
 
-				//System.out.println(user.getUser_id());
+				System.out.println(goal_id);
 
 				//Daoを経由してreward_idに一致するデータを取得する。
 				//Daoから取得したデータと
@@ -83,16 +83,18 @@ public class GoalUpdateServlet extends HttpServlet {
 		String term_id = request.getParameter("term_id");
 		String goal_id = request.getParameter("goal_id");
 
-		Date starting_date= null;
-		Date ending_date = null;
+		Date starting_date=  new Date(0);
+		Date ending_date =  new Date(0);
 
 		try {
-		SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy/MM/dd");
-         starting_date = (Date)sdFormat.parse(sd);
-         ending_date = (Date)sdFormat.parse(ed);
-         System.out.println(starting_date);
+			java.util.Date s_date = new SimpleDateFormat("yyyy-MM-dd").parse(sd);
+			starting_date.setTime(s_date.getTime());
+			java.util.Date e_date = new SimpleDateFormat("yyyy-MM-dd").parse(ed);
+			ending_date.setTime(e_date.getTime());
+
        }catch(Exception e){}
 
+		System.out.println(starting_date);
 
 		//セッションスコープにIDを格納
 		// セッションスコープの保存領域を確保

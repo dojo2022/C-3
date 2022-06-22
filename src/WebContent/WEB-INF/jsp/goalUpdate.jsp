@@ -51,16 +51,21 @@
 					<th>期間</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="term_id" value="1" required>終日</td>
-					<td><input type="radio" name="term_id" value="2">繰り返し</td>
-					<td><input type="radio" name="term_id" value="3">長期</td>
+					<td><input type="radio" name="term_id" value="1"
+					<c:if test ="${e.term_id == '1' }">checked </c:if>required>終日</td>
+					<td><input type="radio" name="term_id" value="2"
+					<c:if test ="${e.term_id == '2' }">checked </c:if>>繰り返し</td>
+					<td><input type="radio" name="term_id" value="3"
+					<c:if test ="${e.term_id == '3' }">checked </c:if>>長期</td>
 				</tr>
 				<tr>
 					<th>達成難易度</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="difficulty_id" value="1" required>簡単</td>
-					<td><input type="radio" name="difficulty_id" value="2">難しい</td>
+					<td><input type="radio" name="difficulty_id" value="1"
+					<c:if test ="${e.difficulty_id == '1' }">checked </c:if> required>簡単</td>
+					<td><input type="radio" name="difficulty_id" value="2"
+					<c:if test ="${e.difficulty_id == '2' }">checked </c:if>>難しい</td>
 				</tr>
 
 				<tr>
@@ -80,16 +85,22 @@
 					<th>タグ</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="tag_id" value="1" required>仕事</td>
-					<td><input type="radio" name="tag_id" value="2">家事</td>
-					<td><input type="radio" name="tag_id" value="3">趣味</td>
-					<td><input type="radio" name="tag_id" value="4">勉強</td>
-					<td><input type="radio" name="tag_id" value="5">その他</td>
+					<td><input type="radio" name="tag_id" value="1"
+					<c:if test ="${e.tag_id == '1' }">checked </c:if>required>仕事</td>
+					<td><input type="radio" name="tag_id" value="2"
+					<c:if test ="${e.tag_id == '2' }">checked </c:if>>家事</td>
+					<td><input type="radio" name="tag_id" value="3"
+					<c:if test ="${e.tag_id == '3' }">checked </c:if>>趣味</td>
+					<td><input type="radio" name="tag_id" value="4"
+					<c:if test ="${e.tag_id == '4' }">checked </c:if>>勉強</td>
+					<td><input type="radio" name="tag_id" value="5"
+					<c:if test ="${e.tag_id == '5' }">checked </c:if>>その他</td>
 
 
 				</tr>
 				<tr>
 					<td><input type="submit" name="SUBMIT" value="更新"></td>
+					<td><input type="submit" name="SUBMIT" value="削除"></td>
 
 				</tr>
 			</table>

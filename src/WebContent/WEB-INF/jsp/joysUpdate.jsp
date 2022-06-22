@@ -66,8 +66,8 @@
 					>豪華(50pt)</td>
 				</tr>
 				<tr>
-					<td><input type="submit" name="SUBMIT" value="削除"></td>
 					<td><input type="submit" name="SUBMIT" value="更新"></td>
+					<td><input type="submit" name="SUBMIT" value="削除"></td>
 				</tr>
 			</table>
 		</form>
