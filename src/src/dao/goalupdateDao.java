@@ -169,7 +169,7 @@ public class goalupdateDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 				// SQL文を準備する SQL問題ない
-				String sql = "SELECT distinct starting_date, ending_date, goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE goal.goal_id = ? AND goal_result.achievement_id =2";
+				String sql = "SELECT distinct goal.goal_id,  goal.starting_date, goal.ending_date, goal.goal_name, goal.goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE goal.goal_id = ? AND goal_result.achievement_id =2";
 				//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -186,6 +186,7 @@ public class goalupdateDao {
 				//コンソールにて「reward_id列がない」→SQLのSELECT文にreward.reward_id追加で解決
 				while (rs.next()) {
 					goal goalsearch = new goal();
+					goalsearch.setGoal_id(rs.getString("goal_id"));
 					goalsearch.setStarting_date(rs.getDate("starting_date"));
 					goalsearch.setEnding_date(rs.getDate(" ending_date"));
 					goalsearch.setGoal_name(rs.getString("goal_name"));
