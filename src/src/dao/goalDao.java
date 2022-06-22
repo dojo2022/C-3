@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.GoalInsert;
 import model.goal;
 
 public class goalDao {
@@ -249,29 +250,202 @@ public class goalDao {
 		return goalTodayList;
 	}
 
+
+// 引数userとGoalInsertで指定されたレコードを登録し、成功したら目標番号を返す
+public String insert(String user, GoalInsert goal) {
+	Connection conn = null;
+	String result = null;	//登録に成功したらtrueに書き換えるコードをこの後書く
+
+	try {
+		// JDBCドライバを読み込む
+		Class.forName("org.h2.Driver");
+
+		// データベースに接続する
+		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+		// SQL文を準備する　＜＜ここを改造する＞＞
+		String sql = "INSERT INTO goal (user_id ,goal_name, goal_detail, tag_id, starting_date, ending_date, difficulty_id, term_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+		PreparedStatement pStmt = conn.prepareStatement(sql);
+
+		// SQL文を完成させる <<改造＞＞
+		if (user != null && !user.equals("")) {
+			pStmt.setString(1, user);
+		}
+		else {
+			pStmt.setString(1, null);
+		}
+		if (goal.getGoal_name() != null && !goal.getGoal_name().equals("")) {
+			pStmt.setString(2, goal.getGoal_name());
+		}
+		else {
+			pStmt.setString(2, null);
+		}
+		if (goal.getGoal_detail() != null && !goal.getGoal_detail().equals("")) {
+			pStmt.setString(3, goal.getGoal_detail());
+		}
+		else {
+			pStmt.setString(3, null);
+		}
+		if (goal.getTerm_id() != null && !goal.getTerm_id().equals("")) {
+			pStmt.setString(4, goal.getTerm_id());
+		}
+		else {
+			pStmt.setString(4, null);
+		}
+		if (goal.getDifficulty_id() != null && !goal.getDifficulty_id().equals("")) {
+			pStmt.setString(5, goal.getDifficulty_id());
+		}
+		else {
+			pStmt.setString(5, null);
+		}
+		if (goal.getStarting_date() != null && !goal.getStarting_date().equals("")) {
+			pStmt.setDate(6, goal.getStarting_date());
+		}
+		else {
+			pStmt.setString(6, null);
+		}
+		if (goal.getEnding_date() != null && !goal.getEnding_date().equals("")) {
+			pStmt.setDate(7, goal.getEnding_date());
+		}
+		else {
+			pStmt.setString(7, null);
+		}
+		if (goal.getTag_id() != null && !goal.getTag_id().equals("")) {
+			pStmt.setString(8, goal.getTag_id());
+		}
+		else {
+			pStmt.setString(8, null);
+		}
+
+		// SQL文を実行する
+		if (pStmt.executeUpdate() == 1) {
+			ResultSet rs = pStmt.getGeneratedKeys();
+	        if (rs.next()) {
+	            System.out.println(rs.getString(1));
+	        }
+		}
+	}
+	catch (SQLException e) {
+		e.printStackTrace();
+	}
+	catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	}
+	finally {
+		// データベースを切断
+		if (conn != null) {
+			try {
+				conn.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	// 結果を返す
+	return result;
 }
-	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-	/*public boolean insert( card) {
-		Connection conn = null;
-		boolean result = false;	//登録に成功したらtrueに書き換えるコードをこの後書く
+//引数目標番号と日付で指定されたレコードを登録し、成功したらtrueを返す
+public boolean resultinsert(GoalInsert goal, String goal_id) {
+	Connection conn = null;
+	boolean result = false;	//登録に成功したらtrueに書き換えるコードをこの後書く
 
-		try {
-			// JDBCドライバを読み込む
-			Class.forName("org.h2.Driver");
+	try {
+		// JDBCドライバを読み込む
+		Class.forName("org.h2.Driver");
 
-			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+		// データベースに接続する
+		conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
 
-			// SQL文を準備する　＜＜ここを改造する＞＞
-			String sql = "insert into BC (number, post_code, name, company_name, department_name, address, email, telephon_number, fax_number) values (?, ?, ?,? , ?, ?, ?, ?,?)";
+		// SQL文を準備する　＜＜ここを改造する＞＞
+		switch (goal.getTerm_id()){
+		case "1":
+			String sql = "goal_result(goal_id, achievement_day, achievement_id) VALUES (?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-
 			// SQL文を完成させる <<改造＞＞
-			if (card.getNumber() != null && !card.getNumber().equals("")) {
-				pStmt.setString(1, card.getNumber());
+
+			if (goal_id != null && !goal_id.equals("")) {
+				pStmt.setString(1, goal_id);
 			}
 			else {
 				pStmt.setString(1, null);
 			}
+			if (goal.getStarting_date() != null && !goal.getStarting_date().equals("")) {
+				pStmt.setDate(2, goal.getStarting_date());
+			}
+			else {
+				pStmt.setString(2, null);
+			}
+				pStmt.setString(3, "2");
+			
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+			break;
+		case "2":
+			String sqlq = "goal_result(goal_id, achievement_day, achievement_id) VALUES (?, ?, ?)";
+			PreparedStatement pStmtq = conn.prepareStatement(sqlq);
+			// SQL文を完成させる <<改造＞＞
+			if (goal_id != null && !goal_id.equals("")) {
+				pStmtq.setString(1, goal_id);
+			}
+			else {
+				pStmtq.setString(1, null);
+			}
+			if (goal.getStarting_date() != null && !goal.getStarting_date().equals("")) {
+				pStmtq.setDate(2, goal.getStarting_date());
+			}
+			else {
+				pStmtq.setString(2, null);
+			}
+				pStmtq.setString(3, "2");
+
+			// SQL文を実行する
+			if (pStmtq.executeUpdate() == 1) {
+				result = true;
+			}
+		
+	case "3":
+		String sqlqq = "goal_result(goal_id, achievement_id) VALUES (?, ?)";
+		PreparedStatement pStmtqq = conn.prepareStatement(sqlqq);
+		// SQL文を完成させる <<改造＞＞
+		if (goal_id != null && !goal_id.equals("")) {
+			pStmtqq.setString(1, goal_id);
 		}
-	}*/
+		else {
+			pStmtqq.setString(1, null);
+		}
+			pStmtqq.setString(2, "2");
+
+		// SQL文を実行する
+		if (pStmtqq.executeUpdate() == 1) {
+			result = true;
+		}
+	}
+}
+catch (SQLException e) {
+	e.printStackTrace();
+}
+catch (ClassNotFoundException e) {
+	e.printStackTrace();
+}
+finally {
+	// データベースを切断
+	if (conn != null) {
+		try {
+			conn.close();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+// 結果を返す
+return result;
+}
+}
+
