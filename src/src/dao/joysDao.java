@@ -331,7 +331,7 @@ public class joysDao {
 				reward.setReward_id(rs.getString("reward_id"));
 				reward.setReward_name(rs.getString("reward_name"));
 				reward.setReward_detail(rs.getString("reward_detail"));
-				reward.setRequired_point(rs.getInt("reward_level_id"));
+				reward.setReward_level_id(rs.getString("reward_level_id"));
 				rewardList.add(reward);
 			}
 

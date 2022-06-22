@@ -53,9 +53,17 @@
 					<th>ささやかor豪華選択</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="reward_level_id" value="1"
+
+					<td>${e.reward_level_id}<input type="radio" name="reward_level_id" value="1"
+						<c:if test="${e.reward_level_id == '1'}">
+							checked
+						</c:if>
 						required>ささやか(10pt)</td>
-					<td><input type="radio" name="reward_level_id" value="2">豪華(50pt)</td>
+					<td><input type="radio" name="reward_level_id" value="2"
+						<c:if test="${e.reward_level_id == '2'}">
+							checked
+						</c:if>
+					>豪華(50pt)</td>
 				</tr>
 				<tr>
 					<td><input type="submit" name="SUBMIT" value="削除"></td>
