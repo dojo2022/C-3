@@ -59,26 +59,33 @@ input[type="radio"].hide {
     cursor:pointer;
     transition:ease 0.2s opacity;
     border: 1px solid;
+    outline: none;
     border-top-right-radius: 10px;
 }
 
 .tab1_label {
-	background: orange;
+	background-color: #FF9B71;
+	outline: none;
 }
 .tab2_label {
-	background: blue;
+	background: #645DD7;
+	outline: none;
 }
 .tab3_label {
-	background: yellow;
+	background: #F2FF49;
+	outline: none;
 }
 .tab4_label {
-	background: green;
+	background: #B3FFFC;
+	outline: none;
 }
 .tab5_label {
-	background: #8000ff;
+	background: #FB62F6;
+	outline: none;
 }
 .tab6_label {
-	background: #808080;
+	background: #6c6c6c;
+	outline: none;
 }
 
 /* タブアニメ */
@@ -93,6 +100,7 @@ input[type="radio"].hide {
   animation-direction: alternate;
   animation-duration: 3s;
   animation-name: tab_anime;
+
 }
 
 @keyframes tab_anime {

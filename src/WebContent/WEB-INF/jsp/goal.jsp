@@ -14,13 +14,29 @@
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<a href="/app/LoginServlet" class="logoutbtn"><div>ログアウト</div></a> <a
+		<div class="logoutbtn"><a href="/app/LoginServlet">ログアウト</a> </div>
+		<a
 			href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
 	</header>
 
 	<!-- ここからメイン -->
 	<main>
+
+
+	<!--
+	更新機能等が確認し終わったら目標IDをユーザー目線から消すために
+		<div>目標ID ${e.goal_id}</div>
+		をCTRL＋Fで検索、以下のこれ↓に全て置換してください
+		<div><input type="hidden" value="${e.goal_id}"></div>
+	-->
+	<!--
+		108-116行目みたいなテーブル（画面で目標テーブルの真上にある鉛筆たち）を機能が特になかったら消したいです
+	-->
+
+
+
+
 		<div class="goal_title">
 			<img src="/app/img/check.png" width="120" height="120" class="goal_title_img">
 			<h1 class="goal_title_h1">目標一覧</h1>
@@ -163,6 +179,9 @@
                     仕事
                 </div>
 
+
+
+
                 <div id="panel3" class="tab_panel">
                     <div id="tag_work" class="tag_table">
 					<table>
@@ -200,6 +219,9 @@
                     家事
                 </div>
 
+
+
+
                 <div id="panel4" class="tab_panel">
                     <div id="tag_work" class="tag_table">
 					<table>
@@ -212,6 +234,9 @@
 						</tr>
 					</table>
 				</div>
+
+
+
 
 				<div id="tag_all" class="tag_table">
 					<table border="1">
@@ -236,6 +261,9 @@
                     </div>
                     趣味
                 </div>
+
+
+
 
                 <div id="panel5" class="tab_panel">
                     <div id="tag_work" class="tag_table">
@@ -273,6 +301,8 @@
                     </div>
                     勉強
                 </div>
+
+
 
                 <div id="panel6" class="tab_panel">
                     <div id="tag_work" class="tag_table">

@@ -60,12 +60,11 @@
 					<a href="/app/JoysUpdateServlet?reward_id=${e.reward_id}">
 							<img src="/app/img/edit.png" width="60" height="60">
 					</a></td>
-					<td><input type="hidden" name="reward_id" value=${e.reward_id} readonly></td>
-					<td><input type="hidden" name="reward_name" value=${e.reward_name} readonly></td>
-					<td class="">JoysID ${e.reward_id}</td>
-					<td class="">Joys名 ${e.reward_name}</td>
-					<td class="">Joys詳細 ${e.reward_detail}</td>
-					<td class="">必要ポイント数 ${e.required_point}</td>
+					<td><input type="hidden" name="reward_id" value="${e.reward_id}" readonly></td>
+					<td><input type="hidden" name="reward_name" value="${e.reward_name}" readonly></td>
+					<td class="">${e.reward_name}</td>
+					<td class="">${e.reward_detail}</td>
+					<td class="">${e.required_point}ポイント</td>
 					<td>
 					 <!-- <a href="/app/CheckjoysServlet" onclick="change(this.form)">
 					    ?required_point=${e.required_point}">-->
