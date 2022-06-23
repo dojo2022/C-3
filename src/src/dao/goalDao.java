@@ -157,8 +157,8 @@ public class goalDao {
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
-			// SQL文を準備する
-			String sql = "SELECT goal_name,goal_detail, id  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND starting_date <= curdate() AND ending_date >=  curdate() AND achievement_id = '2'";
+			// SQL文を準備する　重複を消去して、goal_resultのdateで今日かを判定
+			String sql = "SELECT  goal_name,goal_detail, id  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND ACHIEVEMENT_DAY =  curdate() AND achievement_id = '2'";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
