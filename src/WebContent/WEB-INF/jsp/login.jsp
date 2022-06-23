@@ -43,7 +43,7 @@
 				<input type="checkbox" id="password-check">パスワードを表示する</td>
 				</tr></table>
 
-			<input type="submit" name="login" value="ログイン">
+			<input type="submit" name="login" value="LOGIN" class="login_button">
 		</form>
 		<br>
 		<a href="RegistarServlet">新規登録</a>

@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
+
 body {
-	height: 1000px;
+	height: 100%;
 	background-color: #FED966;
 	margin-right: auto;
 	margin-left: auto;
@@ -9,20 +10,43 @@ body {
 	text-align: center;
 }
 
+
+
+/*ログイン入力部分*/
 table.login {
-    margin-left: auto;
-    margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-input.login_data{
+input.login_data {
 	width: 300px;
-	height:30px;
+	height: 30px;
 	border-radius: 6px;
 	border-color: transparent;
+	height: 30px;
+}
 
+input.login_data:focus{
+	border-color: #d3d6db;
+	outline: none;
+}
+
+/*ログインボタン*/
+input.login_button {
+	width: 300px;
+	height: 30px;
+	border-radius: 6px;
+	background-color: #ff6702;
+	border-color: transparent;
+	color: white;
+}
+
+input.login_button:hover {
+	background: #ff6702;
+	border-bottom: 2px solid #b84c00;
 }
 
 
 .wrapper {
-	color: #ff6702;
+	color: #FED966;
 }
