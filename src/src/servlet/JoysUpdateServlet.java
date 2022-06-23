@@ -132,12 +132,12 @@ public class JoysUpdateServlet extends HttpServlet {
 			if (jDao.update(value)) {	// 更新成功
 			//if (jDao.update(new rewardjoys( reward_name,  reward_detail, reward_level_id,reward_id))) {	// 更新成功
 				request.setAttribute("result",
-						new result("更新成功！", "レコードを更新しました。", "/app/JoysUpdateServlet", "ジョイス登録画面へ"));
+						new result("更新成功！", "レコードを更新しました。", "/app/JoysServlet", "Joys一覧画面へ"));
 			}
 			else {		// 登録失敗
 				System.out.println(request.getParameter("SUBMIT"));
 				request.setAttribute("result",
-				new result("登録失敗！", "レコードを更新できませんでした。", "/app/JoysUpdateServlet", "ジョイス登録画面へ"));
+				new result("更新失敗！", "レコードを更新できませんでした。", "/app/JoysServlet", "Joys一覧画面へ"));
 			}
 		}
 		else {
