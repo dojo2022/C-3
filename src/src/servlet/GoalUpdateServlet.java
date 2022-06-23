@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.goalDao;
 import dao.goalupdateDao;
 import model.goal;
 import model.result;
@@ -105,6 +106,7 @@ public class GoalUpdateServlet extends HttpServlet {
 
 		// 更新または削除を行う
 		goalupdateDao gDao = new goalupdateDao();
+		goalDao g2Dao = new goalDao();
 
 		if (request.getParameter("SUBMIT").equals("更新")) {
 			System.out.println(request.getParameter("SUBMIT"));
@@ -128,17 +130,27 @@ public class GoalUpdateServlet extends HttpServlet {
 			value.setTerm_id(term_id);
 			value.setGoal_id(goal_id);
 
-			if (gDao.update(value)) {	// 更新成功
-				request.setAttribute("result",
-						new result("更新成功！", "目標を更新しました。", "/app/GoalServlet", "目標一覧画面へ"));
-			}
+			/* ←登録のメソッドができたらこれ消してください！！！！！
+
+			 if (gDao.delete(goal_id)) {	// 削除
+				if(g2Dao.insert(user.getUser_id(),   )) {//目標の登録
+
+
+					if(g2Dao.resultinsert(   ,goal_id))//目標の終日・繰り返し・長期ごとの変更
+					request.setAttribute("result",
+							new result("更新成功！", "目標を更新しました。", "/app/GoalServlet", "目標一覧画面へ"));
+			}	}
+
 			else {		// 登録失敗
 				System.out.println(request.getParameter("SUBMIT"));
 				request.setAttribute("result",
 				new result("更新失敗！", "目標を更新できませんでした。", "/app/GoalServlet", "目標一覧登録画面へ"));
 			}
 		}
-		else {
+		else {  登録のメソッドができたらこれ消してください！！！！→*/
+
+
+
 			if (gDao.delete(goal_id)) {	// 削除成功
 				request.setAttribute("result",
 						new result("削除成功！", "目標を削除しました。", "/app/GoalServlet", "目標一覧画面へ"));
