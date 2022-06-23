@@ -16,16 +16,16 @@
 		<table>
 			<tr>
 
-				<td><input type="text" placeholder="ユーザーID(1～12文字)"name="user_id" required></td>
+				<td><input type="text"  pattern="^[0-9a-zA-Z]{1,12}"  placeholder="ユーザーID(1～12文字)"name="user_id" required></td>
 			</tr>
 			<tr>
 
-				<td><input type="password" id="textPassword"placeholder="パスワード(8～12文字)" name="password" required><br>
+				<td><input type="password" pattern="^[0-9a-zA-Z]{8,12}" id="textPassword"placeholder="パスワード半角英数字(8～12文字)" name="password" required><br>
 				<input type="checkbox" id="password-check">パスワードを表示する</td>
 			</tr>
 			<tr>
 
-				<td><input type="password" placeholder="パスワード(確認用)"name="password_confirm" ></td>
+				<td><input type="password"  pattern="^[0-9a-zA-Z]{8,12}"  placeholder="パスワード(確認用)"name="password_confirm" ></td>
 			</tr>
 
 			<tr>
