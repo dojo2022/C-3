@@ -5,7 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Joys交換リザルト</title>
+<title>POME｜Joys交換リザルト</title>
+<link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
+<!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
+<link rel="apple-touch-icon" type="image/png"
+	href="app/img/pome_favicon.png">
+<!-- ↑アップルタッチアイコン　スマホのホーム画面に追加したときに表示されるアイコン -->
+
 <link rel="stylesheet" type="text/css" href="css/result.css">
 <link rel="stylesheet" type="text/css" href="css/color.css">
 </head>
@@ -23,13 +29,17 @@
 <h1>交換失敗！</h1>
 <hr>
 
-	<p>「${reward_name}」ができるようになるにはポイントが足りませんでした・・・</p>
-	<p>現在の保持ポイントは${having_point}ポイントです</p>
+	<p>「${reward_name}」ができるようになるにはポイントが足りませんでした・・・。</p>
+	<p>目標を達成してポイントを貯めましょう！</p>
+	<br>
+	<br>
+
+	現在の保持ポイントは<div class=point>${having_point}ポイント</div>です
 
 
 
 <hr>
-<a href="/app/JoysServlet">Joys一覧へ戻る</a>
+<a href="/app/JoysServlet">＜　Joys一覧へ戻る</a>
 
 
 </main>
