@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.goalDao;
 import model.GoalInsert;
+import model.result;
 import model.user;
 
 /**
@@ -62,7 +63,9 @@ public class GoalRegistarServlet extends HttpServlet {
 		Date ending_date = new Date(0);
 
 		try {
+			//StringからutilDate型に変換
 			java.util.Date s_date = new SimpleDateFormat("yyyy-MM-dd").parse(sd);
+			//utilDate型からsqlDate型に変換
 			starting_date.setTime(s_date.getTime());
 			java.util.Date e_date = new SimpleDateFormat("yyyy-MM-dd").parse(ed);
 			ending_date.setTime(e_date.getTime());
@@ -85,9 +88,31 @@ public class GoalRegistarServlet extends HttpServlet {
 		goal.setEnding_date(ending_date);
 		goal.setTag_id(tag_id);
 
+		boolean result = false;
 		String registar = goalDao.insert(user_id.getUser_id(), goal);
-		System.out.println(registar);
-		boolean a = goalDao.resultinsert(goal, registar);
+		System.out.println("目標番号"+registar);
+		if(!registar.equals(null)) {
+			if(term_id.equals("2")) {
+				result = goalDao.resultinsert(goal, registar, sd, ed);
+			}else {
+				result = goalDao.resultinsert(goal, registar);
+			}
+		}
+
+		if (result) {	// 更新成功
+			//if (jDao.update(new rewardjoys( reward_name,  reward_detail, reward_level_id,reward_id))) {	// 更新成功
+				request.setAttribute("result",
+						new result("登録成功！", "目標を登録しました。", "/app/GoalServlet", "目標一覧画面へ"));
+			}
+			else {		// 登録失敗
+				System.out.println(request.getParameter("SUBMIT"));
+				request.setAttribute("result",
+				new result("登録失敗！", "目標を登録できませんでした。", "/app/GoalServlet", "目標一覧画面へ"));
+			}
+
+		// 結果ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		dispatcher.forward(request, response);
 
 	}
 
