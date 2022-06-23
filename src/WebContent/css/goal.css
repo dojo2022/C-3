@@ -42,7 +42,6 @@ input[type="radio"].hide {
 
     /* タグの親要素に設定でタグ横並び */
     display:flex;
-
 }
 
 /* タグラベル内 */
@@ -52,24 +51,69 @@ input[type="radio"].hide {
     margin:0 10px 5px 0;
     display:inline-block;
     padding:12px 0;
-    color:#999;
-    background:#ddd;
+    color: black;
+    /*background:#ddd;*/
     text-align:center;
-    font-size:13px;
+    font-size:22px;
+    font-weight:700;
     cursor:pointer;
     transition:ease 0.2s opacity;
     border: 1px solid;
     border-top-right-radius: 10px;
-
 }
+
+.tab1_label {
+	background: orange;
+}
+.tab2_label {
+	background: blue;
+}
+.tab3_label {
+	background: yellow;
+}
+.tab4_label {
+	background: green;
+}
+.tab5_label {
+	background: #8000ff;
+}
+.tab6_label {
+	background: #808080;
+}
+
+/* タブアニメ */
+.tab1_label:hover,
+.tab2_label:hover,
+.tab3_label:hover,
+.tab4_label:hover,
+.tab5_label:hover,
+.tab6_label:hover {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 3s;
+  animation-name: tab_anime;
+}
+
+@keyframes tab_anime {
+  0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+  }
+  50%, 70% {
+    transform: scale(0.9);
+  }
+}
+
+/* ホバーすると透明 */
 .tab_area label:hover {
     opacity:0.5;
 }
 
-/* パネル囲い */
+/* パネル囲い スクロール*/
 .panel_area {
     background:#fff;
     border:3px solid orange;
+    overflow: auto;
 }
 
 /* パネル設定 */
@@ -81,15 +125,15 @@ input[type="radio"].hide {
 
 /* パネル内文章 */
 .tab_panel p {
-    font-size:14px;
+    font-size:20px;
     letter-spacing:1px;
     text-align:center;
 }
 
 /*  */
 #tab1:checked ~ .tab_area .tab1_label {
-    background:#fff;
-    color:#000;
+    background:orange;
+    color:white;
 }
 #tab1:checked ~ .panel_area #panel1 {
     display:block;
@@ -97,8 +141,8 @@ input[type="radio"].hide {
 
 /*  */
 #tab2:checked ~ .tab_area .tab2_label {
-    background:#fff;
-    color:#000;
+    background:blue;
+    color:white;
 }
 #tab2:checked ~ .panel_area #panel2 {
     display:block;
@@ -106,8 +150,8 @@ input[type="radio"].hide {
 
 /*  */
 #tab3:checked ~ .tab_area .tab3_label {
-    background:#fff;
-    color:#000;
+    background:yellow;
+    color:white;
 }
 #tab3:checked ~ .panel_area #panel3 {
     display:block;
@@ -115,8 +159,8 @@ input[type="radio"].hide {
 
 /*  */
 #tab4:checked ~ .tab_area .tab4_label {
-    background:#fff;
-    color:#000;
+    background:green;
+    color:white;
 }
 #tab4:checked ~ .panel_area #panel4 {
     display:block;
@@ -124,8 +168,8 @@ input[type="radio"].hide {
 
 /*  */
 #tab5:checked ~ .tab_area .tab5_label {
-    background:#fff;
-    color:#000;
+    background:#8000ff;
+    color:white;
 }
 #tab5:checked ~ .panel_area #panel5 {
     display:block;
@@ -133,8 +177,8 @@ input[type="radio"].hide {
 
 /*  */
 #tab6:checked ~ .tab_area .tab6_label {
-    background:#fff;
-    color:#000;
+    background:#808080;
+    color:white;
 }
 #tab6:checked ~ .panel_area #panel6 {
     display:block;
@@ -171,14 +215,11 @@ input[type="radio"].hide {
     position: fixed;
     z-index: 999;
     bottom: 0;
-
 }
 .footer-ul {
     list-style: none;
     display: flex;
     flex-wrap: nowrap;
-
-
 }
 .footer-li {
     width: 25%;

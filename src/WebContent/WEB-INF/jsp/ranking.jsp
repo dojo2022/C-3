@@ -33,7 +33,7 @@
 
 	<!-- ここからメイン -->
 	<main>
-		<h1><img src ="/app/img/ranking.png" width="50" height="50">ランキング</h1>
+		<h1>ランキング</h1>
 		<!-- <c:forEach var="e" items="${rankingList}">
 
 			頑張る
@@ -48,7 +48,7 @@
 		</c:forEach>-->
 
 		<div id="table">
-	<table id="list">
+	<table class="list">
 		<tr>
 			<th>順位</th>
 			<th>ニックネーム</th>
@@ -60,8 +60,8 @@
 	<c:forEach var="e" items="${ rankingList}">
 		<tr>
 			<td>${e.rank_result}</td>
-			<td>${e.nickname}</td>
-			<td>${e.total_point }ポイント</td>
+			<td>${e.nickname}さん</td>
+			<td>${e.total_point }pts.</td>
 
 		</tr>
 		</c:forEach>
