@@ -121,11 +121,12 @@ public class goalupdateDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 				// SQL文を準備する
-				String sql = "delete from goal where goal_id=?";
+				String sql = "delete from goal where goal_id=?;delete from goal_result where goal_id=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
 				pStmt.setString(1, goal_id);
+				pStmt.setString(2, goal_id);
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {

@@ -150,7 +150,7 @@ public class GoalUpdateServlet extends HttpServlet {
 		else {  登録のメソッドができたらこれ消してください！！！！→*/
 
 
-
+		}else {
 			if (gDao.delete(goal_id)) {	// 削除成功
 				request.setAttribute("result",
 						new result("削除成功！", "目標を削除しました。", "/app/GoalServlet", "目標一覧画面へ"));
