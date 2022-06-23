@@ -10,5 +10,36 @@ footer {
     position: fixed;
     z-index: 999;
     bottom: 0;
-
 }
+
+
+input.user_id{
+
+	width : 1000px;
+}
+
+input.password {
+
+	width : 20cm;
+}
+
+input.password_confirm{
+
+	width : 10em;
+}
+
+
+ input[name = "registar"]{
+ width : 6em;
+
+ }
+
+ input[name = "reset"]{
+ width : 6em;
+ background-color: #FF9933;
+ color:white;
+ }
+
+
+
+
