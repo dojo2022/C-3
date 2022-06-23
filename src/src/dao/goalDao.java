@@ -5,8 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import model.GoalInsert;
 import model.goal;
@@ -98,7 +102,7 @@ public class goalDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND tag_id = ? AND achievement_id = '2'";
+			String sql = "SELECT distinct goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND tag_id = ? AND achievement_id = '2'";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
@@ -267,7 +271,7 @@ public String insert(String user, GoalInsert goal) {
 		// SQL文を準備する　＜＜ここを改造する＞＞
 		String sql = "INSERT INTO goal (user_id ,goal_name, goal_detail, tag_id, starting_date, ending_date, difficulty_id, term_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-		PreparedStatement pStmt = conn.prepareStatement(sql);
+		PreparedStatement pStmt = conn.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
 		// SQL文を完成させる <<改造＞＞
 
@@ -285,7 +289,9 @@ public String insert(String user, GoalInsert goal) {
 		if (pStmt.executeUpdate() == 1) {
 			ResultSet rs = pStmt.getGeneratedKeys();
 	        if (rs.next()) {
-	            System.out.println(rs.getString(1));
+	        	String autoIncrementKey = rs.getString(1);
+	            System.out.println("Daoの中の目標番号"+autoIncrementKey);
+	            result = autoIncrementKey;
 	        }
 		}
 	}
@@ -320,12 +326,14 @@ public boolean resultinsert(GoalInsert goal, String goal_id) {
 		Class.forName("org.h2.Driver");
 
 		// データベースに接続する
-		conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 		// SQL文を準備する　＜＜ここを改造する＞＞
 		switch (goal.getTerm_id()){
+
+		//目標が終日の場合
 		case "1":
-			String sql = "goal_result(goal_id, achievement_day, achievement_id) VALUES (?, ?, ?)";
+			String sql = "INSERT INTO goal_result(goal_id, achievement_day, achievement_id) VALUES (?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる <<改造＞＞
 
@@ -348,31 +356,10 @@ public boolean resultinsert(GoalInsert goal, String goal_id) {
 				result = true;
 			}
 			break;
-		case "2":
-			String sqlq = "goal_result(goal_id, achievement_day, achievement_id) VALUES (?, ?, ?)";
-			PreparedStatement pStmtq = conn.prepareStatement(sqlq);
-			// SQL文を完成させる <<改造＞＞
-			if (goal_id != null && !goal_id.equals("")) {
-				pStmtq.setString(1, goal_id);
-			}
-			else {
-				pStmtq.setString(1, null);
-			}
-			if (goal.getStarting_date() != null && !goal.getStarting_date().equals("")) {
-				pStmtq.setDate(2, goal.getStarting_date());
-			}
-			else {
-				pStmtq.setString(2, null);
-			}
-				pStmtq.setString(3, "2");
 
-			// SQL文を実行する
-			if (pStmtq.executeUpdate() == 1) {
-				result = true;
-			}
-
+		//目標が長期の場合
 	case "3":
-		String sqlqq = "goal_result(goal_id, achievement_id) VALUES (?, ?)";
+		String sqlqq = "INSERT INTO goal_result(goal_id, achievement_id) VALUES (?, ?)";
 		PreparedStatement pStmtqq = conn.prepareStatement(sqlqq);
 		// SQL文を完成させる <<改造＞＞
 		if (goal_id != null && !goal_id.equals("")) {
@@ -410,5 +397,95 @@ finally {
 // 結果を返す
 return result;
 }
-}
 
+
+public boolean resultinsert(GoalInsert goal, String goal_id, String starting_date, String ending_date) {
+	Connection conn = null;
+	boolean result = false;	//登録に成功したらtrueに書き換えるコードをこの後書く
+
+	try {
+		// JDBCドライバを読み込む
+		Class.forName("org.h2.Driver");
+
+		// データベースに接続する
+		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+
+		//目標が繰り返しの場合
+
+			//日付の差を求める
+		long days = 0;
+		try {
+
+
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		    Date date1 = format.parse(starting_date);
+		    Date date2 = format.parse(ending_date);
+		    System.out.print(TimeUnit.DAYS.convert(date2.getTime() - date1.getTime(), TimeUnit.MILLISECONDS));
+		    days = TimeUnit.DAYS.convert(date2.getTime() - date1.getTime(), TimeUnit.MILLISECONDS);
+
+		} catch (Exception e) {}
+
+		for(int i = 0 ; i <= days; i++) {
+
+			String sqlq = "INSERT INTO goal_result(goal_id, achievement_day, achievement_id) VALUES (?, ?, ?)";
+			PreparedStatement pStmtq = conn.prepareStatement(sqlq);
+			// SQL文を完成させる <<改造＞＞
+			if (goal_id != null && !goal_id.equals("")) {
+				pStmtq.setString(1, goal_id);
+			}
+			else {
+				pStmtq.setString(1, null);
+			}
+			if (goal.getStarting_date() != null && !goal.getStarting_date().equals("")) {
+				pStmtq.setDate(2, goal.getStarting_date());
+			}
+			else {
+				pStmtq.setString(2, null);
+			}
+				pStmtq.setString(3, "2");
+
+			// SQL文を実行する
+			if (pStmtq.executeUpdate() == 1) {
+				result = true;
+			}
+
+			//sqlDate型をカレンダークラスに変換
+			Calendar cdr = Calendar.getInstance();
+			cdr.setTime(goal.getStarting_date());
+			System.out.println("加算前の日付"+ cdr);
+
+			//日付の加算処理
+			cdr.add(Calendar.DAY_OF_MONTH, 1);
+			System.out.println("加算後の日付"+ cdr);
+
+			//カレンダークラスからsqlDate型に変換する
+			//cdr = Calendar.getInstance();
+		    java.sql.Date date = new java.sql.Date(cdr.getTime().getTime());
+
+
+			goal.setStarting_date(date);
+		}
+		result = true;
+		}
+	catch (SQLException e) {
+		e.printStackTrace();
+	}
+	catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	}
+	finally {
+		// データベースを切断
+		if (conn != null) {
+			try {
+				conn.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	// 結果を返す
+	return result;
+	}
+	}
