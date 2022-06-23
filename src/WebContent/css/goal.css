@@ -2,11 +2,144 @@
 
 body {
     margin: 0px;
-    height: 1000px;
+    height: 1000px;/* ←意味なし */
 }
 a {
     text-decoration:none;
 }
+
+/* メイン */
+.goal_title {
+	display: flex;
+
+}
+.goal_title_img {
+	position: relative;
+	padding: 30px 100px;
+
+}
+.goal_title_h1 {
+	font-size: 70px;
+	font-weight: normal;
+}
+
+
+/* タブ切り替え */
+/* 全体の位置 */
+.tab_wrap {
+    width:90%;
+    margin:80px auto;
+}
+
+/* ラジオ型消去 */
+input[type="radio"].hide {
+    display:none;
+}
+
+/* タグラベル全体 */
+.tab_area {
+    font-size:0;
+
+    /* タグの親要素に設定でタグ横並び */
+    display:flex;
+
+}
+
+/* タグラベル内 */
+.tab_area label {
+    width:100px;
+    height: 25px;
+    margin:0 10px 5px 0;
+    display:inline-block;
+    padding:12px 0;
+    color:#999;
+    background:#ddd;
+    text-align:center;
+    font-size:13px;
+    cursor:pointer;
+    transition:ease 0.2s opacity;
+    border: 1px solid;
+    border-top-right-radius: 10px;
+
+}
+.tab_area label:hover {
+    opacity:0.5;
+}
+
+/* パネル囲い */
+.panel_area {
+    background:#fff;
+    border:3px solid orange;
+}
+
+/* パネル設定 */
+.tab_panel {
+    width: 100%;
+    height: 500px;
+    display:none;
+}
+
+/* パネル内文章 */
+.tab_panel p {
+    font-size:14px;
+    letter-spacing:1px;
+    text-align:center;
+}
+
+/*  */
+#tab1:checked ~ .tab_area .tab1_label {
+    background:#fff;
+    color:#000;
+}
+#tab1:checked ~ .panel_area #panel1 {
+    display:block;
+}
+
+/*  */
+#tab2:checked ~ .tab_area .tab2_label {
+    background:#fff;
+    color:#000;
+}
+#tab2:checked ~ .panel_area #panel2 {
+    display:block;
+}
+
+/*  */
+#tab3:checked ~ .tab_area .tab3_label {
+    background:#fff;
+    color:#000;
+}
+#tab3:checked ~ .panel_area #panel3 {
+    display:block;
+}
+
+/*  */
+#tab4:checked ~ .tab_area .tab4_label {
+    background:#fff;
+    color:#000;
+}
+#tab4:checked ~ .panel_area #panel4 {
+    display:block;
+}
+
+/*  */
+#tab5:checked ~ .tab_area .tab5_label {
+    background:#fff;
+    color:#000;
+}
+#tab5:checked ~ .panel_area #panel5 {
+    display:block;
+}
+
+/*  */
+#tab6:checked ~ .tab_area .tab6_label {
+    background:#fff;
+    color:#000;
+}
+#tab6:checked ~ .panel_area #panel6 {
+    display:block;
+}
+
 
 /* ヘッダー */
 .header {
@@ -59,6 +192,17 @@ a {
 .footer-li-goal {
 	padding-right: 13px;
 }
+/* フッター　かぶり解決 */
+.empty {
+	height: 100px;
+}
+
+/* 新規登録　位置 */
+.goal_plus {
+	text-align: right;
+	padding: 30px 70px ;
+}
+
 
 /*　アコーディオンメニュー用　*/
 /*

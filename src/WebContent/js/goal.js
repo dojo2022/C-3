@@ -1,6 +1,12 @@
 /**
  *
  */
+
+ 	function labelClick(ele){
+ 		ele.parentNode.submit();
+ 	}
+
+/*
     let btn0 = document.getElementById('btn0');
     btn0.onclick = function(){
         f0.submit();
@@ -30,3 +36,4 @@
     btn5.onclick = function(){
         f5.submit();
         }
+*/

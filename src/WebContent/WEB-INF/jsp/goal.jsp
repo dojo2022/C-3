@@ -21,15 +21,288 @@
 
 	<!-- ここからメイン -->
 	<main>
-		<img src="/app/img/check.png" width="100" height="100"> POME
-		goal
+		<div class="goal_title">
+			<img src="/app/img/check.png" width="120" height="120" class="goal_title_img">
+			<h1 class="goal_title_h1">目標一覧</h1>
+		</div>
+
+
+
+		<div class="tab_wrap">
+            <input id="tab1" class="hide" type="radio" name="tab_btn" checked>
+            <input id="tab2" class="hide" type="radio" name="tab_btn">
+            <input id="tab3" class="hide" type="radio" name="tab_btn">
+            <input id="tab4" class="hide" type="radio" name="tab_btn">
+            <input id="tab5" class="hide" type="radio" name="tab_btn">
+            <input id="tab6" class="hide" type="radio" name="tab_btn">
+            <div class="tab_area">
+                <form action="/app/GoalServlet" id="f0" method="POST">
+                    <input id="btn0" class="hide" type="radio" name="tag" value="0">
+                    <label class="tab1_label" for="tab1" onclick="labelClick(this)">目標一覧</label>
+                </form>
+                <form action="/app/GoalServlet" id="f1" method="POST">
+                    <input id="btn1" class="hide" type="radio" name="tag" value="1">
+                    <label class="tab2_label" for="tab2" onclick="labelClick(this)">仕事</label>
+                </form>
+                <form action="/app/GoalServlet" id="f2" method="POST">
+                    <input id="btn2" class="hide" type="radio" name="tag" value="2">
+                    <label class="tab3_label" for="tab3" onclick="labelClick(this)">家事</label>
+                </form>
+                <form action="/app/GoalServlet" id="f3" method="POST">
+                    <input id="btn3" class="hide" type="radio" name="tag" value="3">
+                    <label class="tab4_label" for="tab4" onclick="labelClick(this)">趣味</label>
+                </form>
+                <form action="/app/GoalServlet" id="f4" method="POST">
+                    <input id="btn4" class="hide" type="radio" name="tag" value="4">
+                    <label class="tab5_label" for="tab5" onclick="labelClick(this)">勉強</label>
+                </form>
+                <form action="/app/GoalServlet" id="f5" method="POST">
+                    <input id="btn5" class="hide" type="radio" name="tag" value="5">
+                    <label class="tab6_label" for="tab6" onclick="labelClick(this)">その他</label>
+                </form>
+            </div>
+
+            <div class="panel_area">
+
+                <div id="panel1" class="tab_panel">
+                        <div id="tag_work" class="tag_table">
+                        <table>
+						<tr>
+							<th>目標名</th>
+								<td><a href="/app/GoalUpdateServlet"> <img
+									src="/app/img/edit.png" width="60" height="60"></a></td>
+							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
+						</tr>
+					</table>
+				</div>
+				<div id="tag_all" class="tag_table">
+					<table border="1">
+						<c:forEach var="e" items="${goalList}">
+							<tr class="title">
+								<td><div>目標ID ${e.goal_id}</div></td>
+								<td><div>開始日 ${e.starting_date}</div></td>
+								<td>～</td>
+								<td><div>終了日 ${e.ending_date}</div></td>
+								<td><div>目標名 ${e.goal_name}</div></td>
+								<td><div>
+										<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+											src="/app/img/edit.png" width="60" height="60"></a>
+									</div></td>
+								<td><div class="btn"></div></td>
+							</tr>
+
+							<tr class="content">
+								<td>${e.goal_detail}</td>
+							</tr>
+						</c:forEach>
+					</table>
+                    目標一覧
+                </div>
+              </div>
+
+                <div id="panel2" class="tab_panel">
+                    <div id="tag_work" class="tag_table">
+                        <table>
+						<tr>
+							<th>目標名</th>
+							<td><a href="/app/GoalUpdateServlet"> <img
+									src="/app/img/edit.png" width="60" height="60"></a></td>
+							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
+						</tr>
+					</table>
+				</div>
+				<div id="tag_all" class="tag_table">
+					<table border="1">
+						<c:forEach var="e" items="${goalList}">
+							<tr class="title">
+								<td><div>目標ID ${e.goal_id}</div></td>
+								<td><div>開始日 ${e.starting_date}</div></td>
+								<td>～</td>
+								<td><div>終了日 ${e.ending_date}</div></td>
+								<td><div>目標名 ${e.goal_name}</div></td>
+								<td><div>
+
+										<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+											src="/app/img/edit.png" width="60" height="60"></a>
+									</div></td>
+								<td><div class="btn"></div></td>
+							</tr>
+
+							<tr class="content">
+								<td>${e.goal_detail}</td>
+							</tr>
+						</c:forEach>
+					</table>
+                    </div>
+                    仕事
+                </div>
+
+                <div id="panel3" class="tab_panel">
+                    <div id="tag_work" class="tag_table">
+					<table>
+						<tr>
+							<th>目標名</th>
+							<td><a href="/app/GoalUpdateServlet"> <img
+									src="/app/img/edit.png" width="60" height="60"></a></td>
+							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="tag_all" class="tag_table">
+					<table border="1">
+						<c:forEach var="e" items="${goalList}">
+							<tr class="title">
+								<td><div>目標ID ${e.goal_id}</div></td>
+								<td><div>開始日 ${e.starting_date}</div></td>
+								<td>～</td>
+								<td><div>終了日 ${e.ending_date}</div></td>
+								<td><div>目標名 ${e.goal_name}</div></td>
+								<td><div>
+										<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+											src="/app/img/edit.png" width="60" height="60"></a>
+									</div></td>
+								<td><div class="btn"></div></td>
+							</tr>
+							<tr class="content">
+								<td>${e.goal_detail}</td>
+							</tr>
+						</c:forEach>
+					</table>
+                    </div>
+                    家事
+                </div>
+
+                <div id="panel4" class="tab_panel">
+                    <div id="tag_work" class="tag_table">
+					<table>
+						<tr>
+							<th>目標名</th>
+							<td><a href="/app/GoalUpdateServlet"> <img
+									src="/app/img/edit.png" width="60" height="60"></a></td>
+							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="tag_all" class="tag_table">
+					<table border="1">
+						<c:forEach var="e" items="${goalList}">
+							<tr class="title">
+								<td><div>目標ID ${e.goal_id}</div></td>
+								<td><div>開始日 ${e.starting_date}</div></td>
+								<td>～</td>
+								<td><div>終了日 ${e.ending_date}</div></td>
+								<td><div>目標名 ${e.goal_name}</div></td>
+								<td><div>
+										<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+											src="/app/img/edit.png" width="60" height="60"></a>
+									</div></td>
+								<td><div class="btn"></div></td>
+							</tr>
+							<tr class="content">
+								<td>${e.goal_detail}</td>
+							</tr>
+						</c:forEach>
+					</table>
+                    </div>
+                    趣味
+                </div>
+
+                <div id="panel5" class="tab_panel">
+                    <div id="tag_work" class="tag_table">
+					<table>
+						<tr>
+							<th>目標名</th>
+							<td><a href="/app/GoalUpdateServlet"> <img
+									src="/app/img/edit.png" width="60" height="60"></a></td>
+							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="tag_all" class="tag_table">
+					<table border="1">
+						<c:forEach var="e" items="${goalList}">
+							<tr class="title">
+								<td><div>目標ID ${e.goal_id}</div></td>
+								<td><div>開始日 ${e.starting_date}</div></td>
+								<td>～</td>
+								<td><div>終了日 ${e.ending_date}</div></td>
+								<td><div>目標名 ${e.goal_name}</div></td>
+								<td><div>
+										<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+											src="/app/img/edit.png" width="60" height="60"></a>
+									</div></td>
+								<td><div class="btn"></div></td>
+							</tr>
+							<tr class="content">
+								<td>${e.goal_detail}</td>
+							</tr>
+						</c:forEach>
+					</table>
+                    </div>
+                    勉強
+                </div>
+
+                <div id="panel6" class="tab_panel">
+                    <div id="tag_work" class="tag_table">
+					<table>
+						<tr>
+							<th>目標名</th>
+							<td><a href="/app/GoalUpdateServlet"> <img
+									src="/app/img/edit.png" width="60" height="60"></a></td>
+							<th></th>
+							<td><input type="checkbox" id="achievement"></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="tag_all" class="tag_table">
+					<table border="1">
+						<c:forEach var="e" items="${goalList}">
+							<tr class="title">
+								<td><div>目標ID ${e.goal_id}</div></td>
+								<td><div>開始日 ${e.starting_date}</div></td>
+								<td>～</td>
+								<td><div>終了日 ${e.ending_date}</div></td>
+								<td><div>目標名 ${e.goal_name}</div></td>
+								<td><div>
+										<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+											src="/app/img/edit.png" width="60" height="60"></a>
+									</div></td>
+								<td><div class="btn"></div></td>
+							</tr>
+							<tr class="content">
+								<td>${e.goal_detail}</td>
+							</tr>
+						</c:forEach>
+					</table>
+                    </div>
+                    その他
+                </div>
+
+            </div>
+        </div>
+
+
+-->
+
+
 
 
 		<!-- 参考サイト：https://shu-sait.com/tab-kirikae-box/ -->
 		<!-- 目標名はSQLに接続してから -->
 		<!-- 編集ボタンからの内部構造、SQLとのあれこれが必要そうです-->
 		<!-- 詳細マウスオーバーのコード書いてないです…！-->
-		<div>
+
+<!--
+
 			<div class="goal_wrap">
 				<form action="/app/GoalServlet" id="f0" method="POST">
 					<input id="btn0" type="radio" name="tag" value="0"> <label
@@ -66,13 +339,14 @@
 					<table>
 						<tr>
 							<th>目標名</th>
-							<!--  <td><a href="/app/GoalUpdateServlet"> <img
+  							<td><a href="/app/GoalUpdateServlet"> <img
 									src="/app/img/edit.png" width="60" height="60"></a></td>
 							<th></th>
-							<td><input type="checkbox" id="achievement"></td>-->
+							<td><input type="checkbox" id="achievement"></td>
 						</tr>
 					</table>
 				</div>
+
 
 				<div id="tag_all" class="tag_table">
 					<table border="1">
@@ -98,25 +372,27 @@
 
 
 
-							<!-- <ul id="links01"> -->
 
-							<!-- <li>${e.goal_detail}</li> -->
-							<!-- </ul> -->
-							<!-- </div> -->
 
 
 						</c:forEach>
 					</table>
-					<a href="/app/GoalRegistarServlet"><img
-						src="/app/img/regist.png" class="menu"></a>
 				</div>
 			</div>
-		</div>
+-->
 
+							<!--375にあったもの <ul id="links01"> -->
+							<!-- <li>${e.goal_detail}</li> -->
+							<!-- </ul> -->
+							<!-- </div> -->
+<div class="goal_plus">
+<a href="/app/GoalRegistarServlet"><img
+						src="/app/img/regist.png" width="140" height="140"></a>
+</div>
 
 	</main>
 	<!--  -->
-
+<div class="empty">
 	<footer class="footer">
 		<ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img
@@ -133,7 +409,7 @@
 					<div>マイプロフィール</div></a></li>
 		</ul>
 	</footer>
-
+</div>
 	<script src="/app/js/goal.js"></script>
 </body>
 </html>
