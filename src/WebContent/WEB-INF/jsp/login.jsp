@@ -22,13 +22,13 @@
 		<form id="login_form" method="POST" action="/app/LoginServlet">
 			<table>
 				<tr>
-					<td><input type="text" value="" placeholder="ユーザーID"
+					<td><input type="text" value="" pattern="^[0-9a-zA-Z]{1,12}"  placeholder="ユーザーID"
 						name="user_id" required></td>
 				</tr>
 
 
 				<tr>
-			<td><input type="password" id="textPassword"  placeholder="パスワード"name="password" required><br>
+			<td><input type="password"  pattern="^[0-9a-zA-Z]{8,12}"  id="textPassword"  placeholder="パスワード"name="password" required><br>
 				<input type="checkbox" id="password-check">パスワードを表示する</td>
 				</tr></table>
 
