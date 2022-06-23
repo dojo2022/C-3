@@ -29,35 +29,59 @@
 
 
 		<div class="tab_wrap">
-            <input id="tab1" class="hide" type="radio" name="tab_btn" checked>
-            <input id="tab2" class="hide" type="radio" name="tab_btn">
-            <input id="tab3" class="hide" type="radio" name="tab_btn">
-            <input id="tab4" class="hide" type="radio" name="tab_btn">
-            <input id="tab5" class="hide" type="radio" name="tab_btn">
-            <input id="tab6" class="hide" type="radio" name="tab_btn">
+            <input id="tab1" class="hide" type="radio" name="tab_btn"
+            	<c:if test="${tag == null or tag =='0'}">
+            		checked
+            	</c:if>
+            >
+            <input id="tab2" class="hide" type="radio" name="tab_btn"
+            	<c:if test="${tag == '1'}">
+            		checked
+            	</c:if>
+            >
+            <input id="tab3" class="hide" type="radio" name="tab_btn"
+            	<c:if test="${tag == '2'}">
+            		checked
+            	</c:if>
+            >
+            <input id="tab4" class="hide" type="radio" name="tab_btn"
+            	<c:if test="${tag == '3'}">
+            		checked
+            	</c:if>
+            >
+            <input id="tab5" class="hide" type="radio" name="tab_btn"
+            	<c:if test="${tag == '4'}">
+            		checked
+            	</c:if>
+            >
+            <input id="tab6" class="hide" type="radio" name="tab_btn"
+            	<c:if test="${tag == '5'}">
+            		checked
+            	</c:if>
+            >
             <div class="tab_area">
                 <form action="/app/GoalServlet" id="f0" method="POST">
-                    <input id="btn0" class="hide" type="radio" name="tag" value="0">
+                    <input id="btn0" type="hidden" name="tag" value="0">
                     <label class="tab1_label" for="tab1" onclick="labelClick(this)">目標一覧</label>
                 </form>
                 <form action="/app/GoalServlet" id="f1" method="POST">
-                    <input id="btn1" class="hide" type="radio" name="tag" value="1">
+                    <input id="btn1" type="hidden" name="tag" value="1">
                     <label class="tab2_label" for="tab2" onclick="labelClick(this)">仕事</label>
                 </form>
                 <form action="/app/GoalServlet" id="f2" method="POST">
-                    <input id="btn2" class="hide" type="radio" name="tag" value="2">
+                    <input id="btn2" type="hidden" name="tag" value="2">
                     <label class="tab3_label" for="tab3" onclick="labelClick(this)">家事</label>
                 </form>
                 <form action="/app/GoalServlet" id="f3" method="POST">
-                    <input id="btn3" class="hide" type="radio" name="tag" value="3">
+                    <input id="btn3" type="hidden" name="tag" value="3">
                     <label class="tab4_label" for="tab4" onclick="labelClick(this)">趣味</label>
                 </form>
                 <form action="/app/GoalServlet" id="f4" method="POST">
-                    <input id="btn4" class="hide" type="radio" name="tag" value="4">
+                    <input id="btn4" type="hidden" name="tag" value="4">
                     <label class="tab5_label" for="tab5" onclick="labelClick(this)">勉強</label>
                 </form>
                 <form action="/app/GoalServlet" id="f5" method="POST">
-                    <input id="btn5" class="hide" type="radio" name="tag" value="5">
+                    <input id="btn5" type="hidden" name="tag" value="5">
                     <label class="tab6_label" for="tab6" onclick="labelClick(this)">その他</label>
                 </form>
             </div>
