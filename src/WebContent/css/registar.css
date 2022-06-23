@@ -15,22 +15,26 @@ footer {
 
 input.user_id{
 
-	width : 1000px;
+	width : 15em;
+	font-size:15px
 }
 
 input.password {
 
-	width : 20cm;
+	width : 15em;
+	font-size:15px
 }
 
 input.password_confirm{
 
-	width : 10em;
+	width : 15em;
+	font-size:15px
 }
 
 
  input[name = "registar"]{
  width : 6em;
+ font-size:15px
 
  }
 
@@ -38,6 +42,7 @@ input.password_confirm{
  width : 6em;
  background-color: #FF9933;
  color:white;
+ font-size:15px
  }
 
 
