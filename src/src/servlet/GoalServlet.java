@@ -77,8 +77,8 @@ public class GoalServlet extends HttpServlet {
 			//検索結果をリクエストスコープに格納する
 			request.setAttribute("goalList", goalList);
 		}
-
-
+		//goal.jsp「checked」対策
+		request.setAttribute("tag", tag);
 
 
 		// 目標一覧ページにフォワードする
