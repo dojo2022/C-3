@@ -4,6 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- ↓レスポンシブデザインにするためのタグ。ユーザーが拡大可能 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+
 <title>POME | ログイン画面</title>
 <link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
 <!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
@@ -28,20 +31,21 @@
 	</div>
 		<img src="/app/img/logo00.png" width="260" height="140" alt="POME">
 		<form id="login_form" method="POST" action="/app/LoginServlet">
-			<table>
+			<table class="login">
 				<tr>
 					<td><input type="text" value=""  placeholder="ユーザーID"
-						name="user_id" required></td>
+						name="user_id" required class="login_data"></td>
 				</tr>
 
 
 				<tr>
-			<td><input type="password"  id="textPassword"  placeholder="パスワード"name="password" required><br>
+			<td><input type="password"  id="textPassword"  placeholder="パスワード"name="password" required class="login_data"><br>
 				<input type="checkbox" id="password-check">パスワードを表示する</td>
 				</tr></table>
 
 			<input type="submit" name="login" value="ログイン">
 		</form>
+		<br>
 		<a href="RegistarServlet">新規登録</a>
 	</main>
 	<!--  -->

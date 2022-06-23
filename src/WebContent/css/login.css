@@ -1,9 +1,28 @@
 @charset "UTF-8";
+
 body {
-    margin: 0px;
-    height: 1000px;
-    background-color: #FED966;
+	height: 1000px;
+	background-color: #FED966;
+	margin-right: auto;
+	margin-left: auto;
+	width: 1000px;
+	text-align: center;
 }
-.wrapper{
-  color: #ff6702;
+
+table.login {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input.login_data{
+	width: 300px;
+	height:30px;
+	border-radius: 6px;
+	border-color: transparent;
+
+}
+
+
+.wrapper {
+	color: #ff6702;
 }
