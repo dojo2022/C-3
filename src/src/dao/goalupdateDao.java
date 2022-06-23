@@ -12,7 +12,7 @@ import model.goal;
 
 public class goalupdateDao {
 
-	public boolean update(goal goal) {
+	/*public boolean update(goal goal) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -105,7 +105,7 @@ public class goalupdateDao {
 
 		// 結果を返す
 		return result;
-	}
+	}*/
 
 	//削除
 		// 引数numberで指定されたレコードを削除し、成功したらtrueを返す

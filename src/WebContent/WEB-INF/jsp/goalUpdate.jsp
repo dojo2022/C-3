@@ -34,7 +34,7 @@
 
 			<table>
 			<tr>
-			<td><input type="text" name="goal_id" value= "${e.goal_id}" >
+			<td><input type="hidden" name="goal_id" value= "${e.goal_id}" >
 			</td>
 
 			</tr>

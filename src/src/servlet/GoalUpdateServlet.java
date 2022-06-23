@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.goalDao;
 import dao.goalupdateDao;
+import model.GoalInsert;
 import model.goal;
 import model.result;
 import model.user;
@@ -83,6 +84,7 @@ public class GoalUpdateServlet extends HttpServlet {
 		String difficulty_id = request.getParameter("difficulty_id");
 		String term_id = request.getParameter("term_id");
 		String goal_id = request.getParameter("goal_id");
+		String tag_id =request.getParameter("tag_id");
 
 		Date starting_date=  new Date(0);
 		Date ending_date =  new Date(0);
@@ -100,13 +102,14 @@ public class GoalUpdateServlet extends HttpServlet {
 		//セッションスコープにIDを格納
 		// セッションスコープの保存領域を確保
 		HttpSession session = request.getSession();
-		user user = (user)session.getAttribute("id");
+		user user_id = (user)session.getAttribute("id");
 
-		System.out.println(user.getUser_id());
+		//System.out.println(user.getUser_id());
 
-		// 更新または削除を行う
+		// 削除と登録を行う
+		//削除
 		goalupdateDao gDao = new goalupdateDao();
-		goalDao g2Dao = new goalDao();
+
 
 		if (request.getParameter("SUBMIT").equals("更新")) {
 			System.out.println(request.getParameter("SUBMIT"));
@@ -115,43 +118,73 @@ public class GoalUpdateServlet extends HttpServlet {
 			//反映されていないことに気づけなかったため。
 
 			//デフォルトコンストラクタ
-			goal value  = new goal();
+			//goal value  = new goal();
 			/*
 			beansに逐一使用するコンストラクタを宣言するのではなく、
 			↑↓のようにデフォルトコンストラクタと元々はif文に
 			入っていた引数を一つずつ記述することで
 			beansにコンストラクタを宣言することなく処理ができる。
 			*/
-			value.setGoal_name(goal_name);
-			value.setGoal_detail(goal_detail);
-			value.setStarting_date(starting_date);
-			value.setEnding_date(ending_date);
-			value.setDifficulty_id(difficulty_id);
-			value.setTerm_id(term_id);
-			value.setGoal_id(goal_id);
+			//value.setGoal_name(goal_name);
+			//value.setGoal_detail(goal_detail);
+			//value.setStarting_date(starting_date);
+			//value.setEnding_date(ending_date);
+			//value.setDifficulty_id(difficulty_id);
+			//value.setTerm_id(term_id);
+			//value.setGoal_id(goal_id);
 
-			/* ←登録のメソッドができたらこれ消してください！！！！！
+
 
 			 if (gDao.delete(goal_id)) {	// 削除
-				if(g2Dao.insert(user.getUser_id(),   )) {//目標の登録
 
+				//登録
+					goalDao goalDao = new goalDao();
+					GoalInsert goal = new GoalInsert();
+					goal.setGoal_name(goal_name);
+					goal.setGoal_detail(goal_detail);
+					goal.setTerm_id(term_id);
+					goal.setDifficulty_id(difficulty_id);
+					goal.setStarting_date(starting_date);
+					goal.setEnding_date(ending_date);
+					goal.setTag_id(tag_id);
 
-					if(g2Dao.resultinsert(   ,goal_id))//目標の終日・繰り返し・長期ごとの変更
+					boolean result = false;
+					String registar = goalDao.insert(user_id.getUser_id(), goal);
+					System.out.println("目標番号"+registar);
+					if(!registar.equals(null)) {
+						if(term_id.equals("2")) {
+							result = goalDao.resultinsert(goal, registar, sd, ed);
+						}else {
+							result = goalDao.resultinsert(goal, registar);
+						}
+					}
+
+					if(result){//目標の更新
+						request.setAttribute("result",
+								new result("更新成功！", "目標を更新しました。", "/app/GoalServlet", "目標一覧画面へ"));
+					}	else {		// 更新失敗
+						System.out.println(request.getParameter("SUBMIT"));
+						request.setAttribute("result",
+						new result("更新失敗！", "目標を更新できませんでした。", "/app/GoalServlet", "目標一覧登録画面へ"));
+					}
+			}
+
+			 else {						// 削除失敗
 					request.setAttribute("result",
-							new result("更新成功！", "目標を更新しました。", "/app/GoalServlet", "目標一覧画面へ"));
-			}	}
-
-			else {		// 登録失敗
-				System.out.println(request.getParameter("SUBMIT"));
-				request.setAttribute("result",
-				new result("更新失敗！", "目標を更新できませんでした。", "/app/GoalServlet", "目標一覧登録画面へ"));
+							new result("削除失敗！", "目標を削除できませんでした。", "/app/GoalServlet", "目標一覧画面へ"));
 			}
 		}
-		else {  登録のメソッドができたらこれ消してください！！！！→*/
+		else {
+
+
+
+
+
 
 
 
 			if (gDao.delete(goal_id)) {	// 削除成功
+				System.out.println("削除"+goal_id);
 				request.setAttribute("result",
 						new result("削除成功！", "目標を削除しました。", "/app/GoalServlet", "目標一覧画面へ"));
 					}
@@ -159,6 +192,7 @@ public class GoalUpdateServlet extends HttpServlet {
 				request.setAttribute("result",
 						new result("削除失敗！", "目標を削除できませんでした。", "/app/GoalServlet", "目標一覧画面へ"));
 			}
+
 		}
 
 		// 結果ページにフォワードする
