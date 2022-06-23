@@ -29,7 +29,7 @@
 		     }
 		 }, false);
    };
-    /* [リセット]ボタンをクリックしたときの処理 */
+    // [リセット]ボタンをクリックしたときの処理 */
      registar_form.onreset = function () {
        error_message.textContent = "";
      };
@@ -50,6 +50,17 @@
    // }
    // }
 
- /**
- *
- */
+
+document.form.registar.addEventListener('click', function() {
+    var result = window.confirm('これで登録しても宜しいですか？');
+    if( result == true ) {
+ 	window.location.href = "/app/RegistarServlet";
+
+    }
+    else {
+
+        return false
+
+    }
+});
+
