@@ -12,7 +12,7 @@
 	<!-- ここからメイン -->
 	<main>
 		<h1>新規登録</h1>
-<form id="registar_form" method="POST" action="/app/RegistarServlet">
+<form id="registar_form"  form name ="form"   method="POST" action="/app/RegistarServlet">
 		<table>
 			<tr >
 
@@ -33,8 +33,8 @@
 				<td>
 					<p>
 						<span id="error_message"></span><br>
-						<input id="touroku" type="submit"name="registar" value="登録">
 						<input type="reset"name="reset" value="リセット">
+						<input id="touroku" type="submit"name="registar" value="登録">
 					</p>
 
 				</td>
