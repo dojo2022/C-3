@@ -5,9 +5,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<title>POME | ジョイス更新・削除</title>
+
+<link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
+<!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
+<link rel="apple-touch-icon" type="image/png"
+	href="app/img/pome_favicon.png">
+<!-- ↑アップルタッチアイコン　スマホのホーム画面に追加したときに表示されるアイコン -->
+
+
 <link rel="stylesheet" type="text/css" href="css/joysUpdate.css">
 <link rel="stylesheet" type="text/css" href="css/color.css">
-<title>joys更新・削除</title>
+
 </head>
 <body>
 	<header class="header">

@@ -5,7 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>POME | 目標編集</title>
+<link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
+<!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
+<link rel="apple-touch-icon" type="image/png"
+	href="app/img/pome_favicon.png">
+<!-- ↑アップルタッチアイコン　スマホのホーム画面に追加したときに表示されるアイコン -->
+
 <link rel="stylesheet" type="text/css" href="/app/css/goalUpdate.css">
 </head>
 <body>
