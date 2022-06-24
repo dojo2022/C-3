@@ -141,8 +141,9 @@ input[type="radio"].hide {
 /* パネル内調整 */
 .in_table {
 	font-size: 22px;
-	width: 100%;
-
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
 }
 .out_table {
 	width: 95%;
