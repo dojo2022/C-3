@@ -32,13 +32,13 @@ input.password_confirm{
 }
 
 
- input[name = "registar"]{
+ input[name = "reset"]{
  width : 6em;
  font-size:15px
 
  }
 
- input[name = "reset"]{
+ input[name = "registar"]{
  width : 6em;
  background-color: #FF9933;
  color:white;
