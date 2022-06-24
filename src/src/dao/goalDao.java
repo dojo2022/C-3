@@ -89,7 +89,7 @@ public class goalDao {
 		// 結果を返す
 		return goalList;
 	}
-											//1 , 2, 3, 4, 5
+	//目標一覧のタグごと表示
 	public List<goal> selectTagGoal(String id, String tag) {
 		Connection conn = null;
 		List<goal> goalList = new ArrayList<goal>();
@@ -102,7 +102,7 @@ public class goalDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT distinct goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND tag_id = ? AND achievement_id = '2'";
+			String sql = "SELECT distinct goal.goal_id, starting_date, ending_date, goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND tag_id = ? AND achievement_id = '2'";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
@@ -118,8 +118,11 @@ public class goalDao {
 			// 結果表をコレクションにコピーする<ここ改造>
 			while (rs.next()) {
 				goal card = new goal(
+						rs.getString("goal_id"),
 						rs.getString("goal_name"),
-						rs.getString("goal_detail"));
+						rs.getString("goal_detail"),
+						rs.getDate("starting_date"),
+						rs.getDate("ending_date"));
 				goalList.add(card);
 			}
 		}catch (SQLException e) {

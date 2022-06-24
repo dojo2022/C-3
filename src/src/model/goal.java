@@ -135,6 +135,13 @@ public class goal implements Serializable {
 		this.term_id = "" ;
 	}
 
+	public goal(String string, String string2, String string3, Date date, Date date2) {
+		this.goal_id = string;
+		this.goal_name = string2;
+		this.goal_detail = string3;
+		this.starting_date = date;
+		this.ending_date = date2;
+	}
 	public String getId() {
 		return id;
 	}
