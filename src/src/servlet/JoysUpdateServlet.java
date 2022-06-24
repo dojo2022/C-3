@@ -143,11 +143,11 @@ public class JoysUpdateServlet extends HttpServlet {
 		else {
 			if (jDao.delete(reward_id)) {	// 削除成功
 				request.setAttribute("result",
-						new result("削除成功！", "レコードを削除しました。", "/app/JoysUpdateServlet", "ジョイス画面へ"));
+						new result("削除成功！", "レコードを削除しました。", "/app/JoysServlet", "ジョイス画面へ"));
 					}
 			else {						// 削除失敗
 				request.setAttribute("result",
-						new result("削除失敗！", "レコードを削除できませんでした。", "/app/JoysUpdateServlet", "ジョイス画面へ"));
+						new result("削除失敗！", "レコードを削除できませんでした。", "/app/JoysServlet", "ジョイス画面へ"));
 			}
 		}
 

@@ -64,7 +64,7 @@
 				</tr>
 				<tr>
 
-					<td>${e.reward_level_id}<input type="radio" name="reward_level_id" value="1"
+					<td><input type="hidden" value="${e.reward_level_id}"><input type="radio" name="reward_level_id" value="1"
 						<c:if test="${e.reward_level_id == '1'}">
 							checked
 						</c:if>
