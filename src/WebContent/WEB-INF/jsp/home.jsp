@@ -3,10 +3,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+<!--
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
 <head>
 <meta charset="UTF-8">
 <title>POME HOME</title>
+
+<link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
+<!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
+<link rel="apple-touch-icon" type="image/png"
+	href="app/img/pome_favicon.png">
+<!-- ↑アップルタッチアイコン　スマホのホーム画面に追加したときに表示されるアイコン -->
+
+
 <link rel="stylesheet" type="text/css" href="/app/css/home.css">
+<link rel="stylesheet" type="text/css" href="css/color.css">
+
 </head>
 <body>
 	<header class="header">
@@ -20,6 +37,7 @@
 
 	<!-- ここからメイン -->
 	<main>
+	<h1>HOME</h1>
 
 		<div>
 			<div class="goal_wrap">
@@ -64,21 +82,27 @@
 								<td><input type="hidden" name="id" value=${e.id} readonly></td>
 								<td>${e.goal_name}</td>
 								<td>${e.goal_detail}</td>
-								<td><a href="/app/GoalUpdateServlet"><img
-										src="/app/img/edit.png" class="menu"></a></td>
+
 								<td>
-
-										<input type="checkbox" id="achievement" name="check" value="1" onchange="formSubmit(this.form)">
-
+									<label class="btn">
+										<input type="checkbox" style="display:none;" id="achievement" name="check" value="1" onchange="formSubmit(this.form)">
+										<i class ="fa fa-square-o fa-2x"></i>
+										<i class ="fa fa-check-square-o fa-2x"></i>
+									</label>
 								</td>
 							</tr>
 					</table>
 					</form>
 					</c:forEach>
 				</div>
+				<div class="goal_plus">
+			<a href="/app/GoalRegistarServlet"><img
+						src="/app/img/regist.png" width="140" height="140"></a>
+		</div>
 
 
 	</main>
+	<div class = "empty"></div>
 	<!--  -->
 	<footer class="footer">
 		<ul class="footer-ul">
