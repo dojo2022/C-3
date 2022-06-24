@@ -1,13 +1,7 @@
 @charset "UTF-8";
-/*
-.wrapper{
-	text-align:center;
-	margin:100px auto 150px auto;
-	max-width:494px;
-}
-*/
 
 
+/*見出し*/
 h1{
 	background-image:url("/app/img/joys.png");
 	background-size:50px 50px;
@@ -15,12 +9,67 @@ h1{
 	padding: 8px 0 0 60px;
 
 }
+/*編集ボタン*/
 .goal_plus {
 	text-align: right;
 	padding: 30px 70px ;
 }
+/*詳細*/
+.out_table {
+	width: 95%;
+  	padding: 10px 0 0 0 ;
+  	margin: 0 auto;
+  	border-top: 2px solid orange;
+  	text-align: center;
+	font-size: 15px;
+}
 
 
+/* 全体の位置 */
+.tab_wrap {
+    width:90%;
+    margin:80px auto;
+}
+
+/* パネル囲い スクロール*/
+.panel_area {
+    background:#fff;
+    border:3px solid orange;
+    overflow: auto;
+}
+
+/* パネル設定 */
+.tab_panel {
+    width: 100%;
+    height: 500px;
+
+}
+
+
+
+/* パネル内調整 */
+.in_table {
+	font-size: 22px;
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+}
+.out_table {
+	width: 95%;
+  	padding: 10px 0 0 0 ;
+  	margin: 0 auto;
+  	border-top: 2px solid orange;
+  	text-align: center;
+	font-size: 15px;
+}
+.test_all {
+
+}
+.test {
+	text-align: center;
+
+
+}
 
 @media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
 }

@@ -6,14 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"
- content="width=device-width,
+	content="width=device-width,
  			initial-scale=1.0,
  			minimum-scale=1.0,
  			user-scalable=yes">
 
 <title>POME | ジョイス</title>
 
-<link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
+<link rel="icon" type="image/png" href="/app/img/favicon.ico" />
 <!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
 <link rel="apple-touch-icon" type="image/png"
 	href="app/img/pome_favicon.png">
@@ -25,8 +25,8 @@
 
 </head>
 <body>
-<!-- 全体を囲むクラス -->
-<div class=wrapper>
+	<!-- 全体を囲むクラス -->
+
 	<header class="header">
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
@@ -43,58 +43,82 @@
 		<h1>joys一覧</h1>
 
 
+		<div class="tab_wrap">
+			<div class="panel_area">
+				<div class="tab_panel">
 
-		<hr>
-		<c:forEach var="e" items="${rewardList}">
+					<form action="/app/CheckjoysServlet" method="POST" id="exchange">
+<div class="test_all">
+<div  class="test">Joys</div>
+<div  class="test">必要ポイント数</div>
+</div>
+<c:forEach var="e" items="${rewardList}">
+						<table class="in_table">
+							<tr>
+								<td></td>
 
-
-			<form action="/app/CheckjoysServlet" method="POST" id="exchange">
-				<!-- 頑張る -->
-								<input type="hidden" value="${e.user_id}">
-								<input type="hidden" value="${e.nickname}">
-								<input type="hidden" name="having_point"value="${e.having_point}">
-
-				<table class="">
-
-
-					<!-- ↓  /app/JoysUpdateServlet?reward_id=0001	こんな感じで数値が入る	 -->
-					<tr>
-					<td>
-					<a href="/app/JoysUpdateServlet?reward_id=${e.reward_id}">
-							<img src="/app/img/edit.png" width="60" height="60">
-					</a></td>
-					<td><input type="hidden" name="reward_id" value="${e.reward_id}" readonly></td>
-					<td><input type="hidden" name="reward_name" value="${e.reward_name}" readonly></td>
-					<td class="">${e.reward_name}</td>
-					<td class="">${e.reward_detail}</td>
-					<td class="">${e.required_point}ポイント</td>
-					<td>
-					 <!-- <a href="/app/CheckjoysServlet" onclick="change(this.form)">
-					    ?required_point=${e.required_point}">-->
-					<input type="image" src="/app/img/present.png" width="60" height="60" onclick="change(this.form)" > </td>
+								<td></td>
+							</tr>
 
 
-					</tr>
-				</table>
-			</form>
 
-	</c:forEach>
-	<hr>
-	<c:forEach end= "0" var="a" items="${rewardList}">
+
+
+								<tr>
+									<td><a
+										href="/app/JoysUpdateServlet?reward_id=${e.reward_id}"> <img
+											src="/app/img/edit.png" width="60" height="60">
+									</a></td>
+
+
+
+									<td class="">${e.reward_name}</td>
+									<td class="">${e.required_point}ポイント</td>
+
+									<td><input type="image" src="/app/img/present.png"
+										width="60" height="60" onclick="change(this.form)"></td>
+									<td><input type="hidden" name="reward_id"
+										value="${e.reward_id}" readonly></td>
+									<td><input type="hidden" name="reward_name"
+										value="${e.reward_name}" readonly></td>
+
+								</tr>
+								</table>
+
+								<div class="out_table">${e.reward_detail}</div>
+
+
+
+
+
+
+
+
+							</c:forEach>
+
+
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<c:forEach end="0" var="a" items="${rewardList}">
 		保持ポイント：${a.having_point}pts
 		</c:forEach>
 
 
 
-<div class="goal_plus">
-			<a href="/app/JoysRegistarServlet"><img
-						src="/app/img/regist.png" width="140" height="140"></a>
+		<div class="goal_plus">
+			<a href="/app/JoysRegistarServlet"><img src="/app/img/regist.png"
+				width="140" height="140"></a>
 		</div>
 
 
 
+
 	</main>
-	<div class = "empty"></div>
+	<div class="empty"></div>
 	<!--  -->
 	<footer class="footer">
 		<ul class="footer-ul">
@@ -113,6 +137,6 @@
 		</ul>
 	</footer>
 	<script src="js/joys.js"></script>
-	</div>
+
 </body>
 </html>
