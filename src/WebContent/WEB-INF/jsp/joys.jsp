@@ -38,15 +38,11 @@
 
 	<!-- ここからメイン -->
 	<main>
-		<img src="/app/img/joys.png" width="60" height="60"> <a
-			href="/app/JoysRegistarServlet"><img src="/app/img/regist.png"
-			width="60" height="60"></a>
-		<!-- ↑右下に固定したい登録ボタン -->
+
+
 		<h1>joys一覧</h1>
 
-		<c:forEach end= "0" var="a" items="${rewardList}">
-		現在の${a.nickname}さんのポイントは${a.having_point}です
-		</c:forEach>
+
 
 		<hr>
 		<c:forEach var="e" items="${rewardList}">
@@ -83,13 +79,22 @@
 			</form>
 
 	</c:forEach>
+	<hr>
+	<c:forEach end= "0" var="a" items="${rewardList}">
+		保持ポイント：${a.having_point}pts
+		</c:forEach>
 
-			<hr>
 
+
+<div class="goal_plus">
+			<a href="/app/JoysRegistarServlet"><img
+						src="/app/img/regist.png" width="140" height="140"></a>
+		</div>
 
 
 
 	</main>
+	<div class = "empty"></div>
 	<!--  -->
 	<footer class="footer">
 		<ul class="footer-ul">
