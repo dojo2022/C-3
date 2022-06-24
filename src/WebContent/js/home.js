@@ -68,4 +68,8 @@
 	};
 
 
+// goal.jsから追加
+ 	function labelClick(ele){
+ 		ele.parentNode.submit();
+ 	}
 

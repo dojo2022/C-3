@@ -90,6 +90,48 @@ body {
     content: "\f096";
 }*/
 
+/*
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*/
+/*
+.home_h1{
+	background-image:url("/app/img/home.png");
+	background-size:60px 60px;
+	background-repeat: no-repeat;
+	padding: 8px 0 0 60px;
+	font-size: 70px;
+	font-weight: normal;
+}
+*/
+
+/* メイン */
+.home_title {
+	display: flex;
+}
+.home_title_img {
+	position: relative;
+	padding: 30px 100px;
+}
+.home_title_h1 {
+	font-size: 70px;
+	font-weight: 500;
+}
+
+.goal_plus {
+	text-align: right;
+	padding: 30px 70px ;
+}
+
+
 label input[type="checkbox"] ~ i.fa.fa-square-o{
     color: #c8c8c8;    display: inline;
 }
@@ -105,30 +147,198 @@ label input[type="checkbox"]:checked ~ i.fa.fa-check-square-o{
 label:hover input[type="checkbox"] ~ i.fa {
 color: #FED966;
 }
-/*
-.fa {
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+
+/* 0624 山口追加↓ */
+/* タブ切り替え */
+/* 全体の位置 */
+.tab_wrap {
+    width:90%;
+    margin:80px auto;
 }
 
-*/
-h1{
-	background-image:url("/app/img/home.png");
-	background-size:50px 50px;
-	background-repeat: no-repeat;
-	padding: 8px 0 0 60px;
-
-}
-.goal_plus {
-	text-align: right;
-	padding: 30px 70px ;
+/* ラジオ型消去 */
+input[type="radio"].hide {
+    display:none;
 }
 
+/* タグラベル全体 */
+.tab_area {
+    font-size:0;
+
+    /* タグの親要素に設定でタグ横並び */
+    display:flex;
+}
+
+/* タグラベル内 */
+.tab_area label {
+    width:100px;
+    height: 25px;
+    margin:0 10px 5px 0;
+    display:inline-block;
+    padding:12px 0;
+    color: black;
+    /*background:#ddd;*/
+    text-align:center;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:ease 0.2s opacity;
+    border: 1px solid;
+    outline: none;
+    border-top-right-radius: 10px;
+}
+
+.tab1_label {
+	background-color: #FF9B71;
+	outline: none;
+}
+.tab2_label {
+	background: #645DD7;
+	outline: none;
+}
+.tab3_label {
+	background: #F2FF49;
+	outline: none;
+}
+.tab4_label {
+	background: #B3FFFC;
+	outline: none;
+}
+.tab5_label {
+	background: #FB62F6;
+	outline: none;
+}
+.tab6_label {
+	background: #6c6c6c;
+	outline: none;
+}
+
+/* タブアニメ */
+.tab1_label:hover,
+.tab2_label:hover,
+.tab3_label:hover,
+.tab4_label:hover,
+.tab5_label:hover,
+.tab6_label:hover {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 3s;
+  animation-name: tab_anime;
+
+}
+
+@keyframes tab_anime {
+  0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+  }
+  50%, 70% {
+    transform: scale(0.9);
+  }
+}
+
+/* ホバーすると透明 */
+.tab_area label:hover {
+    opacity:0.5;
+}
+
+/* パネル囲い スクロール*/
+.panel_area {
+    background:#fff;
+    border:3px solid orange;
+    overflow: auto;
+}
+
+/* パネル設定 */
+.tab_panel {
+    width: 100%;
+    height: 500px;
+    display:none;
+}
+
+/* パネル内文章 */
+.tab_panel p {
+    font-size:20px;
+    letter-spacing:1px;
+    text-align:center;
+}
+
+/* パネル内調整 */
+.in_table {
+	font-size: 22px;
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+}
+.out_table {
+	width: 95%;
+  	padding: 10px 0 0 0 ;
+  	margin: 0 auto;
+  	border-top: 2px solid orange;
+  	text-align: center;
+	font-size: 15px;
+}
+
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+body{color:red;}
+}
+
+
+/*  */
+#tab1:checked ~ .tab_area .tab1_label {
+    background:orange;
+    color:white;
+}
+#tab1:checked ~ .panel_area #panel1 {
+    display:block;
+}
+
+/*  */
+#tab2:checked ~ .tab_area .tab2_label {
+    background:blue;
+    color:white;
+}
+#tab2:checked ~ .panel_area #panel2 {
+    display:block;
+}
+
+/*  */
+#tab3:checked ~ .tab_area .tab3_label {
+    background:yellow;
+    color:white;
+}
+#tab3:checked ~ .panel_area #panel3 {
+    display:block;
+}
+
+/*  */
+#tab4:checked ~ .tab_area .tab4_label {
+    background:green;
+    color:white;
+}
+#tab4:checked ~ .panel_area #panel4 {
+    display:block;
+}
+
+/*  */
+#tab5:checked ~ .tab_area .tab5_label {
+    background:#8000ff;
+    color:white;
+}
+#tab5:checked ~ .panel_area #panel5 {
+    display:block;
+}
+
+/*  */
+#tab6:checked ~ .tab_area .tab6_label {
+    background:#808080;
+    color:white;
+}
+#tab6:checked ~ .panel_area #panel6 {
+    display:block;
+}
 
 
 

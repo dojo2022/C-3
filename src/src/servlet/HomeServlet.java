@@ -74,7 +74,8 @@ public class HomeServlet extends HttpServlet {
 					request.setAttribute("goalTodayList", goalTodayList);
 				}
 
-
+				//goal.jspからコピペ「checked」対策
+				request.setAttribute("tag", tag);
 
 
 				// 目標一覧ページにフォワードする
