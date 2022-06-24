@@ -27,6 +27,18 @@ a {
 	top: 50px;
 }
 
+
+
+.having_point{
+	 border-bottom: solid 2px blue;
+     width: 400px;
+
+}
+
+.total_point{
+	 border-bottom: solid 2px blue;
+     width: 400px;
+}
 /* パネル囲い スクロール*/
 .list{
     background:#fff;
