@@ -74,10 +74,11 @@ public class HomeServlet extends HttpServlet {
 					request.setAttribute("goalTodayList", goalTodayList);
 				}
 
+				//goal.jspからコピペ「checked」対策
+				request.setAttribute("tag", tag);
 
 
-
-				// 目標一覧ページにフォワードする
+				// ホームページにフォワードする
 						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 						dispatcher.forward(request, response);
 			}
