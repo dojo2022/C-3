@@ -75,7 +75,7 @@
 						</tr>
 
 						<tr>
-							<th class="th_left"><span>日付</span></th>
+							<th class="th_left" ><span>日付</span></th>
 
 							<td><input type="date" name="starting_date"
 								value="${e.starting_date}" required></td>
@@ -126,8 +126,9 @@
 
 						</tr>
 						<tr>
-							<td><input type="submit" name="SUBMIT" value="更新"></td>
-							<td><input type="submit" name="SUBMIT" value="削除"></td>
+
+							<td colspan="3"><input type="submit" name="SUBMIT" value="更新" class="update_button"></td>
+							<td colspan="3"><input type="submit" name="SUBMIT" value="削除" class="delete_button"></td>
 
 						</tr>
 

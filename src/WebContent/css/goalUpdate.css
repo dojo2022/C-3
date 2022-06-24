@@ -3,7 +3,7 @@
 body {
 	margin: 0px;
 	height: 100%;
-	text-align: center;
+
 }
 
 a {
@@ -14,10 +14,13 @@ a {
 table {
 	margin-left: auto;
 	margin-right: auto;
-	width: 70%
+	width: 70%;
+	text-align:center;
 }
-th.th_left{
-	width:500px;
+
+th.th_left {
+	width: 500px;
+	height: 40px;
 }
 
 td {
@@ -28,6 +31,8 @@ td {
 /**/
 input.textwidth {
 	width: 100%;
+	outline: 10px #FFF;
+	outline-offset: -10px;
 }
 
 /*ラジオボタン*/
@@ -94,6 +99,7 @@ input[type="radio"]:checked+label.work {
 	float: center;
 	width: 150px;
 }
+
 input[type="radio"]:checked+label.housework {
 	border: 2px solid #fff;
 	border-radius: 6px;
@@ -105,7 +111,8 @@ input[type="radio"]:checked+label.housework {
 	float: center;
 	width: 150px;
 }
-input[type="radio"]:checked+label.hobby{
+
+input[type="radio"]:checked+label.hobby {
 	border: 2px solid #fff;
 	border-radius: 6px;
 	background: green;
@@ -116,6 +123,7 @@ input[type="radio"]:checked+label.hobby{
 	float: center;
 	width: 150px;
 }
+
 input[type="radio"]:checked+label.study {
 	border: 2px solid #fff;
 	border-radius: 6px;
@@ -140,11 +148,49 @@ input[type="radio"]:checked+label.etc {
 	width: 150px;
 }
 
+/*ボタン中央寄せ*/
+
+/*更新ボタン*/
+input.update_button {
+	width: 80px;
+	height: 30px;
+	border-radius: 6px;
+	background-color: #ff6702;
+	border-color: #ff6702;
+	color: white;
+	float:right;
+}
+
+input.update_button:hover {
+	background-color: #fff;
+	color: #ff6702;
+	border-bottom: 2px solid;
+	border-color: #ff6702;
+
+}
+
+/*削除ボタン*/
+input.delete_button {
+	width: 80px;
+	height: 30px;
+	border-radius: 6px;
+	background-color: #fff;
+	border-color: #ff6702;
+	color: #ff6702;
+	float:left;
+}
+
+input.update_button:hover {
+	background-color: #ff6702;
+	border-bottom: 2px solid;
+	border-color: #ff6702;
+	color: #fff;
+}
 
 /* ヘッダー */
 .header {
-	position:relative;
-	top:0;
+	position: relative;
+	top: 0;
 }
 
 .logoutbtn div {
