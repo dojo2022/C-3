@@ -48,9 +48,9 @@
 				<div class="tab_panel">
 
 					<form action="/app/CheckjoysServlet" method="POST" id="exchange">
-<div class="test_all">
-<div  class="test">Joys</div>
-<div  class="test">必要ポイント数</div>
+<div class="panel_upper">
+<div  class="panel_upper_1">Joys</div>
+<div  class="panel_upper_2">必要ポイント数</div>
 </div>
 <c:forEach var="e" items="${rewardList}">
 						<table class="in_table">

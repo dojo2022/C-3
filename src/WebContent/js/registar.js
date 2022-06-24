@@ -1,5 +1,6 @@
  'use strict';
 
+//パスワードと確認一致用
 	const pwd=document.getElementById('textPassword');
 	const pwdCheck =document.getElementById('password-check');
 	 pwdCheck.addEventListener('change', function() {
@@ -21,6 +22,7 @@
             document.getElementById('error_message').textContent=``;
 
          }
+         //パスワードにいれるべき文字
           pwdCheck.addEventListener('change', function() {
 		     if(pwdCheck.checked) {
 		         pwd.setAttribute('type', 'text');
@@ -64,7 +66,7 @@
     }
 });
 */
-
+//登録確認用
  document.getElementById('registar_form').onsubmit = function (event) {
 			let result = window.confirm('この内容で登録しますか？');
 			if(result === true){
