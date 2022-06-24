@@ -39,7 +39,7 @@
 
 			<c:forEach var="e" items="${profile }">
 				<div>
-					<input type="text" name="nickname" value=${e.nickname }>
+					<input type="text" name="nickname" value=${e.nickname } >
 				</div>
 				<div class="having_point">
 					所持ポイント<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
