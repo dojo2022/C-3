@@ -38,7 +38,8 @@
 
 
 </main>
-
+<!-- フッター被り解決 -->
+<div class = "empty"></div>
 		<footer class="footer">
            <!--   <ul class="footer-ul">
                 <li class="footer-li"><a href="/app/HomeServlet"><img src="/app/img/home.png" width="60" height="60"><br><div>Home</div></a></li>

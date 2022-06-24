@@ -114,7 +114,8 @@
 
 </c:forEach>
 	</main>
-	<!--  -->
+	<!-- フッター被り解決 -->
+<div class = "empty"></div>
 
         <footer class="footer">
             <ul class="footer-ul">
