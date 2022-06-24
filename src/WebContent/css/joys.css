@@ -1,7 +1,14 @@
 @charset "UTF-8";
+/*
 .wrapper{
 	text-align:center;
 	margin:100px auto 150px auto;
 	max-width:494px;
+}
+*/
+
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
 
 }
