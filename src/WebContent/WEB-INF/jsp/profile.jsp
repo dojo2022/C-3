@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>POME | プロフィール</title>
 
-<link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
+<link rel="icon" type="image/png" href="/app/img/favicon.ico" />
 <!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
 <link rel="apple-touch-icon" type="image/png"
 	href="app/img/pome_favicon.png">
@@ -37,14 +37,6 @@
 
 
 
-			<h1>
-				<img src="/app/img/profile.png" width="50" height="50">PROFILE
-			</h1>
-			<input type="file" name="IMAGE" accept="image/*"
-				onchange="previewImage(this);"><br>
-			<canvas id="preview" style="max-width: 200px;"></canvas>
-			<br>
-
 			<c:forEach var="e" items="${profile }">
 				<div>
 					<input type="text" name="nickname" value=${e.nickname }>
@@ -67,13 +59,13 @@
 
 
 		達成済みリスト
-		<div id="table">
+		<div id="table" class="list">
 			<table id="list">
 
 
 				<c:forEach var="a" items="${achievementList}">
 					<tr>
-						<td>${a.goal_name }</td>
+						<td class="listname">${a.goal_name }</td>
 
 					</tr>
 				</c:forEach>
