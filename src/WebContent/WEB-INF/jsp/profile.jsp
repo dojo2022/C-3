@@ -41,17 +41,17 @@
 				<div>
 					<input type="text" name="nickname" value=${e.nickname }>
 				</div>
-				<div>
-					所持ポイント<br> ${e.having_point }ポイント<br>
+				<div class="having_point">
+					所持ポイント<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					${e.having_point }ポイント<br>
 				</div>
-				<div>
-					累計ポイント<br> ${e.total_point }ポイント<a href="/app/RankingServlet">(ランキング)</a><br>
+				<div class="total_point">
+					累計ポイント<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					${e.total_point }ポイント<a href="/app/RankingServlet">(ランキング)</a><br>
 				</div>
 			</c:forEach>
-			<select name="color">
-				<option value=color1>デフォルトカラー</option>
-				<option value=color1>ダークカラー</option>
-			</select> <input type="radio" name="edit" value="yes">編集する <input
+
+			<input type="radio" name="edit" value="yes">編集する <input
 				type="radio" name="edit" value="no" checked>編集しない<br> <input
 				type="submit" name="update" value="更新" disabled="disabled"><br>
 

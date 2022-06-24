@@ -11,7 +11,6 @@
 <link rel="apple-touch-icon" type="image/png"
 	href="app/img/pome_favicon.png">
 <!-- ↑アップルタッチアイコン　スマホのホーム画面に追加したときに表示されるアイコン -->
-
 <link rel="stylesheet" type="text/css" href="/app/css/goalRegistar.css">
 
 </head>
@@ -66,13 +65,17 @@
 					<th>日付</th>
 				</tr>
 				<tr>
-					<td><input type="date" name="starting_date" required></td>
+					<td>
+						<div id="app">
+						<input type="date" name="starting_date" onchange="Registar_JSP()" required>
+						</div>
+					</td>
 
 <!-- 開始日はjavaScriptで今日の日付を生成し自動入力されていると便利かも。 -->
 <!-- 開始日が本日以前は入力できない形でもよさそう -->
 
 					<td>～</td>
-					<td><input type="date" name="ending_date"></td>
+					<td><input type="date" name="ending_date" onchange="homeRegistar_JSP()"></td>
 				</tr>
 
 				<tr>

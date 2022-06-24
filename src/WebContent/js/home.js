@@ -43,7 +43,7 @@
     	modal.style.display = 'block';
     }
 
-    // バツ印がクリックされた時
+  /*  // バツ印がクリックされた時
 buttonClose.addEventListener('click', modalClose);
 function modalClose() {
   modal.style.display = 'none';
@@ -56,3 +56,4 @@ function outsideClose(e) {
     modal.style.display = 'none';
   }
  }
+*/
