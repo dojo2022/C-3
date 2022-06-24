@@ -49,44 +49,33 @@
 
 
 						<tr>
-							<th><span>目標名</span></th>
+							<th class="th_left"><span>目標名</span></th>
 
-							<td><input class="textwidth" type="text" name="goal_name"
-								value="${e.goal_name}" required></input></td>
+							<td colspan="5"><input class="textwidth" type="text"
+								name="goal_name" value="${e.goal_name}" required></input></td>
 						</tr>
 						<tr>
-							<th><span>詳細</span></th>
+							<th class="th_left"><span>詳細</span></th>
 
-							<td><input class="textwidth" type="text" name="goal_detail"
-								value="${e.goal_detail}"></input></td>
+							<td colspan="5"><input class="textwidth" type="text"
+								name="goal_detail" value="${e.goal_detail}"></input></td>
 						</tr>
 						<tr>
-							<th><span>期間</span></th>
+							<th class="th_left"><span>期間</span></th>
 
 							<td><input id="終日" type="radio" name="term_id" value="1"
 								<c:if test ="${e.term_id == '1' }">checked </c:if> required>
 								<label class="radio_label" for="終日">終日</label></td>
 							<td><input id="繰り返し" type="radio" name="term_id" value="2"
-								<c:if test ="${e.term_id == '2' }">checked </c:if>>
-								<label class="radio_label" for="繰り返し">繰り返し</label></td>
+								<c:if test ="${e.term_id == '2' }">checked </c:if>> <label
+								class="radio_label" for="繰り返し">繰り返し</label></td>
 							<td><input id="長期" type="radio" name="term_id" value="3"
-								<c:if test ="${e.term_id == '3' }">checked </c:if>>
-								<label class="radio_label" for="長期">長期</label></td>
-						</tr>
-						<tr>
-							<th><span>達成難易度</span></th>
-
-							<td><input id="簡単" type="radio" name="difficulty_id" value="1"
-								<c:if test ="${e.difficulty_id == '1' }">checked </c:if>
-								required>
-								<label class="radio_label" for="簡単">簡単</label></td>
-							<td><input id="難しい" type="radio" name="difficulty_id" value="2"
-										<c:if test ="${e.difficulty_id == '2' }">checked </c:if>>
-								<label class="radio_label" for="難しい">難しい</label></td>
+								<c:if test ="${e.term_id == '3' }">checked </c:if>> <label
+								class="radio_label" for="長期">長期</label></td>
 						</tr>
 
 						<tr>
-							<th><span>日付</span></th>
+							<th class="th_left"><span>日付</span></th>
 
 							<td><input type="date" name="starting_date"
 								value="${e.starting_date}" required></td>
@@ -99,29 +88,40 @@
 								value="${e.ending_date}"></td>
 						</tr>
 
+
 						<tr>
-							<th><span>タグ</span></th>
+							<th class="th_left"><span>達成難易度</span></th>
+
+							<td><input id="簡単" type="radio" name="difficulty_id"
+								value="1"
+								<c:if test ="${e.difficulty_id == '1' }">checked </c:if>
+								required> <label class="radio_label" for="簡単">簡単</label></td>
+							<td><input id="難しい" type="radio" name="difficulty_id"
+								value="2"
+								<c:if test ="${e.difficulty_id == '2' }">checked </c:if>>
+								<label class="radio_label" for="難しい">難しい</label></td>
+						</tr>
+
+
+
+						<tr>
+							<th class="th_left"><span>タグ</span></th>
 
 							<td><input id="仕事" type="radio" name="tag_id" value="1"
-										<c:if test ="${e.tag_id == '1' }">checked </c:if> required><div class="radio_label_work">
-									仕事
-								</div></td>
+								<c:if test ="${e.tag_id == '1' }">checked </c:if> required><label
+								class="radio_label work" for="仕事"> 仕事 </label></td>
 							<td><input id="家事" type="radio" name="tag_id" value="2"
-										<c:if test ="${e.tag_id == '2' }">checked </c:if>><div class="radio_label_housework">
-									家事
-								</div></td>
+								<c:if test ="${e.tag_id == '2' }">checked </c:if>><label
+								class="radio_label housework" for="家事"> 家事 </label></td>
 							<td><input id="趣味" type="radio" name="tag_id" value="3"
-										<c:if test ="${e.tag_id == '3' }">checked </c:if>><div class="radio_label_hobby">
-									趣味
-								</div></td>
+								<c:if test ="${e.tag_id == '3' }">checked </c:if>><label
+								class="radio_label hobby" for="趣味"> 趣味 </label></td>
 							<td><input id="勉強" type="radio" name="tag_id" value="4"
-										<c:if test ="${e.tag_id == '4' }">checked </c:if>><div class="radio_label_study">
-									勉強
-								</div></td>
+								<c:if test ="${e.tag_id == '4' }">checked </c:if>><label
+								class="radio_label study" for="勉強"> 勉強 </label></td>
 							<td><input id="その他" type="radio" name="tag_id" value="5"
-										<c:if test ="${e.tag_id == '5' }">checked </c:if>><div class="radio_label_etc">
-									その他
-								</div></td>
+								<c:if test ="${e.tag_id == '5' }">checked </c:if>><label
+								class="radio_label etc" for="その他"> その他 </label></td>
 
 
 						</tr>

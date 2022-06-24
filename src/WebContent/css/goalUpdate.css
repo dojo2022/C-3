@@ -3,7 +3,7 @@
 body {
 	margin: 0px;
 	height: 100%;
-	text-align:center;
+	text-align: center;
 }
 
 a {
@@ -12,87 +12,139 @@ a {
 
 /*フォーム・テーブルについて*/
 table {
-    margin-left: auto;
-    margin-right: auto;
-    width:50%
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%
+}
+th.th_left{
+	width:500px;
 }
 
-td{
-	width:100%;
-	height:150%;
+td {
+	width: 80%;
+	height: 150%;
 }
-
 
 /**/
-input.textwidth{
-	width:450px;
+input.textwidth {
+	width: 100%;
 }
 
 /*ラジオボタン*/
 input[type=radio] {
-	width:50px;
+	width: 50px;
 	display: none; /* ラジオボタンを非表示にする */
 }
 
-label {
+label.radio_label {
 	border: 2px solid #000;
 	border-radius: 6px;
 	background: #fff;
 	-webkit-box-shadow: 4px 4px 0 #000;
 	box-shadow: 4px 4px 0 #000;
-	display:block;
-	float:center;
-	width:150px;
+	display: block;
+	float: center;
+	width: 150px;
 }
 
-input[type="radio"]:checked+label{
+input[type="radio"]:checked+label.radio_label {
 	border: 2px solid #fff;
 	border-radius: 6px;
 	background: #000;
 	-webkit-box-shadow: 4px 4px 0 #000;
 	box-shadow: 4px 4px 0 #000;
-	color:#fff;
-	display:block;
-	float:center;
-	width:150px;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
 }
 
-label:hover{
+label.radio_label:hover {
 	border: 2px solid #000;
 	border-radius: 0;
 	background: #fff;
 	-webkit-box-shadow: 4px 4px 0 #000;
 	box-shadow: 4px 4px 0 #000;
-	display:block;
-	float:center;
-	width:150px;
+	display: block;
+	float: center;
+	width: 150px;
 }
 
-
-.radio_label_work {
-
+/*タグごとのラベル！！！仕事趣味家事勉強その他*/
+input[type="radio"]:checked+label.work {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: #000;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
 }
 
-.radio_label_housework {
-
+input[type="radio"]:checked+label.work {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: blue;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+input[type="radio"]:checked+label.housework {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: red;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+input[type="radio"]:checked+label.hobby{
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: green;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+input[type="radio"]:checked+label.study {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: orange;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
 }
 
-.radio_label_hobby {
-
+input[type="radio"]:checked+label.etc {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: purple;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
 }
 
-.radio_label_study {
-
-}
-
-.radio_label_etc {
-
-}
 
 /* ヘッダー */
 .header {
-	position: relative;
-	top: 0;
+	position:relative;
+	top:0;
 }
 
 .logoutbtn div {
