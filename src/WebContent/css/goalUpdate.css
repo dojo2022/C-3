@@ -1,11 +1,92 @@
 @charset "UTF-8";
 
 body {
-    margin: 0px;
-    height: 1000px;
+	margin: 0px;
+	height: 100%;
+	text-align:center;
 }
+
 a {
-    text-decoration:none;
+	text-decoration: none;
+}
+
+/*フォーム・テーブルについて*/
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width:50%
+}
+
+td{
+	width:100%;
+	height:150%;
+}
+
+
+/**/
+input.textwidth{
+	width:450px;
+}
+
+/*ラジオボタン*/
+input[type=radio] {
+	width:50px;
+	display: none; /* ラジオボタンを非表示にする */
+}
+
+label {
+	border: 2px solid #000;
+	border-radius: 6px;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	display:block;
+	float:center;
+	width:150px;
+}
+
+input[type="radio"]:checked+label{
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: #000;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color:#fff;
+	display:block;
+	float:center;
+	width:150px;
+}
+
+label:hover{
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	display:block;
+	float:center;
+	width:150px;
+}
+
+
+.radio_label_work {
+
+}
+
+.radio_label_housework {
+
+}
+
+.radio_label_hobby {
+
+}
+
+.radio_label_study {
+
+}
+
+.radio_label_etc {
+
 }
 
 /* ヘッダー */
@@ -13,6 +94,7 @@ a {
 	position: relative;
 	top: 0;
 }
+
 .logoutbtn div {
 	color: black;
 	background-color: #def03c;
@@ -21,6 +103,7 @@ a {
 	right: 180px;
 	top: 60px;
 }
+
 .hint img {
 	position: absolute;
 	right: 50px;
@@ -29,33 +112,35 @@ a {
 
 /* フッター */
 .footer {
-    height: 100px;
-    background-color: #FF9933;
-    font-size: 15px;
-    width: 100%;
-
-    /* 固定 */
-    position: fixed;
-    z-index: 999;
-    bottom: 0;
-
+	height: 100px;
+	background-color: #FF9933;
+	font-size: 15px;
+	width: 100%;
+	/* 固定 */
+	position: fixed;
+	z-index: 999;
+	bottom: 0;
 }
+
 .footer-ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: nowrap;
-
-
+	list-style: none;
+	display: flex;
+	flex-wrap: nowrap;
 }
+
 .footer-li {
-    width: 25%;
-    text-align: center;
+	width: 25%;
+	text-align: center;
 }
-.footer-li div {
-    color: #3a3a3a;
 
+.footer-li div {
+	color: #3a3a3a;
 }
 /* フッター　「目標一覧」　位置調整 */
 .footer-li-goal {
 	padding-right: 13px;
+}
+/* フッター　かぶり解決 */
+.empty {
+	height: 110px;
 }
