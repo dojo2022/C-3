@@ -78,7 +78,7 @@ public class HomeServlet extends HttpServlet {
 				request.setAttribute("tag", tag);
 
 
-				// 目標一覧ページにフォワードする
+				// ホームページにフォワードする
 						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 						dispatcher.forward(request, response);
 			}
