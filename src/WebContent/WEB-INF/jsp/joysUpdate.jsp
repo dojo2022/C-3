@@ -43,14 +43,14 @@
 
 				<tr>
 					<td><input type="text" name="reward_id"  value="${e.reward_id}"
-						required></input></td>
+						required disabled="disabled"></input></td>
 				</tr>
 				<tr>
 					<th>joys名</th>
 				</tr>
 				<tr>
 					<td><input type="text" name="reward_name" value="${e.reward_name}"
-						required></input></td>
+						required ></input></td>
 				</tr>
 				<tr>
 					<th>詳細</th>
@@ -64,7 +64,7 @@
 				</tr>
 				<tr>
 
-					<td>${e.reward_level_id}<input type="radio" name="reward_level_id" value="1"
+					<td><input type="hidden" value="${e.reward_level_id}"><input type="radio" name="reward_level_id" value="1"
 						<c:if test="${e.reward_level_id == '1'}">
 							checked
 						</c:if>

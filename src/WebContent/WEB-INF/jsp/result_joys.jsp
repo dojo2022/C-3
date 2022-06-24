@@ -32,7 +32,7 @@
 <hr>
 
 	<p>「${reward_name}」ができるようになりました！</p>
-	現在の保持ポイントは<div class=point>${minushaving_point}ポイント</div>です
+	現在の保持ポイント<div class=point>${minushaving_point}ポイント</div><br>
 	<img src="/app/img/1.png" >
 
 

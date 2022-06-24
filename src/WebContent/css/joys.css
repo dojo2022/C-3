@@ -8,6 +8,19 @@
 */
 
 
+h1{
+	background-image:url("/app/img/joys.png");
+	background-size:50px 50px;
+	background-repeat: no-repeat;
+	padding: 8px 0 0 60px;
+
+}
+.goal_plus {
+	text-align: right;
+	padding: 30px 70px ;
+}
+
+
 
 @media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
 }

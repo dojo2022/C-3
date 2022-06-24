@@ -82,11 +82,11 @@ public class JoysRegistarServlet extends HttpServlet {
 
 			if (jDao.insert(user.getUser_id(),joys)) {	// 登録成功
 				request.setAttribute("result",
-				new result("登録成功！", "レコードを登録しました。", "/app/JoysRegistarServlet", "ジョイス登録画面へ"));
+				new result("登録成功！", "レコードを登録しました。", "/app/JoysServlet", "ジョイス一覧画面へ"));
 			}
 			else {												// 登録失敗
 				request.setAttribute("result",
-				new result("登録失敗！", "レコードを登録できませんでした。", "/app/JoysRegistarServlet", "ジョイス登録画面へ"));
+				new result("登録失敗！", "レコードを登録できませんでした。", "/app/JoysServlet", "ジョイス一覧画面へ"));
 			}
 
 		// 結果ページにフォワードする

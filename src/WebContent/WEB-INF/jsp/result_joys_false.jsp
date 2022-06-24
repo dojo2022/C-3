@@ -34,7 +34,7 @@
 	<br>
 	<br>
 
-	現在の保持ポイントは<div class=point>${having_point}ポイント</div>です
+	現在の保持ポイント<div class=point>${having_point}ポイント</div>
 
 
 
