@@ -5,6 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport"
+ content="width=device-width,
+ 			initial-scale=1.0,
+ 			minimum-scale=1.0,
+ 			user-scalable=yes">
 
 <title>POME | ジョイス</title>
 
@@ -57,7 +62,7 @@
 
 
 					<!-- ↓  /app/JoysUpdateServlet?reward_id=0001	こんな感じで数値が入る	 -->
-					<tr >
+					<tr>
 					<td>
 					<a href="/app/JoysUpdateServlet?reward_id=${e.reward_id}">
 							<img src="/app/img/edit.png" width="60" height="60">
