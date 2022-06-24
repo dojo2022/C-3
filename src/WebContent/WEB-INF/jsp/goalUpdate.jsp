@@ -128,7 +128,7 @@
 						<tr>
 
 							<td colspan="3"><input type="submit" name="SUBMIT" value="更新" class="update_button"></td>
-							<td colspan="3"><input type="submit" name="SUBMIT" value="削除" class="delete_button"></td>
+							<td colspan="3"><input id="delete" type="submit" name="SUBMIT" value="削除" class="delete_button" ></td>
 
 						</tr>
 
