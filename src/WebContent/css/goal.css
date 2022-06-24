@@ -2,7 +2,7 @@
 
 body {
     margin: 0px;
-    height: 1000px;/* ←意味なし */
+    height: 1000px;/* ←意味ないかも */
 }
 a {
     text-decoration:none;
@@ -137,6 +137,16 @@ input[type="radio"].hide {
     letter-spacing:1px;
     text-align:center;
 }
+
+/* パネル内調整 */
+.table_upper {
+	border-bottom: 1px solid #ff0080;
+
+}
+.namisen {
+	font-size: 40px;
+}
+
 
 /*  */
 #tab1:checked ~ .tab_area .tab1_label {

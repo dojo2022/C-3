@@ -14,7 +14,7 @@
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<div class="logoutbtn"><a href="/app/LoginServlet">ログアウト</a> </div>
+		<div class="logoutbtn"><a href="/app/LogoutServlet">ログアウト</a> </div>
 		<a
 			href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
@@ -105,29 +105,26 @@
             <div class="panel_area">
 
                 <div id="panel1" class="tab_panel">
-                        <div id="tag_work" class="tag_table">
-                        <table>
+					<!--<table> 日付　目標名チェック　鉛筆　下線下に目標詳細
 						<tr>
 							<th>目標名</th>
-								<td><a href="/app/GoalUpdateServlet"> <img
+								  <td><a href="/app/GoalUpdateServlet"> <img
 									src="/app/img/edit.png" width="60" height="60"></a></td>
-							<th></th>
 							<td><input type="checkbox" id="achievement"></td>
 						</tr>
-					</table>
-				</div>
-				<div id="tag_all" class="tag_table">
-					<table border="1">
+					</table>-->
+
+					<table>
 						<c:forEach var="e" items="${goalList}">
-							<tr class="title">
-								<td><div>目標ID ${e.goal_id}</div></td>
-								<td><div>開始日 ${e.starting_date}</div></td>
-								<td>～</td>
-								<td><div>終了日 ${e.ending_date}</div></td>
-								<td><div>目標名 ${e.goal_name}</div></td>
+							<tr class="table_upper">
+								<!--  <td><div>目標ID <br>${e.goal_id}</div></td> -->
+								<td><div><!--  開始日 --> ${e.starting_date}</div></td>
+								<td class="namisen">～</td>
+								<td><div><!--終了日--> ${e.ending_date}</div></td>
+								<td><div><!--目標名--> ${e.goal_name}</div></td>
 								<td><div>
 										<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
-											src="/app/img/edit.png" width="60" height="60"></a>
+											src="/app/img/edit.png" width="40" height="40"></a>
 									</div></td>
 								<td><div class="btn"></div></td>
 							</tr>
@@ -137,8 +134,6 @@
 							</tr>
 						</c:forEach>
 					</table>
-                    目標一覧
-                </div>
               </div>
 
                 <div id="panel2" class="tab_panel">
@@ -235,9 +230,6 @@
 					</table>
 				</div>
 
-
-
-
 				<div id="tag_all" class="tag_table">
 					<table border="1">
 						<c:forEach var="e" items="${goalList}">
@@ -307,7 +299,7 @@
                 <div id="panel6" class="tab_panel">
                     <div id="tag_work" class="tag_table">
 					<table>
-						<tr>
+						<tr class="table_upper">
 							<th>目標名</th>
 							<td><a href="/app/GoalUpdateServlet"> <img
 									src="/app/img/edit.png" width="60" height="60"></a></td>
@@ -318,7 +310,7 @@
 				</div>
 
 				<div id="tag_all" class="tag_table">
-					<table border="1">
+					<table>
 						<c:forEach var="e" items="${goalList}">
 							<tr class="title">
 								<td><div>目標ID ${e.goal_id}</div></td>
@@ -439,32 +431,32 @@
 							<!-- <li>${e.goal_detail}</li> -->
 							<!-- </ul> -->
 							<!-- </div> -->
-<div class="goal_plus">
-<a href="/app/GoalRegistarServlet"><img
+		<div class="goal_plus">
+			<a href="/app/GoalRegistarServlet"><img
 						src="/app/img/regist.png" width="140" height="140"></a>
-</div>
+		</div>
 
 	</main>
 	<!--  -->
-<div class="empty">
-	<footer class="footer">
-		<ul class="footer-ul">
-			<li class="footer-li"><a href="/app/HomeServlet"><img
-					src="/app/img/home.png" width="60" height="60"><br>
-					<div>Home</div></a></li>
-			<li class="footer-li"><a href="/app/GoalServlet"><img
-					src="/app/img/check.png" width="60" height="60"><br>
-					<div class="footer-li-goal">目標一覧</div></a></li>
-			<li class="footer-li"><a href="/app/JoysServlet"><img
-					src="/app/img/joys.png" width="60" height="60"><br>
-					<div>Joys</div></a></li>
-			<li class="footer-li"><a href="/app/ProfileServlet"><img
-					src="/app/img/profile.png" width="60" height="60"><br>
-					<div>マイプロフィール</div></a></li>
-		</ul>
-	</footer>
-</div>
-	<script src="/app/js/goal.js"></script>
+	<div class="empty">
+		<footer class="footer">
+			<ul class="footer-ul">
+				<li class="footer-li"><a href="/app/HomeServlet"><img
+						src="/app/img/home.png" width="60" height="60"><br>
+						<div>Home</div></a></li>
+				<li class="footer-li"><a href="/app/GoalServlet"><img
+						src="/app/img/check.png" width="60" height="60"><br>
+						<div class="footer-li-goal">目標一覧</div></a></li>
+				<li class="footer-li"><a href="/app/JoysServlet"><img
+						src="/app/img/joys.png" width="60" height="60"><br>
+						<div>Joys</div></a></li>
+				<li class="footer-li"><a href="/app/ProfileServlet"><img
+						src="/app/img/profile.png" width="60" height="60"><br>
+						<div>マイプロフィール</div></a></li>
+			</ul>
+		</footer>
+	</div>
+		<script src="/app/js/goal.js"></script>
 </body>
 </html>
 
