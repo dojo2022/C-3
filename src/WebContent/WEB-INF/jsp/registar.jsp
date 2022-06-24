@@ -12,7 +12,7 @@
 	<!-- ここからメイン -->
 	<main>
 		<h1>新規登録</h1>
-<form id="registar_form"  form name ="form"   method="POST" action="/app/RegistarServlet">
+<form id="registar_form"   name ="form"   method="POST" action="/app/RegistarServlet">
 		<table>
 			<tr >
 

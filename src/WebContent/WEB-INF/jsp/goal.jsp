@@ -130,8 +130,7 @@
 									<td><!--目標名--> ${e.goal_name}</td>
 									<td>
 											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
-												src="/app/img/edit.png" width="40" height="40"></a>
-									</td>
+												src="/app/img/edit.png" width="40" height="40"></a></td>
 							</tr>
 					</table>
 					<div class="out_table">${e.goal_detail}</div>
