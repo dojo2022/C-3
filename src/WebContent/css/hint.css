@@ -12,7 +12,8 @@ footer {
 
 }
 
-/* ダークカラー */
+
+/* ダークカラー
 main {
 	color: gray;
 	background-color: rgb(36, 36, 36);
@@ -20,4 +21,66 @@ main {
 h2, h3, h4{
 	color: whitesmoke;
 
+}
+ */
+
+/* フッター　かぶり解決 */
+.empty {
+	height: 100px;
+}
+
+/*質問リストの色*/
+.qanda dl {
+    position: relative;
+    margin: 30px 0 0;
+    cursor: pointer;
+    border: 1px solid #DDD;
+}
+.qanda dl:first-child {
+  margin-top: 0;
+}
+
+
+.qanda dl dt {
+    position: relative;
+    margin: 0;
+    padding: 20px 20px 20px 60px;
+    font-weight: bold;
+    background: #DDD;
+}
+
+
+.qanda dl dd {
+    position: relative;
+    margin: 0;
+    padding: 20px 20px 20px 60px;
+}
+.qanda dl dd p {
+    margin: 30px 0 0;
+}
+.qanda dl dd p:first-child{
+    margin-top: 0;
+}
+
+@media screen and (max-width: 767px) {
+ .qanda dl {
+    margin: 10px 0 0;
+}
+
+.qanda dl dt {
+    padding: 16px 16px 16px 50px;
+    font-size: 14px;
+}
+
+.qanda dl dd {
+    margin: 0;
+    padding: 16px 16px 16px 50px;
+    font-size: 14px;
+}
+.qanda dl dd p {
+    margin: 30px 0 0;
+}
+.qanda dl dd p:first-child{
+    margin-top: 0;
+}
 }
