@@ -139,12 +139,24 @@ input[type="radio"].hide {
 }
 
 /* パネル内調整 */
-.table_upper {
-	border-bottom: 1px solid #ff0080;
+.in_table {
+	font-size: 22px;
+	width: 100%;
 
 }
-.namisen {
-	font-size: 40px;
+.out_table {
+	width: 95%;
+  	padding: 10px 0 0 0 ;
+  	margin: 0 auto;
+  	border-top: 2px solid orange;
+  	text-align: center;
+	font-size: 15px;
+}
+
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+body{color:red;}
 }
 
 

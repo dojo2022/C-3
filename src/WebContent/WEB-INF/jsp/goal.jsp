@@ -5,6 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport"
+ content="width=device-width,
+ 			initial-scale=1.0,
+ 			minimum-scale=1.0,
+ 			user-scalable=yes">
+
+
 <title>POME | 目標一覧</title>
 <link rel="stylesheet" type="text/css" href="/app/css/goal.css">
 <link rel="stylesheet" type="text/css" href="/app/css/color.css">
@@ -113,28 +120,25 @@
 							<td><input type="checkbox" id="achievement"></td>
 						</tr>
 					</table>-->
-
-					<table>
-						<c:forEach var="e" items="${goalList}">
-							<tr class="table_upper">
+					<c:forEach var="e" items="${goalList}">
+					<table class="in_table">
+							<tr>
 								<!--  <td><div>目標ID <br>${e.goal_id}</div></td> -->
-								<td><div><!--  開始日 --> ${e.starting_date}</div></td>
-								<td class="namisen">～</td>
-								<td><div><!--終了日--> ${e.ending_date}</div></td>
-								<td><div><!--目標名--> ${e.goal_name}</div></td>
-								<td><div>
-										<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
-											src="/app/img/edit.png" width="40" height="40"></a>
-									</div></td>
-								<td><div class="btn"></div></td>
+									<td><!--  開始日 --> ${e.starting_date}</td>
+									<td>～</td>
+									<td><!--終了日--> ${e.ending_date}</td>
+									<td><!--目標名--> ${e.goal_name}</td>
+									<td>
+											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+												src="/app/img/edit.png" width="40" height="40"></a>
+									</td>
+									<td><input type="checkbox" id="achievement"></td>
 							</tr>
-
-							<tr class="content">
-								<td>${e.goal_detail}</td>
-							</tr>
-						</c:forEach>
 					</table>
+					<div class="out_table">${e.goal_detail}</div>
+					</c:forEach>
               </div>
+
 
                 <div id="panel2" class="tab_panel">
                     <div id="tag_work" class="tag_table">
@@ -171,10 +175,8 @@
 						</c:forEach>
 					</table>
                     </div>
-                    仕事
+
                 </div>
-
-
 
 
                 <div id="panel3" class="tab_panel">
@@ -211,7 +213,7 @@
 						</c:forEach>
 					</table>
                     </div>
-                    家事
+
                 </div>
 
 
