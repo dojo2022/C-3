@@ -1,1 +1,7 @@
 @charset "UTF-8";
+.wrapper{
+	text-align:center;
+	margin:100px auto 150px auto;
+	max-width:494px;
+
+}

@@ -20,6 +20,8 @@
 
 </head>
 <body>
+<!-- 全体を囲むクラス -->
+<div class=wrapper>
 	<header class="header">
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
@@ -101,5 +103,6 @@
 		</ul>
 	</footer>
 	<script src="js/joys.js"></script>
+	</div>
 </body>
 </html>
