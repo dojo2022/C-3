@@ -10,7 +10,7 @@
 	     }
 	 }, false);
 
-     document.getElementById('touroku').onclick = function (event) {
+     document.getElementById('touroku').onclick = function () {
         if(registar_form.password.value !== registar_form.password_confirm.value) {
           event.preventDefault();
         document.getElementById('error_message').textContent=`※パスワードが一致していません`;
@@ -51,7 +51,7 @@
    // }
 
 
-document.form.registar.addEventListener('click', function() {
+/*document.form.registar.addEventListener('click', function() {
     var result = window.confirm('これで登録しても宜しいですか？');
     if( result == true ) {
  	window.location.href = "/app/RegistarServlet";
@@ -63,4 +63,17 @@ document.form.registar.addEventListener('click', function() {
 
     }
 });
+*/
+
+ document.getElementById('registar_form').onsubmit = function (event) {
+			let result = window.confirm('この内容で登録しますか？');
+			if(result === true){
+				window.location.href = 'LoginServlet';
+				return true;
+			}else {
+				return false;
+			}
+
+		}
+
 

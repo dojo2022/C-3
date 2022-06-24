@@ -97,14 +97,28 @@
 				</form>
 			</div>
 
+<form action="/app/CheckgoalServlet" method="POST" id="ach">
+				<table>
+					<tr>
+						<td><input type="hidden" name="id" value=${e.id } readonly></td>
+						<td>${e.goal_name}</td>
+						<td>${e.goal_detail}</td>
+						<td><label class="btn"> <input type="checkbox"
+								style="display: none;" id="achievement" name="check" value="1"
+								onchange="formSubmit(this.form)"> <i
+								class="fa fa-square-o fa-2x"></i> <i
+								class="fa fa-check-square-o fa-2x"></i>
+						</label></td>
+					</tr>
+				</table>
+			</form>
 
 			<div class="panel_area">
 
 				<div id="panel1" class="tab_panel">
-					<c:forEach var="e" items="${goalList}">
+					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
-
 								<td>${e.starting_date}</td>
 								<td>～</td>
 								<td>${e.ending_date}</td>
@@ -126,7 +140,7 @@
 				</div>
 
 				<div id="panel2" class="tab_panel">
-					<c:forEach var="e" items="${goalList}">
+					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
 								<td>${e.starting_date}</td>
@@ -150,7 +164,7 @@
 				</div>
 
 				<div id="panel3" class="tab_panel">
-					<c:forEach var="e" items="${goalList}">
+					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
 								<td>${e.starting_date}</td>
@@ -174,7 +188,7 @@
 				</div>
 
 				<div id="panel4" class="tab_panel">
-					<c:forEach var="e" items="${goalList}">
+					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
 								<td>${e.starting_date}</td>
@@ -198,7 +212,7 @@
 				</div>
 
 				<div id="panel5" class="tab_panel">
-					<c:forEach var="e" items="${goalList}">
+					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
 								<td>${e.starting_date}</td>
@@ -222,7 +236,7 @@
 				</div>
 
 				<div id="panel6" class="tab_panel">
-					<c:forEach var="e" items="${goalList}">
+					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
 								<td>${e.starting_date}</td>
