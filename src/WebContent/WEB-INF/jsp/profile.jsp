@@ -53,7 +53,7 @@
 
 			<input type="radio" name="edit" value="yes">編集する <input
 				type="radio" name="edit" value="no" checked>編集しない<br> <input
-				type="submit" name="update" value="更新" disabled="disabled"><br>
+				type="submit" name="update" value="更新" ><br>
 
 		</form>
 
