@@ -132,7 +132,6 @@
 											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
 												src="/app/img/edit.png" width="40" height="40"></a>
 									</td>
-									<td><input type="checkbox" id="achievement"></td>
 							</tr>
 					</table>
 					<div class="out_table">${e.goal_detail}</div>
@@ -141,7 +140,7 @@
 
 
                 <div id="panel2" class="tab_panel">
-                    <div id="tag_work" class="tag_table">
+                    <!--  <div id="tag_work" class="tag_table">
                         <table>
 						<tr>
 							<th>目標名</th>
@@ -175,12 +174,28 @@
 						</c:forEach>
 					</table>
                     </div>
-
+                    -->
+					<c:forEach var="e" items="${goalList}">
+					<table class="in_table">
+							<tr>
+								<!--  <td><div>目標ID <br>${e.goal_id}</div></td> -->
+									<td><!--  開始日 --> ${e.starting_date}</td>
+									<td>～</td>
+									<td><!--終了日--> ${e.ending_date}</td>
+									<td><!--目標名--> ${e.goal_name}</td>
+									<td>
+											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+												src="/app/img/edit.png" width="40" height="40"></a>
+									</td>
+							</tr>
+					</table>
+					<div class="out_table">${e.goal_detail}</div>
+					</c:forEach>
                 </div>
 
 
                 <div id="panel3" class="tab_panel">
-                    <div id="tag_work" class="tag_table">
+                    <!-- <div id="tag_work" class="tag_table">
 					<table>
 						<tr>
 							<th>目標名</th>
@@ -213,14 +228,30 @@
 						</c:forEach>
 					</table>
                     </div>
-
+					-->
+					<c:forEach var="e" items="${goalList}">
+					<table class="in_table">
+							<tr>
+								<!--  <td><div>目標ID <br>${e.goal_id}</div></td> -->
+									<td><!--  開始日 --> ${e.starting_date}</td>
+									<td>～</td>
+									<td><!--終了日--> ${e.ending_date}</td>
+									<td><!--目標名--> ${e.goal_name}</td>
+									<td>
+											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+												src="/app/img/edit.png" width="40" height="40"></a>
+									</td>
+							</tr>
+					</table>
+					<div class="out_table">${e.goal_detail}</div>
+					</c:forEach>
                 </div>
 
 
 
 
                 <div id="panel4" class="tab_panel">
-                    <div id="tag_work" class="tag_table">
+                    <!-- <div id="tag_work" class="tag_table">
 					<table>
 						<tr>
 							<th>目標名</th>
@@ -253,14 +284,30 @@
 						</c:forEach>
 					</table>
                     </div>
-                    趣味
+                    -->
+                    <c:forEach var="e" items="${goalList}">
+					<table class="in_table">
+							<tr>
+								<!--  <td><div>目標ID <br>${e.goal_id}</div></td> -->
+									<td><!--  開始日 --> ${e.starting_date}</td>
+									<td>～</td>
+									<td><!--終了日--> ${e.ending_date}</td>
+									<td><!--目標名--> ${e.goal_name}</td>
+									<td>
+											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+												src="/app/img/edit.png" width="40" height="40"></a>
+									</td>
+							</tr>
+					</table>
+					<div class="out_table">${e.goal_detail}</div>
+					</c:forEach>
                 </div>
 
 
 
 
                 <div id="panel5" class="tab_panel">
-                    <div id="tag_work" class="tag_table">
+                    <!-- <div id="tag_work" class="tag_table">
 					<table>
 						<tr>
 							<th>目標名</th>
@@ -293,13 +340,29 @@
 						</c:forEach>
 					</table>
                     </div>
-                    勉強
+                    -->
+                    <c:forEach var="e" items="${goalList}">
+					<table class="in_table">
+							<tr>
+								<!--  <td><div>目標ID <br>${e.goal_id}</div></td> -->
+									<td><!--  開始日 --> ${e.starting_date}</td>
+									<td>～</td>
+									<td><!--終了日--> ${e.ending_date}</td>
+									<td><!--目標名--> ${e.goal_name}</td>
+									<td>
+											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+												src="/app/img/edit.png" width="40" height="40"></a>
+									</td>
+							</tr>
+					</table>
+					<div class="out_table">${e.goal_detail}</div>
+					</c:forEach>
                 </div>
 
 
 
                 <div id="panel6" class="tab_panel">
-                    <div id="tag_work" class="tag_table">
+                    <!--  <div id="tag_work" class="tag_table">
 					<table>
 						<tr class="table_upper">
 							<th>目標名</th>
@@ -332,7 +395,23 @@
 						</c:forEach>
 					</table>
                     </div>
-                    その他
+                    -->
+                    <c:forEach var="e" items="${goalList}">
+					<table class="in_table">
+							<tr>
+								<!--  <td><div>目標ID <br>${e.goal_id}</div></td> -->
+									<td><!--  開始日 --> ${e.starting_date}</td>
+									<td>～</td>
+									<td><!--終了日--> ${e.ending_date}</td>
+									<td><!--目標名--> ${e.goal_name}</td>
+									<td>
+											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
+												src="/app/img/edit.png" width="40" height="40"></a>
+									</td>
+							</tr>
+					</table>
+					<div class="out_table">${e.goal_detail}</div>
+					</c:forEach>
                 </div>
 
             </div>
