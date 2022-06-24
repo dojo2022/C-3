@@ -36,7 +36,8 @@
 		<hr>
 		<a href="/app/HomeServlet">＜　ホームへ戻る</a>
 	</main>
-
+<!-- フッター被り解決 -->
+<div class = "empty"></div>
 	<footer class="footer">
 		<!--  <ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img
