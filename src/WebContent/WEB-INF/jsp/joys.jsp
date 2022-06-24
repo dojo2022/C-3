@@ -43,34 +43,30 @@
 		<h1>joys一覧</h1>
 
 
+
+
 		<div class="tab_wrap">
 			<div class="panel_area">
 				<div class="tab_panel">
 
 					<form action="/app/CheckjoysServlet" method="POST" id="exchange">
-<div class="test_all">
-<div  class="test">Joys</div>
-<div  class="test">必要ポイント数</div>
-</div>
-<c:forEach var="e" items="${rewardList}">
-						<table class="in_table">
-							<tr>
-								<td></td>
+						<div class="test_all">
+							<div class="test">Joys</div>
+							<div class="test">必要ポイント数</div>
+						</div>
+						<c:forEach var="e" items="${rewardList}">
+							<table class="in_table">
+								<tr>
+									<td></td>
 
-								<td></td>
-							</tr>
-
-
-
-
+									<td></td>
+								</tr>
 
 								<tr>
 									<td><a
 										href="/app/JoysUpdateServlet?reward_id=${e.reward_id}"> <img
 											src="/app/img/edit.png" width="60" height="60">
 									</a></td>
-
-
 
 									<td class="">${e.reward_name}</td>
 									<td class="">${e.required_point}ポイント</td>
@@ -83,21 +79,12 @@
 										value="${e.reward_name}" readonly></td>
 
 								</tr>
-								</table>
+							</table>
 
-								<div class="out_table">${e.reward_detail}</div>
+							<div class="out_table">${e.reward_detail}</div>
+							<input type="hidden" name="having_point" value="${e.having_point}">
 
-
-
-
-
-
-
-
-							</c:forEach>
-
-
-
+						</c:forEach>
 					</form>
 				</div>
 			</div>
