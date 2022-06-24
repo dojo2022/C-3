@@ -6,7 +6,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>POME | プロフィール</title>
+<title>POME | マイプロフィール</title>
 
 <link rel="icon" type="image/png" href="/app/img/favicon.ico" />
 <!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
@@ -17,6 +17,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/profile.css">
+<link rel="stylesheet" type="text/css" href="css/color.css">
 </head>
 
 
@@ -39,26 +40,27 @@
 
 			<c:forEach var="e" items="${profile }">
 				<div>
-					<input type="text" name="nickname" value=${e.nickname } >
+					<h2>ニックネーム</h2>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id= "nickname" name="nickname" value=${e.nickname } >
 				</div>
 				<div class="having_point">
-					所持ポイント<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					${e.having_point }ポイント<br>
+					<h2>所持ポイント</h2>
+					<p id = "point">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${e.having_point }ポイント</p>
 				</div>
 				<div class="total_point">
-					累計ポイント<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					${e.total_point }ポイント<a href="/app/RankingServlet">(ランキング)</a><br>
+					<h2>累計ポイント</h2>
+					<p id = "point">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${e.total_point }ポイント</p>
 				</div>
 			</c:forEach>
 
-			<input type="radio" name="edit" value="yes">編集する <input
-				type="radio" name="edit" value="no" checked>編集しない<br> <input
-				type="submit" name="update" value="更新" disabled="disabled"><br>
+			<input type="radio" name="edit" value="yes">編集する&nbsp;&nbsp;&nbsp;
+			<input type="radio" name="edit" value="no" checked>編集しない&nbsp;&nbsp;&nbsp;
+			<input type="submit" class = "update" name="update" value="更新" disabled="disabled"><br>
 
 		</form>
 
 
-		達成済みリスト
+		<h2>達成済みリスト</h2>
 		<div id="table" class="list">
 			<table id="list">
 
@@ -71,10 +73,11 @@
 				</c:forEach>
 			</table>
 		</div>
-
+	<a href="/app/RankingServlet">ポイントランキングはこちら▶</a><br>
 	</main>
 	<!--  -->
 
+	<div class = "empty"></div>
 	<footer class="footer">
 		<ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img

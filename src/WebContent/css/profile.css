@@ -17,7 +17,6 @@ a {
 	color: black;
 	background-color: #def03c;
 	font-size: 30px;
-	position: absolute;
 	right: 180px;
 	top: 60px;
 }
@@ -28,23 +27,12 @@ a {
 }
 
 
-
-.having_point{
-	 border-bottom: solid 2px blue;
-     width: 400px;
-
-}
-
-.total_point{
-	 border-bottom: solid 2px blue;
-     width: 400px;
-}
 /* パネル囲い スクロール*/
 .list{
     background:#fff;
     border:3px solid orange;
-    width: 300px;
-    height: 100px;
+    width: 700px;
+    height: 300px;
     overflow: auto;
     border-radius: 10px;
     padding:0 0 0 0;
@@ -53,7 +41,8 @@ a {
 }
 
 .listname{
-	 padding:0 0
+	 padding:0.25em 0.5em;
+
 }
 
 
@@ -89,3 +78,34 @@ a {
 .footer-li-goal {
 	padding-right: 13px;
 }
+
+h2 {
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  color: #FF6700;/*文字色*/
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #FF6700;/*左線*/
+}
+
+#nickname {
+	font-size:25px;
+	font-weight:bold;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+
+#point{
+	font-size:25px;
+	font-weight:bold;
+}
+/* 更新ボタン */
+.update {
+	background:#FF9933;
+	border: #FF6700;
+	border:3px 5px;
+	color: white;
+	font-size:25px;
+	letter-spacing:5px;
+	border-radius:5px;
+}
+
