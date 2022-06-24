@@ -76,22 +76,11 @@ label.radio_label:hover {
 }
 
 /*タグごとのラベル！！！仕事趣味家事勉強その他*/
-input[type="radio"]:checked+label.work {
-	border: 2px solid #fff;
-	border-radius: 6px;
-	background: #000;
-	-webkit-box-shadow: 4px 4px 0 #000;
-	box-shadow: 4px 4px 0 #000;
-	color: #fff;
-	display: block;
-	float: center;
-	width: 150px;
-}
 
 input[type="radio"]:checked+label.work {
 	border: 2px solid #fff;
 	border-radius: 6px;
-	background: blue;
+	background: #FB4B1A;
 	-webkit-box-shadow: 4px 4px 0 #000;
 	box-shadow: 4px 4px 0 #000;
 	color: #fff;
@@ -103,7 +92,7 @@ input[type="radio"]:checked+label.work {
 input[type="radio"]:checked+label.housework {
 	border: 2px solid #fff;
 	border-radius: 6px;
-	background: red;
+	background: #06C7F2;
 	-webkit-box-shadow: 4px 4px 0 #000;
 	box-shadow: 4px 4px 0 #000;
 	color: #fff;
@@ -115,7 +104,7 @@ input[type="radio"]:checked+label.housework {
 input[type="radio"]:checked+label.hobby {
 	border: 2px solid #fff;
 	border-radius: 6px;
-	background: green;
+	background: #019DD8;
 	-webkit-box-shadow: 4px 4px 0 #000;
 	box-shadow: 4px 4px 0 #000;
 	color: #fff;
@@ -127,7 +116,7 @@ input[type="radio"]:checked+label.hobby {
 input[type="radio"]:checked+label.study {
 	border: 2px solid #fff;
 	border-radius: 6px;
-	background: orange;
+	background: #8000ff;
 	-webkit-box-shadow: 4px 4px 0 #000;
 	box-shadow: 4px 4px 0 #000;
 	color: #fff;
@@ -139,7 +128,7 @@ input[type="radio"]:checked+label.study {
 input[type="radio"]:checked+label.etc {
 	border: 2px solid #fff;
 	border-radius: 6px;
-	background: purple;
+	background: #DA72D1;
 	-webkit-box-shadow: 4px 4px 0 #000;
 	box-shadow: 4px 4px 0 #000;
 	color: #fff;
