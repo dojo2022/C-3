@@ -3,7 +3,7 @@
  */
 
 //タグごと表示のラジオボタン
- let btn0 = document.getElementById('btn0');
+	let btn0 = document.getElementById('btn0');
     btn0.onclick = function(){
         f0.submit();
     }
@@ -31,29 +31,41 @@
 	let btn5 = document.getElementById('btn5');
     btn5.onclick = function(){
         f5.submit();
-        }
+    }
 
-  //今日やることを達成したときの処理
+
+
+
+	//今日やることを達成したときの処理
     function formSubmit(form){
 		form.submit();
 	}
 
-  	let btn = document.getElementById('achievement');
-    btn.onclick = function(){
-    	modal.style.display = 'block';
-    }
 
   /*  // バツ印がクリックされた時
-buttonClose.addEventListener('click', modalClose);
-function modalClose() {
-  modal.style.display = 'none';
-}
+	buttonClose.addEventListener('click', modalClose);
+	function modalClose() {
+		modal.style.display = 'none';
+	}
 
-// モーダルコンテンツ以外がクリックされた時
-addEventListener('click', outsideClose);
-function outsideClose(e) {
-  if (e.target == modal) {
-    modal.style.display = 'none';
-  }
- }
+	// モーダルコンテンツ以外がクリックされた時
+	addEventListener('click', outsideClose);
+	function outsideClose(e) {
+		if (e.target == modal) {
+			modal.style.display = 'none';
+  		}
+ 	}
 */
+
+	document.getElementById('logout').onclick = function (event) {
+		let re = window.confirm('ログアウトしますか？');
+		if(re === true){
+			window.location.href = 'LogoutServlet';
+			return true;
+		}else {
+			return false;
+		}
+	};
+
+
+
