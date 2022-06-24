@@ -87,8 +87,8 @@
 
 
 </main>
-<!--  -->
-
+<!-- フッター被り解決 -->
+<div class = "empty"></div>
 <footer>
 <a href = "HomeServlet">
 戻る
