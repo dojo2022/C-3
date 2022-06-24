@@ -52,10 +52,13 @@ function Registar_JSP(){
     // 日付オブジェクトを生成
     var fromDate = new Date(val_from);
     var todayDate = new Date();
-    var DAte = todayDate.getDate();
+    var Date = todayDate.getDate();
+    console.log(Date);
+    console.log(fromDate);
     //var toDate = new Date(val_to);
+    console.log(Date);
     // 開始日と終了日の差を計算
-    var judge = (DAte - fromDate);
+    var judge = (fromDate - DAte);
 
     if(judge < 0){
       alert("本日以降の日付を指定してください。");
