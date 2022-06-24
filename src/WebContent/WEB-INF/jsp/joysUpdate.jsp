@@ -42,15 +42,15 @@
 			<table>
 
 				<tr>
-					<td><input type="text" name="reward_id"  value="${e.reward_id}"
-						required></input></td>
+					<td><input type="hidden" name="reward_id"  value="${e.reward_id}"
+						required ></input></td>
 				</tr>
 				<tr>
 					<th>joys名</th>
 				</tr>
 				<tr>
 					<td><input type="text" name="reward_name" value="${e.reward_name}"
-						required></input></td>
+						required ></input></td>
 				</tr>
 				<tr>
 					<th>詳細</th>

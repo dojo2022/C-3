@@ -135,7 +135,13 @@
 							</tr>
 					</table>
 					<div class="out_table">${e.goal_detail}</div>
-					<br><br><br><br><br><br><br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
 					</c:forEach>
               </div>
 
@@ -191,6 +197,13 @@
 							</tr>
 					</table>
 					<div class="out_table">${e.goal_detail}</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
 					</c:forEach>
                 </div>
 
@@ -245,6 +258,13 @@
 							</tr>
 					</table>
 					<div class="out_table">${e.goal_detail}</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
 					</c:forEach>
                 </div>
 
@@ -301,6 +321,13 @@
 							</tr>
 					</table>
 					<div class="out_table">${e.goal_detail}</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
 					</c:forEach>
                 </div>
 
@@ -357,6 +384,13 @@
 							</tr>
 					</table>
 					<div class="out_table">${e.goal_detail}</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
 					</c:forEach>
                 </div>
 
@@ -412,6 +446,13 @@
 							</tr>
 					</table>
 					<div class="out_table">${e.goal_detail}</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
 					</c:forEach>
                 </div>
 
