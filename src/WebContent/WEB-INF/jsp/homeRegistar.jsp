@@ -12,18 +12,17 @@
 	href="app/img/pome_favicon.png">
 <!-- ↑アップルタッチアイコン　スマホのホーム画面に追加したときに表示されるアイコン -->
 <link rel="stylesheet" type="text/css" href="/app/css/goalRegistar.css">
-
+<link rel="stylesheet" type="text/css" href="css/color.css">
 </head>
 <body>
         <header class="header">
             <div class="logo"><img src="/app/img/logo00.png"  width="300" height="150"></div>
-            <a href="/app/LoginServlet" class="logoutbtn"><div>ログアウト</div></a>
+            <a id="logout" href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a>
             <a href="/app/HintServlet" class="hint" target="_blank"><img src="/app/img/hint.png" width="60" height="60"></a>
         </header>
 
 	<!-- ここからメイン -->
 	<main>
-		<p>POME GOALREGISTAR</p>
 
 		<form method="POST" action="/app/GoalRegistarServlet">
 			<div class="img">

@@ -13,6 +13,13 @@
 
 
 <title>POME | 目標一覧</title>
+
+<link rel="icon" type="image/png" href="/app/img/favicon.ico" />
+<!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
+<link rel="apple-touch-icon" type="image/png"
+	href="app/img/pome_favicon.png">
+<!-- ↑アップルタッチアイコン　スマホのホーム画面に追加したときに表示されるアイコン -->
+
 <link rel="stylesheet" type="text/css" href="/app/css/goal.css">
 <link rel="stylesheet" type="text/css" href="/app/css/color.css">
 </head>
@@ -21,7 +28,7 @@
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<div class="logoutbtn"><a href="/app/LogoutServlet">ログアウト</a> </div>
+		<div class="logoutbtn"><a id='logout' href="/app/LogoutServlet">ログアウト</a> </div>
 		<a
 			href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
