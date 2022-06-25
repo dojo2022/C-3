@@ -41,9 +41,9 @@
 
 
 		<h1>joys一覧</h1>
-
-
-
+		<c:forEach end="0" var="a" items="${rewardList}">
+		保持ポイント：${a.having_point}pts
+		</c:forEach>
 
 		<div class="tab_wrap">
 			<div class="panel_area">
@@ -96,9 +96,7 @@
 			</div>
 		</div>
 
-		<c:forEach end="0" var="a" items="${rewardList}">
-		保持ポイント：${a.having_point}pts
-		</c:forEach>
+
 
 
 

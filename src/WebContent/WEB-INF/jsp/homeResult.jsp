@@ -38,8 +38,8 @@
 	</main>
 <!-- フッター被り解決 -->
 <div class = "empty"></div>
-	<footer class="footer">
-		<!--  <ul class="footer-ul">
+	<!--<footer class="footer">
+		  <ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img
 					src="/app/img/home.png" width="60" height="60"><br>
 				<div>Home</div></a></li>
@@ -52,8 +52,8 @@
 			<li class="footer-li"><a href="/app/ProfileServlet"><img
 					src="/app/img/profile.png" width="60" height="60"><br>
 				<div>マイプロフィール</div></a></li>
-		</ul>-->
-	</footer>
+		</ul>
+	</footer>-->
 	<script>
 		const imageArea = document.getElementById('imageArea');
 		const images = ['/app/img/1.png', '/app/img/2.png', '/app/img/3.png', '/app/img/4.png','/app/img/5.png'];
