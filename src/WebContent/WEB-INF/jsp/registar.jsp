@@ -4,8 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>新規登録</title>
+<title>POME｜新規登録</title>
+
+<link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
+<!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
+<link rel="apple-touch-icon" type="image/png"
+	href="app/img/pome_favicon.png">
+<!-- ↑アップルタッチアイコン　スマホのホーム画面に追加したときに表示されるアイコン -->
+
 <link rel="stylesheet" type="text/css" href="css/registar.css">
+<link rel="stylesheet" type="text/css" href="css/color.css">
 </head>
 <body>
 	<header> </header>

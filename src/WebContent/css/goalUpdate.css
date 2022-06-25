@@ -182,14 +182,6 @@ input.update_button:hover {
 	top: 0;
 }
 
-.logoutbtn div {
-	color: black;
-	background-color: #def03c;
-	font-size: 30px;
-	position: absolute;
-	right: 180px;
-	top: 60px;
-}
 
 .hint img {
 	position: absolute;

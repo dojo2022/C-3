@@ -12,7 +12,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>POME HOME</title>
+<title>POME｜HOME</title>
 
 <link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
 <!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->

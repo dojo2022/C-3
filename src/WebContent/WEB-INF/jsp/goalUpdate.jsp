@@ -16,6 +16,7 @@
 <style>
 </style>
 <link rel="stylesheet" type="text/css" href="/app/css/goalUpdate.css">
+<link rel="stylesheet" type="text/css" href="/app/css/color.css">
 </head>
 <body>
 	<header class="header">
