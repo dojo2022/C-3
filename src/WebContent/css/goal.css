@@ -60,7 +60,11 @@ input[type="radio"].hide {
     transition:ease 0.2s opacity;
     border: 1px solid;
     outline: none;
-    border-top-right-radius: 10px;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 0px;
+
 }
 
 .tab1_label {

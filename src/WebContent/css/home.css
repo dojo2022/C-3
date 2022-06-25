@@ -185,33 +185,43 @@ input[type="radio"].hide {
     transition:ease 0.2s opacity;
     border: 1px solid;
     outline: none;
-    border-top-right-radius: 10px;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 0px;
 }
 
+
 .tab1_label {
-	background-color: #FF9B71;
+	background-color: #F28703;
 	outline: none;
+
 }
 .tab2_label {
-	background: #645DD7;
+	background: #FB4B1A;
 	outline: none;
+
 }
 .tab3_label {
-	background: #F2FF49;
+	background: #06C7F2;
 	outline: none;
+
 }
 .tab4_label {
-	background: #B3FFFC;
+	background: #019DD8;
 	outline: none;
+
 }
 .tab5_label {
-	background: #FB62F6;
+	background: #8000ff;
 	outline: none;
+
 }
 .tab6_label {
-	background: #6c6c6c;
+	background: #DA72D1;
 	outline: none;
 }
+
 
 /* タブアニメ */
 .tab1_label:hover,
@@ -288,8 +298,8 @@ body{color:red;}
 
 /*  */
 #tab1:checked ~ .tab_area .tab1_label {
-    background:orange;
-    color:white;
+    background:white;
+    color:#F28703;
 }
 #tab1:checked ~ .panel_area #panel1 {
     display:block;
@@ -297,8 +307,9 @@ body{color:red;}
 
 /*  */
 #tab2:checked ~ .tab_area .tab2_label {
-    background:blue;
-    color:white;
+
+    background:white;
+    color:#FB4B1A;
 }
 #tab2:checked ~ .panel_area #panel2 {
     display:block;
@@ -306,8 +317,8 @@ body{color:red;}
 
 /*  */
 #tab3:checked ~ .tab_area .tab3_label {
-    background:yellow;
-    color:white;
+    background:white;
+    color:#06C7F2;
 }
 #tab3:checked ~ .panel_area #panel3 {
     display:block;
@@ -315,8 +326,8 @@ body{color:red;}
 
 /*  */
 #tab4:checked ~ .tab_area .tab4_label {
-    background:green;
-    color:white;
+    background:white;
+    color:#019DD8;
 }
 #tab4:checked ~ .panel_area #panel4 {
     display:block;
@@ -324,8 +335,8 @@ body{color:red;}
 
 /*  */
 #tab5:checked ~ .tab_area .tab5_label {
-    background:#8000ff;
-    color:white;
+    background:white;
+    color:#8000ff;
 }
 #tab5:checked ~ .panel_area #panel5 {
     display:block;
@@ -333,8 +344,8 @@ body{color:red;}
 
 /*  */
 #tab6:checked ~ .tab_area .tab6_label {
-    background:#808080;
-    color:white;
+    background:white;
+    color:#DA72D1;
 }
 #tab6:checked ~ .panel_area #panel6 {
     display:block;
