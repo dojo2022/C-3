@@ -74,7 +74,7 @@
 						<td><input type="submit" name="SUBMIT" value="更新"
 							class="update_button"></td>
 						<td><input type="submit" name="SUBMIT" value="削除"
-							class="delete_button"></td>
+							class="delete_button" onclick="return chkDelete(this)"></td>
 					</tr>
 				</table>
 			</form>
