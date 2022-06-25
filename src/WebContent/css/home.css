@@ -355,8 +355,7 @@ body{color:red;}
   z-index: 99;
   height: 100%;
   background-color: #FED966;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   width: 100%;
   text-align: center;
   animation-duration: 2s;
@@ -365,14 +364,12 @@ body{color:red;}
   animation-name: top-op;
 }
 .op_logo {
-
 	animation-timing-function: linear;
  	animation-iteration-count: 1;
  	animation-direction: alternate;
 	animation-duration: 2s;
 	animation-delay: 1s;
 	animation-name: logo_anime;
-
 }
 
 @keyframes logo_anime {
@@ -384,11 +381,10 @@ body{color:red;}
   }
 }
 
-
 .top-op2{
   z-index: 100;
   background: #FED966;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
   animation-name: top-op2;
@@ -400,13 +396,13 @@ body{color:red;}
   left:0;
   right:0;
 }
-50% {
+40%, 50% {
   left:0;
   right:0;
 }
 100% {
-  width:40%;
-  height:25%;
+  width:35%;
+  height:50%;
   top:10%;
   left:100%;
   right:80%;
@@ -416,13 +412,16 @@ body{color:red;}
 0% {
   width: 100%;
   left:0;
+   opacity: 1;
 }
 50% {
   width: 100%;
+
 }
 100% {
   width: 0%;
   left: 100%;
+   opacity: 0;
 }
 }
 
