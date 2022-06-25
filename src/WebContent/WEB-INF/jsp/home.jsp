@@ -26,6 +26,47 @@
 
 </head>
 <body>
+
+
+
+	<div class="top-op">
+  		<img src="/app/img/logo00.png" width="600" height="300" class="op_logo">
+  	</div>
+  	<div class="top-op2">
+  		<div class="login_body">
+	  	<div class = "wrapper">
+			<h3>
+				ToDo管理アプリのように登録し<br>
+				達成したときには褒めてもらえるアプリ
+			</h3>
+		</div>
+		<img src="/app/img/logo00.png" width="260" height="140" alt="POME">
+		<form id="login_form" method="POST" action="/app/LoginServlet">
+			<table class="login">
+				<tr>
+					<td><input type="text" value=""  placeholder="ＯＫ！！"
+						name="user_id" required class="login_data">
+					</td>
+				</tr>
+				<tr>
+					<td><input type="password"  id="textPassword"  placeholder="ＯＫ！！"name="password" required class="login_data"><br>
+						<input type="checkbox" id="password-check" >
+					</td>
+				</tr>
+			</table>
+			<input type="submit" name="login" value="LOGIN" class="login_button">
+		</form>
+		<br>
+		<a href="RegistarServlet">新規登録
+		</a>
+		<a href = "HintServlet">
+		<img src="/app/img/hint.png" width="25" height="25" >POMEについて詳しく知りたい方はこちらへ
+		</a >
+		</div>
+  	</div>
+
+
+
 	<header class="header">
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
@@ -38,6 +79,9 @@
 
 	<!-- ここからメイン -->
 	<main>
+
+
+
 		<div class="home_title">
 			<img src="/app/img/home.png" width="120" height="120" class="home_title_img">
 			<h1 class="home_title_h1">HOME</h1>
@@ -97,7 +141,7 @@
 				</form>
 			</div>
 
-<form action="/app/CheckgoalServlet" method="POST" id="ach">
+			<form action="/app/CheckgoalServlet" method="POST" id="ach">
 				<table>
 					<tr>
 						<td><input type="hidden" name="id" value=${e.id } readonly></td>
@@ -309,4 +353,7 @@
 	</footer>
 	<script src="/app/js/home.js"></script>
 </body>
+
+
+
 </html>
