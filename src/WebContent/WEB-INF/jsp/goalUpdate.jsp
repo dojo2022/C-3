@@ -33,7 +33,7 @@
 		<c:forEach var="e" items="${goalList}">
 
 
-			<form method="post" action="">
+			<form method="post" action="/app/GoalUpdateServlet">
 				<div class="img">
 					<img src="/app/img/joys.png" width="80" height="80">
 					<h1>目標更新・削除</h1>
