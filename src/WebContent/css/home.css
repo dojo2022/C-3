@@ -176,10 +176,8 @@ input[type="radio"].hide {
     margin:0 10px 5px 0;
     display:inline-block;
     padding:12px 0;
-    color: black;
-    /*background:#ddd;*/
+    color: rgb(255, 255, 255);
     text-align:center;
-    font-size:16px;
     font-weight:700;
     cursor:pointer;
     transition:ease 0.2s opacity;
@@ -195,31 +193,35 @@ input[type="radio"].hide {
 .tab1_label {
 	background-color: #F28703;
 	outline: none;
-
+	font-size: 15px;
 }
 .tab2_label {
 	background: #FB4B1A;
 	outline: none;
+	font-size:22px;
 
 }
 .tab3_label {
 	background: #06C7F2;
 	outline: none;
+	font-size:22px;
 
 }
 .tab4_label {
 	background: #019DD8;
 	outline: none;
+	font-size:22px;
 
 }
 .tab5_label {
 	background: #8000ff;
 	outline: none;
-
+	font-size:22px;
 }
 .tab6_label {
 	background: #DA72D1;
 	outline: none;
+	font-size:22px;
 }
 
 

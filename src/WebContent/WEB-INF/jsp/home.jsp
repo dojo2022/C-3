@@ -29,7 +29,7 @@
 
 
 
-    <!--<c:if test="${first == '1'}"></c:if>-->
+<!--
 	<div class="top-op">
   		<img src="/app/img/logo00.png" width="600" height="300" class="op_logo">
   	</div>
@@ -65,7 +65,7 @@
 		</a >
 		</div>
   	</div>
-
+-->
 
 
 
