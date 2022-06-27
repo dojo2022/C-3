@@ -29,14 +29,18 @@
 <main>
 
 <h1>交換成功！</h1>
+<div class="hr-p">
 <hr>
+</div>
 
 	<p>「${reward_name}」ができるようになりました！</p>
 	現在の保持ポイント<div class=point>${minushaving_point}ポイント</div><br>
 	<img src="/app/img/1.png" >
 
 
+<div class="hr-a">
 <hr>
+</div>
 
 
 <a href="/app/JoysServlet">＜　Joys一覧へ戻る</a>

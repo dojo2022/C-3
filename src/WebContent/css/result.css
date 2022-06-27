@@ -1,7 +1,38 @@
 @charset "UTF-8";
 
+main {
+	text-align: center;
+}
+hr {
+	border-top: 4px solid #ff8000;
+	text-align: center;
+}
+.hr-p {
+	margin: 80px 10% ;
+}
+.hr-a {
+	margin: 80px 10% 120px 10%;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+p {
+	font-size: 20px;
+}
+
+hr:after {
+
+	display: inline-block;
+	position: relative;
+	top: -15px;
+	padding: 10px 10px;
+	background: #ffffff;
+	color: #ff00ff;
+	font-size: 20px;
+}
 .point{
 	color:#FF9933;
-
 }
 
