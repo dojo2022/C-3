@@ -28,12 +28,16 @@
 
 	<main>
 		<h1>目標達成！！！！</h1>
+		<div class="hr-p">
 		<hr>
+		</div>
 		<h2><span style="color:#FF9933">${plusPoint}ポイント</span>を獲得しました！！！</h2>
 
 		<img src="/app/img/omedetou.png"><br>
 		<img src="/app/img/1.png" id='imageArea'>
+		<div class="hr-a">
 		<hr>
+		</div>
 		<a href="/app/HomeServlet">＜　ホームへ戻る</a>
 	</main>
 <!-- フッター被り解決 -->

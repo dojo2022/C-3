@@ -285,6 +285,11 @@ body{color:red;}
 	padding: 30px 70px ;
 }
 
+/* 目標名背景を色付け
+.goal_name{
+	background-color:#FFFF99;
+}
+*/
 
 /*　アコーディオンメニュー用　*/
 /*

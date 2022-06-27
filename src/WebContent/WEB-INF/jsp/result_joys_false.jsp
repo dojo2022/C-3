@@ -27,7 +27,9 @@
 <!-- ここからメイン -->
 <main>
 <h1>交換失敗！</h1>
+<div class="hr-p">
 <hr>
+</div>
 
 	<p>「${reward_name}」ができるようになるにはポイントが足りませんでした・・・。</p>
 	<p>目標を達成してポイントを貯めましょう！</p>
@@ -38,7 +40,9 @@
 
 
 
+<div class="hr-a">
 <hr>
+</div>
 <a href="/app/JoysServlet">＜　Joys一覧へ戻る</a>
 
 

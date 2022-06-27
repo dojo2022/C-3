@@ -135,6 +135,7 @@
 									<td>～</td>
 									<td><!--終了日--> ${e.ending_date}</td>
 									<td><!--目標名--> ${e.goal_name}</td>
+									<td><!--目標難易度--> ${e.difficulty_name}</td>
 									<td>
 											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
 												src="/app/img/edit.png" width="40" height="40"></a></td>
@@ -196,6 +197,7 @@
 									<td>～</td>
 									<td><!--終了日--> ${e.ending_date}</td>
 									<td><!--目標名--> ${e.goal_name}</td>
+									<td><!--目標難易度--> ${e.difficulty_name}</td>
 									<td>
 											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
 												src="/app/img/edit.png" width="40" height="40"></a>
@@ -257,6 +259,7 @@
 									<td>～</td>
 									<td><!--終了日--> ${e.ending_date}</td>
 									<td><!--目標名--> ${e.goal_name}</td>
+									<td><!--目標難易度--> ${e.difficulty_name}</td>
 									<td>
 											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
 												src="/app/img/edit.png" width="40" height="40"></a>
@@ -314,12 +317,13 @@
                     -->
                     <c:forEach var="e" items="${goalList}">
 					<table class="in_table">
-							<tr>
+							<tr class="goal_name">
 								<!--  <td><div>目標ID <br>${e.goal_id}</div></td> -->
 									<td><!--  開始日 --> ${e.starting_date}</td>
 									<td>～</td>
 									<td><!--終了日--> ${e.ending_date}</td>
 									<td><!--目標名--> ${e.goal_name}</td>
+									<td><!--目標難易度--> ${e.difficulty_name}</td>
 									<td>
 											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
 												src="/app/img/edit.png" width="40" height="40"></a>
@@ -383,6 +387,7 @@
 									<td>～</td>
 									<td><!--終了日--> ${e.ending_date}</td>
 									<td><!--目標名--> ${e.goal_name}</td>
+									<td><!--目標難易度--> ${e.difficulty_name}</td>
 									<td>
 											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
 												src="/app/img/edit.png" width="40" height="40"></a>
@@ -445,6 +450,7 @@
 									<td>～</td>
 									<td><!--終了日--> ${e.ending_date}</td>
 									<td><!--目標名--> ${e.goal_name}</td>
+									<td><!--目標難易度--> ${e.difficulty_name}</td>
 									<td>
 											<a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}"> <img
 												src="/app/img/edit.png" width="40" height="40"></a>

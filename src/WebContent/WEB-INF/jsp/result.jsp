@@ -27,13 +27,16 @@
 <!-- ここからメイン -->
 <main>
 <h1><c:out value="${result.title}" /></h1>
-
+<div class="hr-p">
 <hr>
+</div>
 <p><c:out value="${result.message}" /></p>
 
 
 
+<div class="hr-a">
 <hr>
+</div>
 <a href="${result.backTo}">＜　${result.backToMessage}</a>
 
 
