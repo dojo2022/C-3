@@ -2,7 +2,13 @@
 
 th.th_left {
 	width: 500px;
-	height: 40px;
+	height: 60px;
+	font-size: 20px;
+}
+
+.jr {
+	width: 250px;
+	height: 20px;
 }
 
 /*ささやか・豪華*/
@@ -59,13 +65,14 @@ input[type="radio"]:checked+label.gorgious {
 
 /*更新ボタン*/
 input.update_button {
-	width: 80px;
-	height: 30px;
+	width: 90px;
+	height: 40px;
 	border-radius: 6px;
 	background-color: #ff6702;
 	border-color: #ff6702;
 	color: white;
 	float:right;
+	margin-top: 40px;
 }
 
 input.update_button:hover {
@@ -76,20 +83,26 @@ input.update_button:hover {
 
 }
 
+
+
 /*削除ボタン*/
 input.delete_button {
-	width: 80px;
-	height: 30px;
+	width: 90px;
+	height: 40px;
 	border-radius: 6px;
 	background-color: #fff;
 	border-color: #ff6702;
 	color: #ff6702;
 	float:left;
+	margin-top: 40px;
+	margin-left: 50px;
 }
 
-input.update_button:hover {
+input.delete_button:hover {
 	background-color: #ff6702;
 	border-bottom: 2px solid;
-	border-color: #ff6702;
+	border-color: #ffffff;
 	color: #fff;
 }
+
+

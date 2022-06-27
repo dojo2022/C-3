@@ -40,13 +40,13 @@
 						<th class="th_left">joys名</th>
 
 						<td colspan="2"><input type="text" name="reward_name"
-							placeholder="アイス" required></input></td>
+							placeholder="アイス"  class="jr" required></input></td>
 					</tr>
 					<tr>
 						<th class="th_left">詳細</th>
 
 						<td colspan="2"><input type="text" name="reward_detail"
-							placeholder="チョコモナカジャンボを大人買い"></input></td>
+							placeholder="チョコモナカジャンボを大人買い" class="jr"></input></td>
 					</tr>
 					<tr>
 						<th class="th_left">ささやかor豪華選択</th>

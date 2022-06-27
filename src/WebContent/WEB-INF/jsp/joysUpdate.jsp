@@ -49,13 +49,13 @@
 						<th class="th_left">joys名</th>
 
 						<td colspan="2"><input type="text" name="reward_name"
-							value="${e.reward_name}" required></input></td>
+							value="${e.reward_name}" class="jr" required></input></td>
 					</tr>
 					<tr>
 						<th class="th_left">詳細</th>
 
 						<td colspan="2"><input type="text" name="reward_detail"
-							value="${e.reward_detail}"></input></td>
+							value="${e.reward_detail}" class="jr"></input></td>
 					</tr>
 
 					<tr>
@@ -74,7 +74,7 @@
 						</c:if>><label
 							class="radio_label gorgious" for="豪華">豪華(50pt)</label></td>
 					</tr>
-					<tr>
+					<tr class="reg_res">
 						<td><input type="submit" name="SUBMIT" value="更新"
 							class="update_button"></td>
 						<td><input type="submit" name="SUBMIT" value="削除"

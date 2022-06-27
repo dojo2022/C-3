@@ -2,9 +2,14 @@
 
 th.th_left {
 	width: 500px;
-	height: 40px;
+	height: 60px;
+	font-size: 20px;
 }
 
+.jr {
+	width: 250px;
+	height: 20px;
+}
 /*ささやか・豪華*/
 input[type=radio] {
 	width: 50px;
@@ -59,13 +64,14 @@ input[type="radio"]:checked+label.gorgious {
 
 /*登録ボタン*/
 input.registar_button {
-	width: 80px;
-	height: 30px;
+	width: 90px;
+	height: 40px;
 	border-radius: 6px;
 	background-color: #ff6702;
 	border-color: #ff6702;
 	color: white;
 	float:right;
+	margin-top: 40px;
 }
 
 input.registar_button:hover {
