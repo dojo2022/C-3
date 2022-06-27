@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -37,6 +38,10 @@ public class GoalUpdateServlet extends HttpServlet {
 			response.sendRedirect("/app/LoginServlet");
 			return;
 		}
+
+		//今日の日付を取得する
+				LocalDate today = LocalDate.now();
+				request.setAttribute("today",today);
 
 		//リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
