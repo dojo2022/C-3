@@ -37,13 +37,21 @@ public class HomeServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		user user = (user)session.getAttribute("id");
 
+		if(session.getAttribute("top_op") == null) {
+			//1回目のHomeServletが呼ばれた時
+			session.setAttribute("top_op", true);
+		}else {
+			//2回目以降のHomeServletが呼ばれた時
+			session.setAttribute("top_op", false);
+		}
+
 		System.out.println(user.getUser_id());
 
 		goalDao dao = new goalDao();
 		List<goal> goalTodayList = dao.selectToday(user.getUser_id());
 
 		// 検索結果をリクエストスコープに格納する
-				request.setAttribute("goalTodayList", goalTodayList);
+		request.setAttribute("goalTodayList", goalTodayList);
 
 		// ホームページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
@@ -55,33 +63,41 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//セッションスコープからuserIDを取得
-				HttpSession session = request.getSession();
-				user user = (user)session.getAttribute("id");
+		HttpSession session = request.getSession();
+		user user = (user)session.getAttribute("id");
 
-				//リクエストパラメーターを書く！！
-				request.setCharacterEncoding("UTF-8");
-				String  tag = request.getParameter("tag");
+		if(session.getAttribute("top_op") == null) {
+			//1回目のHomeServletが呼ばれた時
+			session.setAttribute("top_op", true);
+		}else {
+			//2回目以降のHomeServletが呼ばれた時
+			session.setAttribute("top_op", false);
+		}
 
-				System.out.println(tag);
-				goalDao dao = new goalDao();
-				if (tag.equals("0")) {
-					List<goal> goalTodayList = dao.selectToday(user.getUser_id());
-					//検索結果をリクエストスコープに格納する
-					request.setAttribute("goalTodayList", goalTodayList);
-				}else {
-					List<goal> goalTodayList = dao.selectTagToday(user.getUser_id(), tag);
-					//検索結果をリクエストスコープに格納する
-					request.setAttribute("goalTodayList", goalTodayList);
-				}
+		//リクエストパラメーターを書く！！
+		request.setCharacterEncoding("UTF-8");
+		String  tag = request.getParameter("tag");
 
-				//goal.jspからコピペ「checked」対策
-				request.setAttribute("tag", tag);
+		System.out.println(tag);
+		goalDao dao = new goalDao();
+		if (tag.equals("0")) {
+			List<goal> goalTodayList = dao.selectToday(user.getUser_id());
+			//検索結果をリクエストスコープに格納する
+			request.setAttribute("goalTodayList", goalTodayList);
+		}else {
+			List<goal> goalTodayList = dao.selectTagToday(user.getUser_id(), tag);
+			//検索結果をリクエストスコープに格納する
+			request.setAttribute("goalTodayList", goalTodayList);
+		}
+
+		//goal.jspからコピペ「checked」対策
+		request.setAttribute("tag", tag);
 
 
-				// ホームページにフォワードする
-						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-						dispatcher.forward(request, response);
-			}
+		// ホームページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+		dispatcher.forward(request, response);
 	}
+}
 
 

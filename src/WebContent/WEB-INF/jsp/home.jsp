@@ -29,7 +29,7 @@
 
 
 
-<!--
+<c:if test="${top_op}">
 	<div class="top-op">
   		<img src="/app/img/logo00.png" width="600" height="300" class="op_logo">
   	</div>
@@ -65,7 +65,7 @@
 		</a >
 		</div>
   	</div>
--->
+</c:if>
 
 
 
@@ -142,36 +142,19 @@
 						class="tab6_label" for="tab6" onclick="labelClick(this)">その他</label>
 				</form>
 			</div>
-
-			<form action="/app/CheckgoalServlet" method="POST" id="ach">
-				<table>
-					<tr>
-						<td><input type="hidden" name="id" value=${e.id } readonly></td>
-						<td>${e.goal_name}</td>
-						<td>${e.goal_detail}</td>
-						<td><label class="btn"> <input type="checkbox"
-								style="display: none;" id="achievement" name="check" value="1"
-								onchange="formSubmit(this.form)"> <i
-								class="fa fa-square-o fa-2x"></i> <i
-								class="fa fa-check-square-o fa-2x"></i>
-						</label></td>
-					</tr>
-				</table>
-			</form>
-
 			<div class="panel_area">
-
 				<div id="panel1" class="tab_panel">
 					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
-								<td>${e.starting_date}</td>
-								<td>～</td>
-								<td>${e.ending_date}</td>
 								<td>${e.goal_name}</td>
-								<td><a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}">
-										<img src="/app/img/edit.png" width="40" height="40">
-								</a></td>
+								<td><label class="btn"> <input type="checkbox"
+									style="display: none;" id="achievement" name="check" value="1"
+									onchange="formSubmit(this.form)"> <i
+									class="fa fa-square-o fa-2x"></i> <i
+									class="fa fa-check-square-o fa-2x"></i>
+									</label>
+								</td>
 							</tr>
 						</table>
 						<div class="out_table">${e.goal_detail}</div>
@@ -189,13 +172,14 @@
 					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
-								<td>${e.starting_date}</td>
-								<td>～</td>
-								<td>${e.ending_date}</td>
 								<td>${e.goal_name}</td>
-								<td><a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}">
-										<img src="/app/img/edit.png" width="40" height="40">
-								</a></td>
+								<td><label class="btn"> <input type="checkbox"
+									style="display: none;" id="achievement" name="check" value="1"
+									onchange="formSubmit(this.form)"> <i
+									class="fa fa-square-o fa-2x"></i> <i
+									class="fa fa-check-square-o fa-2x"></i>
+									</label>
+								</td>
 							</tr>
 						</table>
 						<div class="out_table">${e.goal_detail}</div>
@@ -213,13 +197,14 @@
 					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
-								<td>${e.starting_date}</td>
-								<td>～</td>
-								<td>${e.ending_date}</td>
 								<td>${e.goal_name}</td>
-								<td><a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}">
-										<img src="/app/img/edit.png" width="40" height="40">
-								</a></td>
+								<td><label class="btn"> <input type="checkbox"
+									style="display: none;" id="achievement" name="check" value="1"
+									onchange="formSubmit(this.form)"> <i
+									class="fa fa-square-o fa-2x"></i> <i
+									class="fa fa-check-square-o fa-2x"></i>
+									</label>
+								</td>
 							</tr>
 						</table>
 						<div class="out_table">${e.goal_detail}</div>
@@ -237,13 +222,14 @@
 					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
-								<td>${e.starting_date}</td>
-								<td>～</td>
-								<td>${e.ending_date}</td>
 								<td>${e.goal_name}</td>
-								<td><a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}">
-										<img src="/app/img/edit.png" width="40" height="40">
-								</a></td>
+								<td><label class="btn"> <input type="checkbox"
+									style="display: none;" id="achievement" name="check" value="1"
+									onchange="formSubmit(this.form)"> <i
+									class="fa fa-square-o fa-2x"></i> <i
+									class="fa fa-check-square-o fa-2x"></i>
+									</label>
+								</td>
 							</tr>
 						</table>
 						<div class="out_table">${e.goal_detail}</div>
@@ -261,13 +247,14 @@
 					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
-								<td>${e.starting_date}</td>
-								<td>～</td>
-								<td>${e.ending_date}</td>
 								<td>${e.goal_name}</td>
-								<td><a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}">
-										<img src="/app/img/edit.png" width="40" height="40">
-								</a></td>
+								<td><label class="btn"> <input type="checkbox"
+									style="display: none;" id="achievement" name="check" value="1"
+									onchange="formSubmit(this.form)"> <i
+									class="fa fa-square-o fa-2x"></i> <i
+									class="fa fa-check-square-o fa-2x"></i>
+									</label>
+								</td>
 							</tr>
 						</table>
 						<div class="out_table">${e.goal_detail}</div>
@@ -285,13 +272,14 @@
 					<c:forEach var="e" items="${goalTodayList}">
 						<table class="in_table">
 							<tr>
-								<td>${e.starting_date}</td>
-								<td>～</td>
-								<td>${e.ending_date}</td>
 								<td>${e.goal_name}</td>
-								<td><a href="/app/GoalUpdateServlet?goal_id=${e.goal_id}">
-										<img src="/app/img/edit.png" width="40" height="40">
-								</a></td>
+								<td><label class="btn"> <input type="checkbox"
+									style="display: none;" id="achievement" name="check" value="1"
+									onchange="formSubmit(this.form)"> <i
+									class="fa fa-square-o fa-2x"></i> <i
+									class="fa fa-check-square-o fa-2x"></i>
+									</label>
+								</td>
 							</tr>
 						</table>
 						<div class="out_table">${e.goal_detail}</div>
@@ -309,24 +297,6 @@
 		</div>
 
 
-
-		<c:forEach var="e" items="${goalTodayList}">
-			<form action="/app/CheckgoalServlet" method="POST" id="ach">
-				<table>
-					<tr>
-						<td><input type="hidden" name="id" value=${e.id } readonly></td>
-						<td>${e.goal_name}</td>
-						<td>${e.goal_detail}</td>
-						<td><label class="btn"> <input type="checkbox"
-								style="display: none;" id="achievement" name="check" value="1"
-								onchange="formSubmit(this.form)"> <i
-								class="fa fa-square-o fa-2x"></i> <i
-								class="fa fa-check-square-o fa-2x"></i>
-						</label></td>
-					</tr>
-				</table>
-			</form>
-		</c:forEach>
 
 		<div class="goal_plus">
 			<a href="/app/GoalRegistarServlet"><img src="/app/img/regist.png"
