@@ -66,7 +66,7 @@
 				<tr>
 					<td>
 						<div id="app">
-						<input type="date" name="starting_date" onchange="Registar_JSP()" required>
+						<input type="date" min="<%=request.getAttribute("today") %>" name="starting_date" onchange="Registar_JSP()" required>
 						</div>
 					</td>
 
@@ -74,7 +74,7 @@
 <!-- 開始日が本日以前は入力できない形でもよさそう -->
 
 					<td>～</td>
-					<td><input type="date" name="ending_date" onchange="homeRegistar_JSP()"></td>
+					<td><input type="date" min="<%=request.getAttribute("today") %>" name="ending_date" onchange="homeRegistar_JSP()"></td>
 				</tr>
 
 				<tr>
