@@ -163,7 +163,7 @@ public class goalDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する　重複を消去して、goal_resultのdateで今日かを判定
-			String sql = "SELECT  goal_name,goal_detail, id  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND ACHIEVEMENT_DAY =  curdate() AND achievement_id = '2'";
+			String sql = "SELECT  goal_name,goal_detail, id, difficulty_name  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id INNER JOIN difficulty  ON difficulty.difficulty_id = goal.difficulty_id WHERE user_id = ? AND ACHIEVEMENT_DAY =  curdate() AND achievement_id = '2'";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -179,7 +179,8 @@ public class goalDao {
 				goal card = new goal(
 						rs.getString("goal_name"),
 						rs.getString("goal_detail"),
-						rs.getString("id"));
+						rs.getString("id"),
+						rs.getString("difficulty_name"));
 				goalTodayList.add(card);
 			}
 		}catch (SQLException e) {
@@ -217,7 +218,7 @@ public class goalDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT distinct  goal_name, goal_detail, goal.goal_id  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND starting_date <= curdate() AND ending_date >=  curdate()AND tag_id = ? AND achievement_id = '2'";
+			String sql = "SELECT distinct  goal_name, goal_detail, goal.goal_id, difficulty_name  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id  INNER JOIN difficulty  ON difficulty.difficulty_id = goal.difficulty_id WHERE user_id = ? AND starting_date <= curdate() AND ending_date >=  curdate()AND tag_id = ? AND achievement_id = '2'";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -235,7 +236,9 @@ public class goalDao {
 			while (rs.next()) {
 				goal card = new goal(
 						rs.getString("goal_name"),
-						rs.getString("goal_detail"));
+						rs.getString("goal_detail"),
+						rs.getString("goal_id"),
+						rs.getString("difficulty_name"));
 				goalTodayList.add(card);
 			}
 		}catch (SQLException e) {

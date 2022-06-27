@@ -148,6 +148,7 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
+								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
 										<td><input type="hidden" name="id" value=${e.id } readonly>
@@ -180,6 +181,7 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
+								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
 										<td><input type="hidden" name="id" value=${e.id } readonly>
@@ -212,6 +214,7 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
+								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
 										<td><input type="hidden" name="id" value=${e.id } readonly>
@@ -244,6 +247,7 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
+								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
 										<td><input type="hidden" name="id" value=${e.id } readonly>
@@ -276,6 +280,7 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
+								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
 										<td><input type="hidden" name="id" value=${e.id } readonly>
@@ -308,6 +313,7 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
+								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
 										<td><input type="hidden" name="id" value=${e.id } readonly>

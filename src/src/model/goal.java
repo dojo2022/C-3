@@ -160,6 +160,12 @@ public class goal implements Serializable {
 		this.ending_date = date2;
 		this.difficulty_name = string4;
 	}
+	public goal(String string, String string2, String string3, String string4) {
+		this.goal_name = string;
+		this.goal_detail = string2;
+		this.id = string3;
+		this.difficulty_name = string4;
+	}
 	public String getId() {
 		return id;
 	}
