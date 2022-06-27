@@ -24,7 +24,7 @@
 		<table>
 			<tr >
 
-				<td><input type="text"  class="user_id"  pattern="^[0-9a-zA-Z]{1,12}"    placeholder="ユーザーID" name="user_id" required></td>
+				<td><input type="text"  class="user_id"  pattern="^[0-9a-zA-Z]{1,12}"    placeholder="ユーザーID(1～12文字)" name="user_id" required></td>
 			</tr>
 			<tr >
 
