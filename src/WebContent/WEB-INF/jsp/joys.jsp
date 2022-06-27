@@ -39,8 +39,11 @@
 	<!-- ここからメイン -->
 	<main>
 
+		<div class="goal_title">
+			<img src="/app/img/check.png" width="120" height="120" class="goal_title_img">
+			<h1 class="goal_title_h1">joys一覧</h1>
+		</div>
 
-		<h1>joys一覧</h1>
 		<c:forEach end="0" var="a" items="${rewardList}">
 		保持ポイント：${a.having_point}pts
 		</c:forEach>
@@ -57,18 +60,6 @@
 					<c:forEach var="e" items="${rewardList}">
 						<form action="/app/CheckjoysServlet" method="POST" id="exchange">
 							<table class="in_table">
-								<tr>
-									<td></td>
-
-									<td></td>
-								</tr>
-
-
-
-
-								<td></td>
-								</tr>
-
 								<tr>
 									<td><a
 										href="/app/JoysUpdateServlet?reward_id=${e.reward_id}"> <img
@@ -91,6 +82,7 @@
 							<div class="out_table">${e.reward_detail}</div>
 							<input type="hidden" name="having_point"
 								value="${e.having_point}">
+							<br><br><br><br><br><br><br><br>
 
 						</form>
 					</c:forEach>
