@@ -31,8 +31,8 @@
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<a id='logout' href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a> <a
-			href="/app/HintServlet" class="hint" target="_blank"><img
+		<a id='logout' href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a>
+		<a href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
 	</header>
 
@@ -49,23 +49,24 @@
 			<div class="panel_area">
 				<div class="tab_panel">
 
-					<form action="/app/CheckjoysServlet" method="POST" id="exchange">
-<div class="panel_upper">
-<div  class="panel_upper_1">Joys</div>
-<div  class="panel_upper_2">必要ポイント数</div>
-</div>
-<c:forEach var="e" items="${rewardList}">
-						<table class="in_table">
-							<tr>
-								<td></td>
 
-								<td></td>
-							</tr>
-
-
-
+					<div class="panel_upper">
+						<div class="panel_upper_1">Joys</div>
+						<div class="panel_upper_2">必要ポイント数</div>
+					</div>
+					<c:forEach var="e" items="${rewardList}">
+						<form action="/app/CheckjoysServlet" method="POST" id="exchange">
+							<table class="in_table">
+								<tr>
+									<td></td>
 
 									<td></td>
+								</tr>
+
+
+
+
+								<td></td>
 								</tr>
 
 								<tr>
@@ -88,10 +89,12 @@
 							</table>
 
 							<div class="out_table">${e.reward_detail}</div>
-							<input type="hidden" name="having_point" value="${e.having_point}">
+							<input type="hidden" name="having_point"
+								value="${e.having_point}">
 
-						</c:forEach>
-					</form>
+						</form>
+					</c:forEach>
+
 				</div>
 			</div>
 		</div>
