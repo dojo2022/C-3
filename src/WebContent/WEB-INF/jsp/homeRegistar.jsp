@@ -12,7 +12,7 @@
 	href="app/img/pome_favicon.png">
 <!-- ↑アップルタッチアイコン　スマホのホーム画面に追加したときに表示されるアイコン -->
 <link rel="stylesheet" type="text/css" href="/app/css/goalRegistar.css">
-<link rel="stylesheet" type="text/css" href="css/color.css">
+<link rel="stylesheet" type="text/css" href="/app/css/color.css">
 </head>
 <body>
 	<header class="header">
@@ -47,10 +47,10 @@
 					</tr>
 					<tr>
 						<th class="th_left"><span>期間</span></th>
-						<td><input type="radio" name="term_id" value="1" required><label class="radio_label" for="終日">終日</label></td>
-						<td><input type="radio" name="term_id" value="2"><label
+						<td><input id="終日" type="radio" name="term_id" value="1" required><label class="radio_label" for="終日">終日</label></td>
+						<td><input id="繰り返し" type="radio" name="term_id" value="2"><label
 								class="radio_label" for="繰り返し">繰り返し</label></td>
-						<td><input type="radio" name="term_id" value="3"><label
+						<td><input id="長期" type="radio" name="term_id" value="3"><label
 								class="radio_label" for="長期">長期</label></td>
 					</tr>
 
