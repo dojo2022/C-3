@@ -26,7 +26,15 @@ public class GoalServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession sessiont = request.getSession();
+		if (sessiont.getAttribute("id") == null) {
+			response.sendRedirect("/app/LoginServlet");
+			return;
+		}
 
+
+		//セッションスコープからユーザーＩＤを取得
 		HttpSession session = request.getSession();
 		user user = (user)session.getAttribute("id");
 

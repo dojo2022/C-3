@@ -25,6 +25,12 @@ public class CheckgoalServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession sessiont = request.getSession();
+		if (sessiont.getAttribute("id") == null) {
+			response.sendRedirect("/app/LoginServlet");
+			return;
+		}
 
 	}
 
