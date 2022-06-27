@@ -231,6 +231,7 @@ body{color:red;}
 	position: relative;
 	top: 0;
 }
+/*
 .logoutbtn div {
 	color: black;
 	background-color: #def03c;
@@ -238,7 +239,7 @@ body{color:red;}
 	position: absolute;
 	right: 180px;
 	top: 60px;
-}
+}*/
 .hint img {
 	position: absolute;
 	right: 50px;

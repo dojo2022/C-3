@@ -39,9 +39,9 @@
 	<!-- ここからメイン -->
 	<main>
 
-		<div class="goal_title">
-			<img src="/app/img/check.png" width="120" height="120" class="goal_title_img">
-			<h1 class="goal_title_h1">joys一覧</h1>
+		<div class="title">
+			<img src="/app/img/joys.png" width="120" height="120" class="title_img">
+			<h1 class="title_h1">joys一覧</h1>
 		</div>
 
 		<c:forEach end="0" var="a" items="${rewardList}">

@@ -27,9 +27,12 @@ main {
 	top: 0;
 }
 .logoutbtn{
+	text-align:center;
+	width: 15%;
+	height: 30%;
 	border-radius: 3px;
 	color: white;
-	background-color: #ffb366;
+	background-color: #FF9933;
 	font-size: 30px;
 	position: absolute;
 	right: 180px;
@@ -79,7 +82,20 @@ main {
 	height: 100px;
 }
 
+/*タイトル*/
+.title {
+	display: flex;
 
+}
+.title_img {
+	position: relative;
+	padding: 30px 100px;
+
+}
+.title_h1 {
+	font-size: 70px;
+	font-weight: normal;
+}
 
 
 

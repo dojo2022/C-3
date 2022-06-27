@@ -34,9 +34,8 @@
 
 
 			<form method="post" action="">
-				<div class="img">
-					<img src="/app/img/joys.png" width="80" height="80">
-					<h1>目標更新・削除</h1>
+				<div class="title">
+					<img src="/app/img/check.png" width="80" height="80" class="title_img"><h1 class="title_h1">目標更新・削除</h1>
 				</div>
 
 
