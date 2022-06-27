@@ -317,7 +317,7 @@
                     -->
                     <c:forEach var="e" items="${goalList}">
 					<table class="in_table">
-							<tr>
+							<tr class="goal_name">
 								<!--  <td><div>目標ID <br>${e.goal_id}</div></td> -->
 									<td><!--  開始日 --> ${e.starting_date}</td>
 									<td>～</td>
