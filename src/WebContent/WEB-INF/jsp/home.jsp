@@ -148,12 +148,19 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
-								<td><label class="btn"> <input type="checkbox"
-									style="display: none;" id="achievement" name="check" value="1"
-									onchange="formSubmit(this.form)"> <i
-									class="fa fa-square-o fa-2x"></i> <i
-									class="fa fa-check-square-o fa-2x"></i>
-									</label>
+								<td>
+									<form action="/app/CheckgoalServlet" method="POST" id="ach">
+										<td><input type="hidden" name="id" value=${e.id } readonly>
+										</td>
+										<td>
+											<label class="btn"><input type="checkbox"
+											style="display: none;" id="achievement" name="check" value="1"
+											onchange="formSubmit(this.form)"> <i
+											class="fa fa-square-o fa-2x"></i> <i
+											class="fa fa-check-square-o fa-2x"></i>
+											</label>
+										</td>
+									</form>
 								</td>
 							</tr>
 						</table>
@@ -173,12 +180,19 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
-								<td><label class="btn"> <input type="checkbox"
-									style="display: none;" id="achievement" name="check" value="1"
-									onchange="formSubmit(this.form)"> <i
-									class="fa fa-square-o fa-2x"></i> <i
-									class="fa fa-check-square-o fa-2x"></i>
-									</label>
+								<td>
+									<form action="/app/CheckgoalServlet" method="POST" id="ach">
+										<td><input type="hidden" name="id" value=${e.id } readonly>
+										</td>
+										<td>
+											<label class="btn"><input type="checkbox"
+											style="display: none;" id="achievement" name="check" value="1"
+											onchange="formSubmit(this.form)"> <i
+											class="fa fa-square-o fa-2x"></i> <i
+											class="fa fa-check-square-o fa-2x"></i>
+											</label>
+										</td>
+									</form>
 								</td>
 							</tr>
 						</table>
@@ -198,12 +212,19 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
-								<td><label class="btn"> <input type="checkbox"
-									style="display: none;" id="achievement" name="check" value="1"
-									onchange="formSubmit(this.form)"> <i
-									class="fa fa-square-o fa-2x"></i> <i
-									class="fa fa-check-square-o fa-2x"></i>
-									</label>
+								<td>
+									<form action="/app/CheckgoalServlet" method="POST" id="ach">
+										<td><input type="hidden" name="id" value=${e.id } readonly>
+										</td>
+										<td>
+											<label class="btn"><input type="checkbox"
+											style="display: none;" id="achievement" name="check" value="1"
+											onchange="formSubmit(this.form)"> <i
+											class="fa fa-square-o fa-2x"></i> <i
+											class="fa fa-check-square-o fa-2x"></i>
+											</label>
+										</td>
+									</form>
 								</td>
 							</tr>
 						</table>
@@ -223,12 +244,19 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
-								<td><label class="btn"> <input type="checkbox"
-									style="display: none;" id="achievement" name="check" value="1"
-									onchange="formSubmit(this.form)"> <i
-									class="fa fa-square-o fa-2x"></i> <i
-									class="fa fa-check-square-o fa-2x"></i>
-									</label>
+								<td>
+									<form action="/app/CheckgoalServlet" method="POST" id="ach">
+										<td><input type="hidden" name="id" value=${e.id } readonly>
+										</td>
+										<td>
+											<label class="btn"><input type="checkbox"
+											style="display: none;" id="achievement" name="check" value="1"
+											onchange="formSubmit(this.form)"> <i
+											class="fa fa-square-o fa-2x"></i> <i
+											class="fa fa-check-square-o fa-2x"></i>
+											</label>
+										</td>
+									</form>
 								</td>
 							</tr>
 						</table>
@@ -248,12 +276,19 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
-								<td><label class="btn"> <input type="checkbox"
-									style="display: none;" id="achievement" name="check" value="1"
-									onchange="formSubmit(this.form)"> <i
-									class="fa fa-square-o fa-2x"></i> <i
-									class="fa fa-check-square-o fa-2x"></i>
-									</label>
+								<td>
+									<form action="/app/CheckgoalServlet" method="POST" id="ach">
+										<td><input type="hidden" name="id" value=${e.id } readonly>
+										</td>
+										<td>
+											<label class="btn"><input type="checkbox"
+											style="display: none;" id="achievement" name="check" value="1"
+											onchange="formSubmit(this.form)"> <i
+											class="fa fa-square-o fa-2x"></i> <i
+											class="fa fa-check-square-o fa-2x"></i>
+											</label>
+										</td>
+									</form>
 								</td>
 							</tr>
 						</table>
@@ -273,12 +308,19 @@
 						<table class="in_table">
 							<tr>
 								<td>${e.goal_name}</td>
-								<td><label class="btn"> <input type="checkbox"
-									style="display: none;" id="achievement" name="check" value="1"
-									onchange="formSubmit(this.form)"> <i
-									class="fa fa-square-o fa-2x"></i> <i
-									class="fa fa-check-square-o fa-2x"></i>
-									</label>
+								<td>
+									<form action="/app/CheckgoalServlet" method="POST" id="ach">
+										<td><input type="hidden" name="id" value=${e.id } readonly>
+										</td>
+										<td>
+											<label class="btn"><input type="checkbox"
+											style="display: none;" id="achievement" name="check" value="1"
+											onchange="formSubmit(this.form)"> <i
+											class="fa fa-square-o fa-2x"></i> <i
+											class="fa fa-check-square-o fa-2x"></i>
+											</label>
+										</td>
+									</form>
 								</td>
 							</tr>
 						</table>
