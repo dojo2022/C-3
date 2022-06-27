@@ -62,18 +62,18 @@ table {
 }
 
 th.th_left {
-	width: 500px;
+	padding: 10px;
 	height: 40px;
 }
 
 td {
-	width: 80%;
-	height: 150%;
+	width: 70px;
+	height: 15px;
 }
 
 /**/
 input.textwidth {
-	width: 100%;
+	width: 75%;
 	outline: 10px #FFF;
 	outline-offset: -10px;
 }
