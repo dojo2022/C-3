@@ -81,3 +81,17 @@ input.registar_button:hover {
 	border-color: #ff6702;
 
 }
+/* メイン */
+.joys_title {
+	display: flex;
+
+}
+.joys_title_img {
+	position: relative;
+	padding: 30px 100px;
+
+}
+.joys_title_h1 {
+	font-size: 70px;
+	font-weight: normal;
+}

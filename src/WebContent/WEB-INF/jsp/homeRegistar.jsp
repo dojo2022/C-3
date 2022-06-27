@@ -28,10 +28,10 @@
 	<main>
 
 		<form method="POST" action="/app/GoalRegistarServlet">
-			<div class="img">
-				<img src="/app/img/joys.png" width="80" height="80">
-				<h1>目標登録</h1>
-			</div>
+			<div class="home_title">
+			<img src="/app/img/check.png" width="120" height="120" class="home_title_img">
+			<h1 class="home_title_h1">目標登録</h1>
+		</div>
 
 			<div class="goal_info_wrapper">
 				<table>

@@ -45,7 +45,7 @@
 		</div>
 
 		<c:forEach end="0" var="a" items="${rewardList}">
-		保持ポイント：${a.having_point}pts
+		<p class="having">保持ポイント：${a.having_point}pts</p>
 		</c:forEach>
 
 		<div class="tab_wrap">

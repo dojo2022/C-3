@@ -197,3 +197,18 @@ input.update_button:hover {
 	border-color: #ff6702;
 
 }
+
+/* メイン */
+.home_title {
+	display: flex;
+
+}
+.home_title_img {
+	position: relative;
+	padding: 30px 100px;
+
+}
+.home_title_h1 {
+	font-size: 70px;
+	font-weight: normal;
+}

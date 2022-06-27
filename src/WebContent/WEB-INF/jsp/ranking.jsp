@@ -33,7 +33,11 @@
 
 	<!-- ここからメイン -->
 	<main>
-		<h1>ランキング</h1>
+		<div class="ranking_title">
+			<img src="/app/img/ranking.png" width="120" height="120" class="ranking_title_img">
+			<h1 class="ranking_title_h1">ランキング</h1>
+		</div>
+
 		<!-- <c:forEach var="e" items="${rankingList}">
 
 			頑張る

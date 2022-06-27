@@ -29,10 +29,10 @@
 	<main>
 
 		<form method="post" action="/app/JoysRegistarServlet">
-			<div class="img">
-				<img src="/app/img/joys.png" width="80" height="80">
-				<h1>joys登録</h1>
-			</div>
+			<div class="joys_title">
+			<img src="/app/img/joys.png" width="120" height="120" class="joys_title_img">
+			<h1 class="joys_title_h1">Joys登録</h1>
+		</div>
 
 
 			<table>

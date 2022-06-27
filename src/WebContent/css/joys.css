@@ -68,7 +68,10 @@
 .panel_upper_2 {
 	padding-left: 200px;
 }
-
-
+/*保持ポイント文字*/
+.having{
+font-size: 28px;
+text-align: center;
+}
 @media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
 }
