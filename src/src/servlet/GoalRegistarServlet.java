@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,6 +37,11 @@ public class GoalRegistarServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//今日の日付を取得する
+		LocalDate today = LocalDate.now();
+		request.setAttribute("today",today);
+
+
 		// 目標登録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/homeRegistar.jsp");
 		dispatcher.forward(request, response);
