@@ -52,3 +52,148 @@ a {
 .footer-li-goal {
 	padding-right: 13px;
 }
+
+/*フォーム・テーブルについて*/
+table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	text-align:center;
+}
+
+th.th_left {
+	width: 500px;
+	height: 40px;
+}
+
+td {
+	width: 80%;
+	height: 150%;
+}
+
+/**/
+input.textwidth {
+	width: 100%;
+	outline: 10px #FFF;
+	outline-offset: -10px;
+}
+
+/*ラジオボタン*/
+input[type=radio] {
+	width: 50px;
+	display: none; /* ラジオボタンを非表示にする */
+}
+
+label.radio_label {
+	border: 2px solid #000;
+	border-radius: 6px;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	display: block;
+	float: center;
+	width: 150px;
+}
+
+input[type="radio"]:checked+label.radio_label {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: #000;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+
+label.radio_label:hover {
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	display: block;
+	float: center;
+	width: 150px;
+}
+
+/*タグごとのラベル！！！仕事趣味家事勉強その他*/
+
+input[type="radio"]:checked+label.work {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: #FB4B1A;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+
+input[type="radio"]:checked+label.housework {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: #06C7F2;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+
+input[type="radio"]:checked+label.hobby {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: #019DD8;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+
+input[type="radio"]:checked+label.study {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: #8000ff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+
+input[type="radio"]:checked+label.etc {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: #DA72D1;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+/*更新ボタン*/
+input.update_button {
+	width: 80px;
+	height: 30px;
+	border-radius: 6px;
+	background-color: #ff6702;
+	border-color: #ff6702;
+	color: white;
+	float:right;
+}
+
+input.update_button:hover {
+	background-color: #fff;
+	color: #ff6702;
+	border-bottom: 2px solid;
+	border-color: #ff6702;
+
+}
