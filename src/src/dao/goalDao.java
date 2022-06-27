@@ -44,7 +44,7 @@ public class goalDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT distinct goal.goal_id, starting_date, ending_date, goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND achievement_id = ?";
+			String sql = "SELECT distinct goal.goal_id, starting_date, ending_date, goal_name,goal_detail, difficulty_name  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id INNER JOIN difficulty  ON difficulty.difficulty_id = goal.difficulty_id  WHERE user_id = ? AND achievement_id = ?";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -64,7 +64,8 @@ public class goalDao {
 						rs.getDate("ending_date"),
 						rs.getString("goal_name"),
 						rs.getString("goal_detail"),
-						rs.getString("goal_id"));
+						rs.getString("goal_id"),
+						rs.getString("difficulty_name"));
 				goalList.add(card);
 			}
 
@@ -102,7 +103,7 @@ public class goalDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT distinct goal.goal_id, starting_date, ending_date, goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND tag_id = ? AND achievement_id = '2'";
+			String sql = "SELECT distinct goal.goal_id, starting_date, ending_date, goal_name, goal_detail, difficulty_name  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id INNER JOIN difficulty  ON difficulty.difficulty_id = goal.difficulty_id WHERE user_id = ? AND tag_id = ? AND achievement_id = '2'";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
@@ -122,7 +123,8 @@ public class goalDao {
 						rs.getString("goal_name"),
 						rs.getString("goal_detail"),
 						rs.getDate("starting_date"),
-						rs.getDate("ending_date"));
+						rs.getDate("ending_date"),
+						rs.getString("difficulty_name"));
 				goalList.add(card);
 			}
 		}catch (SQLException e) {

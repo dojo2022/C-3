@@ -14,6 +14,15 @@ public class goal implements Serializable {
 	private String difficulty_id;
 	private String term_id;
 	private String id;
+	private String difficulty_name;
+
+
+	public String getDifficulty_name() {
+		return difficulty_name;
+	}
+	public void setDifficulty_name(String difficulty_name) {
+		this.difficulty_name = difficulty_name;
+	}
 	public String getGoal_id() {
 		return goal_id;
 	}
@@ -92,13 +101,14 @@ public class goal implements Serializable {
 		this.ending_date = ending_date;
 	}
 
-	public goal(Date date, Date date2, String string, String string2, String string3) {
+	public goal(Date date, Date date2, String string, String string2, String string3, String string4) {
 		// TODO 自動生成されたコンストラクター・スタブ
 		this.starting_date = date;
 		this.ending_date = date2;
 		this.goal_name = string;
 		this.goal_detail = string2;
-		this.goal_id = string3;//引数をフィールドに格納している処理
+		this.goal_id = string3;
+		this.difficulty_name = string4;//引数をフィールドに格納している処理
 	}
 	public goal(String string) {
 		// TODO 自動生成されたコンストラクター・スタブ
@@ -141,6 +151,14 @@ public class goal implements Serializable {
 		this.goal_detail = string3;
 		this.starting_date = date;
 		this.ending_date = date2;
+	}
+	public goal(String string, String string2, String string3, Date date, Date date2, String string4) {
+		this.goal_id = string;
+		this.goal_name = string2;
+		this.goal_detail = string3;
+		this.starting_date = date;
+		this.ending_date = date2;
+		this.difficulty_name = string4;
 	}
 	public String getId() {
 		return id;
