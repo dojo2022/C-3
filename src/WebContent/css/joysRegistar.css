@@ -1,1 +1,77 @@
 @charset "UTF-8";
+
+th.th_left {
+	width: 500px;
+	height: 40px;
+}
+
+/*ささやか・豪華*/
+input[type=radio] {
+	width: 50px;
+	display: none; /* ラジオボタンを非表示にする */
+}
+label.radio_label {
+	border: 2px solid #000;
+	border-radius: 6px;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	display: block;
+	float: center;
+	width: 150px;
+}
+
+label.radio_label:hover {
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	display: block;
+	float: center;
+	width: 150px;
+}
+/*タグごとのラベル！！！ささやか豪華*/
+input[type="radio"]:checked+label.tiny {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	 background: linear-gradient(to right, #2af598 0%, #009efd 100%);
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+
+input[type="radio"]:checked+label.gorgious {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	background: linear-gradient(45deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #B67B03 90% 100%);
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+	color: #fff;
+	display: block;
+	float: center;
+	width: 150px;
+}
+
+
+/*登録ボタン*/
+input.registar_button {
+	width: 80px;
+	height: 30px;
+	border-radius: 6px;
+	background-color: #ff6702;
+	border-color: #ff6702;
+	color: white;
+	float:right;
+}
+
+input.registar_button:hover {
+	background-color: #fff;
+	color: #ff6702;
+	border-bottom: 2px solid;
+	border-color: #ff6702;
+
+}

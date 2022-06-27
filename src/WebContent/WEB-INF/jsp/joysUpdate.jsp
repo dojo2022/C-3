@@ -24,8 +24,8 @@
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<a id='logout' href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a> <a
-			href="/app/HintServlet" class="hint" target="_blank"><img
+		<a id='logout' href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a>
+		<a href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
 	</header>
 
@@ -61,14 +61,18 @@
 					<tr>
 						<th class="th_left">ささやかor豪華選択</th>
 
-						<td><input id="ささやか" type="radio" name="reward_level_id" value="1"
+						<td><input id="ささやか" type="radio" name="reward_level_id"
+							value="1"
 							<c:if test="${e.reward_level_id == '1'}">
 							checked
-						</c:if>><label class="radio_label tiny" for="ささやか">ささやか(10pt)</label></td>
-						<td><input id="豪華" type="radio" name="reward_level_id" value="2"
+						</c:if>><label
+							class="radio_label tiny" for="ささやか">ささやか(10pt)</label></td>
+						<td><input id="豪華" type="radio" name="reward_level_id"
+							value="2"
 							<c:if test="${e.reward_level_id == '2'}">
 							checked
-						</c:if>><label class="radio_label gorgious" for="豪華">豪華(50pt)</label></td>
+						</c:if>><label
+							class="radio_label gorgious" for="豪華">豪華(50pt)</label></td>
 					</tr>
 					<tr>
 						<td><input type="submit" name="SUBMIT" value="更新"

@@ -29,33 +29,40 @@
 	<main>
 
 		<form method="post" action="/app/JoysRegistarServlet">
-			<h1>joys登録</h1>
+			<div class="img">
+				<img src="/app/img/joys.png" width="80" height="80">
+				<h1>joys登録</h1>
+			</div>
 
 
 			<table>
-				<tr>
-					<th>joys名</th>
-				</tr>
-				<tr>
-					<td><input type="text" name="reward_name" placeholder="アイス" required></input></td>
-				</tr>
-				<tr>
-					<th>詳細</th>
-				</tr>
-				<tr>
-					<td><input type="text" name="reward_detail"
-						placeholder="チョコモナカジャンボを大人買い"></input></td>
-				</tr>
-				<tr>
-					<th>ささやかor豪華選択</th>
-				</tr>
-				<tr>
-					<td><input type="radio" name="reward_level_id" value="1" required>ささやか</td>
-					<td><input type="radio" name="reward_level_id" value="2">豪華</td>
-				</tr>
-				<tr>
-					<td><input type="submit" value="登録"></td>
-				</tr>
+					<tr>
+						<th class="th_left">joys名</th>
+
+						<td colspan="2"><input type="text" name="reward_name"
+							placeholder="アイス" required></input></td>
+					</tr>
+					<tr>
+						<th class="th_left">詳細</th>
+
+						<td colspan="2"><input type="text" name="reward_detail"
+							placeholder="チョコモナカジャンボを大人買い"></input></td>
+					</tr>
+					<tr>
+						<th class="th_left">ささやかor豪華選択</th>
+
+						<td><input id="ささやか" type="radio" name="reward_level_id"
+							value="1" checked>
+							<label class="radio_label tiny" for="ささやか">ささやか(10pt)</label>
+						</td>
+						<td><input id="豪華" type="radio" name="reward_level_id"
+							value="2"><label
+							class="radio_label gorgious" for="豪華">豪華(50pt)</label></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="SUBMIT" value="登録"
+							class="registar_button"></td>
+					</tr>
 			</table>
 		</form>
 
