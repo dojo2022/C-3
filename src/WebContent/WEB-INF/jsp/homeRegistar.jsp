@@ -36,23 +36,17 @@
 			<div class="goal_info_wrapper">
 				<table>
 					<tr>
-						<th class="th_left">目標名</th>
+						<th class="th_left"><span>目標名</span></th>
+						<td colspan="5"><input class="textwidth" type="text" name="goal_name" placeholder=""
+							required></td>
 					</tr>
 					<tr>
-						<td colspan="5"><input type="text" name="goal_name" placeholder=""
-							required></input></td>
+						<th class="th_left"><span>詳細</span></th>
+						<td colspan="5"><input class="textwidth" type="text" name="goal_detail"
+							placeholder="1000文字まで"></td>
 					</tr>
 					<tr>
-						<th class="th_left">詳細</th>
-					</tr>
-					<tr>
-						<td colspan="5"><input type="text" name="goal_detail"
-							placeholder="1000文字まで"></input></td>
-					</tr>
-					<tr>
-						<th class="th_left">期間</th>
-					</tr>
-					<tr>
+						<th class="th_left"><span>期間</span></th>
 						<td><input type="radio" name="term_id" value="1" required><label class="radio_label" for="終日">終日</label></td>
 						<td><input type="radio" name="term_id" value="2"><label
 								class="radio_label" for="繰り返し">繰り返し</label></td>
@@ -62,9 +56,7 @@
 
 
 					<tr>
-						<th class="th_left">日付</th>
-					</tr>
-					<tr>
+						<th class="th_left"><span>日付</span></th>
 						<td>
 							<div id="app">
 								<input type="date" min="<%=request.getAttribute("today")%>"
@@ -78,22 +70,18 @@
 						<td>～</td>
 						<td><input type="date"
 							min="<%=request.getAttribute("today")%>" name="ending_date"
-							onchange="homeRegistar_JSP()"></td>
+							onchange="homeRegistar_JSP()" required></td>
 					</tr>
 
 					<tr>
-						<th class="th_left">達成難易度</th>
-					</tr>
-					<tr>
+						<th class="th_left"><span>達成難易度</span></th>
 						<td><input type="radio" id="簡単"name="difficulty_id" value="1"
 							required><label class="radio_label" for="簡単">簡単</label></td>
 						<td><input type="radio" id="難しい"name="difficulty_id" value="2"><label class="radio_label" for="難しい">難しい</label></td>
 					</tr>
 
 					<tr>
-						<th class="th_left">タグ</th>
-					</tr>
-					<tr>
+						<th class="th_left"><span>タグ</span></th>
 						<td><input type="radio" id="仕事"name="tag_id" value="1" required><label
 								class="radio_label work" for="仕事">仕事</label></td>
 						<td><input type="radio" id="家事"name="tag_id" value="2"><label
@@ -108,7 +96,7 @@
 
 					</tr>
 					<tr>
-						<td colspan="3"><input type="submit" name="" value="登録"></td>
+						<td colspan="3"><input type="submit" name="" class="update_button"value="登録"></td>
 
 					</tr>
 				</table>

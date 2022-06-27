@@ -78,15 +78,14 @@
 						<tr>
 							<th class="th_left" ><span>日付</span></th>
 
-							<td><input type="date" name="starting_date"
+							<td><input type="date" min="<%=request.getAttribute("today") %>" name="starting_date"
 								value="${e.starting_date}" required></td>
 
 							<!-- 開始日はjavaScriptで今日の日付を生成し自動入力されていると便利かも。 -->
 							<!-- 開始日が本日以前は入力できない形でもよさそう -->
 
 							<td>～</td>
-							<td><input type="date" name="ending_date"
-								value="${e.ending_date}"></td>
+							<td><input type="date" min="<%=request.getAttribute("today") %>" name="ending_date" onchange="homeRegistar_JSP()" value="${e.ending_date}"></td>
 						</tr>
 
 
