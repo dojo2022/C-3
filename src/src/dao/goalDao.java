@@ -215,7 +215,7 @@ public class goalDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT goal_name,goal_detail  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND starting_date <= curdate() AND ending_date >=  curdate()AND tag_id = ? AND achievement_id = '2'";
+			String sql = "SELECT distinct  goal_name, goal_detail, goal.goal_id  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE user_id = ? AND starting_date <= curdate() AND ending_date >=  curdate()AND tag_id = ? AND achievement_id = '2'";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
