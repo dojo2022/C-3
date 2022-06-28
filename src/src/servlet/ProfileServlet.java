@@ -36,8 +36,8 @@ public class ProfileServlet extends HttpServlet {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession sessiont = request.getSession();
 		if (sessiont.getAttribute("id") == null) {
-		response.sendRedirect("/app/LoginServlet");
-		return;
+			response.sendRedirect("/app/LoginServlet");
+			return;
 		}
 
 		//セッションスコープにIDを格納
@@ -77,53 +77,53 @@ public class ProfileServlet extends HttpServlet {
 	//プロフィールを変更する処理
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
-				//String user_id = request.getParameter("user_id");
-				String nickname = request.getParameter("nickname");
-				//String picture = request.getParameter("picture");
+		request.setCharacterEncoding("UTF-8");
+		//String user_id = request.getParameter("user_id");
+		String nickname = request.getParameter("nickname");
+		//String picture = request.getParameter("picture");
 
-				// セッションスコープにIDを格納する(先生の書いたやつ）
-				//HttpSession session = request.getSession();
-				//user user = new user();
-				//user.setUser_id(user_id);
-				//session.setAttribute("id", user);
+		// セッションスコープにIDを格納する(先生の書いたやつ）
+		//HttpSession session = request.getSession();
+		//user user = new user();
+		//user.setUser_id(user_id);
+		//session.setAttribute("id", user);
 
-				//セッションスコープにIDを格納
-				//HttpSession session = request.getSession();
-				//user user = (user)session.getAttribute("id");
+		//セッションスコープにIDを格納
+		//HttpSession session = request.getSession();
+		//user user = (user)session.getAttribute("id");
 
-				HttpSession session = request.getSession();
-				user user = (user)session.getAttribute("id");
-				user.setNickname(nickname);
+		HttpSession session = request.getSession();
+		user user = (user)session.getAttribute("id");
+		user.setNickname(nickname);
 
 
-				//更新を行う
-				loginDao uDao = new loginDao();
-				//user profile = new user(nickname );
-				//profile.setUser_id(user.getUser_id());
-				System.out.println(user);
+		//更新を行う
+		loginDao uDao = new loginDao();
+		//user profile = new user(nickname );
+		//profile.setUser_id(user.getUser_id());
+		System.out.println(user);
 
-				if (request.getParameter("update").equals("更新")) {
-					if (uDao.update(user)) {	// 更新成功
-						request.setAttribute("result",
+		if (request.getParameter("update").equals("更新")) {
+			if (uDao.update(user)) {	// 更新成功
+				request.setAttribute("result",
 						(new result("更新成功！", "更新に成功しました。", "/app/ProfileServlet", "プロフィールページへ戻る" )));
 
 
 
-						// 結果ページにフォワードする
-						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-						dispatcher.forward(request, response);
+				// 結果ページにフォワードする
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+				dispatcher.forward(request, response);
 
-					}
-					else{request.setAttribute("result",
-							(new result("更新失敗！", "更新に失敗しました。", "/app/ProfileServlet", "プロフィールページへ戻る" )));
+			}
+			else{request.setAttribute("result",
+					(new result("更新失敗！", "更新に失敗しました。", "/app/ProfileServlet", "プロフィールページへ戻る" )));
 
-					// 結果ページにフォワードする
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-					dispatcher.forward(request, response);
+			// 結果ページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+			dispatcher.forward(request, response);
 
-					}
-				}
+			}
+		}
 
 
 

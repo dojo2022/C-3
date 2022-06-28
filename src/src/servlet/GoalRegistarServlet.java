@@ -25,13 +25,13 @@ import model.user;
 public class GoalRegistarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public GoalRegistarServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public GoalRegistarServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -115,14 +115,14 @@ public class GoalRegistarServlet extends HttpServlet {
 
 		if (result) {	// 更新成功
 			//if (jDao.update(new rewardjoys( reward_name,  reward_detail, reward_level_id,reward_id))) {	// 更新成功
-				request.setAttribute("result",
-						new result("登録成功！", "目標を登録しました。", "/app/GoalServlet", "目標一覧画面へ"));
-			}
-			else {		// 登録失敗
-				System.out.println(request.getParameter("SUBMIT"));
-				request.setAttribute("result",
-				new result("登録失敗！", "目標を登録できませんでした。", "/app/GoalServlet", "目標一覧画面へ"));
-			}
+			request.setAttribute("result",
+					new result("登録成功！", "目標を登録しました。", "/app/GoalServlet", "目標一覧画面へ"));
+		}
+		else {		// 登録失敗
+			System.out.println(request.getParameter("SUBMIT"));
+			request.setAttribute("result",
+					new result("登録失敗！", "目標を登録できませんでした。", "/app/GoalServlet", "目標一覧画面へ"));
+		}
 
 		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");

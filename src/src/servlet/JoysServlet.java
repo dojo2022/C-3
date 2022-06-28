@@ -44,8 +44,8 @@ public class JoysServlet extends HttpServlet {
 
 
 		//セッションスコープにIDを格納
-//	HttpSession session = request.getSession();
-//		user user = (user)session.getAttribute("id");
+		//	HttpSession session = request.getSession();
+		//		user user = (user)session.getAttribute("id");
 
 		//System.out.println(get.user_id());
 
@@ -61,7 +61,7 @@ public class JoysServlet extends HttpServlet {
 		// joys一覧閲覧画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/joys.jsp");
 		dispatcher.forward(request, response);
-		}
+	}
 
 
 	/**

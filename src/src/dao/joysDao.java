@@ -12,7 +12,7 @@ import model.rewardjoys;
 //select,insert,update,deleteは基本だから通常作っておくのがベース。
 //ただ、全部作るのは大変だから必要なもののみまずは作る
 public class joysDao {
-/*
+	/*
 	//パターン１
 	//アクセス修飾子 戻り値データ型
 	public List<rewardjoys> select(String id){
@@ -20,7 +20,7 @@ public class joysDao {
 
 		return rewardList;
 	}
-*/
+	 */
 	// 引数user_rewardで検索項目を指定し、検索結果のリストを返す
 	public List<rewardjoys> selectAll(String id) {
 		Connection conn = null;
@@ -95,7 +95,7 @@ public class joysDao {
 
 
 
-//登録画面
+	//登録画面
 	// 引数rewardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(String user_id,rewardjoys reward) {
 		Connection conn = null;
@@ -167,7 +167,7 @@ public class joysDao {
 	}
 
 
-//更新
+	//更新
 	// 引数rewardで指定されたレコードを更新し、成功したらtrueを返す
 	// 「レコードを更新できませんでした」
 	//→デバッグ、更新のため入力した内容は入ってた
@@ -249,7 +249,7 @@ public class joysDao {
 
 
 
-//削除
+	//削除
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
 	public boolean delete(String reward_id) {
 		Connection conn = null;

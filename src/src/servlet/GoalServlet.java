@@ -47,11 +47,11 @@ public class GoalServlet extends HttpServlet {
 		//dao.select(user.getUser_id());
 		List<goal> goalList = dao.selectAll(user.getUser_id());
 
-//System.out.println(goalList.get(0));
+		//System.out.println(goalList.get(0));
 
-//		//パターン２
-//		//userオブジェクトをまるごと引数として渡してあげる
-//		dao.select(user);
+		//		//パターン２
+		//		//userオブジェクトをまるごと引数として渡してあげる
+		//		dao.select(user);
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("goalList", goalList);
@@ -90,7 +90,7 @@ public class GoalServlet extends HttpServlet {
 
 
 		// 目標一覧ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/goal.jsp");
-				dispatcher.forward(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/goal.jsp");
+		dispatcher.forward(request, response);
 	}
 }

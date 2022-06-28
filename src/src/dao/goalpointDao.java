@@ -40,17 +40,17 @@ public class goalpointDao {
 
 
 			// SQL文を実行し、結果表を取得する
-						ResultSet rs = pStmt.executeQuery();
+			ResultSet rs = pStmt.executeQuery();
 
-						//1件しかデータがない場合
-						//pointcardにuserテーブルのintのやつ代入
-						difficulty  plus_point = new difficulty();
-						if(rs.next()) {
-							plus_point.setGoal_point(rs.getInt("goal_point"));
-						}
+			//1件しかデータがない場合
+			//pointcardにuserテーブルのintのやつ代入
+			difficulty  plus_point = new difficulty();
+			if(rs.next()) {
+				plus_point.setGoal_point(rs.getInt("goal_point"));
+			}
 
-						//持ってきたポイント数を変数に代入
-					     pluspoint = plus_point	.getGoal_point();
+			//持ってきたポイント数を変数に代入
+			pluspoint = plus_point	.getGoal_point();
 
 
 		}catch ( Exception e ) {
@@ -65,9 +65,9 @@ public class goalpointDao {
 				} catch (Exception e) {
 
 
+				}
 			}
 		}
-	}
 
 		// 結果を返す
 		return pluspoint;
@@ -75,49 +75,49 @@ public class goalpointDao {
 	}
 
 	//達成評価変更
-		public boolean update(String id ){
-			Connection conn = null;
-			boolean update = false;
+	public boolean update(String id ){
+		Connection conn = null;
+		boolean update = false;
 
-			try {
-				// JDBCドライバを読み込む
-				Class.forName("org.h2.Driver");
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
 
-				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
-				// SQL文を準備する
-				//更新処理
-				String sqlu = "UPDATE  goal_result SET achievement_id = '1'  WHERE id=?";
-				PreparedStatement pStmtu = conn.prepareStatement(sqlu);
+			// SQL文を準備する
+			//更新処理
+			String sqlu = "UPDATE  goal_result SET achievement_id = '1'  WHERE id=?";
+			PreparedStatement pStmtu = conn.prepareStatement(sqlu);
 
-				pStmtu.setString(1, id );
-				if (pStmtu.executeUpdate() == 1) {
-					update = true;
+			pStmtu.setString(1, id );
+			if (pStmtu.executeUpdate() == 1) {
+				update = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
 				}
 			}
-							catch (SQLException e) {
-								e.printStackTrace();
-							}
-							catch (ClassNotFoundException e) {
-								e.printStackTrace();
-							}
-							finally {
-								// データベースを切断
-								if (conn != null) {
-									try {
-										conn.close();
-									}
-									catch (SQLException e) {
-										e.printStackTrace();
-									}
-								}
-							}
-
-							// 結果を返す
-							return update;
-						}
 		}
+
+		// 結果を返す
+		return update;
+	}
+}
 
 
 
