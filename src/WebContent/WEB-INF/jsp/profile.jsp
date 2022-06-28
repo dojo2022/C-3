@@ -73,7 +73,9 @@
 				</c:forEach>
 			</table>
 		</div>
-	<a href="/app/RankingServlet">ポイントランキングはこちら▶</a><br>
+		<div class = "empty_profile"></div>
+	<a href="/app/RankingServlet" class="rank">ポイントランキングはこちら▶</a><br>
+	<div class = "empty_profile"></div>
 	</main>
 	<!--  -->
 
