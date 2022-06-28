@@ -2,20 +2,20 @@
  *
  */
 
- 	function labelClick(ele){
- 		ele.parentNode.submit();
- 	}
+function labelClick(ele) {
+	ele.parentNode.submit();
+}
 
 /*
-    let btn0 = document.getElementById('btn0');
-    btn0.onclick = function(){
-        f0.submit();
-    }
+let btn0 = document.getElementById('btn0');
+btn0.onclick = function(){
+    f0.submit();
+}
 
-    let btn1 = document.getElementById('btn1');
+let btn1 = document.getElementById('btn1');
     btn1.onclick = function(){
         f1.submit();
-    }
+}
 
     let btn2 = document.getElementById('btn2');
     btn2.onclick = function(){
@@ -39,12 +39,12 @@
 */
 
 //ログアウトアラート
-document.getElementById('logout').onclick = function (event) {
-		let re = window.confirm('ログアウトしますか？');
-		if(re === true){
-			window.location.href = 'LogoutServlet';
-			return true;
-		}else {
-			return false;
-		}
-	};
+document.getElementById('logout').onclick = function(event) {
+	let re = window.confirm('ログアウトしますか？');
+	if (re === true) {
+		window.location.href = 'LogoutServlet';
+		return true;
+	} else {
+		return false;
+	}
+};
