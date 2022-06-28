@@ -31,7 +31,7 @@
 <body>
 
 
-	<!--
+
 <c:if test="${top_op}">
 	<div class="top-op">
   		<img src="/app/img/logo00.png" width="600" height="300" class="op_logo">
@@ -69,7 +69,7 @@
 		</div>
   	</div>
 </c:if>
--->
+
 
 
 	<header class="header">
