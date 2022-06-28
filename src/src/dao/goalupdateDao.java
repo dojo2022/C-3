@@ -108,126 +108,126 @@ public class goalupdateDao {
 	}*/
 
 	//削除
-		// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-		public boolean delete(String goal_id) {
-			Connection conn = null;
-			boolean result = false;
+	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
+	public boolean delete(String goal_id) {
+		Connection conn = null;
+		boolean result = false;
 
-			try {
-				// JDBCドライバを読み込む
-				Class.forName("org.h2.Driver");
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
 
-				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
-				// SQL文を準備する
-				String sql = "delete from goal where goal_id=?;delete from goal_result where goal_id=?";
-				PreparedStatement pStmt = conn.prepareStatement(sql);
+			// SQL文を準備する
+			String sql = "delete from goal where goal_id=?;delete from goal_result where goal_id=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-				// SQL文を完成させる
-				pStmt.setString(1, goal_id);
-				pStmt.setString(2, goal_id);
+			// SQL文を完成させる
+			pStmt.setString(1, goal_id);
+			pStmt.setString(2, goal_id);
 
-				// SQL文を実行する
-				if (pStmt.executeUpdate() == 1) {
-					result = true;
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
 				}
 			}
-			catch (SQLException e) {
-				e.printStackTrace();
-			}
-			catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}
-			finally {
-				// データベースを切断
-				if (conn != null) {
-					try {
-						conn.close();
-					}
-					catch (SQLException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-
-			// 結果を返す
-			return result;
 		}
 
+		// 結果を返す
+		return result;
+	}
 
 
-		//goal用の検索メソッド
-		public List<goal> selectGoal_id(String goal_id) {
-			Connection conn = null;
-			List<goal> goalList = new ArrayList<goal>();
 
-			try {
-				// JDBCドライバを読み込む
-				Class.forName("org.h2.Driver");
+	//goal用の検索メソッド
+	public List<goal> selectGoal_id(String goal_id) {
+		Connection conn = null;
+		List<goal> goalList = new ArrayList<goal>();
 
-				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
 
-				// SQL文を準備する SQL問題ない
-				String sql = "SELECT distinct goal.goal_id,  goal.starting_date, goal.ending_date, goal.goal_name, goal.goal_detail, goal.term_id, goal.difficulty_id,goal.tag_id  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE goal.goal_id = ? AND goal_result.achievement_id =2";
-				//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
-				PreparedStatement pStmt = conn.prepareStatement(sql);
+			// SQL文を準備する SQL問題ない
+			String sql = "SELECT distinct goal.goal_id,  goal.starting_date, goal.ending_date, goal.goal_name, goal.goal_detail, goal.term_id, goal.difficulty_id,goal.tag_id  FROM goal INNER JOIN goal_result ON goal.goal_id = goal_result.goal_id WHERE goal.goal_id = ? AND goal_result.achievement_id =2";
+			//↑SQL select reward_id,user_id, reward_name, reward_detail from reward WHERE reward.user_id = ? ORDER BY reward_level.reward_level_id ASC
 
-				// SQL文を完成させる
-				if (goal_id != null) {
-					pStmt.setString(1,goal_id);
-				}
-				System.out.println("パラメータ"+goal_id);
-				// SQL文を実行し、結果表を取得する
-				ResultSet rs = pStmt.executeQuery();
+			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-				// 結果表をコレクションにコピーする
-				//コンソールにて「reward_id列がない」→SQLのSELECT文にreward.reward_id追加で解決
-				while (rs.next()) {
-					goal goalsearch = new goal();
-					goalsearch.setGoal_id(rs.getString("goal_id"));
-					goalsearch.setStarting_date(rs.getDate("starting_date"));
-					goalsearch.setEnding_date(rs.getDate("ending_date"));
-					goalsearch.setGoal_name(rs.getString("goal_name"));
-					goalsearch.setGoal_detail(rs.getString("goal_detail"));
-					goalsearch.setTerm_id(rs.getString("term_id"));
-					goalsearch.setDifficulty_id(rs.getString("difficulty_id"));
-					goalsearch.setTag_id(rs.getString("tag_id"));
-					goalList.add(goalsearch);
-				}
-
-
+			// SQL文を完成させる
+			if (goal_id != null) {
+				pStmt.setString(1,goal_id);
 			}
-			catch (SQLException e) {
-				e.printStackTrace();
-				goalList = null;
+			System.out.println("パラメータ"+goal_id);
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			//コンソールにて「reward_id列がない」→SQLのSELECT文にreward.reward_id追加で解決
+			while (rs.next()) {
+				goal goalsearch = new goal();
+				goalsearch.setGoal_id(rs.getString("goal_id"));
+				goalsearch.setStarting_date(rs.getDate("starting_date"));
+				goalsearch.setEnding_date(rs.getDate("ending_date"));
+				goalsearch.setGoal_name(rs.getString("goal_name"));
+				goalsearch.setGoal_detail(rs.getString("goal_detail"));
+				goalsearch.setTerm_id(rs.getString("term_id"));
+				goalsearch.setDifficulty_id(rs.getString("difficulty_id"));
+				goalsearch.setTag_id(rs.getString("tag_id"));
+				goalList.add(goalsearch);
 			}
-			catch (ClassNotFoundException e) {
-				e.printStackTrace();
-				goalList = null;
-			}
-
-			finally {
-				// データベースを切断
-				if (conn != null) {
-					try {
-						conn.close();
-					}
-					catch (SQLException e) {
-						e.printStackTrace();
-						goalList = null;
-					}
-				}
-			}
-
-			// 結果を返す
-			return goalList;
-		}
-
-
 
 
 		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			goalList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			goalList = null;
+		}
+
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					goalList = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return goalList;
+	}
+
+
+
+
+}
 

@@ -1,12 +1,12 @@
 /**
  *
  */
- "use strict";
+"use strict";
 
- //プレゼントボタン（交換ボタン）を押されたとき
-  function change(form) {
-			form.submit();
-			}
+//プレゼントボタン（交換ボタン）を押されたとき
+function change(form) {
+	form.submit();
+}
 
 
 /*//プレゼントボタン（交換ボタン）を押されたとき
@@ -34,12 +34,12 @@ function outsideClose(e) {
 */
 
 //ログアウトアラート
-	document.getElementById('logout').onclick = function (event) {
-		let re = window.confirm('ログアウトしますか？');
-		if(re === true){
-			window.location.href = 'LogoutServlet';
-			return true;
-		}else {
-			return false;
-		}
-	};
+document.getElementById('logout').onclick = function(event) {
+	let re = window.confirm('ログアウトしますか？');
+	if (re === true) {
+		window.location.href = 'LogoutServlet';
+		return true;
+	} else {
+		return false;
+	}
+};

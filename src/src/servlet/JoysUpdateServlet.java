@@ -45,7 +45,7 @@ public class JoysUpdateServlet extends HttpServlet {
 
 
 
-//------------------------------------------------------------------------------------------------
+		//------------------------------------------------------------------------------------------------
 		//Daoを経由してreward_idに一致するデータを取得する。
 		//Daoから取得したデータと
 		//インスタンスの生成
@@ -58,11 +58,11 @@ public class JoysUpdateServlet extends HttpServlet {
 		//取得したrewardjoysデータをリクエストスコープに格納する。
 		//リクエストスコープに変数から取出した値を格納
 		request.setAttribute("rewardList",rewardList);
-	  //request.setAttribute(  "human"  ,human);
+		//request.setAttribute(  "human"  ,human);
 
 
 
-		  //リクエストスコープからインスタンス取得
+		//リクエストスコープからインスタンス取得
 		//rewardjoys rewardjoys = (rewardjoys)request.getAttribute("rewardjoys");
 		// human 		h 		= (Human) request.getAttribute		("human");
 
@@ -83,7 +83,7 @@ public class JoysUpdateServlet extends HttpServlet {
 	}
 
 
-//------------------------------------------------------------------------------------------------
+	//------------------------------------------------------------------------------------------------
 
 
 
@@ -124,27 +124,27 @@ public class JoysUpdateServlet extends HttpServlet {
 			↑↓のようにデフォルトコンストラクタと元々はif文に
 			入っていた引数を一つずつ記述することで
 			beansにコンストラクタを宣言することなく処理ができる。
-			*/
+			 */
 			value.setReward_id(reward_id);
 			value.setReward_name(reward_name);
 			value.setReward_detail(reward_detail);
 			value.setReward_level_id(reward_level_id);
 			if (jDao.update(value)) {	// 更新成功
-			//if (jDao.update(new rewardjoys( reward_name,  reward_detail, reward_level_id,reward_id))) {	// 更新成功
+				//if (jDao.update(new rewardjoys( reward_name,  reward_detail, reward_level_id,reward_id))) {	// 更新成功
 				request.setAttribute("result",
 						new result("更新成功！", "レコードを更新しました。", "/app/JoysServlet", "Joys一覧画面へ"));
 			}
 			else {		// 登録失敗
 				System.out.println(request.getParameter("SUBMIT"));
 				request.setAttribute("result",
-				new result("更新失敗！", "レコードを更新できませんでした。", "/app/JoysServlet", "Joys一覧画面へ"));
+						new result("更新失敗！", "レコードを更新できませんでした。", "/app/JoysServlet", "Joys一覧画面へ"));
 			}
 		}
 		else {
 			if (jDao.delete(reward_id)) {	// 削除成功
 				request.setAttribute("result",
 						new result("削除成功！", "レコードを削除しました。", "/app/JoysServlet", "ジョイス画面へ"));
-					}
+			}
 			else {						// 削除失敗
 				request.setAttribute("result",
 						new result("削除失敗！", "レコードを削除できませんでした。", "/app/JoysServlet", "ジョイス画面へ"));
@@ -152,8 +152,8 @@ public class JoysUpdateServlet extends HttpServlet {
 		}
 
 		// 結果ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-				dispatcher.forward(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

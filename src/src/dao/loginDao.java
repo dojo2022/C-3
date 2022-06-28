@@ -59,7 +59,7 @@ public class loginDao {
 		// 結果を返す
 		return loginResult;
 	}
-//新規登録
+	//新規登録
 	public boolean newuser(user user) {
 		Connection conn = null;
 		boolean newuser = false;
@@ -118,8 +118,8 @@ public class loginDao {
 	}
 
 
-//プロフィールの表示
-//引数paramで検索項目を指定し、検索結果のリストを返す
+	//プロフィールの表示
+	//引数paramで検索項目を指定し、検索結果のリストを返す
 	public List<user> select(user param) {
 		Connection conn = null;//初期化
 		List<user> profile = new ArrayList<user>();
@@ -152,14 +152,14 @@ public class loginDao {
 			// 結果表をコレクションにコピーする<<ここも改造>>検索した結果を格納
 			while (rs.next()) {
 				user usercard = new user(
-				rs.getString("user_id"),
-				rs.getString("password"),
-				rs.getString("nickname"),
-				rs.getInt("having_point"),
-				rs.getInt("total_point"),
-				rs.getString("picture")
+						rs.getString("user_id"),
+						rs.getString("password"),
+						rs.getString("nickname"),
+						rs.getInt("having_point"),
+						rs.getInt("total_point"),
+						rs.getString("picture")
 
-				);
+						);
 				profile.add(usercard);
 			}
 		}
@@ -208,39 +208,39 @@ public class loginDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-						if (card.getNickname() != null && !card.getNickname().equals("")) {
-							pStmt.setString(1, card.getNickname());
-						}
-						else {
-							pStmt.setString(1, null);}
+			if (card.getNickname() != null && !card.getNickname().equals("")) {
+				pStmt.setString(1, card.getNickname());
+			}
+			else {
+				pStmt.setString(1, null);}
 
-							pStmt.setString(2, card.getUser_id());
+			pStmt.setString(2, card.getUser_id());
 
-							if (pStmt.executeUpdate() == 1) {
-								update = true;
-							}
-						}
-						catch (SQLException e) {
-							e.printStackTrace();
-						}
-						catch (ClassNotFoundException e) {
-							e.printStackTrace();
-						}
-						finally {
-							// データベースを切断
-							if (conn != null) {
-								try {
-									conn.close();
-								}
-								catch (SQLException e) {
-									e.printStackTrace();
-								}
-							}
-						}
+			if (pStmt.executeUpdate() == 1) {
+				update = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 
-						// 結果を返す
-						return update;
-					}
+		// 結果を返す
+		return update;
+	}
 
 
 
@@ -302,22 +302,22 @@ public class loginDao {
 			//pointcardのhaving_point total_pointを使う
 
 			// SQL文を完成させる
-				pStmtu.setInt(1, pluspointcard.getHaving_point());
-				pStmtu.setInt(2,pluspointcard.getTotal_point() );
-				pStmtu.setString(3, user_id );
-				if (pStmtu.executeUpdate() == 1) {
-					pluspoint_update = true;
-				}
+			pStmtu.setInt(1, pluspointcard.getHaving_point());
+			pStmtu.setInt(2,pluspointcard.getTotal_point() );
+			pStmtu.setString(3, user_id );
+			if (pStmtu.executeUpdate() == 1) {
+				pluspoint_update = true;
+			}
 
-			}catch ( Exception e ) {
+		}catch ( Exception e ) {
 
-			} finally {
+		} finally {
 
-				// データベースを切断
-				if (conn != null) {
-					try {
-						conn.close();
-					} catch (Exception e) {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (Exception e) {
 
 
 				}
@@ -330,48 +330,48 @@ public class loginDao {
 	}
 
 	//Joys達成に伴う保持ポイントの減算処理
-		public boolean minuspoint_update(String user_id,int minuspoint) {
-			Connection conn = null;
-			boolean minuspoint_update = false;
+	public boolean minuspoint_update(String user_id,int minuspoint) {
+		Connection conn = null;
+		boolean minuspoint_update = false;
 
 
-			try {
-				// JDBCドライバを読み込む
-				Class.forName("org.h2.Driver");
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
 
-				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/C3", "sa", "");
 
-				// SQL文を準備する
-				//累計ポイントと保持ポイントの呼び出し
+			// SQL文を準備する
+			//累計ポイントと保持ポイントの呼び出し
 
-				String sql = "SELECT having_point FROM user WHERE user_id=?";
-				PreparedStatement pStmt = conn.prepareStatement(sql);
-
-
-				//SQL文を完成させる
-				if (user_id != null) {
-					pStmt.setString(1, user_id );
-				}
-
-				// SQL文を実行し、結果表を取得する
-				ResultSet rs = pStmt.executeQuery();
-
-				//1件しかデータがない場合
-				//pointcardにuserテーブルのintのやつ代入
-				user minuspointcard = new user();
-				if(rs.next()) {
-					minuspointcard.setHaving_point(rs.getInt("having_point"));
-
-				}
-
-				//持ってきたポイント数を変数に代入
-
-				int m = minuspointcard.getHaving_point();
+			String sql = "SELECT having_point FROM user WHERE user_id=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 
-				// 変数に獲得ポイントを減算(having_pointがminuspointより大きければ減算小さければエラー？
-				if(m>=minuspoint) {
+			//SQL文を完成させる
+			if (user_id != null) {
+				pStmt.setString(1, user_id );
+			}
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			//1件しかデータがない場合
+			//pointcardにuserテーブルのintのやつ代入
+			user minuspointcard = new user();
+			if(rs.next()) {
+				minuspointcard.setHaving_point(rs.getInt("having_point"));
+
+			}
+
+			//持ってきたポイント数を変数に代入
+
+			int m = minuspointcard.getHaving_point();
+
+
+			// 変数に獲得ポイントを減算(having_pointがminuspointより大きければ減算小さければエラー？
+			if(m>=minuspoint) {
 				m = m - minuspoint;
 
 
@@ -389,35 +389,35 @@ public class loginDao {
 				//pointcardのhaving_point total_pointを使う
 
 				// SQL文を完成させる
-					pStmtm.setInt(1, minuspointcard.getHaving_point());
-					pStmtm.setString(2, user_id );
-					if (pStmtm.executeUpdate() == 1) {
-						minuspoint_update = true;
-					}
-				}else
-					minuspoint_update=false;
+				pStmtm.setInt(1, minuspointcard.getHaving_point());
+				pStmtm.setString(2, user_id );
+				if (pStmtm.executeUpdate() == 1) {
+					minuspoint_update = true;
+				}
+			}else
+				minuspoint_update=false;
 
-				}catch ( Exception e ) {
+		}catch ( Exception e ) {
 
-				} finally {
+		} finally {
 
 
 			// データベースを切断
-						if (conn != null) {
-							try {
-								conn.close();
-							} catch (Exception e) {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (Exception e) {
 
 
-						}
-					}
 				}
-
-			// 結果を返す
-			return minuspoint_update;
+			}
 		}
 
+		// 結果を返す
+		return minuspoint_update;
 	}
+
+}
 
 
 

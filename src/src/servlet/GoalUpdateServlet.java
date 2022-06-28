@@ -40,29 +40,29 @@ public class GoalUpdateServlet extends HttpServlet {
 		}
 
 		//今日の日付を取得する
-				LocalDate today = LocalDate.now();
-				request.setAttribute("today",today);
+		LocalDate today = LocalDate.now();
+		request.setAttribute("today",today);
 
 		//リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
-				String goal_id = request.getParameter("goal_id");
+		request.setCharacterEncoding("UTF-8");
+		String goal_id = request.getParameter("goal_id");
 
 
-				System.out.println(goal_id);
+		System.out.println(goal_id);
 
-				//Daoを経由してreward_idに一致するデータを取得する。
-				//Daoから取得したデータと
-				//インスタンスの生成
-				goalupdateDao gDao = new goalupdateDao();
-				List<goal> goalList = gDao.selectGoal_id(goal_id);
-
-
+		//Daoを経由してreward_idに一致するデータを取得する。
+		//Daoから取得したデータと
+		//インスタンスの生成
+		goalupdateDao gDao = new goalupdateDao();
+		List<goal> goalList = gDao.selectGoal_id(goal_id);
 
 
-				//取得したrewardjoysデータをリクエストスコープに格納する。
-				//リクエストスコープに変数から取出した値を格納
-				request.setAttribute("goalList",goalList);
-			  //request.setAttribute(  "human"  ,human);
+
+
+		//取得したrewardjoysデータをリクエストスコープに格納する。
+		//リクエストスコープに変数から取出した値を格納
+		request.setAttribute("goalList",goalList);
+		//request.setAttribute(  "human"  ,human);
 
 		// 目標更新・削除画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/goalUpdate.jsp");
@@ -84,7 +84,7 @@ public class GoalUpdateServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String goal_name = request.getParameter("goal_name");
 		String goal_detail = request.getParameter("goal_detail");
-	    String sd = request.getParameter("starting_date");
+		String sd = request.getParameter("starting_date");
 		String ed= request.getParameter("ending_date");
 		String difficulty_id = request.getParameter("difficulty_id");
 		String term_id = request.getParameter("term_id");
@@ -100,7 +100,7 @@ public class GoalUpdateServlet extends HttpServlet {
 			java.util.Date e_date = new SimpleDateFormat("yyyy-MM-dd").parse(ed);
 			ending_date.setTime(e_date.getTime());
 
-       }catch(Exception e){}
+		}catch(Exception e){}
 
 		System.out.println(starting_date);
 
@@ -129,7 +129,7 @@ public class GoalUpdateServlet extends HttpServlet {
 			↑↓のようにデフォルトコンストラクタと元々はif文に
 			入っていた引数を一つずつ記述することで
 			beansにコンストラクタを宣言することなく処理ができる。
-			*/
+			 */
 			//value.setGoal_name(goal_name);
 			//value.setGoal_detail(goal_detail);
 			//value.setStarting_date(starting_date);
@@ -140,43 +140,43 @@ public class GoalUpdateServlet extends HttpServlet {
 
 
 
-			 if (gDao.delete(goal_id)) {	// 削除
+			if (gDao.delete(goal_id)) {	// 削除
 
 				//登録
-					goalDao goalDao = new goalDao();
-					GoalInsert goal = new GoalInsert();
-					goal.setGoal_name(goal_name);
-					goal.setGoal_detail(goal_detail);
-					goal.setTerm_id(term_id);
-					goal.setDifficulty_id(difficulty_id);
-					goal.setStarting_date(starting_date);
-					goal.setEnding_date(ending_date);
-					goal.setTag_id(tag_id);
+				goalDao goalDao = new goalDao();
+				GoalInsert goal = new GoalInsert();
+				goal.setGoal_name(goal_name);
+				goal.setGoal_detail(goal_detail);
+				goal.setTerm_id(term_id);
+				goal.setDifficulty_id(difficulty_id);
+				goal.setStarting_date(starting_date);
+				goal.setEnding_date(ending_date);
+				goal.setTag_id(tag_id);
 
-					boolean result = false;
-					String registar = goalDao.insert(user_id.getUser_id(), goal);
-					System.out.println("目標番号"+registar);
-					if(!registar.equals(null)) {
-						if(term_id.equals("2")) {
-							result = goalDao.resultinsert(goal, registar, sd, ed);
-						}else {
-							result = goalDao.resultinsert(goal, registar);
-						}
+				boolean result = false;
+				String registar = goalDao.insert(user_id.getUser_id(), goal);
+				System.out.println("目標番号"+registar);
+				if(!registar.equals(null)) {
+					if(term_id.equals("2")) {
+						result = goalDao.resultinsert(goal, registar, sd, ed);
+					}else {
+						result = goalDao.resultinsert(goal, registar);
 					}
+				}
 
-					if(result){//目標の更新
-						request.setAttribute("result",
-								new result("更新成功！", "目標を更新しました。", "/app/GoalServlet", "目標一覧画面へ"));
-					}	else {		// 更新失敗
-						System.out.println(request.getParameter("SUBMIT"));
-						request.setAttribute("result",
-						new result("更新失敗！", "目標を更新できませんでした。", "/app/GoalServlet", "目標一覧登録画面へ"));
-					}
+				if(result){//目標の更新
+					request.setAttribute("result",
+							new result("更新成功！", "目標を更新しました。", "/app/GoalServlet", "目標一覧画面へ"));
+				}	else {		// 更新失敗
+					System.out.println(request.getParameter("SUBMIT"));
+					request.setAttribute("result",
+							new result("更新失敗！", "目標を更新できませんでした。", "/app/GoalServlet", "目標一覧登録画面へ"));
+				}
 			}
 
-			 else {						// 削除失敗
-					request.setAttribute("result",
-							new result("削除失敗！", "目標を削除できませんでした。", "/app/GoalServlet", "目標一覧画面へ"));
+			else {						// 削除失敗
+				request.setAttribute("result",
+						new result("削除失敗！", "目標を削除できませんでした。", "/app/GoalServlet", "目標一覧画面へ"));
 			}
 		}
 		else {
@@ -192,7 +192,7 @@ public class GoalUpdateServlet extends HttpServlet {
 				System.out.println("削除"+goal_id);
 				request.setAttribute("result",
 						new result("削除成功！", "目標を削除しました。", "/app/GoalServlet", "目標一覧画面へ"));
-					}
+			}
 			else {						// 削除失敗
 				request.setAttribute("result",
 						new result("削除失敗！", "目標を削除できませんでした。", "/app/GoalServlet", "目標一覧画面へ"));
@@ -201,8 +201,8 @@ public class GoalUpdateServlet extends HttpServlet {
 		}
 
 		// 結果ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-				dispatcher.forward(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

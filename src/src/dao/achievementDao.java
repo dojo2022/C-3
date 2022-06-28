@@ -16,17 +16,17 @@ public class achievementDao {
 	//パターン１
 	//アクセス修飾子 戻り値データ型
 	//public List<goal> select(user param) {
-		//List<goal> achievementList = new ArrayList<goal>();
+	//List<goal> achievementList = new ArrayList<goal>();
 
-		//return achievementList;
+	//return achievementList;
 	//}
 
-//	//パターン２
-//	public List<goal> select(user user) {
-//		System.out.print(user.getUser_id());
-//
-//		return null;
-//	}
+	//	//パターン２
+	//	public List<goal> select(user user) {
+	//		System.out.print(user.getUser_id());
+	//
+	//		return null;
+	//	}
 
 	//達成済みリスト用
 	public List<goal> select(user param) {
@@ -68,7 +68,7 @@ public class achievementDao {
 						//rs.getDate("starting_date"),
 						//rs.getDate("ending_date"),
 						rs.getString("goal_name"));
-						//rs.getString("goal_detail"));
+				//rs.getString("goal_detail"));
 				achievementList.add(card);
 			}
 
