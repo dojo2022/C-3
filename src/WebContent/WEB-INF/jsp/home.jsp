@@ -5,16 +5,19 @@
 <html>
 <!--
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">-->
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<link
+	href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+	rel="stylesheet">
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 
 <head>
 <meta charset="UTF-8">
 <title>POME｜HOME</title>
 
-<link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
+<link rel="icon" type="image/png" href="/app/img/favicon.ico" />
 <!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
 <link rel="apple-touch-icon" type="image/png"
 	href="app/img/pome_favicon.png">
@@ -28,7 +31,7 @@
 <body>
 
 
-<!--
+	<!--
 <c:if test="${top_op}">
 	<div class="top-op">
   		<img src="/app/img/logo00.png" width="600" height="300" class="op_logo">
@@ -73,9 +76,8 @@
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<a  id="logout" href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a>
-		 <a
-			href="/app/HintServlet" class="hint" target="_blank"><img
+		<a id="logout" href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a>
+		<a href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
 	</header>
 
@@ -85,7 +87,8 @@
 
 
 		<div class="home_title">
-			<img src="/app/img/home.png" width="120" height="120" class="home_title_img">
+			<img src="/app/img/home.png" width="120" height="120"
+				class="home_title_img">
 			<h1 class="home_title_h1">HOME</h1>
 		</div>
 
@@ -151,16 +154,13 @@
 								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
-										<td><input type="hidden" name="id" value=${e.id } readonly>
-										</td>
-										<td>
-											<label class="btn"><input type="checkbox"
-											style="display: none;" id="achievement" name="check" value="1"
-											onchange="formSubmit(this.form)"> <i
-											class="fa fa-square-o fa-2x"></i> <i
-											class="fa fa-check-square-o fa-2x"></i>
-											</label>
-										</td>
+										<td><input type="hidden" name="id" value=${e.id }
+											readonly></td>
+										<td><label class="btn"><input type="checkbox"
+												style="display: none;" id="achievement" name="check"
+												value="1" onchange="formSubmit(this.form)"> <i
+												class="fa fa-square-o fa-2x"></i> <i
+												class="fa fa-check-square-o fa-2x"></i> </label></td>
 									</form>
 								</td>
 							</tr>
@@ -184,16 +184,13 @@
 								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
-										<td><input type="hidden" name="id" value=${e.id } readonly>
-										</td>
-										<td>
-											<label class="btn"><input type="checkbox"
-											style="display: none;" id="achievement" name="check" value="1"
-											onchange="formSubmit(this.form)"> <i
-											class="fa fa-square-o fa-2x"></i> <i
-											class="fa fa-check-square-o fa-2x"></i>
-											</label>
-										</td>
+										<td><input type="hidden" name="id" value=${e.id }
+											readonly></td>
+										<td><label class="btn"><input type="checkbox"
+												style="display: none;" id="achievement" name="check"
+												value="1" onchange="formSubmit(this.form)"> <i
+												class="fa fa-square-o fa-2x"></i> <i
+												class="fa fa-check-square-o fa-2x"></i> </label></td>
 									</form>
 								</td>
 							</tr>
@@ -217,16 +214,13 @@
 								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
-										<td><input type="hidden" name="id" value=${e.id } readonly>
-										</td>
-										<td>
-											<label class="btn"><input type="checkbox"
-											style="display: none;" id="achievement" name="check" value="1"
-											onchange="formSubmit(this.form)"> <i
-											class="fa fa-square-o fa-2x"></i> <i
-											class="fa fa-check-square-o fa-2x"></i>
-											</label>
-										</td>
+										<td><input type="hidden" name="id" value=${e.id }
+											readonly></td>
+										<td><label class="btn"><input type="checkbox"
+												style="display: none;" id="achievement" name="check"
+												value="1" onchange="formSubmit(this.form)"> <i
+												class="fa fa-square-o fa-2x"></i> <i
+												class="fa fa-check-square-o fa-2x"></i> </label></td>
 									</form>
 								</td>
 							</tr>
@@ -250,16 +244,13 @@
 								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
-										<td><input type="hidden" name="id" value=${e.id } readonly>
-										</td>
-										<td>
-											<label class="btn"><input type="checkbox"
-											style="display: none;" id="achievement" name="check" value="1"
-											onchange="formSubmit(this.form)"> <i
-											class="fa fa-square-o fa-2x"></i> <i
-											class="fa fa-check-square-o fa-2x"></i>
-											</label>
-										</td>
+										<td><input type="hidden" name="id" value=${e.id }
+											readonly></td>
+										<td><label class="btn"><input type="checkbox"
+												style="display: none;" id="achievement" name="check"
+												value="1" onchange="formSubmit(this.form)"> <i
+												class="fa fa-square-o fa-2x"></i> <i
+												class="fa fa-check-square-o fa-2x"></i> </label></td>
 									</form>
 								</td>
 							</tr>
@@ -283,16 +274,13 @@
 								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
-										<td><input type="hidden" name="id" value=${e.id } readonly>
-										</td>
-										<td>
-											<label class="btn"><input type="checkbox"
-											style="display: none;" id="achievement" name="check" value="1"
-											onchange="formSubmit(this.form)"> <i
-											class="fa fa-square-o fa-2x"></i> <i
-											class="fa fa-check-square-o fa-2x"></i>
-											</label>
-										</td>
+										<td><input type="hidden" name="id" value=${e.id }
+											readonly></td>
+										<td><label class="btn"><input type="checkbox"
+												style="display: none;" id="achievement" name="check"
+												value="1" onchange="formSubmit(this.form)"> <i
+												class="fa fa-square-o fa-2x"></i> <i
+												class="fa fa-check-square-o fa-2x"></i> </label></td>
 									</form>
 								</td>
 							</tr>
@@ -316,16 +304,13 @@
 								<td>${e.difficulty_name}</td>
 								<td>
 									<form action="/app/CheckgoalServlet" method="POST" id="ach">
-										<td><input type="hidden" name="id" value=${e.id } readonly>
-										</td>
-										<td>
-											<label class="btn"><input type="checkbox"
-											style="display: none;" id="achievement" name="check" value="1"
-											onchange="formSubmit(this.form)"> <i
-											class="fa fa-square-o fa-2x"></i> <i
-											class="fa fa-check-square-o fa-2x"></i>
-											</label>
-										</td>
+										<td><input type="hidden" name="id" value=${e.id }
+											readonly></td>
+										<td><label class="btn"><input type="checkbox"
+												style="display: none;" id="achievement" name="check"
+												value="1" onchange="formSubmit(this.form)"> <i
+												class="fa fa-square-o fa-2x"></i> <i
+												class="fa fa-check-square-o fa-2x"></i> </label></td>
 									</form>
 								</td>
 							</tr>
@@ -353,22 +338,22 @@
 
 
 	</main>
-	<div class = "empty"></div>
+	<div class="empty"></div>
 	<!--  -->
 	<footer class="footer">
 		<ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img
 					src="/app/img/home.png" width="60" height="60"><br>
-				<div>Home</div></a></li>
+					<div>Home</div></a></li>
 			<li class="footer-li"><a href="/app/GoalServlet"><img
 					src="/app/img/check.png" width="60" height="60"><br>
-				<div class="footer-li-goal">目標一覧</div></a></li>
+					<div class="footer-li-goal">目標一覧</div></a></li>
 			<li class="footer-li"><a href="/app/JoysServlet"><img
 					src="/app/img/joys.png" width="60" height="60"><br>
-				<div>Joys</div></a></li>
+					<div>Joys</div></a></li>
 			<li class="footer-li"><a href="/app/ProfileServlet"><img
 					src="/app/img/profile.png" width="60" height="60"><br>
-				<div>マイプロフィール</div></a></li>
+					<div>マイプロフィール</div></a></li>
 		</ul>
 	</footer>
 	<script src="/app/js/home.js"></script>

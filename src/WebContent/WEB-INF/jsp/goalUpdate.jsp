@@ -23,8 +23,8 @@
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<a id="logout" href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a> <a
-			href="/app/HintServlet" class="hint" target="_blank"><img
+		<a id="logout" href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a>
+		<a href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
 	</header>
 
@@ -35,7 +35,9 @@
 
 			<form method="post" action="">
 				<div class="title">
-					<img src="/app/img/check.png" width="80" height="80" class="title_img"><h1 class="title_h1">目標更新・削除</h1>
+					<img src="/app/img/check.png" width="80" height="80"
+						class="title_img">
+					<h1 class="title_h1">目標更新・削除</h1>
 				</div>
 
 
@@ -75,16 +77,19 @@
 						</tr>
 
 						<tr>
-							<th class="th_left" ><span>日付</span></th>
+							<th class="th_left"><span>日付</span></th>
 
-							<td><input type="date" min="<%=request.getAttribute("today") %>" name="starting_date"
+							<td><input type="date"
+								min="<%=request.getAttribute("today") %>" name="starting_date"
 								value="${e.starting_date}" required></td>
 
 							<!-- 開始日はjavaScriptで今日の日付を生成し自動入力されていると便利かも。 -->
 							<!-- 開始日が本日以前は入力できない形でもよさそう -->
 
 							<td>～</td>
-							<td><input type="date" min="<%=request.getAttribute("today") %>" name="ending_date" onchange="homeRegistar_JSP()" value="${e.ending_date}"></td>
+							<td><input type="date"
+								min="<%=request.getAttribute("today") %>" name="ending_date"
+								onchange="homeRegistar_JSP()" value="${e.ending_date}"></td>
 						</tr>
 
 
@@ -126,8 +131,11 @@
 						</tr>
 						<tr>
 
-							<td colspan="3"><input type="submit" name="SUBMIT" value="更新" class="update_button"></td>
-							<td colspan="3"><input  type="submit" name="SUBMIT" value="削除" class="delete_button" onclick="return chkDelete(this)" ></td>
+							<td colspan="3"><input type="submit" name="SUBMIT"
+								value="更新" class="update_button"></td>
+							<td colspan="3"><input type="submit" name="SUBMIT"
+								value="削除" class="delete_button"
+								onclick="return chkDelete(this)"></td>
 
 						</tr>
 

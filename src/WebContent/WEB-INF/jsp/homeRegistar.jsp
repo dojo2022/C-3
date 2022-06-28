@@ -29,29 +29,31 @@
 
 		<form method="POST" action="/app/GoalRegistarServlet">
 			<div class="home_title">
-			<img src="/app/img/check.png" width="120" height="120" class="home_title_img">
-			<h1 class="home_title_h1">目標登録</h1>
-		</div>
+				<img src="/app/img/check.png" width="120" height="120"
+					class="home_title_img">
+				<h1 class="home_title_h1">目標登録</h1>
+			</div>
 
 			<div class="goal_info_wrapper">
 				<table>
 					<tr>
 						<th class="th_left"><span>目標名</span></th>
-						<td colspan="5"><input class="textwidth" type="text" name="goal_name" placeholder=""
-							required></td>
+						<td colspan="5"><input class="textwidth" type="text"
+							name="goal_name" placeholder="" required></td>
 					</tr>
 					<tr>
 						<th class="th_left"><span>詳細</span></th>
-						<td colspan="5"><input class="textwidth" type="text" name="goal_detail"
-							placeholder="1000文字まで"></td>
+						<td colspan="5"><input class="textwidth" type="text"
+							name="goal_detail" placeholder="1000文字まで"></td>
 					</tr>
 					<tr>
 						<th class="th_left"><span>期間</span></th>
-						<td><input id="終日" type="radio" name="term_id" value="1" required><label class="radio_label" for="終日">終日</label></td>
+						<td><input id="終日" type="radio" name="term_id" value="1"
+							required><label class="radio_label" for="終日">終日</label></td>
 						<td><input id="繰り返し" type="radio" name="term_id" value="2"><label
-								class="radio_label" for="繰り返し">繰り返し</label></td>
+							class="radio_label" for="繰り返し">繰り返し</label></td>
 						<td><input id="長期" type="radio" name="term_id" value="3"><label
-								class="radio_label" for="長期">長期</label></td>
+							class="radio_label" for="長期">長期</label></td>
 					</tr>
 
 
@@ -75,28 +77,30 @@
 
 					<tr>
 						<th class="th_left"><span>達成難易度</span></th>
-						<td><input type="radio" id="簡単"name="difficulty_id" value="1"
-							required><label class="radio_label" for="簡単">簡単</label></td>
-						<td><input type="radio" id="難しい"name="difficulty_id" value="2"><label class="radio_label" for="難しい">難しい</label></td>
+						<td><input type="radio" id="簡単" name="difficulty_id"
+							value="1" required><label class="radio_label" for="簡単">簡単</label></td>
+						<td><input type="radio" id="難しい" name="difficulty_id"
+							value="2"><label class="radio_label" for="難しい">難しい</label></td>
 					</tr>
 
 					<tr>
 						<th class="th_left"><span>タグ</span></th>
-						<td><input type="radio" id="仕事"name="tag_id" value="1" required><label
-								class="radio_label work" for="仕事">仕事</label></td>
-						<td><input type="radio" id="家事"name="tag_id" value="2"><label
-								class="radio_label housework" for="家事">家事</label></td>
-						<td><input type="radio" id="趣味"name="tag_id" value="3"><label
-								class="radio_label hobby" for="趣味">趣味</label></td>
-						<td><input type="radio" id="勉強"name="tag_id" value="4"><label
-								class="radio_label study" for="勉強">勉強</label></td>
-						<td><input type="radio" id="その他"name="tag_id" value="5"><label
-								class="radio_label etc" for="その他">その他</label></td>
+						<td><input type="radio" id="仕事" name="tag_id" value="1"
+							required><label class="radio_label work" for="仕事">仕事</label></td>
+						<td><input type="radio" id="家事" name="tag_id" value="2"><label
+							class="radio_label housework" for="家事">家事</label></td>
+						<td><input type="radio" id="趣味" name="tag_id" value="3"><label
+							class="radio_label hobby" for="趣味">趣味</label></td>
+						<td><input type="radio" id="勉強" name="tag_id" value="4"><label
+							class="radio_label study" for="勉強">勉強</label></td>
+						<td><input type="radio" id="その他" name="tag_id" value="5"><label
+							class="radio_label etc" for="その他">その他</label></td>
 
 
 					</tr>
 					<tr>
-						<td colspan="3"><input type="submit" name="" class="update_button"value="登録"></td>
+						<td colspan="3"><input type="submit" name=""
+							class="update_button" value="登録"></td>
 
 					</tr>
 				</table>
@@ -110,16 +114,16 @@
 		<ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img
 					src="/app/img/home.png" width="60" height="60"><br>
-				<div>Home</div></a></li>
+					<div>Home</div></a></li>
 			<li class="footer-li"><a href="/app/GoalServlet"><img
 					src="/app/img/check.png" width="60" height="60"><br>
-				<div class="footer-li-goal">目標一覧</div></a></li>
+					<div class="footer-li-goal">目標一覧</div></a></li>
 			<li class="footer-li"><a href="/app/JoysServlet"><img
 					src="/app/img/joys.png" width="60" height="60"><br>
-				<div>Joys</div></a></li>
+					<div>Joys</div></a></li>
 			<li class="footer-li"><a href="/app/ProfileServlet"><img
 					src="/app/img/profile.png" width="60" height="60"><br>
-				<div>マイプロフィール</div></a></li>
+					<div>マイプロフィール</div></a></li>
 		</ul>
 	</footer>
 

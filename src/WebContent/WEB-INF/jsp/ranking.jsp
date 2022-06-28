@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>POME | ランキング</title>
 
-<link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
+<link rel="icon" type="image/png" href="/app/img/favicon.ico" />
 <!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
 <link rel="apple-touch-icon" type="image/png"
 	href="app/img/pome_favicon.png">
@@ -24,7 +24,7 @@
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
 
-			<a id='logout' href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a>
+		<a id='logout' href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a>
 
 		<a href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
@@ -34,7 +34,8 @@
 	<!-- ここからメイン -->
 	<main>
 		<div class="ranking_title">
-			<img src="/app/img/ranking.png" width="120" height="120" class="ranking_title_img">
+			<img src="/app/img/ranking.png" width="120" height="120"
+				class="ranking_title_img">
 			<h1 class="ranking_title_h1">ランキング</h1>
 		</div>
 
@@ -52,29 +53,29 @@
 		</c:forEach>-->
 
 		<div id="table">
-	<table class="list">
-		<tr>
-			<th>順位</th>
-			<th>ニックネーム</th>
-			<th>累計ポイント</th>
+			<table class="list">
+				<tr>
+					<th>順位</th>
+					<th>ニックネーム</th>
+					<th>累計ポイント</th>
 
 
-		</tr>
+				</tr>
 
-	<c:forEach var="e" items="${ rankingList}">
-		<tr>
-			<td>${e.rank_result}</td>
-			<td>${e.nickname}さん</td>
-			<td>${e.total_point }pts.</td>
+				<c:forEach var="e" items="${ rankingList}">
+					<tr>
+						<td>${e.rank_result}</td>
+						<td>${e.nickname}さん</td>
+						<td>${e.total_point }pts.</td>
 
-		</tr>
-		</c:forEach>
-	</table>
-	</div>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
 
 	</main>
 	<!-- フッター被り解決 -->
-<div class = "empty"></div>
+	<div class="empty"></div>
 
 	<footer class="footer">
 		<ul class="footer-ul">

@@ -40,12 +40,13 @@
 	<main>
 
 		<div class="title">
-			<img src="/app/img/joys.png" width="120" height="120" class="title_img">
+			<img src="/app/img/joys.png" width="120" height="120"
+				class="title_img">
 			<h1 class="title_h1">joys一覧</h1>
 		</div>
 
 		<c:forEach end="0" var="a" items="${rewardList}">
-		<p class="having">保持ポイント：${a.having_point}pts</p>
+			<p class="having">保持ポイント：${a.having_point}pts</p>
 		</c:forEach>
 
 		<div class="tab_wrap">
@@ -81,8 +82,14 @@
 
 							<div class="out_table">${e.reward_detail}</div>
 							<input type="hidden" name="having_point"
-								value="${e.having_point}">
-							<br><br><br><br><br><br><br><br>
+								value="${e.having_point}"> <br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
 
 						</form>
 					</c:forEach>

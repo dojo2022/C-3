@@ -26,8 +26,8 @@
 		<div class="logo">
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
-		<a id='logout' href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a> <a
-			href="/app/HintServlet" class="hint" target="_blank"><img
+		<a id='logout' href="/app/LogoutServlet" class="logoutbtn"><div>ログアウト</div></a>
+		<a href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
 	</header>
 
@@ -41,21 +41,23 @@
 			<c:forEach var="e" items="${profile }">
 				<div>
 					<h2>ニックネーム</h2>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id= "nickname" name="nickname" value=${e.nickname } >
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"
+						id="nickname" name="nickname" value=${e.nickname }>
 				</div>
 				<div class="having_point">
 					<h2>所持ポイント</h2>
-					<p id = "point">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${e.having_point }ポイント</p>
+					<p id="point">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${e.having_point }ポイント</p>
 				</div>
 				<div class="total_point">
 					<h2>累計ポイント</h2>
-					<p id = "point">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${e.total_point }ポイント</p>
+					<p id="point">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${e.total_point }ポイント</p>
 				</div>
 			</c:forEach>
 
 			<input type="radio" name="edit" value="yes">編集する&nbsp;&nbsp;&nbsp;
 			<input type="radio" name="edit" value="no" checked>編集しない&nbsp;&nbsp;&nbsp;
-			<input type="submit" class = "update" name="update" value="更新" disabled="disabled"><br>
+			<input type="submit" class="update" name="update" value="更新"
+				disabled="disabled"><br>
 
 		</form>
 
@@ -73,11 +75,11 @@
 				</c:forEach>
 			</table>
 		</div>
-	<a href="/app/RankingServlet">ポイントランキングはこちら▶</a><br>
+		<a href="/app/RankingServlet">ポイントランキングはこちら▶</a><br>
 	</main>
 	<!--  -->
 
-	<div class = "empty"></div>
+	<div class="empty"></div>
 	<footer class="footer">
 		<ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img

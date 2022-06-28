@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>POME｜達成リザルト</title>
 
-<link rel="icon" type="image/png" href="/app/img/favicon.ico"/>
+<link rel="icon" type="image/png" href="/app/img/favicon.ico" />
 <!-- ↑ファビコン設定　タブ左やブックマーク時に表示されるアイコン -->
 <link rel="apple-touch-icon" type="image/png"
 	href="app/img/pome_favicon.png">
@@ -22,26 +22,28 @@
 			<img src="/app/img/logo00.png" width="300" height="150">
 		</div>
 		<!-- <a href="/app/LoginServlet" class="logoutbtn"><div>ログアウト</div></a>-->
-		 <a href="/app/HintServlet" class="hint" target="_blank"><img
+		<a href="/app/HintServlet" class="hint" target="_blank"><img
 			src="/app/img/hint.png" width="60" height="60"></a>
 	</header>
 
 	<main>
 		<h1>目標達成！！！！</h1>
 		<div class="hr-p">
-		<hr>
+			<hr>
 		</div>
-		<h2><span style="color:#FF9933">${plusPoint}ポイント</span>を獲得しました！！！</h2>
+		<h2>
+			<span style="color: #FF9933">${plusPoint}ポイント</span>を獲得しました！！！
+		</h2>
 
-		<img src="/app/img/omedetou.png"><br>
-		<img src="/app/img/1.png" id='imageArea'>
+		<img src="/app/img/omedetou.png"><br> <img
+			src="/app/img/1.png" id='imageArea'>
 		<div class="hr-a">
-		<hr>
+			<hr>
 		</div>
-		<a href="/app/HomeServlet">＜　ホームへ戻る</a>
+		<a href="/app/HomeServlet">＜ ホームへ戻る</a>
 	</main>
-<!-- フッター被り解決 -->
-<div class = "empty"></div>
+	<!-- フッター被り解決 -->
+	<div class="empty"></div>
 	<!--<footer class="footer">
 		  <ul class="footer-ul">
 			<li class="footer-li"><a href="/app/HomeServlet"><img
@@ -60,9 +62,10 @@
 	</footer>-->
 	<script>
 		const imageArea = document.getElementById('imageArea');
-		const images = ['/app/img/1.png', '/app/img/2.png', '/app/img/3.png', '/app/img/4.png','/app/img/5.png'];
+		const images = [ '/app/img/1.png', '/app/img/2.png', '/app/img/3.png',
+				'/app/img/4.png', '/app/img/5.png' ];
 
-		const imageNo = Math.floor( Math.random() * images.length)
+		const imageNo = Math.floor(Math.random() * images.length)
 		imageArea.src = images[imageNo];
 	</script>
 </body>

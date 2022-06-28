@@ -35,7 +35,8 @@
 		<c:forEach var="e" items="${rewardList}">
 			<form method="post" action="/app/JoysUpdateServlet">
 				<div class="title">
-					<img src="/app/img/joys.png" width="80" height="80" class="title_img">
+					<img src="/app/img/joys.png" width="80" height="80"
+						class="title_img">
 					<h1 class="title_h1">joys更新・削除</h1>
 				</div>
 
