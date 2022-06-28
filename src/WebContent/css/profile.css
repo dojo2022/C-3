@@ -37,6 +37,7 @@ a {
 .listname{
 	 padding:0.25em 0.5em;
 
+
 }
 
 
@@ -101,5 +102,16 @@ h2 {
 	font-size:25px;
 	letter-spacing:5px;
 	border-radius:5px;
+}
+
+/* 空要素　全体位置調整のため */
+.empty_profile {
+	height: 50px;
+}
+
+/* ポイントランキング　文字位置修正 */
+.rank {
+	padding: 80px;
+	font-size: 20px;
 }
 
