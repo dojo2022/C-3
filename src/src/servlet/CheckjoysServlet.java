@@ -51,44 +51,44 @@ public class CheckjoysServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		user user_id = (user)session.getAttribute("id");
 
-				//リクエストパラメーターを書く！！
-				//消費ポイントを返す
+		//リクエストパラメーターを書く！！
+		//消費ポイントを返す
 
 
-				joyspointDao dao = new joyspointDao();
-				int minuspoint = dao.select(id);
+		joyspointDao dao = new joyspointDao();
+		int minuspoint = dao.select(id);
 
-				System.out.println("pluspoint"+minuspoint);
+		System.out.println("pluspoint"+minuspoint);
 
-				//ポイントを引き算
-				loginDao point = new loginDao();
+		//ポイントを引き算
+		loginDao point = new loginDao();
 
-				boolean update = point.minuspoint_update(user_id.getUser_id(), minuspoint);
+		boolean update = point.minuspoint_update(user_id.getUser_id(), minuspoint);
 
-				int minushaving_point = having_point-minuspoint;
+		int minushaving_point = having_point-minuspoint;
 
-				//セッションスコープにIDを格納
-				HttpSession result = request.getSession();
-				result.setAttribute("reward_name", reward_name);
-				result.setAttribute("having_point",having_point);
-				result.setAttribute("minushaving_point",minushaving_point);
+		//セッションスコープにIDを格納
+		HttpSession result = request.getSession();
+		result.setAttribute("reward_name", reward_name);
+		result.setAttribute("having_point",having_point);
+		result.setAttribute("minushaving_point",minushaving_point);
 
 
-				if (update) {	// 交換成功
-					//結果ページにフォワードする
+		if (update) {	// 交換成功
+			//結果ページにフォワードする
 
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result_joys.jsp");
-					dispatcher.forward(request, response);
-						}
-					else {		// 交換失敗
-						//結果ページにフォワードする
-						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result_joys_false.jsp");
-						dispatcher.forward(request, response);
-					}
-				//セッションスコープに表示内容を格納
-				//HttpSession minus = request.getSession();
-				//minus.setAttribute("reward_name", reward_name);
-				//minus.setAttribute("having_point", having_point);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result_joys.jsp");
+			dispatcher.forward(request, response);
+		}
+		else {		// 交換失敗
+			//結果ページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result_joys_false.jsp");
+			dispatcher.forward(request, response);
+		}
+		//セッションスコープに表示内容を格納
+		//HttpSession minus = request.getSession();
+		//minus.setAttribute("reward_name", reward_name);
+		//minus.setAttribute("having_point", having_point);
 
 
 
